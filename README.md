@@ -1,3 +1,8 @@
+[![Mergify Status][mergify-status]][mergify]
+
+[mergify]: https://mergify.com
+[mergify-status]: https://img.shields.io/endpoint.svg?url=https://api.mergify.com/v1/badges/inkbeard/monorepo
+
 # Turborepo starter
 
 This is an official starter Turborepo.
