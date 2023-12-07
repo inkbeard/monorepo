@@ -3,7 +3,7 @@ queue_rules:
     conditions: &default_queue_conditions
       - -label=Hold merge
       - -label=Addressing issues
-      - label=zready to merge
+      - label=Ready to merge
 
 pull_request_rules:
   - name: Automatic merge on approval
@@ -12,14 +12,6 @@ pull_request_rules:
       queue:
         name: default
         allow_merging_configuration_change: true
-  - name: add review when out of draft
-    conditions:
-      - -label=review requested
-      - -draft
-    actions:
-      label:
-        add:
-          - review requested
   - name: add label on conflicts
     conditions:
       - conflict
