@@ -1,9 +1,9 @@
 queue_rules:
   - name: default
     conditions: &default_queue_conditions
-      - -label=blocked
-      - -label=addressing issues
-      - label=review requested
+      - -label=Hold merge
+      - -label=Addressing issues
+      - label=zready to merge
 
 pull_request_rules:
   - name: Automatic merge on approval
