@@ -37,6 +37,16 @@ This Turborepo has some additional tools already setup for you:
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
 
+### Create App
+
+To create a new app, run the following command from root:
+
+```
+pnpm turbo gen workspace
+```
+
+Check [Turborepo's documentation](https://turbo.build/repo/docs/core-concepts/monorepos/code-generation) for more information, including how to work with custom generators.
+
 ### Build
 
 To build all apps and packages, run the following command:
