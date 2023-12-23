@@ -6,12 +6,18 @@ queue_rules:
       - label=Ready to merge
 
 pull_request_rules:
-  - name: Automatic merge on approval
-    conditions: *default_queue_conditions
+  - name: Automatically approve Dependabot PRs
+    conditions:
+      - author=dependabot[bot]
+      - or:
+        - dependabot-update-type=version-update:semver-minor
+        - dependabot-update-type=version-update:semver-patch
     actions:
-      queue:
-        name: default
-        allow_merging_configuration_change: true
+      review:
+        type: APPROVE
+      label:
+        add:
+          - Ready to merge
   - name: add label on conflicts
     conditions:
       - conflict
