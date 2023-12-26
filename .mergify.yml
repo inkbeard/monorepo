@@ -1,24 +1,39 @@
 shared:
   ci_success: &ci_success
-    - "check-success=CI / Build and Test"
-  queue_merge_conditions: &queue_merge_conditions
+    - "check-success=Build and Test"
+  queue_conditions: &queue_conditions
     - -label=Hold merge
     - -label=Addressing issues
     - -draft
+    - -conflict
     - or :
       - "#approved-reviews-by>=1"
       - label=Ready to merge
 
-
 queue_rules:
   - name: default
-    batch_size: 3
-    conditions:
-      - and: *queue_merge_conditions
+    queue_conditions:
+      - and: *queue_conditions
+      - author!=dependabot[bot]
+    merge_conditions:
+      - and: *queue_conditions
+      - and: *ci_success
+  - name: dep-update
+    batch_size: 10
+    # Wait for up to 30 minutes for the batch to fill up
+    batch_max_wait_time: 30 min
+    queue_conditions:
+      - and: *queue_conditions
+      - author=dependabot[bot]
+    merge_conditions:
+      - and: *queue_conditions
+      - and: *ci_success
 
 pull_request_rules:
   - name: Add PR to default merge queue
-    conditions: *queue_merge_conditions
+    conditions:
+      - and: *queue_conditions
+      - author!=dependabot[bot]
     actions:
       queue:
         name: default
