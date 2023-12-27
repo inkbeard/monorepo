@@ -1,18 +1,52 @@
-queue_rules:
-  - name: default
-    conditions: &default_queue_conditions
-      - -label=Hold merge
-      - -label=Addressing issues
+shared:
+  ci_success: &ci_success
+    - "check-success=Build and Test"
+  queue_conditions: &queue_conditions
+    - -label=Hold merge
+    - -label=Addressing issues
+    - -draft
+    - -conflict
+    - or :
+      - "#approved-reviews-by>=1"
       - label=Ready to merge
 
+queue_rules:
+  - name: default
+    queue_conditions:
+      - and: *queue_conditions
+      - author!=dependabot[bot]
+    merge_conditions:
+      - and: *queue_conditions
+      - and: *ci_success
+  - name: dep-update
+    batch_size: 10
+    # Wait for up to 30 minutes for the batch to fill up
+    batch_max_wait_time: 30 min
+    queue_conditions:
+      - and: *queue_conditions
+      - author=dependabot[bot]
+    merge_conditions:
+      - and: *queue_conditions
+      - and: *ci_success
+
 pull_request_rules:
-  - name: Automatic merge on approval
-    conditions: *default_queue_conditions
+  - name: Add PR to default merge queue
+    conditions:
+      - and: *queue_conditions
+      - author!=dependabot[bot]
     actions:
       queue:
         name: default
         allow_merging_configuration_change: true
-  - name: add label on conflicts
+  - name: Automatically approve Dependabot PRs
+    conditions:
+      - author=dependabot[bot]
+      - and: *ci_success
+      - dependabot-update-type=version-update:semver-patch
+    actions:
+      review:
+        type: APPROVE
+  - name: Test for conflicts
     conditions:
       - conflict
     actions:
