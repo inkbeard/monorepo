@@ -12,6 +12,7 @@ shared:
 
 queue_rules:
   - name: default
+    batch_size: 3
     speculative_checks: 3
     queue_conditions:
       - and: *queue_conditions
