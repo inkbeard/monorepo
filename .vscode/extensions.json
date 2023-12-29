@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "circleci.circleci",
+    "dbaeumer.vscode-eslint",
+    "github.copilot",
+    "mrmlnc.vscode-scss",
+    "redhat.vscode-yaml",
+    "shakram02.bash-beautify",
+    "stylelint.vscode-stylelint",
+    "vue.volar"
+  ]
+}
