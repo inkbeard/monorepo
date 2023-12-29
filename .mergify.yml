@@ -12,6 +12,7 @@ shared:
 
 queue_rules:
   - name: default
+    speculative_checks: 3
     queue_conditions:
       - and: *queue_conditions
       - author!=dependabot[bot]
@@ -20,7 +21,6 @@ queue_rules:
       - and: *ci_success
   - name: dep-update
     batch_size: 10
-    # Wait for up to 30 minutes for the batch to fill up
     batch_max_wait_time: 30 min
     queue_conditions:
       - and: *queue_conditions
