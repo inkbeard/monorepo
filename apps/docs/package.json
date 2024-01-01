@@ -15,9 +15,9 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^14.0.4",
     "@inkbeard/eslint-config": "workspace:*",
     "@inkbeard/typescript-config": "workspace:*",
+    "@next/eslint-plugin-next": "^14.0.4",
     "@types/eslint": "^8.44.7",
     "@types/node": "^17.0.12",
     "@types/react": "^18.2.0",
