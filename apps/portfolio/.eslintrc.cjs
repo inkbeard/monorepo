@@ -3,5 +3,5 @@ require('@rushstack/eslint-patch/modern-module-resolution')
 
 module.exports = {
   root: true,
-  extends: ["@repo/eslint-config/vue.js"],
+  extends: ["@inkbeard/eslint-config/vue.js"],
 }
