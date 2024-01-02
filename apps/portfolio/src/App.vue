@@ -56,10 +56,6 @@ nav {
   }
 }
 
-nav {
-  font-size: 14px;
-}
-
 nav a {
   display: inline-block;
   padding: 0 1rem;
