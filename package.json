@@ -3,10 +3,11 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "lint:fix": "pnpm --recursive run lint:fix",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "lint:fix": "pnpm --recursive run lint:fix",
+    "lint": "turbo run lint",
     "postinstall": "manypkg check",
+    "stylelint": "turbo stylelint",
     "test": "turbo run test"
   },
   "packageManager": "pnpm@8.9.0",
@@ -26,5 +27,8 @@
       "INTERNAL_MISMATCH"
     ]
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "stylelint": "^16.1.0"
+  }
 }
