@@ -1,7 +1,8 @@
 {
   "editor.tabSize": 2,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": true
   },
   "eslint.codeActionsOnSave.rules": null,
   "eslint.validate": [
@@ -12,6 +13,7 @@
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
+  "stylelint.packageManager": "pnpm",
   "stylelint.validate": [
     "css",
     "scss",
