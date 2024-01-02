@@ -1,5 +1,5 @@
 ---
-"@repo/eslint-config": minor
+"@inkbeard/eslint-config": minor
 ---
 
 - added vue custom eslint rules

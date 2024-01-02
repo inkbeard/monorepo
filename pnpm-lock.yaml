@@ -14,10 +14,10 @@ importers:
       '@manypkg/cli':
         specifier: ^0.21.0
         version: 0.21.1
-      '@repo/eslint-config':
+      '@inkbeard/eslint-config':
         specifier: workspace:*
         version: link:packages/eslint-config
-      '@repo/typescript-config':
+      '@inkbeard/typescript-config':
         specifier: workspace:*
         version: link:packages/typescript-config
       prettier:
@@ -29,7 +29,7 @@ importers:
 
   apps/docs:
     dependencies:
-      '@repo/ui':
+      '@inkbeard/ui':
         specifier: workspace:*
         version: link:../../packages/ui
       next:
@@ -45,10 +45,10 @@ importers:
       '@next/eslint-plugin-next':
         specifier: ^14.0.4
         version: 14.0.4
-      '@repo/eslint-config':
+      '@inkbeard/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
-      '@repo/typescript-config':
+      '@inkbeard/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
       '@types/eslint':
@@ -133,7 +133,7 @@ importers:
 
   apps/web:
     dependencies:
-      '@repo/ui':
+      '@inkbeard/ui':
         specifier: workspace:*
         version: link:../../packages/ui
       next:
@@ -149,10 +149,10 @@ importers:
       '@next/eslint-plugin-next':
         specifier: ^14.0.4
         version: 14.0.4
-      '@repo/eslint-config':
+      '@inkbeard/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
-      '@repo/typescript-config':
+      '@inkbeard/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
       '@types/eslint':
@@ -211,10 +211,10 @@ importers:
 
   packages/ui:
     devDependencies:
-      '@repo/eslint-config':
+      '@inkbeard/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@repo/typescript-config':
+      '@inkbeard/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       '@turbo/gen':
