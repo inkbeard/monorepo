@@ -6,6 +6,7 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "lint:fix": "pnpm --recursive run lint:fix",
+    "stylelint": "turbo run stylelint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "postinstall": "manypkg check",
     "test": "turbo run test"
