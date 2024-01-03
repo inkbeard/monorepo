@@ -1,12 +1,20 @@
 {
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.codeActionsOnSave.rules": null,
   "eslint.validate": [
     "javascript",
     "vue"
   ],
   "files.trimTrailingWhitespace": true,
-  "editor.tabSize": 2,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
-  },
-  "eslint.codeActionsOnSave.rules": null
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "stylelint.validate": [
+    "css",
+    "scss",
+    "vue"
+  ]
 }
