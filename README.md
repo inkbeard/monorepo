@@ -3,6 +3,8 @@
 [mergify]: https://mergify.com
 [mergify-status]: https://img.shields.io/endpoint.svg?url=https://api.mergify.com/v1/badges/inkbeard/monorepo
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a4d75aa7-03c4-4638-9eb6-a34ba8d85174/deploy-status)](https://app.netlify.com/sites/dainty-arithmetic-94f385/deploys)
+
 # Turborepo starter
 
 This is an official starter Turborepo.

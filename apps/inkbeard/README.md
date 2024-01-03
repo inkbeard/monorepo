@@ -1,4 +1,4 @@
-# portfolio
+# inkbeard
 
 This template should help get you started developing with Vue 3 in Vite.
 
@@ -30,25 +30,25 @@ pnpm install
 ### Compile and Hot-Reload for Development
 
 ```sh
-pnpm dev --filter portfolio
+pnpm dev --filter inkbeard
 ```
 
 ### Type-Check, Compile and Minify for Production
 
 ```sh
-pnpm build --filter portfolio
+pnpm build --filter inkbeard
 ```
 
 ### Run Unit Tests with [Vitest](https://vitest.dev/)
 
 ```sh
-pnpm test:unit --filter portfolio
+pnpm test:unit --filter inkbeard
 ```
 
 ### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
 
 ```sh
-pnpm test:e2e:dev --filter portfolio
+pnpm test:e2e:dev --filter inkbeard
 ```
 
 This runs the end-to-end tests against the Vite development server.
@@ -57,12 +57,12 @@ It is much faster than the production build.
 But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
 
 ```sh
-pnpm build --filter portfolio
-pnpm test:e2e --filter portfolio
+pnpm build --filter inkbeard
+pnpm test:e2e --filter inkbeard
 ```
 
 ### Lint with [ESLint](https://eslint.org/)
 
 ```sh
-pnpm lint --filter portfolio
+pnpm lint --filter inkbeard
 ```
