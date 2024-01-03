@@ -22,6 +22,7 @@
       "cache": false,
       "persistent": true
     },
+    "stylelint": {},
     "test": {
       "dependsOn": [],
       "outputs": [
