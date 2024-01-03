@@ -43,7 +43,10 @@ jobs:
         run: pnpm install
 
       - name: Run unit tests
-        run: pnpm turbo test
+        run: pnpm test
 
       - name: Run lint
-        run: pnpm turbo lint
+        run: pnpm lint
+
+      - name: Run stylelint
+        run: pnpm stylelint
