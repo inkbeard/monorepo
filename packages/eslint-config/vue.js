@@ -14,8 +14,7 @@ require('@rushstack/eslint-patch/modern-module-resolution')
 module.exports = {
   'extends': [
     'plugin:vue/vue3-recommended',
-    'eslint:recommended',
-    '@vue/eslint-config-typescript'
+    '@vue/eslint-config-airbnb-with-typescript'
   ],
   parserOptions: {
     ecmaVersion: 'latest'
@@ -29,6 +28,13 @@ module.exports = {
   overrides: [
     // Force ESLint to detect .tsx files
     { files: ["*.js?(x)", "*.ts?(x)"] },
+    {
+      "files": ["*.vue"],
+      "rules": {
+        // Turning off since vue/script-indent handles this
+        '@typescript-eslint/indent': ['off'],
+      }
+    }
   ],
   rules: {
     'vue/attributes-order': ['warn', {
@@ -36,5 +42,19 @@ module.exports = {
     }],
     // Require indenting with 2 spaces in script block
     'vue/script-indent': ['warn', 2, { baseIndent: 1 }],
+    'import/prefer-default-export': 0,
+    "vue/max-len": ["error", {
+      "code": 120,
+      "template": 120,
+      "comments": 120,
+      "ignorePattern": ' d=', // Ignore SVG paths
+      "ignoreComments": true,
+      "ignoreUrls": true,
+      "ignoreStrings": true,
+      "ignoreTemplateLiterals": false,
+      "ignoreRegExpLiterals": false,
+      "ignoreHTMLAttributeValues": false,
+      "ignoreHTMLTextContents": false,
+    }]
   }
 };
