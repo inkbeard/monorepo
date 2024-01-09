@@ -85,6 +85,9 @@ importers:
         specifier: ^4.2.5
         version: 4.2.5(vue@3.4.3)
     devDependencies:
+      '@inkbeard/eslint-config':
+        specifier: workspace:*
+        version: link:../../packages/eslint-config
       '@inkbeard/stylelint-config':
         specifier: workspace:*
         version: link:../../packages/stylelint-config
