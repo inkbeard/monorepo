@@ -1,6 +1,5 @@
 <script setup lang="ts">
   import WelcomeItem from './WelcomeItem.vue';
-  import DocumentationIcon from './icons/IconDocumentation.vue';
   import ToolingIcon from './icons/IconTooling.vue';
   import EcosystemIcon from './icons/IconEcosystem.vue';
   import CommunityIcon from './icons/IconCommunity.vue';
@@ -10,7 +9,7 @@
 <template>
   <WelcomeItem>
     <template #icon>
-      <DocumentationIcon />
+      <i class="fa-sharp fa-regular fa-book-open fa-lg" />
     </template>
     <template #heading>
       Documentation
