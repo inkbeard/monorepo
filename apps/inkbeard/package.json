@@ -2,7 +2,7 @@
   "name": "inkbeard",
   "version": "0.1.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --open",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "test": "vitest --run",
@@ -15,6 +15,7 @@
     "stylelint": "stylelint \"**/*.{css,scss,vue}\""
   },
   "dependencies": {
+    "@vitejs/plugin-basic-ssl": "^1.0.2",
     "pinia": "^2.1.7",
     "vue": "^3.4.3",
     "vue-router": "^4.2.5"
