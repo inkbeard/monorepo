@@ -1,6 +1,16 @@
 <script setup lang="ts">
+  import GlobalNavigation from '@/components/GlobalNavigation.vue';
 </script>
 
 <template>
-  <RouterView />
+  <GlobalNavigation />
+  <main>
+    <RouterView />
+  </main>
 </template>
+
+<style scoped>
+  main {
+    min-height: 100vh;
+  }
+</style>

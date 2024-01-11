@@ -2,7 +2,5 @@
 </script>
 
 <template>
-  <main>
-    hello
-  </main>
+  hello
 </template>
