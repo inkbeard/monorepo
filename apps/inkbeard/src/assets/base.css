@@ -85,5 +85,8 @@ body {
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(0 0 0 / 70%);
+
+  @media (width >= 768px) {
+    padding-top: 50px;
+  }
 }
