@@ -1,7 +1,8 @@
 <script setup lang="ts">
   import { RouterLink } from 'vue-router';
-  import { ref } from 'vue';
+  import { ref, watch, onBeforeMount } from 'vue';
 
+  const darkMode = ref(false);
   const isActive = ref(false);
   const links = [
     {
@@ -10,6 +11,22 @@
       to: { name: 'Home' },
     },
   ];
+
+  watch(darkMode, (newValue) => {
+    if (newValue) {
+      document.documentElement.classList.add('dark');
+      window.sessionStorage.setItem('darkMode', String(true));
+    } else {
+      document.documentElement.classList.remove('dark');
+      window.sessionStorage.removeItem('darkMode');
+    }
+  });
+
+  onBeforeMount(() => {
+    if (window.sessionStorage.getItem('darkMode')) {
+      darkMode.value = true;
+    }
+  });
 </script>
 
 <template>
@@ -73,6 +90,19 @@
         @click="isActive = !isActive"
         @keydown="isActive = !isActive"
       />
+      <button
+        class="toggle-wrapper"
+        :class="{ 'is-active': darkMode }"
+        type="button"
+        @click="darkMode = !darkMode"
+      >
+        <span class="toggle-icon">
+          <i
+            class="fa-solid fa-sm"
+            :class="`fa-${darkMode ? 'moon' : 'sun-bright'}`"
+          />
+        </span>
+      </button>
     </div>
   </header>
 </template>
@@ -208,9 +238,10 @@
     position: fixed;
     top: 20px;
     right: 20px;
-    width: 33px;
-    height: 17px;
+    width: 38px;
+    height: 22px;
     margin: 0 10px;
+    padding: 0;
     cursor: pointer;
     border: 1px solid var(--color-border);
     border-radius: 12px;
@@ -221,10 +252,19 @@
       top: inherit;
       right: inherit;
     }
+
+    &:hover {
+      border-color: var(--color-border-hover);
+    }
   }
 
   .toggle-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: all .25s ease;
+    width: 19px;
+    height: 19px;
     border-radius: 100%;
     background-color: rgb(255 255 255 / 70%);
 
