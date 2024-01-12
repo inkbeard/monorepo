@@ -238,7 +238,7 @@
     position: fixed;
     top: 20px;
     right: 20px;
-    width: 38px;
+    width: 37px;
     height: 22px;
     margin: 0 10px;
     padding: 0;
