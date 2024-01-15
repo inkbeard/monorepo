@@ -13,6 +13,27 @@ const router = createRouter({
       name: 'Resume',
       component: () => import('@/views/ResumeView.vue'),
     },
+    {
+      path: '/projects',
+      name: 'Projects',
+      children: [
+        {
+          path: '/budget-it',
+          name: 'BudgetIt',
+          component: () => import('@/views/BudgetItView.vue'),
+        },
+        {
+          path: '/gbt-mad-libs',
+          name: 'GbtMadLibs',
+          component: () => import('@/views/GbtMadLibsView.vue'),
+        },
+        {
+          path: '/icon-memory',
+          name: 'IconMemory',
+          component: () => import('@/views/IconMemoryView.vue'),
+        },
+      ],
+    },
   ],
 });
 
