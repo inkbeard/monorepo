@@ -1,16 +1,10 @@
 <script setup lang="ts">
-  import { RouterLink } from 'vue-router';
+  import { RouterLink, useRouter } from 'vue-router';
   import { ref, watch, onBeforeMount } from 'vue';
 
   const darkMode = ref(false);
   const isActive = ref(false);
-  const links = [
-    {
-      text: 'home',
-      icon: 'fa-duotone fa-house fa-lg',
-      to: { name: 'Home' },
-    },
-  ];
+  const { children: projects } = useRouter().options.routes.find(({ name }) => name === 'Projects') || { children: [] };
 
   watch(darkMode, (newValue) => {
     if (newValue) {
@@ -30,25 +24,29 @@
 </script>
 
 <template>
-  <header :class="{ 'is-active': isActive }">
-    <div class="navigation-container">
+  <header>
+    <div class="navigation-container" :class="{ 'is-active': isActive }">
       <nav>
         <ul class="example-links">
-          <li
-            v-for="({ icon, text, to }) in links"
-            :key="text"
-          >
+          <li>
             <RouterLink
-              :to="to"
+              class="home-link"
+              :to="{ name: 'Home' }"
               @click="isActive = false"
             >
-              <template v-if="icon">
-                <i :class="icon" />
-                <span class="mobile-text">{{ text }}</span>
-              </template>
-              <template v-else>
-                {{ text }}
-              </template>
+              <i class="fa-duotone fa-house fa-lg" />
+              inkbeard
+            </RouterLink>
+          </li>
+          <li
+            v-for="({ name, meta: { title } }) in projects"
+            :key="title"
+          >
+            <RouterLink
+              :to="{ name }"
+              @click="isActive = false"
+            >
+              {{ title }}
             </RouterLink>
           </li>
         </ul>
@@ -86,7 +84,6 @@
       <i
         class="cta-hamburger fa-solid fa-lg"
         :class="`fa-${isActive ? 'xmark' : 'bars'}`"
-        tabindex="0"
         @click="isActive = !isActive"
         @keydown="isActive = !isActive"
       />
@@ -108,64 +105,107 @@
 </template>
 
 <style scoped>
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    @media (width >= 768px) {
+      display: flex;
+    }
+  }
+
   a {
-    color: white;
+    display: block;
+    padding: 10px;
     text-decoration: none;
+    color: var(--vt-c-white);
+    transition: all .5s ease-in-out;
+
+    &.home-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    &.router-link-active:not(.home-link) {
+      cursor: default;
+      text-decoration: underline;
+    }
+
+    html.dark & {
+      color: var(--vt-c-black);
+    }
+
+    @media (width >= 768px) {
+      color: var(--vt-c-black);
+
+      html.dark & {
+        color: var(--vt-c-white);
+      }
+    }
+  }
+
+  header {
+    border-bottom: 1px solid var(--color-border);
+    width: 100%;
+
+    @media (width >= 768px) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  nav {
+    position: fixed;
+    left: -200px;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    height: 100vh;
+    padding-top: 40px;
+    transition: all .5s ease-in-out;
+    background-color: var(--vt-c-black);
+    color: var(--vt-c-white);
+
+    .is-active & {
+      left: 0;
+      background-color: var(--vt-c-black);
+
+      html.dark & {
+        background-color: var(--vt-c-white);
+      }
+    }
+
+    @media (width >= 768px) {
+      position: relative;
+      display: flex;
+      flex: 1;
+      justify-content: space-between;
+      left: 0;
+      align-items: center;
+      height: inherit;
+      padding-top: 0;
+      background-color: transparent;
+    }
   }
 
   .cta-hamburger {
-    position: absolute;
-    top: 20px;
-    right: -30px;
+    z-index: 10;
     cursor: pointer;
     transition: all .5s ease-in-out;
 
     .is-active & {
-      right: 10px;
-      color: white;
+      margin-left: 160px;
+      color: var(--vt-c-white);
+
+      html.dark & {
+        color: var(--vt-c-black);
+      }
     }
 
     @media (width >= 768px) {
       display: none;
-    }
-  }
-
-  .example-links {
-    li {
-      a {
-        display: block;
-        padding: 10px;
-        transition: all .5s ease-in-out;
-
-        &.router-link-active {
-          cursor: default;
-        }
-
-        &:not(.router-link-active):hover {
-          background-color: var(--color-background);
-          color: var(--accent-color);
-
-          /* body.dark & {
-            color: white;
-          } */
-        }
-
-        @media (width >= 768px) {
-          display: flex;
-          align-items: center;
-          height: 100%;
-        }
-      }
-
-      @media (width >= 768px) {
-        display: flex;
-      }
-    }
-
-    @media (width >= 768px) {
-      display: flex;
-      flex: 1;
-      height: 100%;
     }
   }
 
@@ -181,6 +221,7 @@
     @media (width >= 768px) {
       position: relative;
       width: 90px;
+      margin-left: 0;
       padding: 0;
 
       a {
@@ -191,56 +232,35 @@
     }
   }
 
-  .mobile-text {
-    display: inline-block;
-    margin-left: 10px;
-
-    @media (width >= 768px) {
-      display: none;
-    }
-  }
-
-  header {
-    position: fixed;
-    left: -200px;
-    top: 0;
-    bottom: 0;
-    width: 200px;
-    z-index: 10;
-    background-color: #323A66;
-    transition: left .5s ease-in-out;
-
-    @media (width >= 768px) {
-      display: flex;
-      align-items: center;
-      left: 0;
-      width: 100%;
-      height: 50px;
-    }
-
-    &.is-active {
-      left: 0;
-    }
-  }
-
   .navigation-container {
     display: flex;
     align-items: center;
-    width: 100%;
-    height: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    justify-content: space-between;
+    padding: 14px 10px;
+
+    @media (width >= 768px) {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
   }
 
   .toggle-wrapper {
     display: flex;
     align-items: center;
-    position: fixed;
-    top: 20px;
-    right: 20px;
+
+    /* position: fixed; */
+
+    /* top: 20px; */
+
+    /* right: 20px; */
     width: 37px;
     height: 22px;
-    margin: 0 10px;
+
+    /* margin: 0 10px; */
+    margin-left: 10px;
     padding: 0;
     cursor: pointer;
     border: 1px solid var(--color-border);
@@ -273,26 +293,5 @@
       border-color: rgb(0 0 0 / 70%);
       transform: translateX(16px);
     }
-  }
-
-  nav {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    padding-top: 40px;
-
-    @media (width >= 768px) {
-      display: flex;
-      flex: 1;
-      align-items: center;
-      height: inherit;
-      padding-top: 0;
-    }
-  }
-
-  ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
   }
 </style>
