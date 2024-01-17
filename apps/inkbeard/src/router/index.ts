@@ -21,16 +21,25 @@ const router = createRouter({
           path: '/budget-it',
           name: 'BudgetIt',
           component: () => import('@/views/BudgetItView.vue'),
+          meta: {
+            title: 'Budget It',
+          },
         },
         {
           path: '/gbt-mad-libs',
           name: 'GbtMadLibs',
           component: () => import('@/views/GbtMadLibsView.vue'),
+          meta: {
+            title: 'GBT Mad Libs',
+          },
         },
         {
           path: '/icon-memory',
           name: 'IconMemory',
           component: () => import('@/views/IconMemoryView.vue'),
+          meta: {
+            title: 'Icon Memory',
+          },
         },
       ],
     },
