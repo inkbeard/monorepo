@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { RouterLink, useRouter } from 'vue-router';
   import { ref, watch, onBeforeMount } from 'vue';
+  import AppIcon from '@/components/AppIcon.vue';
 
   const darkMode = ref(false);
   const isActive = ref(false);
@@ -34,7 +35,7 @@
               :to="{ name: 'Home' }"
               @click="isActive = false"
             >
-              <i class="fa-duotone fa-house fa-lg" />
+              <AppIcon icon="fa-duotone fa-house" />
               inkbeard
             </RouterLink>
           </li>
@@ -58,7 +59,7 @@
               rel="noopener noreferrer"
               target="_blank"
             >
-              <i class="fa-brands fa-github fa-lg" />
+              <AppIcon icon="fa-brands fa-github" />
             </a>
           </li>
           <li>
@@ -68,7 +69,7 @@
               rel="noopener noreferrer"
               target="_blank"
             >
-              <i class="fa-brands fa-linkedin fa-lg" />
+              <AppIcon icon="fa-brands fa-linkedin" />
             </a>
           </li>
           <li>
@@ -76,13 +77,13 @@
               aria-label="Resume link"
               :to="{ name: 'Resume' }"
             >
-              <i class="fa-solid fa-file fa-lg" />
+              <AppIcon icon="fa-solid fa-file" />
             </RouterLink>
           </li>
         </ul>
       </nav>
       <i
-        class="cta-hamburger fa-solid fa-lg"
+        class="cta-hamburger fa-solid"
         :class="`fa-${isActive ? 'xmark' : 'bars'}`"
         @click="isActive = !isActive"
         @keydown="isActive = !isActive"
@@ -94,9 +95,9 @@
         @click="darkMode = !darkMode"
       >
         <span class="toggle-icon">
-          <i
-            class="fa-solid fa-sm"
-            :class="`fa-${darkMode ? 'moon' : 'sun-bright'}`"
+          <AppIcon
+            :icon="`fa-solid fa-${darkMode ? 'moon' : 'sun-bright'}`"
+            size="sm"
           />
         </span>
       </button>
