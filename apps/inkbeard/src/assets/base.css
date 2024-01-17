@@ -22,6 +22,15 @@
   --ink-text-dark-1: var(--ink-white);
   --ink-text-dark-2: rgb(235 235 235 / 64%);
 
+  /* info theme */
+  --ink-info: rgb(33 150 243);
+  /* success theme */
+  --ink-success: rgb(76 175 80);
+  /* warning theme */
+  --ink-warning: rgb(251 140 0);
+  /* danger theme */
+  --ink-danger: rgb(176 0 32);
+
   /* semantic color variables for this project */
   /* backgrounds */
   --color-background: var(--ink-white);
