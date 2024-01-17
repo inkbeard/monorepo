@@ -119,7 +119,7 @@
     display: block;
     padding: 10px;
     text-decoration: none;
-    color: var(--vt-c-white);
+    color: var(--ink-white);
     transition: all .5s ease-in-out;
 
     &.home-link {
@@ -134,14 +134,14 @@
     }
 
     html.dark & {
-      color: var(--vt-c-black);
+      color: var(--ink-black);
     }
 
     @media (width >= 768px) {
-      color: var(--vt-c-black);
+      color: var(--ink-black);
 
       html.dark & {
-        color: var(--vt-c-white);
+        color: var(--ink-white);
       }
     }
   }
@@ -165,15 +165,15 @@
     height: 100vh;
     padding-top: 40px;
     transition: all .5s ease-in-out;
-    background-color: var(--vt-c-black);
-    color: var(--vt-c-white);
+    background-color: var(--ink-black);
+    color: var(--ink-white);
 
     .is-active & {
       left: 0;
-      background-color: var(--vt-c-black);
+      background-color: var(--ink-black);
 
       html.dark & {
-        background-color: var(--vt-c-white);
+        background-color: var(--ink-white);
       }
     }
 
@@ -197,10 +197,10 @@
 
     .is-active & {
       margin-left: 160px;
-      color: var(--vt-c-white);
+      color: var(--ink-white);
 
       html.dark & {
-        color: var(--vt-c-black);
+        color: var(--ink-black);
       }
     }
 
@@ -265,7 +265,7 @@
     cursor: pointer;
     border: 1px solid var(--color-border);
     border-radius: 12px;
-    background-color: var(--vt-c-divider-dark-1);
+    background-color: var(--ink-divider-dark-1);
 
     @media (width >= 768px) {
       position: relative;
