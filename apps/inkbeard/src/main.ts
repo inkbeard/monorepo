@@ -2,7 +2,10 @@ import './assets/main.css';
 
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
+import { useFeatureFlagStore } from '@/stores/featureFlags';
 
+// eslint-disable-next-line import/no-extraneous-dependencies
+import flagsmith from 'flagsmith';
 import App from './App.vue';
 import router from './router';
 
@@ -10,5 +13,18 @@ const app = createApp(App);
 
 app.use(createPinia());
 app.use(router);
+
+flagsmith.init({
+  environmentID: import.meta.env.PROD
+    ? 'oWEJdH2Tc54wNCUVNVgnCQ'
+    : 'ax5a27QiuSV2CYBUbw9J67',
+  onChange: () => {
+    const featureFlagStore = useFeatureFlagStore();
+    featureFlagStore.flags = {
+      ...featureFlagStore.flags,
+      examples: flagsmith.hasFeature('examples'),
+    };
+  },
+});
 
 app.mount('#app');
