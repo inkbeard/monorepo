@@ -78,6 +78,9 @@ importers:
       '@vitejs/plugin-basic-ssl':
         specifier: ^1.0.2
         version: 1.0.2(vite@5.0.10)
+      flagsmith:
+        specifier: ^3.22.0
+        version: 3.22.0
       modern-normalize:
         specifier: ^2.0.0
         version: 2.0.0
@@ -4407,6 +4410,10 @@ packages:
     dependencies:
       micromatch: 4.0.5
       pkg-dir: 4.2.0
+    dev: false
+
+  /flagsmith@3.22.0:
+    resolution: {integrity: sha512-qvFk52HxfPMqFinpiM0zftpPWP9IHRObrFaQ16pjlxwdsfhSmJNO3XmCSAqdNScizXVlOi6dUTs1Xjdput6MzA==}
     dev: false
 
   /flat-cache@3.0.4:
