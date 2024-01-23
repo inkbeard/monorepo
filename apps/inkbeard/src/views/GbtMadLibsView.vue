@@ -3,5 +3,5 @@
 
 <template>
   <h2>GBT Mad Libs</h2>
-  <p>Q1</p>
+  <p>Estimated release: Q1</p>
 </template>
