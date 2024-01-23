@@ -2,6 +2,7 @@
   "name": "monorepo",
   "scripts": {
     "build": "turbo run build",
+    "preview": "turbo run preview",
     "dev": "turbo run dev",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint:fix": "pnpm --recursive run lint:fix",

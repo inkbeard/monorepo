@@ -13,6 +13,11 @@
         "!.next/cache/**"
       ]
     },
+    "preview": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
     "lint": {
       "dependsOn": [
         "^lint"
