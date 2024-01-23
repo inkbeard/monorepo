@@ -1,5 +1,11 @@
 # @inkbeard/eslint-config
 
+## 0.2.0
+
+### Minor Changes
+
+- e184951: Add vue/eslint-config-airbnb-with-typescript and custom rules
+
 ## 0.1.0
 
 ### Minor Changes
