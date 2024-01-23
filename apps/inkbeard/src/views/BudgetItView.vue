@@ -3,5 +3,5 @@
 
 <template>
   <h2>Budget it</h2>
-  <p>Q1</p>
+  <p>Estimated release: Q1</p>
 </template>
