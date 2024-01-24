@@ -2,5 +2,9 @@ import { ref } from 'vue';
 import { defineStore } from 'pinia';
 
 export const useFeatureFlagStore = defineStore('featureFlags', () => (
-  { flags: ref({}) }
+  {
+    flags: ref({
+      examples: { enabled: false },
+    }),
+  }
 ));

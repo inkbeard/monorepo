@@ -2,6 +2,7 @@
   import { RouterLink, useRouter } from 'vue-router';
   import { ref, watch, onBeforeMount } from 'vue';
   import AppIcon from '@/components/AppIcon.vue';
+  import { useFeatureFlagStore } from '@/stores/featureFlags';
 
   const darkMode = ref(false);
   const isActive = ref(false);
@@ -39,17 +40,19 @@
               inkbeard
             </RouterLink>
           </li>
-          <li
-            v-for="({ name, meta: { title } }) in projects"
-            :key="title"
-          >
-            <RouterLink
-              :to="{ name }"
-              @click="isActive = false"
+          <template v-if="useFeatureFlagStore().flags.examples.enabled">
+            <li
+              v-for="({ name }) in projects"
+              :key="name"
             >
-              {{ title }}
-            </RouterLink>
-          </li>
+              <RouterLink
+                :to="{ name }"
+                @click="isActive = false"
+              >
+                {{ name }}
+              </RouterLink>
+            </li>
+          </template>
         </ul>
         <ul class="external-links">
           <li>
