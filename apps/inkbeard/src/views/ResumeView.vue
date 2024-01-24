@@ -115,7 +115,7 @@
   <header>
     <div>
       <h2>Aaron Stoddart</h2>
-      <p>Fullstack/Frontend Engineer</p>
+      <p>Frontend Engineer</p>
     </div>
     <ul class="fa-ul">
       <li
@@ -145,7 +145,7 @@
     <div>
       <p>
         <!-- eslint-disable-next-line vue/max-len -->
-        I am currently a freelance fullstack engineer with 15+ years of experience focusing on frontend technologies. Working with small startups (10 employees) to large companies (1000+ employees) has provided me with a wide range of opportunities of growth and allowed me to make impactful company-wide decisions to build web applications from the ground up, establish best practices, and grow sets of skills from interacting with various aspects of each organization (devOps, product, QA, etc). I'm humbled to have worked with some of the best engineers and diverse people for as long as I have to build products for hundreds of thousands of users.
+        I am currently a freelance Frontend engineer with 15+ years of experience. Working with small startups (10 employees) to large companies (1000+ employees) has provided me with a wide range of opportunities of growth and allowed me to make impactful company-wide decisions to build web applications from the ground up, establish best practices, and grow sets of skills from interacting with various aspects of each organization (devOps, product, QA, etc). I'm humbled to have worked with some of the best engineers and diverse people for as long as I have to build products for hundreds of thousands of users.
       </p>
     </div>
   </section>
