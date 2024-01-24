@@ -22,7 +22,9 @@ flagsmith.init({
     const featureFlagStore = useFeatureFlagStore();
     featureFlagStore.flags = {
       ...featureFlagStore.flags,
-      examples: flagsmith.hasFeature('examples'),
+      // All feature flags will be set as an object with with `enabled`, `id`, and `value` properties
+      // with the name of the feature flag as the key.
+      ...flagsmith.getAllFlags(),
     };
   },
 });
