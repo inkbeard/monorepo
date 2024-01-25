@@ -72,7 +72,7 @@
               rel="noopener noreferrer"
               target="_blank"
             >
-              <AppIcon icon="fa-brands fa-linkedin" />
+              <AppIcon icon="fa-brands fa-linkedin" size="dragon" />
             </a>
           </li>
           <li>
@@ -80,7 +80,7 @@
               aria-label="Resume link"
               :to="{ name: 'Resume' }"
             >
-              <AppIcon icon="fa-solid fa-file" />
+              <AppIcon icon="fa-solid fa-file" size="" />
             </RouterLink>
           </li>
         </ul>
