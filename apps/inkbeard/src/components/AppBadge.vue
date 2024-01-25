@@ -1,4 +1,4 @@
-,<script setup lang="ts">
+<script setup lang="ts">
   defineProps({
     /**
      * Used to determine if the badge should show counter notifications styles.

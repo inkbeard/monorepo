@@ -1,7 +1,10 @@
 <script setup lang="ts">
+  import ProjectHeader from '@/components/ProjectHeader.vue';
 </script>
 
 <template>
-  <h2>Icon Memory Game</h2>
-  <p>Estimated release: Q1</p>
+  <ProjectHeader badge-status="warning" badge-value="Backlog">
+    Icon Memory Game
+  </ProjectHeader>
+  <p>Estimated release: 2024</p>
 </template>
