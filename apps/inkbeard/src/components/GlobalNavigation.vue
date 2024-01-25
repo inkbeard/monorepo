@@ -1,12 +1,24 @@
 <script setup lang="ts">
-  import { RouterLink, useRouter } from 'vue-router';
+  import { RouterLink } from 'vue-router';
   import { ref, watch, onBeforeMount } from 'vue';
   import AppIcon from '@/components/AppIcon.vue';
-  import { useFeatureFlagStore } from '@/stores/featureFlags';
 
   const darkMode = ref(false);
   const isActive = ref(false);
-  const { children: projects } = useRouter().options.routes.find(({ name }) => name === 'Projects') || { children: [] };
+  const projects = [
+    {
+      label: 'Budget It',
+      route: 'BudgetIt',
+    },
+    {
+      label: 'GBT Mad Libs',
+      route: 'GbtMadLibs',
+    },
+    {
+      label: 'Icon Memory',
+      route: 'IconMemory',
+    },
+  ];
 
   watch(darkMode, (newValue) => {
     if (newValue) {
@@ -40,19 +52,17 @@
               inkbeard
             </RouterLink>
           </li>
-          <template v-if="useFeatureFlagStore().flags.examples.enabled">
-            <li
-              v-for="({ name }) in projects"
-              :key="name"
+          <li
+            v-for="({ label, route }) in projects"
+            :key="route"
+          >
+            <RouterLink
+              :to="{ name: route }"
+              @click="isActive = false"
             >
-              <RouterLink
-                :to="{ name }"
-                @click="isActive = false"
-              >
-                {{ name }}
-              </RouterLink>
-            </li>
-          </template>
+              {{ label }}
+            </RouterLink>
+          </li>
         </ul>
         <ul class="external-links">
           <li>
