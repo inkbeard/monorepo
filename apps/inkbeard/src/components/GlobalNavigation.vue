@@ -264,16 +264,8 @@
   .toggle-wrapper {
     display: flex;
     align-items: center;
-
-    /* position: fixed; */
-
-    /* top: 20px; */
-
-    /* right: 20px; */
     width: 37px;
-    height: 22px;
-
-    /* margin: 0 10px; */
+    height: 21px;
     margin-left: 10px;
     padding: 0;
     cursor: pointer;
