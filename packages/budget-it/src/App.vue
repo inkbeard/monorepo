@@ -12,6 +12,10 @@
     'Clothing',
     'Medical',
   ]);
+
+  function deleteCategory(value: string) {
+    categories.value.splice(categories.value.indexOf(value), 1);
+  }
 </script>
 
 <template>
@@ -21,6 +25,7 @@
       v-for="category in categories"
       :key="category"
       :category="category"
+      @delete-category="deleteCategory"
     />
   </main>
 </template>
