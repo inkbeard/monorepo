@@ -15,7 +15,7 @@
     "stylelint": "stylelint \"**/*.{css,scss,vue}\""
   },
   "dependencies": {
-    "@vitejs/plugin-basic-ssl": "^1.0.2",
+    "@vitejs/plugin-basic-ssl": "^1.1.0",
     "flagsmith": "^3.22.0",
     "modern-normalize": "^2.0.0",
     "pinia": "^2.1.7",
