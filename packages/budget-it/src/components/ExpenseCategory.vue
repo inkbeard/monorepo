@@ -5,34 +5,55 @@
     category: string;
   }>();
 
+  const emit = defineEmits<{
+    (e: 'deleteCategory', value: string): void
+  }>();
   const isOpen = ref(false);
+
 </script>
 
 <template>
-  <div
-    class="category-section"
-    :class="{ 'is-open': isOpen }"
-  >
-    <div class="category-title">
-      <span>{{ category }}</span>
-      <button
-        type="button"
-        @click="isOpen = !isOpen"
-      >
-        {{ isOpen ? '-' : '+' }}
-      </button>
-    </div>
+  <div class="category-container">
     <div
-      v-if="isOpen"
-      class="category-content"
+      class="category-section"
+      :class="{ 'is-open': isOpen }"
     >
-      <p>Expenses go here</p>
+      <div class="category-title">
+        <span>{{ category }}</span>
+        <button
+          class="toggle"
+          type="button"
+          @click="isOpen = !isOpen"
+        >
+          {{ isOpen ? '-' : '+' }}
+        </button>
+      </div>
+      <div
+        v-if="isOpen"
+        class="category-content"
+      >
+        <p>Expenses go here</p>
+      </div>
     </div>
+    <button
+      class="delete"
+      type="button"
+      @click="emit('deleteCategory', category)"
+    >
+      Delete
+    </button>
   </div>
 </template>
 
 <style scoped>
+.category-container {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
 .category-section {
+  flex: 1;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -50,11 +71,19 @@
 }
 
 button {
-  width: 36px;
   background: none;
   border: none;
   color: var(--color-text);
-  font-size: 30px;
+  font-size: 14px;
   cursor: pointer;
+
+  &.delete {
+    margin-left: auto;
+  }
+
+  &.toggle {
+    width: 36px;
+    font-size: 30px;
+  }
 }
 </style>
