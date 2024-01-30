@@ -1,7 +1,9 @@
 <script setup lang="ts">
+  import { ref } from 'vue';
+  import AddCategory from '@/components/AddCategory.vue';
   import ExportCategory from '@/components/ExpenseCategory.vue';
 
-  const categories = [
+  const categories = ref([
     'Entertainment',
     'Food',
     'Housing',
@@ -9,11 +11,12 @@
     'Utilities',
     'Clothing',
     'Medical',
-  ];
+  ]);
 </script>
 
 <template>
   <main>
+    <AddCategory @add-category="(value:string) => categories.unshift(value)" />
     <ExportCategory
       v-for="category in categories"
       :key="category"
