@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import { ref } from 'vue';
+  import ExpenseItem from './ExpenseItem.vue';
 
   defineProps<{
     category: string;
@@ -32,7 +33,7 @@
         v-if="isOpen"
         class="category-content"
       >
-        <p>Expenses go here</p>
+        <ExpenseItem :category="category" />
       </div>
     </div>
     <button
