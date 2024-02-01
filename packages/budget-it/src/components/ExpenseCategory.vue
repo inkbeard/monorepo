@@ -25,7 +25,10 @@
           type="button"
           @click="isOpen = !isOpen"
         >
-          {{ isOpen ? '-' : '+' }}
+          <i
+            class="fa-duotone fa-xl"
+            :class="`fa-arrows-${isOpen ? 'to' : 'from'}-dotted-line`"
+          />
         </button>
       </div>
       <div
@@ -40,7 +43,7 @@
       type="button"
       @click="emit('deleteCategory', category)"
     >
-      Delete
+      <i class="fa-duotone fa-trash-can fa-xl" />
     </button>
   </div>
 </template>
@@ -74,16 +77,6 @@ button {
   background: none;
   border: none;
   color: var(--color-text);
-  font-size: 14px;
   cursor: pointer;
-
-  &.delete {
-    margin-left: auto;
-  }
-
-  &.toggle {
-    width: 36px;
-    font-size: 30px;
-  }
 }
 </style>
