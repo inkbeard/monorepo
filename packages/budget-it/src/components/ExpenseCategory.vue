@@ -54,12 +54,15 @@
   display: flex;
   align-items: baseline;
   gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .category-section {
   flex: 1;
   border: 1px solid #ccc;
   border-radius: 4px;
+  color: var(--vt-c-black-soft);
+  background-color: var(--vt-c-white);
 }
 
 .category-title,
@@ -79,5 +82,9 @@ button {
   border: none;
   color: var(--color-text);
   cursor: pointer;
+
+  &.toggle {
+    color: var(--vt-c-black-soft);
+  }
 }
 </style>
