@@ -1,5 +1,25 @@
 # inkbeard
 
+## 0.3.0
+
+### Minor Changes
+
+- 38461ca: Fixed height bug with light/dark mode toggle
+- 3f5caae: - Added AppBadge component and test
+  - Updated color contrasts to be AA compliant
+- 9ca0432: added details about estimate dates
+- dc4c062: Changed to static array for the global navigation
+- 4fba79a: - Added ProjectHeader component for each example project
+  - Added badges to each example project
+- 7730cb5: - Added feature flag store
+  - Added flagsmith initialization
+- 8ea16aa: updated resume and redirected home page to resume
+- df50073: - Wrapped the examples navigation in a feature flag.
+
+### Patch Changes
+
+- 7508c6c: Bump @vitejs/plugin-basic-ssl from 1.0.2 to 1.1.0
+
 ## 0.2.0
 
 ### Minor Changes
