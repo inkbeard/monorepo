@@ -2,7 +2,7 @@
   import { ref } from 'vue';
 
   defineProps<{
-    category: string;
+    categoryId: number;
   }>();
 
   const expenseCost = ref(0);
@@ -12,11 +12,11 @@
 
 <template>
   <form>
-    <label :for="`${category}-${expenseName}`">
+    <label :for="`${categoryId}-${expenseName}`">
       {{ expenseName }}
     </label>
     <input
-      :id="`${category}-${expenseName}`"
+      :id="`${categoryId}-${expenseName}`"
       v-model="expenseCost"
       type="number"
     >

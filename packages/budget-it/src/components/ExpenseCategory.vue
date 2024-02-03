@@ -1,14 +1,15 @@
 <script setup lang="ts">
   import { ref } from 'vue';
+  import type { CategoryInfo } from '@/stores/categories';
+  import { useCategoriesStore } from '@/stores/categories';
   import ExpenseItem from './ExpenseItem.vue';
 
-  defineProps<{
-    category: string;
-  }>();
-
-  const emit = defineEmits<{
-    (e: 'deleteCategory', value: string): void
-  }>();
+  defineProps({
+    category: {
+      type: Object as () => CategoryInfo,
+      required: true,
+    },
+  });
   const isOpen = ref(false);
 
 </script>
@@ -20,7 +21,7 @@
       :class="{ 'is-open': isOpen }"
     >
       <div class="category-title">
-        <span>{{ category }}</span>
+        <span>{{ category.name }}</span>
         <button
           class="toggle"
           type="button"
@@ -36,13 +37,13 @@
         v-if="isOpen"
         class="category-content"
       >
-        <ExpenseItem :category="category" />
+        <ExpenseItem :category-id="category.id" />
       </div>
     </div>
     <button
       class="delete"
       type="button"
-      @click="emit('deleteCategory', category)"
+      @click="useCategoriesStore().deleteCategory(category.id)"
     >
       <i class="fa-duotone fa-trash-can fa-xl" />
     </button>

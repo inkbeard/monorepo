@@ -3,7 +3,7 @@ import { mount } from '@vue/test-utils';
 import AppIcon from '../AppIcon.vue';
 
 describe('AppIcon', () => {
-  it('renders classes with default large style', () => {
+  it('should render classes with default large style', () => {
     const fontStyle = 'fa-solid';
     const iconName = 'fa-check';
     const wrapper = mount(AppIcon, {

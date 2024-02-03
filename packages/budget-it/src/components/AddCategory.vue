@@ -1,18 +1,23 @@
 <script setup lang="ts">
-  import { ref } from 'vue';
+  import { ref, computed } from 'vue';
+  import { useCategoriesStore } from '@/stores/categories';
 
-  const emit = defineEmits(['addCategory']);
   const categoryName = ref('');
   const isActive = ref(false);
+  const isDisabled = computed(() => (
+    !categoryName.value
+    || useCategoriesStore().categoryList.some(({ name }) => (
+      name.toLowerCase() === categoryName.value.trim().toLowerCase()))
+  ));
 
   function cancelEdit() {
     categoryName.value = '';
     isActive.value = false;
   }
   function addCategory() {
-    if (!categoryName.value) return;
+    if (isDisabled.value) return;
 
-    emit('addCategory', categoryName.value);
+    useCategoriesStore().addCategory(categoryName.value);
     cancelEdit();
   }
 </script>
@@ -45,7 +50,7 @@
           Cancel
         </button>
         <button
-          :disabled="!categoryName"
+          :disabled="isDisabled"
           type="button"
           @click="addCategory"
         >
