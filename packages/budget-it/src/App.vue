@@ -1,32 +1,16 @@
 <script setup lang="ts">
-  import { ref } from 'vue';
   import AddCategory from '@/components/AddCategory.vue';
   import ExportCategory from '@/components/ExpenseCategory.vue';
-
-  const categories = ref([
-    'Entertainment',
-    'Food',
-    'Housing',
-    'Transportation',
-    'Utilities',
-    'Clothing',
-    'Medical',
-  ]);
-
-  function deleteCategory(value: string) {
-    categories.value.splice(categories.value.indexOf(value), 1);
-  }
+  import { useCategoriesStore } from '@/stores/categories';
 </script>
 
 <template>
   <main>
-    <AddCategory @add-category="(value:string) => categories.unshift(value)" />
+    <AddCategory />
     <ExportCategory
-      v-for="category in categories"
-      :key="category"
+      v-for="category in useCategoriesStore().categoryList"
+      :key="category.id"
       :category="category"
-      @delete-category="deleteCategory"
     />
   </main>
 </template>
-
