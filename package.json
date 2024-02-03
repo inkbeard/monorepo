@@ -9,7 +9,8 @@
     "lint": "turbo run lint",
     "postinstall": "manypkg check",
     "stylelint": "turbo stylelint",
-    "test": "turbo run test"
+    "test:unit": "turbo run test:unit",
+    "test:unit:watch": "turbo run test:unit:watch"
   },
   "packageManager": "pnpm@8.9.0",
   "engines": {
