@@ -21,9 +21,10 @@
       :class="{ 'is-open': isOpen }"
     >
       <div class="category-title">
-        <span>{{ category.name }}</span>
+        <span data-test="category name">{{ category.name }}</span>
         <button
           class="toggle"
+          data-test="toggle expenses"
           type="button"
           @click="isOpen = !isOpen"
         >
@@ -37,11 +38,15 @@
         v-if="isOpen"
         class="category-content"
       >
-        <ExpenseItem :category-id="category.id" />
+        <ExpenseItem
+          :category-id="category.id"
+          data-test="category expense"
+        />
       </div>
     </div>
     <button
       class="delete"
+      data-test="delete category"
       type="button"
       @click="useCategoriesStore().deleteCategory(category.id)"
     >
