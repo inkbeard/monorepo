@@ -48,7 +48,7 @@ describe('ExpenseCategory', () => {
       .toBe(true);
   });
 
-  it.only('should delete the category from the store on delete cta click', () => {
+  it('should delete the category from the store on delete cta click', () => {
     createWrapper();
 
     wrapper.find('[data-test="delete category"]').trigger('click');
