@@ -1,5 +1,15 @@
 # @inkbeard/budget-it
 
+## 0.2.0
+
+### Minor Changes
+
+- 5e672b1: Associated Expense Items with the expense store
+- 3605c5d: Added categories store and move all logic to it.
+- 1c39150: Added expenses pinia store and test
+- 9022b41: added category store unit test
+- db29e2d: Added ExpenseCategory unit test
+
 ## 0.1.0
 
 ### Minor Changes

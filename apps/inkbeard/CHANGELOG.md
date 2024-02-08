@@ -1,5 +1,11 @@
 # inkbeard
 
+## 0.4.0
+
+### Minor Changes
+
+- 9d323e8: Updated `test` script to `test:unit` and added watch logic
+
 ## 0.3.0
 
 ### Minor Changes
