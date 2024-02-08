@@ -1,16 +1,22 @@
 <script setup lang="ts">
-  import { ref } from 'vue';
+  import { computed, ref } from 'vue';
   import type { CategoryInfo } from '@/stores/categories';
   import { useCategoriesStore } from '@/stores/categories';
+  import { useExpensesStore } from '@/stores/expenses';
   import ExpenseItem from './ExpenseItem.vue';
 
-  defineProps({
+  const props = defineProps({
     category: {
       type: Object as () => CategoryInfo,
       required: true,
     },
   });
   const isOpen = ref(false);
+  const categoryExpenses = computed(() => (
+    Object.values(useExpensesStore().expenseList).filter(
+      ({ categoryId }) => categoryId === props.category.id,
+    )
+  ));
 
 </script>
 
@@ -38,10 +44,17 @@
         v-if="isOpen"
         class="category-content"
       >
-        <ExpenseItem
-          :category-id="category.id"
-          data-test="category expense"
-        />
+        <template v-if="categoryExpenses.length">
+          <ExpenseItem
+            v-for="expense in categoryExpenses"
+            :key="expense.id"
+            data-test="category expense"
+            :expense="expense"
+          />
+        </template>
+        <p v-else>
+          No expenses in for "{{ category.name }}."
+        </p>
       </div>
     </div>
     <button

@@ -1,23 +1,22 @@
 <script setup lang="ts">
   import { ref } from 'vue';
+  import type { ExpenseInfo } from '@/stores/expenses';
 
-  defineProps<{
-    categoryId: number;
+  const props = defineProps<{
+    expense: ExpenseInfo;
   }>();
 
-  const expenseCost = ref(0);
-  const expenseName = ref('test expense');
-
+  const expenseAmount = ref(props.expense.amount);
 </script>
 
 <template>
   <form>
-    <label :for="`${categoryId}-${expenseName}`">
-      {{ expenseName }}
+    <label :for="`${expense.categoryId}-${expense.name}`">
+      {{ expense.name }}
     </label>
     <input
-      :id="`${categoryId}-${expenseName}`"
-      v-model="expenseCost"
+      :id="`${expense.categoryId}-${expense.name}`"
+      v-model="expenseAmount"
       type="number"
     >
   </form>
