@@ -1,7 +1,7 @@
 import { setActivePinia, createPinia } from 'pinia';
 import { useCategoriesStore } from '@/stores/categories';
 
-describe('store Store', () => {
+describe('categories store', () => {
   beforeEach(() => {
     setActivePinia(createPinia());
   });
@@ -18,7 +18,7 @@ describe('store Store', () => {
       .toMatchObject({ name: 'Test', id: 1 });
   });
 
-  it('addCategory', () => {
+  it('deleteCategory', () => {
     const store = useCategoriesStore();
 
     store.categoryList = [
