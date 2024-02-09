@@ -11,12 +11,15 @@
       required: true,
     },
   });
-  const isOpen = ref(false);
   const categoryExpenses = computed(() => (
-    Object.values(useExpensesStore().expenseList).filter(
-      ({ categoryId }) => categoryId === props.category.id,
-    )
+    Object.values(useExpensesStore().expenseList).reduce((acc, expense) => {
+      if (expense.categoryId === props.category.id) {
+        acc.push(expense);
+      }
+      return acc;
+    }, [])
   ));
+  const isOpen = ref(false);
 
 </script>
 
