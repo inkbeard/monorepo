@@ -6,8 +6,16 @@
   const props = defineProps<{
     expense: ExpenseInfo;
   }>();
-
   const expenseAmount = ref(props.expense.amount);
+  const updateExpenseAmount = () => {
+    const { expenseList } = useExpensesStore();
+    const { id } = props.expense;
+
+    if (id) {
+      expenseList[id].amount = expenseAmount.value;
+    }
+  };
+
 </script>
 
 <template>
@@ -19,7 +27,7 @@
       :id="`${expense.categoryId}-${expense.name}`"
       v-model="expenseAmount"
       type="number"
-      @blur="useExpensesStore().expenseList[props.expense.id].amount = expenseAmount"
+      @blur="updateExpenseAmount"
     >
   </form>
 </template>
