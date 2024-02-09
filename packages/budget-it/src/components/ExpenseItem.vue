@@ -22,6 +22,11 @@
   <form>
     <label :for="`${expense.categoryId}-${expense.name}`">
       {{ expense.name }}
+      <i
+        v-if="expense.description"
+        class="fa-duotone fa-circle-question"
+        :title="expense.description"
+      />
     </label>
     <input
       :id="`${expense.categoryId}-${expense.name}`"

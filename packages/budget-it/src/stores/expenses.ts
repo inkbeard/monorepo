@@ -3,6 +3,7 @@ import { defineStore } from 'pinia';
 export interface ExpenseInfo {
   amount: number // Amount of the expense
   categoryId: number // Unique identifier for the category the expense belongs to
+  description?: string // Description of the expense
   id?: number // Unique identifier for the expense
   name: string // Name of the expense
   order: number // Order of the expense in the list
@@ -35,6 +36,7 @@ export const useExpensesStore = defineStore('expenses', {
       3: {
         amount: 1000,
         categoryId: 3,
+        description: 'Started with Guaranteed Rate and then refinanced with Better.com.',
         id: 3,
         name: 'Mortgage',
         order: 0,
@@ -57,8 +59,9 @@ export const useExpensesStore = defineStore('expenses', {
         source: null,
       },
       7: {
-        amount: 50,
+        amount: 2260,
         categoryId: 7,
+        description: 'Monthly premium for family of 4.',
         id: 7,
         name: 'BCBS',
         order: 0,
