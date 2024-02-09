@@ -3,6 +3,7 @@ import { defineStore } from 'pinia';
 export interface ExpenseInfo {
   amount: number // Amount of the expense
   categoryId: number // Unique identifier for the category the expense belongs to
+  id: number // Unique identifier for the expense
   name: string // Name of the expense
   order: number // Order of the expense in the list
   source: null | string // Source of the expense (e.g. "Credit Card", "Debit Card", "Cash")
@@ -18,6 +19,7 @@ export const useExpensesStore = defineStore('expenses', {
       1: {
         amount: 2,
         categoryId: 1,
+        id: 1,
         name: 'Netflix',
         order: 0,
         source: null,
@@ -25,6 +27,7 @@ export const useExpensesStore = defineStore('expenses', {
       2: {
         amount: 2,
         categoryId: 2,
+        id: 2,
         name: 'HBFC',
         order: 0,
         source: null,
@@ -32,6 +35,7 @@ export const useExpensesStore = defineStore('expenses', {
       3: {
         amount: 1000,
         categoryId: 3,
+        id: 3,
         name: 'Mortgage',
         order: 0,
         source: null,
@@ -39,6 +43,7 @@ export const useExpensesStore = defineStore('expenses', {
       4: {
         amount: 30,
         categoryId: 4,
+        id: 4,
         name: 'Gas',
         order: 0,
         source: null,
@@ -46,6 +51,7 @@ export const useExpensesStore = defineStore('expenses', {
       5: {
         amount: 50,
         categoryId: 5,
+        id: 5,
         name: 'Target',
         order: 0,
         source: null,
@@ -53,6 +59,7 @@ export const useExpensesStore = defineStore('expenses', {
       7: {
         amount: 50,
         categoryId: 7,
+        id: 7,
         name: 'BCBS',
         order: 0,
         source: null,
