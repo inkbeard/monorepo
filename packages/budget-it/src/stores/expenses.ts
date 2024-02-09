@@ -3,7 +3,7 @@ import { defineStore } from 'pinia';
 export interface ExpenseInfo {
   amount: number // Amount of the expense
   categoryId: number // Unique identifier for the category the expense belongs to
-  id: number // Unique identifier for the expense
+  id?: number // Unique identifier for the expense
   name: string // Name of the expense
   order: number // Order of the expense in the list
   source: null | string // Source of the expense (e.g. "Credit Card", "Debit Card", "Cash")
