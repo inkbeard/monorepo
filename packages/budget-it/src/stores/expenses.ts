@@ -7,7 +7,7 @@ export interface ExpenseInfo {
   id?: number // Unique identifier for the expense
   name: string // Name of the expense
   order: number // Order of the expense in the list
-  source: null | string // Source of the expense (e.g. "Credit Card", "Debit Card", "Cash")
+  sourceId: number // Source Id of the expense that is mapped from the sources store
 }
 
 interface ExpenseList {
@@ -20,52 +20,46 @@ export const useExpensesStore = defineStore('expenses', {
       1: {
         amount: 2,
         categoryId: 1,
-        id: 1,
         name: 'Netflix',
         order: 0,
-        source: null,
+        sourceId: 1,
       },
       2: {
         amount: 2,
         categoryId: 2,
-        id: 2,
         name: 'HBFC',
         order: 0,
-        source: null,
+        sourceId: 5,
       },
       3: {
         amount: 1000,
         categoryId: 3,
         description: 'Started with Guaranteed Rate and then refinanced with Better.com.',
-        id: 3,
         name: 'Mortgage',
         order: 0,
-        source: null,
+        sourceId: 3,
       },
       4: {
         amount: 30,
         categoryId: 4,
-        id: 4,
         name: 'Gas',
         order: 0,
-        source: null,
+        sourceId: 1,
       },
       5: {
         amount: 50,
         categoryId: 5,
-        id: 5,
         name: 'Target',
         order: 0,
-        source: null,
+        sourceId: 1,
       },
       7: {
         amount: 2260,
         categoryId: 7,
         description: 'Monthly premium for family of 4.',
-        id: 7,
         name: 'BCBS',
         order: 0,
-        source: null,
+        sourceId: 3,
       },
     } as ExpenseList,
   }),

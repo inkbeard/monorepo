@@ -17,6 +17,17 @@ describe('sources Store', () => {
     store.sourceList = { ...sourceList };
   });
 
+  describe('alphabaticSourceList', () => {
+    it('should return an alphabatize list of sources and their IDs', () => {
+      expect(store.alphabaticSourceList)
+        .toEqual([
+          { source: 'Checking Account', id: 3 },
+          { source: 'Debit Card', id: 1 },
+          { source: 'Savings Account', id: 4 },
+        ]);
+    });
+  });
+
   describe('addSource', () => {
     it('should assign the next highest number as the ID ', () => {
       store.addSource('Test Source');

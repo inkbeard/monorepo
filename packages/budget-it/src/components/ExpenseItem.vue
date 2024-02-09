@@ -1,14 +1,25 @@
 <script setup lang="ts">
-  import { ref } from 'vue';
+  import { computed, ref } from 'vue';
   import type { ExpenseInfo } from '@/stores/expenses';
   import { useExpensesStore } from '@/stores/expenses';
+  import { useSourcesStore } from '@/stores/sources';
 
   const props = defineProps<{
     expense: ExpenseInfo;
   }>();
+  const { expenseList } = useExpensesStore();
   const expenseAmount = ref(props.expense.amount);
+  const expenseSourceId = computed({
+    get: () => props.expense.sourceId,
+    set: (value: number) => {
+      const { id } = props.expense;
+
+      if (id) {
+        expenseList[id].sourceId = value;
+      }
+    },
+  });
   const updateExpenseAmount = () => {
-    const { expenseList } = useExpensesStore();
     const { id } = props.expense;
 
     if (id) {
@@ -34,6 +45,15 @@
       type="number"
       @blur="updateExpenseAmount"
     >
+    <select v-model="expenseSourceId">
+      <option
+        v-for="({ id, source }) in useSourcesStore().alphabaticSourceList"
+        :key="id"
+        :value="id"
+      >
+        {{ source }}
+      </option>
+    </select>
   </form>
 </template>
 
