@@ -4,12 +4,23 @@ export const useSourcesStore = defineStore('sources', {
   state: () => ({
     sourceList: {
       1: 'Credit Card',
-      2: 'Debit Card',
       3: 'Checking Account',
       4: 'Savings Account',
       5: 'Cash',
     } as Record<number, string>,
   }),
+  getters: {
+    /**
+     * Get an alphabatize list of sources and their IDs.
+     */
+    alphabaticSourceList(): { source: string, id: number }[] {
+      const sourceList = Object.entries(this.sourceList).map(([id, source]) => (
+        { source, id: +id }
+      ));
+
+      return sourceList.sort((a, b) => a.source.toLowerCase().localeCompare(b.source.toLowerCase()));
+    },
+  },
   actions: {
     /**
      * Add a new source to the current list of sources with the ID + 1 of the highest ID so far.
