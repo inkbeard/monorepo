@@ -30,7 +30,7 @@
 </script>
 
 <template>
-  <form>
+  <form @submit.prevent>
     <label :for="`${expense.categoryId}-${expense.name}`">
       {{ expense.name }}
       <i
