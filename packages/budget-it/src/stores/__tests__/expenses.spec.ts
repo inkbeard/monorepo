@@ -8,7 +8,7 @@ describe('expenses Store', () => {
     categoryId: 1,
     name: 'Test',
     order: 0,
-    source: null,
+    sourceId: 1,
   };
 
   beforeEach(() => {
