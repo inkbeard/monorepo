@@ -1,8 +1,22 @@
 <script setup lang="ts">
-  import { computed } from 'vue';
+  import { computed, ref, nextTick } from 'vue';
   import { useSourcesStore } from '@/stores/sources';
   import { useExpensesStore } from '@/stores/expenses';
 
+  const isAdding = ref(false);
+  const newSource = ref('');
+  /**
+   * Check if the new source already exists or is missing.
+   */
+  const newSourceIsDisabled = computed(() => (
+    !newSource.value
+    || Object.values(useSourcesStore().sourceList).some((sourceName) => (
+      sourceName.toLowerCase() === newSource.value.toLowerCase()
+    ))
+  ));
+  /**
+   * Get the expenses associated with the sources.
+   */
   const sourcesWithExpenses = computed(() => (
     Object.entries(useExpensesStore().expenseList)
       .reduce((acc: any, [id, { sourceId }]) => {
@@ -14,10 +28,65 @@
 
         return acc;
       }, {})));
+  /**
+   * Add a new source if it doesn't exist already.
+   */
+  const addSource = async () => {
+    if (newSourceIsDisabled.value) {
+      return;
+    }
+
+    useSourcesStore().addSource(newSource.value);
+
+    await nextTick();
+
+    isAdding.value = false;
+    newSource.value = '';
+  };
 </script>
 
 <template>
-  <h2>Sources</h2>
+  <h2>
+    Sources
+    <button
+      aria-label="Add source"
+      data-test="add source"
+      :disabled="isAdding"
+      type="button"
+      @click="isAdding = true"
+    >
+      <i class="fa-solid fa-plus fa-lg" />
+    </button>
+  </h2>
+  <form
+    v-if="isAdding"
+    @submit.prevent="addSource"
+  >
+    <input
+      v-model="newSource"
+      aria-label="New source"
+      data-test="new source"
+      type="text"
+    />
+    <div class="btn-group">
+      <button
+        aria-label="Cancel new source"
+        data-test="cancel new source"
+        type="button"
+        @click="isAdding = false"
+      >
+        <i class="fa-solid fa-xmark fa-lg" />
+      </button>
+      <button
+        aria-label="Save source"
+        data-test="save source"
+        :disabled="newSourceIsDisabled"
+        type="submit"
+      >
+        <i class="fa-solid fa-check fa-lg" />
+      </button>
+    </div>
+  </form>
   <ul>
     <li
       v-for="({ id, source }) in useSourcesStore().alphabaticSourceList"
@@ -27,7 +96,7 @@
       <button
         aria-label="Delete source"
         data-test="delete source"
-        :disabled="!sourcesWithExpenses[id]?.length"
+        :disabled="sourcesWithExpenses[id]?.length"
         type="button"
         @click="useSourcesStore().deleteSource(id)"
       >
@@ -38,6 +107,22 @@
 </template>
 
 <style scoped>
+h2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+form {
+  display: flex;
+  gap: .5rem;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+input {
+  flex: 1;
+}
+
 ul {
   padding: 0;
 }
