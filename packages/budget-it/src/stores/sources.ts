@@ -3,6 +3,7 @@ import { useExpensesStore } from './expenses';
 
 export const useSourcesStore = defineStore('sources', {
   state: () => ({
+    defaultSourceId: 4,
     sourceList: {
       1: 'Credit Card',
       3: 'Checking Account',
@@ -41,10 +42,18 @@ export const useSourcesStore = defineStore('sources', {
     /**
      * Add a new source to the current list of sources with the ID + 1 of the highest ID so far.
      */
-    addSource(sourceName: string) {
-      const sourceIds = Object.keys(this.sourceList).map(Number);
+    addSource(
+      { sourceName, isDefault }: { sourceName: string, isDefault?: boolean },
+    ): number {
+      const newSourceId = Math.max(...Object.keys(this.sourceList).map(Number)) + 1;
 
-      this.sourceList[Math.max(...sourceIds) + 1] = sourceName;
+      this.sourceList[newSourceId] = sourceName;
+
+      if (isDefault) {
+        this.defaultSourceId = newSourceId;
+      }
+
+      return newSourceId;
     },
     /**
      * Delete a source from the current list of sources.
