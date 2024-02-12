@@ -1,19 +1,9 @@
 <script setup lang="ts">
-  import { ref, nextTick } from 'vue';
+  import { ref } from 'vue';
   import { useSourcesStore } from '@/stores/sources';
   import SourceListing from '@/components/SourceListing.vue';
 
   const isAdding = ref(false);
-  /**
-   * Add a new source if it doesn't exist already.
-   */
-  const addSource = async (value: string) => {
-    useSourcesStore().addSource(value);
-
-    await nextTick();
-
-    isAdding.value = false;
-  };
 </script>
 
 <template>
@@ -32,14 +22,12 @@
   <ul>
     <SourceListing
       v-if="isAdding"
-      @add-source="addSource"
-      @cancel-add-source="isAdding = false"
+      v-model:is-editing="isAdding"
     />
     <SourceListing
       v-for="({ id }) in useSourcesStore().alphabaticSourceList"
       :key="id"
       :source-id="id"
-      @update-source="useSourcesStore().sourceList[id] = $event"
     />
   </ul>
 </template>

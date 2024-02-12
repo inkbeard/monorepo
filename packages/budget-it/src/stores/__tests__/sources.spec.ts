@@ -14,6 +14,7 @@ describe('sources Store', () => {
     setActivePinia(createPinia());
 
     store = useSourcesStore();
+    store.defaultSourceId = 4;
     store.sourceList = { ...sourceList };
   });
 
@@ -29,14 +30,24 @@ describe('sources Store', () => {
   });
 
   describe('addSource', () => {
-    it('should assign the next highest number as the ID ', () => {
-      store.addSource('Test Source');
+    it('should assign the next highest number as the ID', () => {
+      store.addSource({ sourceName: 'Test Source' });
 
       expect(store.sourceList)
         .toEqual({
           ...sourceList,
           5: 'Test Source',
         });
+    });
+
+    it('should assign default source ID if isDefault', () => {
+      store.addSource({
+        isDefault: true,
+        sourceName: 'Test Source',
+      });
+
+      expect(store.defaultSourceId)
+        .toBe(5);
     });
   });
 
