@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia';
+import { useExpensesStore } from './expenses';
 
 export const useSourcesStore = defineStore('sources', {
   state: () => ({
@@ -19,6 +20,21 @@ export const useSourcesStore = defineStore('sources', {
       ));
 
       return sourceList.sort((a, b) => a.source.toLowerCase().localeCompare(b.source.toLowerCase()));
+    },
+    /**
+     * Get the expenses associated with the sources.
+     */
+    sourcesWithExpenses() {
+      return Object.entries(useExpensesStore().expenseList)
+        .reduce((acc: any, [id, { sourceId }]) => {
+          if (acc[sourceId]) {
+            acc[sourceId].push(id);
+          } else {
+            acc[sourceId] = [id];
+          }
+
+          return acc;
+        }, {});
     },
   },
   actions: {
