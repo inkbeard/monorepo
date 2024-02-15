@@ -1,0 +1,39 @@
+{
+  "name": "ui-library",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "build": "storybook build",
+    "preview": "serve storybook-static",
+    "init-msw": "msw init public/"
+  },
+  "dependencies": {
+    "vue": "^3.4.18"
+  },
+  "devDependencies": {
+    "@inkbeard/eslint-config": "workspace:*",
+    "@inkbeard/stylelint-config": "workspace:*",
+    "@rushstack/eslint-patch": "^1.7.2",
+    "@storybook/addon-essentials": "^7.6.16",
+    "@storybook/addon-interactions": "^7.6.16",
+    "@storybook/addon-links": "^7.6.16",
+    "@storybook/blocks": "^7.6.16",
+    "@storybook/test": "^7.6.16",
+    "@storybook/vue3": "^7.6.16",
+    "@storybook/vue3-vite": "^7.6.16",
+    "@vitejs/plugin-vue": "^4.5.2",
+    "eslint-plugin-storybook": "^0.6.15",
+    "eslint-plugin-vue": "^9.21.1",
+    "msw": "^1.2.1",
+    "msw-storybook-addon": "^1.10.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.6.16",
+    "vite": "^5.0.10"
+  },
+  "resolutions": {
+    "jackspeak": "2.1.1"
+  }
+}
