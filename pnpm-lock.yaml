@@ -100,6 +100,9 @@ importers:
       '@inkbeard/stylelint-config':
         specifier: workspace:*
         version: link:../../packages/stylelint-config
+      '@inkbeard/ui-vue':
+        specifier: workspace:*
+        version: link:../../packages/ui-vue
       '@tsconfig/node18':
         specifier: ^18.2.2
         version: 18.2.2

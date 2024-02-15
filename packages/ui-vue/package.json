@@ -1,8 +1,13 @@
 {
   "name": "@inkbeard/ui-vue",
   "version": "0.0.0",
-  "private": true,
-  "scripts": {},
+  "scripts": {
+    "test:unit": "vitest run",
+    "test:unit:watch": "vitest",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore",
+    "lint:fix": "pnpm lint --fix",
+    "stylelint": "stylelint \"**/*.{css,scss,vue}\""
+  },
   "dependencies": {
     "primevue": "^3.48.1",
     "vue": "^3.4.18"
