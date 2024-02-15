@@ -1,7 +1,8 @@
 <script setup lang="ts">
   import { RouterLink } from 'vue-router';
   import { ref, watch, onBeforeMount } from 'vue';
-  import AppIcon from '@/components/AppIcon.vue';
+  // eslint-disable-next-line import/no-extraneous-dependencies
+  import { AppIcon } from '@inkbeard/ui-vue';
 
   const darkMode = ref(false);
   const isActive = ref(false);
