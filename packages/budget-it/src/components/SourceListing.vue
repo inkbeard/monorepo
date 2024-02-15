@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { computed, ref } from 'vue';
   import { useSourcesStore } from '@/stores/sources';
+  import { AppButton } from '@inkbeard/ui-vue';
 
   const props = defineProps<{
     sourceId?: number,
@@ -69,22 +70,22 @@
           type="text"
         />
         <div class="btn-group">
-          <button
+          <AppButton
             aria-label="Cancel new source"
+            class="p-button-icon"
             data-test="cancel new source"
-            type="button"
+            icon="fa-solid fa-xmark fa-lg"
+            text
             @click="cancelEdit"
-          >
-            <i class="fa-solid fa-xmark fa-lg" />
-          </button>
-          <button
+          />
+          <AppButton
             aria-label="Save source"
+            class="p-button-icon"
             data-test="save source"
             :disabled="sourceIsDisabled"
-            type="submit"
-          >
-            <i class="fa-solid fa-check fa-lg" />
-          </button>
+            icon="fa-solid fa-check fa-lg"
+            text
+          />
         </div>
       </div>
       <label
@@ -100,39 +101,36 @@
       </label>
     </form>
     <template v-else>
-      {{ sourceName }}
+      <span>{{ sourceName }}</span>
       <div class="btn-group">
-        <button
+        <AppButton
           aria-label="Set default source"
+          class="p-button-icon"
           data-test="set default"
+          :icon="useSourcesStore().defaultSourceId === sourceId
+            ? 'fa-1x fa-duotone fa-star'
+            : 'fa-1x fa-regular fa-star'"
+          text
           title="Set as default source"
-          type="button"
           @click="useSourcesStore().defaultSourceId = sourceId"
-        >
-          <i
-            class="fa-lg"
-            :class="useSourcesStore().defaultSourceId === sourceId
-              ? 'fa-duotone fa-star'
-              : 'fa-regular fa-star'"
-          />
-        </button>
-        <button
+        />
+        <AppButton
           aria-label="Edit source"
+          class="p-button-icon"
           data-test="edit source"
-          type="button"
+          icon="fa-duotone fa-pencil fa-1x"
+          text
           @click="isEditing = true"
-        >
-          <i class="fa-duotone fa-pencil fa-lg" />
-        </button>
-        <button
+        />
+        <AppButton
           aria-label="Delete source"
+          class="p-button-icon"
           data-test="delete source"
           :disabled="sourcesWithExpenses[sourceId]?.length"
-          type="button"
+          icon="fa-duotone fa-trash-can fa-1x"
+          text
           @click="deleteSource(sourceId)"
-        >
-          <i class="fa-duotone fa-trash-can fa-lg" />
-        </button>
+        />
       </div>
     </template>
   </li>
@@ -147,7 +145,7 @@ form {
   justify-content: space-between;
 
   > div {
-    display: flex;;
+    display: flex;
     flex-direction: row;
   }
 }
@@ -162,17 +160,5 @@ li {
   gap: .1rem;
   list-style: none;
   padding: .2rem 0;
-}
-
-button {
-  background: none;
-  border: none;
-  color: var(--ink-color-text);
-  cursor: pointer;
-
-  &:disabled {
-    cursor: not-allowed;
-    opacity: .5;
-  }
 }
 </style>

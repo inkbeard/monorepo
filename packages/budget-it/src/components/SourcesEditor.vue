@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { ref } from 'vue';
   import { useSourcesStore } from '@/stores/sources';
+  import { AppButton } from '@inkbeard/ui-vue';
   import SourceListing from '@/components/SourceListing.vue';
 
   const isAdding = ref(false);
@@ -9,15 +10,13 @@
 <template>
   <h5>
     Sources
-    <button
+    <AppButton
       aria-label="Add source"
       data-test="add source"
       :disabled="isAdding"
-      type="button"
+      icon="fa-solid fa-plus fa-lg"
       @click="isAdding = true"
-    >
-      <i class="fa-solid fa-plus fa-lg" />
-    </button>
+    />
   </h5>
   <ul>
     <SourceListing

@@ -16,8 +16,10 @@
     "stylelint": "stylelint \"**/*.{css,scss,vue}\""
   },
   "dependencies": {
+    "@inkbeard/ui-vue": "workspace:*",
     "modern-normalize": "^2.0.0",
     "pinia": "^2.1.7",
+    "primevue": "^3.48.1",
     "vue": "^3.4.18"
   },
   "devDependencies": {
