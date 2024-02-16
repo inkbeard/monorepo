@@ -53,33 +53,12 @@ export default {
       ],
     },
   },
+  parameters: {
+    layout: 'centered',
+  },
 };
-export const LoggedOut = {};
-
-// More on writing stories with args: https://storybook.js.org/docs/vue/writing-stories/args
-// export const Primary = {
-//   args: {
-//     primary: true,
-//     label: 'Button',
-//   },
-// };
-
-// export const Secondary = {
-//   args: {
-//     label: 'Button',
-//   },
-// };
-
-// export const Large = {
-//   args: {
-//     size: 'large',
-//     label: 'Button',
-//   },
-// };
-
-// export const Small = {
-//   args: {
-//     size: 'small',
-//     label: 'Button',
-//   },
-// };
+export const PrimaryPlus = {
+  args: {
+    icon: 'fa-solid fa-plus',
+  },
+};
