@@ -151,6 +151,9 @@ importers:
 
   apps/ui-library:
     dependencies:
+      '@inkbeard/ui-vue':
+        specifier: workspace:*
+        version: link:../../packages/ui-vue
       vue:
         specifier: ^3.4.18
         version: 3.4.19(typescript@5.3.3)
