@@ -1,0 +1,81 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+
+<Meta title="Colors" />
+
+<ColorPalette>
+  <ColorItem
+    title="White"
+    colors={{
+      '--ink-white': '#fff',
+      '--ink-white-soft': '#f8f8f8',
+      '--ink-white-mute': '#f2f2f2',
+    }}
+  />
+  <ColorItem
+    title="Black"
+    subtitle=""
+    colors={{
+      '--ink-black': '#181818',
+      '--ink-black-soft': '#222',
+      '--ink-black-mute': '#282828',
+    }}
+  />
+  <ColorItem
+    title="Indigo"
+    colors={{
+      '--ink-indigo': '#2c3e50',
+    }}
+  />
+  <ColorItem
+    title="Divider"
+    colors={{
+      '--ink-divider-light-1': 'rgb(60 60 60 / 29%)',
+      '--ink-divider-light-2': 'rgb(60 60 60 / 12%)',
+      '--ink-divider-dark-1': 'rgb(84 84 84 / 65%)',
+      '--ink-divider-dark-2': 'rgb(84 84 84 / 48%)',
+    }}
+  />
+  <ColorItem
+    title="Text"
+    colors={{
+      '--color-heading': '#2c3e50',
+      '--color-text': '#2c3e50',
+      '--ink-text-light-1': '#2c3e50',
+      '--ink-text-light-2': 'rgb(60 60 60 / 66%)',
+      '--ink-text-dark-1': '#fff',
+      '--ink-text-dark-2': 'rgb(235 235 235 / 64%)',
+    }}
+  />
+  <ColorItem
+    title="Text"
+    subtitle="Dark mode"
+    colors={{
+      '--color-text': 'rgb(235 235 235 / 64%)',
+      '--color-heading': '#fff',
+    }}
+  />
+  <ColorItem
+    title="Info"
+    colors={{
+      '--ink-info': 'rgb(11 120 208)',
+    }}
+  />
+  <ColorItem
+    title="Success"
+    colors={{
+      '--ink-success': 'rgb(34 133 30)',
+    }}
+  />
+  <ColorItem
+    title="Warning"
+    colors={{
+      '--ink-warning': 'rgb(251 140 0)',
+    }}
+  />
+  <ColorItem
+    title="Danger"
+    colors={{
+      '--ink-danger': 'rgb(176 0 32)',
+    }}
+  />
+</ColorPalette>
