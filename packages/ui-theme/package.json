@@ -1,0 +1,16 @@
+{
+  "name": "@inkbeard/ui-theme",
+  "version": "0.0.0",
+  "private": true,
+  "files": [
+    "assets"
+  ],
+  "exports": {
+    "./*.css": {
+      "import": "./assets/*.css"
+    }
+  },
+  "dependencies": {
+    "modern-normalize": "^2.0.0"
+  }
+}

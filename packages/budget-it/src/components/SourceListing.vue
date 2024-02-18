@@ -167,7 +167,7 @@ li {
 button {
   background: none;
   border: none;
-  color: var(--color-text);
+  color: var(--ink-color-text);
   cursor: pointer;
 
   &:disabled {

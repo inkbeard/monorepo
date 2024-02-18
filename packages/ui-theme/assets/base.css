@@ -1,0 +1,15 @@
+@import 'modern-normalize/modern-normalize.css';
+
+* {
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--color-background);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+
+}
