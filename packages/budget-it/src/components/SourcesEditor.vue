@@ -7,7 +7,7 @@
 </script>
 
 <template>
-  <h2>
+  <h5>
     Sources
     <button
       aria-label="Add source"
@@ -18,7 +18,7 @@
     >
       <i class="fa-solid fa-plus fa-lg" />
     </button>
-  </h2>
+  </h5>
   <ul>
     <SourceListing
       v-if="isAdding"
@@ -33,7 +33,7 @@
 </template>
 
 <style scoped>
-h2 {
+h5 {
   display: flex;
   justify-content: space-between;
 }
@@ -45,7 +45,7 @@ ul {
 button {
   background: none;
   border: none;
-  color: var(--color-text);
+  color: var(--ink-color-text);
   cursor: pointer;
 
   &:disabled {

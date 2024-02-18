@@ -1,0 +1,65 @@
+body,
+html {
+  line-height: 1.6;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-size: 15px;
+  color: var(--ink-color-text);
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  font-size: var(--ink-body-font-size);
+  margin: 10px 0;
+  line-height: 18px;
+}
+
+a {
+  color: var(--ink-color-text);
+  transition: color .25s ease-in;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+.text-danger {
+  color: var(--ink-danger) !important;
+}
+
+.text-info {
+  color: var(--ink-info) !important;
+}
+
+.text-success {
+  color: var(--ink-success) !important;
+}
+
+.text-warning {
+  color: var(--ink-warning) !important;
+}
