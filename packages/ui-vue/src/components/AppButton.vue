@@ -10,7 +10,9 @@
   <Button
     v-bind="$attrs"
     :pt="{
-      root: { class: 'app-button' },
+      root: {
+        class: 'app-button p-button-small',
+      },
     }"
   />
 </template>

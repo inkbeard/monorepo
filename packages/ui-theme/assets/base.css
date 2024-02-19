@@ -1,9 +1,4 @@
-@import 'modern-normalize/modern-normalize.css';
-
-* {
-  margin: 0;
-  font-weight: normal;
-}
+@import url('modern-normalize/modern-normalize.css') layer(app-level);
 
 body {
   min-height: 100vh;
@@ -11,5 +6,4 @@ body {
   transition:
     color 0.5s,
     background-color 0.5s;
-
 }
