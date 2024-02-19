@@ -13,6 +13,11 @@ export default defineConfig({
     },
   },
   build: {
+    lib: {
+      entry: fileURLToPath(new URL('./index.ts', import.meta.url)),
+      name: 'ui-vue',
+      fileName: (format) => `ui-vue.${format}.js`,
+    },
     rollupOptions: {
       external: ['primevue', 'vue'],
       output: {
