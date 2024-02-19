@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import { computed, ref } from 'vue';
+  import { AppButton } from '@inkbeard/ui-vue';
   import type { CategoryInfo } from '@/stores/categories';
   import { useCategoriesStore } from '@/stores/categories';
   import { useExpensesStore } from '@/stores/expenses';
@@ -31,17 +32,14 @@
     >
       <div class="category-title">
         <span data-test="category name">{{ category.name }}</span>
-        <button
+        <AppButton
           class="toggle"
           data-test="toggle expenses"
-          type="button"
+          :icon="`fa-duotone fa-xl fa-arrows-${isOpen ? 'to' : 'from'}-dotted-line`"
+          severity="secondary"
+          text
           @click="isOpen = !isOpen"
-        >
-          <i
-            class="fa-duotone fa-xl"
-            :class="`fa-arrows-${isOpen ? 'to' : 'from'}-dotted-line`"
-          />
-        </button>
+        />
       </div>
       <div
         v-if="isOpen"
@@ -60,14 +58,14 @@
         </p>
       </div>
     </div>
-    <button
+    <AppButton
       class="delete"
       data-test="delete category"
-      type="button"
+      icon="fa-duotone fa-trash-can fa-lg"
+      severity="danger"
+      text
       @click="useCategoriesStore().deleteCategory(category.id)"
-    >
-      <i class="fa-duotone fa-trash-can fa-xl" />
-    </button>
+    />
   </div>
 </template>
 
@@ -97,16 +95,5 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #ccc;
-}
-
-button {
-  background: none;
-  border: none;
-  color: var(--ink-color-text);
-  cursor: pointer;
-
-  &.toggle {
-    color: var(--vt-c-black-soft);
-  }
 }
 </style>
