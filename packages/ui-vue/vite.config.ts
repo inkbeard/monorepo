@@ -12,4 +12,18 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  build: {
+    rollupOptions: {
+      input: {
+        main: fileURLToPath(new URL('./index.ts', import.meta.url)),
+      },
+      external: ['primevue', 'vue'],
+      output: {
+        globals: {
+          vue: 'Vue',
+          primevue: 'primevue',
+        },
+      },
+    },
+  },
 });

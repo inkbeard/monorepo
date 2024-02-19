@@ -87,6 +87,9 @@ importers:
       pinia:
         specifier: ^2.1.7
         version: 2.1.7(typescript@5.3.3)(vue@3.4.18)
+      primevue:
+        specifier: ^3.48.1
+        version: 3.48.1(vue@3.4.18)
       vue:
         specifier: ^3.4.18
         version: 3.4.18(typescript@5.3.3)
