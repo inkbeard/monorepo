@@ -267,9 +267,9 @@ importers:
 
   packages/budget-it:
     dependencies:
-      modern-normalize:
-        specifier: ^2.0.0
-        version: 2.0.0
+      '@inkbeard/ui-vue':
+        specifier: workspace:*
+        version: link:../ui-vue
       pinia:
         specifier: ^2.1.7
         version: 2.1.7(typescript@5.3.3)(vue@3.4.18)
@@ -445,6 +445,9 @@ importers:
       '@inkbeard/stylelint-config':
         specifier: workspace:*
         version: link:../stylelint-config
+      '@inkbeard/ui-theme':
+        specifier: workspace:*
+        version: link:../ui-theme
       '@tsconfig/node18':
         specifier: ^18.2.2
         version: 18.2.2
