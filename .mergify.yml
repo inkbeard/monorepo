@@ -117,6 +117,16 @@ pull_request_rules:
             - workflow: label-maker.yaml
               inputs:
                 project_name: test
+  - name: Add default project label
+    conditions:
+      - partition-name=default
+    actions:
+      github_actions:
+        workflow:
+          dispatch:
+            - workflow: label-maker.yaml
+              inputs:
+                project_name: default
   - name: Add PR stack label for stacked PRs created by mergify
     conditions:
       - head~=mergify_cli/
