@@ -13,6 +13,7 @@
     }
   },
   "scripts": {
+    "build": "vite build",
     "test:unit": "vitest run",
     "test:unit:watch": "vitest",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore",
