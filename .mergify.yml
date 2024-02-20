@@ -1,3 +1,28 @@
+partition_rules:
+  - name: default
+    fallback_partition: true
+
+  - name: inkbeard site
+    conditions:
+      - files~=^apps/inkbeard/
+
+  - name: example library
+    conditions:
+      - files~=^apps/ui-library/
+
+  - name: budget it
+    conditions:
+      - files~=^packages/budget-it/
+
+  - name: general ui
+    conditions:
+      - files~=^packages/ui-theme/
+      - files~=^packages/ui-vue/
+      - files~=^packages/ui/
+      - files~=^packages/eslint-config/
+      - files~=^packages/stylelint-config/
+      - files~=^packages/typescript-config/
+
 shared:
   ci_success: &ci_success
     - "check-success=Build and Test"
@@ -82,6 +107,26 @@ pull_request_rules:
         toggle:
           - conflict
   # PR label rules
+  - name: Add appropriate project labels
+    conditions:
+      - partition-name!=default
+    actions:
+      github_actions:
+        workflow:
+          dispatch:
+            - workflow: label-maker.yaml
+              inputs:
+                project_name: test
+  - name: Add default project label
+    conditions:
+      - partition-name=default
+    actions:
+      github_actions:
+        workflow:
+          dispatch:
+            - workflow: label-maker.yaml
+              inputs:
+                project_name: default
   - name: Add PR stack label for stacked PRs created by mergify
     conditions:
       - head~=mergify_cli/
