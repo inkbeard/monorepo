@@ -1,0 +1,43 @@
+name: Create Label
+
+on:
+  workflow_dispatch:
+    inputs:
+      project_name:
+        description: 'The project name to use for the label'
+        required: true
+        default: 'default'
+        type: string
+
+jobs:
+  create-label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create label
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const { repo: { owner, repo } } = context;
+            const name = 'new-label';
+            const color = 'f1c40f';
+            const description = 'This is a new label';
+
+            try {
+              console.log(github.inputs.project_name)
+              console.log(github.rest.issues)
+              await github.rest.issues.createLabel({
+                owner,
+                repo,
+                name,
+                color,
+                description,
+              });
+              console.log(`Label "${name}" created.`);
+            } catch (error) {
+              if (error.status === 422) {
+                console.log(`Label "${name}" already exists.`);
+              } else {
+                console.error(error);
+              }
+            }
