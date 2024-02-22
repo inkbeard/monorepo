@@ -18,6 +18,7 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
+            console.log(${{context}}, ${{inputs}})
             const { project_name } = context.payload.inputs
             const { repo: { owner, repo } } = context;
             const name = `team: ${project_name}`;
