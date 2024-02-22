@@ -24,7 +24,8 @@
     "eslint": "^8.56.0",
     "prettier": "^3.1.0",
     "stylelint": "^16.2.0",
-    "turbo": "latest"
+    "turbo": "latest",
+    "vue": "^3.4.19"
   },
   "manypkg": {
     "ignoredRules": [

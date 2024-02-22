@@ -20,8 +20,7 @@
     "stylelint": "stylelint \"**/*.{css,scss,vue}\""
   },
   "dependencies": {
-    "primevue": "^3.48.1",
-    "vue": "^3.4.18"
+    "primevue": "^3.48.1"
   },
   "devDependencies": {
     "@inkbeard/eslint-config": "workspace:*",
