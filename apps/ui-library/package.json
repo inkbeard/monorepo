@@ -10,7 +10,6 @@
     "init-msw": "msw init public/"
   },
   "dependencies": {
-    "@inkbeard/ui-theme": "workspace:*",
     "@inkbeard/ui-vue": "workspace:*",
     "pinia": "^2.1.7",
     "vue": "^3.4.18"

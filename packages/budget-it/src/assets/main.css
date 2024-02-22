@@ -1,6 +1,4 @@
-@import url('@inkbeard/ui-theme/base.css');
-@import url('@inkbeard/ui-theme/theme.css');
-@import url('@inkbeard/ui-theme/typography.css');
+@import url('@inkbeard/ui-vue/main.css');
 
 #app {
   max-width: 1280px;
