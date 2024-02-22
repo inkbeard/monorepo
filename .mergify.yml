@@ -2,15 +2,15 @@ partition_rules:
   - name: default
     fallback_partition: true
 
-  - name: inkbeard site
+  - name: website
     conditions:
       - files~=^apps/inkbeard/
 
-  - name: example library
+  - name: examples
     conditions:
       - files~=^apps/ui-library/
 
-  - name: budget it
+  - name: budget-it app
     conditions:
       - files~=^packages/budget-it/
 
@@ -107,16 +107,6 @@ pull_request_rules:
         toggle:
           - conflict
   # PR label rules
-  - name: Add appropriate project labels
-    conditions:
-      - and: *ci_success
-    actions:
-      github_actions:
-        workflow:
-          dispatch:
-            - workflow: label-maker.yml
-              inputs:
-                project_name: queue-partition-name
   - name: Add PR stack label for stacked PRs created by mergify
     conditions:
       - head~=mergify_cli/
@@ -124,3 +114,60 @@ pull_request_rules:
       label:
         add:
           - PR stack
+  # Partition rules
+  # Would ideally have this as dynamic, but Mergify doesn't support the `partition-queue-name` attribute at the moment.
+  - name: Default partition workflow
+    conditions:
+      - and: *ci_success
+      - partition-name=default
+    actions:
+      github_actions:
+        workflow:
+          dispatch:
+            - workflow: partition.yml
+              inputs:
+                project_name: default
+  - name: website partition workflow
+    conditions:
+      - and: *ci_success
+      - partition-name=website
+    actions:
+      github_actions:
+        workflow:
+          dispatch:
+            - workflow: partition.yml
+              inputs:
+                project_name: website
+  - name: examples partition workflow
+    conditions:
+      - and: *ci_success
+      - partition-name=examples
+    actions:
+      github_actions:
+        workflow:
+          dispatch:
+            - workflow: partition.yml
+              inputs:
+                project_name: examples
+  - name: budget-it app partition workflow
+    conditions:
+      - and: *ci_success
+      - partition-name=budget-it app
+    actions:
+      github_actions:
+        workflow:
+          dispatch:
+            - workflow: partition.yml
+              inputs:
+                project_name: budget-it app
+  - name: general ui partition workflow
+    conditions:
+      - and: *ci_success
+      - partition-name=general ui
+    actions:
+      github_actions:
+        workflow:
+          dispatch:
+            - workflow: partition.yml
+              inputs:
+                project_name: general ui
