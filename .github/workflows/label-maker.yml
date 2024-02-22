@@ -14,18 +14,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create label
-        uses: actions/github-script@v5
+        uses: actions/github-script@v7
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
+            console.log(${{context}}, ${{inputs}})
+            const { project_name } = context.payload.inputs
             const { repo: { owner, repo } } = context;
-            const name = 'new-label';
+            const name = `team: ${project_name}`;
             const color = 'f1c40f';
-            const description = 'This is a new label';
+            const description = `A PR belonging to the ${project_name} project.`;
 
             try {
-              console.log(github.inputs.project_name)
-              console.log(github.rest.issues)
               await github.rest.issues.createLabel({
                 owner,
                 repo,
