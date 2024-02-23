@@ -1,6 +1,6 @@
 ---
 "ui-library": minor
-"budget-it": minor
+"@inkbeard/budget-it": minor
 ---
 
 Replaced ui-theme with ui-vue exported styles

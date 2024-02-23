@@ -3,8 +3,6 @@ import './assets/main.css';
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import { useFeatureFlagStore } from '@/stores/featureFlags';
-
-// eslint-disable-next-line import/no-extraneous-dependencies
 import flagsmith from 'flagsmith';
 import App from './App.vue';
 import router from './router';
