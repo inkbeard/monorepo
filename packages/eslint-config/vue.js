@@ -35,7 +35,7 @@ module.exports = {
         '@typescript-eslint/indent': ['off'],
         'import/no-extraneous-dependencies': [
           'error',
-          { devDependencies: true },
+          { devDependencies: true }
         ],
       }
     }
