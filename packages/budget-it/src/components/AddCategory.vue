@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { ref, computed } from 'vue';
   import { useCategoriesStore } from '@/stores/categories';
+  import { AppButton } from '@inkbeard/ui-vue';
 
   const categoryName = ref('');
   const isActive = ref(false);
@@ -28,12 +29,12 @@
       v-if="!isActive"
       class="button-group"
     >
-      <button
-        type="button"
+      <AppButton
+        icon="fa-solid fa-plus"
+        label="Add category"
+        raised
         @click="isActive = true"
-      >
-        Add category
-      </button>
+      />
     </div>
     <div v-else>
       <label for="add-category">
@@ -46,16 +47,18 @@
         @keydown.enter="addCategory"
       />
       <div class="button-group">
-        <button type="button" @click="cancelEdit">
-          Cancel
-        </button>
-        <button
+        <AppButton
+          label="Cancel"
+          raised
+          severity="secondary"
+          @click="cancelEdit"
+        />
+        <AppButton
           :disabled="isDisabled"
-          type="button"
+          label="Add"
+          raised
           @click="addCategory"
-        >
-          Add
-        </button>
+        />
       </div>
     </div>
   </div>
