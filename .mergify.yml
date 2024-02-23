@@ -1,28 +1,3 @@
-partition_rules:
-  - name: default
-    fallback_partition: true
-
-  - name: website
-    conditions:
-      - files~=^apps/inkbeard/
-
-  - name: examples
-    conditions:
-      - files~=^apps/ui-library/
-
-  - name: budget-it app
-    conditions:
-      - files~=^packages/budget-it/
-
-  - name: general ui
-    conditions:
-      - files~=^packages/ui-theme/
-      - files~=^packages/ui-vue/
-      - files~=^packages/ui/
-      - files~=^packages/eslint-config/
-      - files~=^packages/stylelint-config/
-      - files~=^packages/typescript-config/
-
 shared:
   ci_success: &ci_success
     - "check-success=Build and Test"
@@ -42,6 +17,39 @@ shared:
   release_queue_conditions: &release_queue_conditions
       - head=changeset-release/main
       - "#approved-reviews-by>=1"
+  team_inkbeard: &team_inkbeard
+    - files~=^apps/inkbeard/
+  team_ui_library: &team_ui_library
+    - files~=^apps/ui-library/
+  team_budget_it: &team_budget_it
+    - files~=^apps/budget-it/
+  team_general_ui: &team_general_ui
+      - files~=^packages/ui-theme/
+      - files~=^packages/ui-vue/
+      - files~=^packages/ui/
+      - files~=^packages/eslint-config/
+      - files~=^packages/stylelint-config/
+      - files~=^packages/typescript-config/
+
+partition_rules:
+  - name: default
+    fallback_partition: true
+
+  - name: inkbeard
+    conditions:
+      - and: *team_inkbeard
+
+  - name: examples
+    conditions:
+      - and: *team_ui_library
+
+  - name: budget-it
+    conditions:
+      - and: *team_budget_it
+
+  - name: general ui
+    conditions:
+      - and: *team_general_ui
 
 queue_rules:
   - name: release
@@ -116,32 +124,21 @@ pull_request_rules:
           - PR stack
   # Partition rules
   # Would ideally have this as dynamic, but Mergify doesn't support the `partition-queue-name` attribute at the moment.
-  - name: Default partition workflow
+  - name: inkbeard partition workflow
     conditions:
       - and: *ci_success
-      - partition-name=default
+      - and: *team_inkbeard
     actions:
       github_actions:
         workflow:
           dispatch:
             - workflow: partition.yml
               inputs:
-                project_name: default
-  - name: website partition workflow
-    conditions:
-      - and: *ci_success
-      - partition-name=website
-    actions:
-      github_actions:
-        workflow:
-          dispatch:
-            - workflow: partition.yml
-              inputs:
-                project_name: website
+                project_name: inkbeard
   - name: examples partition workflow
     conditions:
       - and: *ci_success
-      - partition-name=examples
+      - and: *team_ui_library
     actions:
       github_actions:
         workflow:
@@ -149,21 +146,21 @@ pull_request_rules:
             - workflow: partition.yml
               inputs:
                 project_name: examples
-  - name: budget-it app partition workflow
+  - name: budget-it partition workflow
     conditions:
       - and: *ci_success
-      - partition-name=budget-it app
+      - and: *team_budget_it
     actions:
       github_actions:
         workflow:
           dispatch:
             - workflow: partition.yml
               inputs:
-                project_name: budget-it app
+                project_name: budget-it
   - name: general ui partition workflow
     conditions:
       - and: *ci_success
-      - partition-name=general ui
+      - and: *team_general_ui
     actions:
       github_actions:
         workflow:
