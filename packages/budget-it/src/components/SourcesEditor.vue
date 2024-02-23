@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import { ref } from 'vue';
+  import { AppButton } from '@inkbeard/ui-vue';
   import { useSourcesStore } from '@/stores/sources';
   import SourceListing from '@/components/SourceListing.vue';
 
@@ -9,15 +10,14 @@
 <template>
   <h5>
     Sources
-    <button
+    <AppButton
       aria-label="Add source"
       data-test="add source"
       :disabled="isAdding"
-      type="button"
+      icon="fa-solid fa-plus fa-lg"
+      text
       @click="isAdding = true"
-    >
-      <i class="fa-solid fa-plus fa-lg" />
-    </button>
+    />
   </h5>
   <ul>
     <SourceListing
@@ -36,9 +36,12 @@
 h5 {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin: 0;
 }
 
 ul {
+  margin: 0;
   padding: 0;
 }
 
