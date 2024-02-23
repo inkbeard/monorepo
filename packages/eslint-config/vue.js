@@ -33,6 +33,10 @@ module.exports = {
       "rules": {
         // Turning off since vue/script-indent handles this
         '@typescript-eslint/indent': ['off'],
+        'import/no-extraneous-dependencies': [
+          'error',
+          { devDependencies: true },
+        ],
       }
     }
   ],
