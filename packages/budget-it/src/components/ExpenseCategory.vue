@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { computed, ref } from 'vue';
   import { AppButton } from '@inkbeard/ui-vue';
+  import type { ExpenseInfo } from '@/stores/expenses';
   import type { CategoryInfo } from '@/stores/categories';
   import { useCategoriesStore } from '@/stores/categories';
   import { useExpensesStore } from '@/stores/expenses';
@@ -13,12 +14,15 @@
     },
   });
   const categoryExpenses = computed(() => (
-    Object.values(useExpensesStore().expenseList).reduce((acc, expense) => {
+    Object.entries(useExpensesStore().expenseList).reduce((acc, [id, expense]) => {
       if (expense.categoryId === props.category.id) {
-        acc.push(expense);
+        acc.push({
+          ...expense,
+          id: Number(id),
+        });
       }
       return acc;
-    }, [])
+    }, [] as ExpenseInfo[])
   ));
   const isOpen = ref(false);
 
