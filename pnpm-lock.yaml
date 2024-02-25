@@ -270,6 +270,9 @@ importers:
       pinia:
         specifier: ^2.1.7
         version: 2.1.7(typescript@5.3.3)(vue@3.4.18)
+      primevue:
+        specifier: ^3.48.1
+        version: 3.49.0(vue@3.4.18)
       vue:
         specifier: ^3.4.18
         version: 3.4.18(typescript@5.3.3)
@@ -11184,6 +11187,14 @@ packages:
 
   /primevue@3.48.1(vue@3.4.18):
     resolution: {integrity: sha512-lyJ+E0ZCv2pR9jIpdPLBysU8zB2hOKrN7q78orloWelPx05zSYoMVKAWaqKTHNpunD52xffjaqovt1y6B/9XoQ==}
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      vue: 3.4.18(typescript@5.3.3)
+    dev: false
+
+  /primevue@3.49.0(vue@3.4.18):
+    resolution: {integrity: sha512-1lFTU/WK1wcjaaKqce7XldrH4MGPySXxH9Nyoj0d9QiGehePw9JUQrGhVgfjx3I/MD/VgE85wF1HihqtPJehbw==}
     peerDependencies:
       vue: ^3.0.0
     dependencies:
