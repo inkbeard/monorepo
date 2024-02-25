@@ -2,7 +2,7 @@
 
 body {
   min-height: 100vh;
-  background: var(--color-background);
+  background: var(--ink-background-color);
   transition:
     color 0.5s,
     background-color 0.5s;

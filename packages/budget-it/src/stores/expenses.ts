@@ -61,6 +61,27 @@ export const useExpensesStore = defineStore('expenses', {
         order: 0,
         sourceId: 3,
       },
+      8: {
+        amount: 2,
+        categoryId: 1,
+        name: 'Hulu',
+        order: 1,
+        sourceId: 1,
+      },
+      9: {
+        amount: 300,
+        categoryId: 2,
+        name: 'Jewel',
+        order: 1,
+        sourceId: 4,
+      },
+      10: {
+        amount: 99,
+        categoryId: 4,
+        name: 'Metra',
+        order: 1,
+        sourceId: 1,
+      },
     } as ExpenseList,
   }),
   actions: {

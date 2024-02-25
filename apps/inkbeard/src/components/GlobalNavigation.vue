@@ -161,7 +161,7 @@
   }
 
   header {
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--ink-border-color);
     width: 100%;
 
     @media (width >= 768px) {
@@ -269,7 +269,7 @@
     margin-left: 10px;
     padding: 0;
     cursor: pointer;
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--ink-border-color);
     border-radius: 12px;
     background-color: var(--ink-divider-dark-1);
 

@@ -35,20 +35,21 @@
   --ink-h1-font-size: 30px;
   --ink-h1-font-weight: 600;
   /* themes */
-  --ink-info: #0b78d0;
-  --ink-success: #22851e;
-  --ink-warning: #fb8c00;
-  --ink-danger: #b00020;
+  --ink-info-color: #0b78d0;
+  --ink-success-color: #22851e;
+  --ink-warning-color: #fb8c00;
+  --ink-danger-color: #b00020;
 
   /* semantic color variables for this project */
   /* backgrounds */
-  --color-background: var(--ink-white);
-  --color-background-soft: var(--ink-white-soft);
-  --color-background-mute: var(--ink-white-mute);
+  --ink-background-color: var(--ink-white);
+  --ink-background-color-soft: var(--ink-white-soft);
+  --ink-background-color-mute: var(--ink-white-mute);
 
   /* borders */
-  --color-border: var(--ink-divider-light-2);
-  --color-border-hover: var(--ink-divider-light-1);
+  --ink-border-color: var(--ink-divider-light-1);
+  --ink-border-color-dark: var(--ink-divider-dark-2);
+  --ink-border-color-hover: var(--ink-divider-light-1);
 
   /* headings */
 
@@ -59,12 +60,12 @@
 html.dark {
   color-scheme: dark;
   /* backgrounds */
-  --color-background: var(--ink-black);
-  --color-background-soft: var(--ink-black-soft);
-  --color-background-mute: var(--ink-black-mute);
+  --ink-background-color: var(--ink-black);
+  --ink-background-color-soft: var(--ink-black-soft);
+  --ink-background-color-mute: var(--ink-black-mute);
   /* borders */
-  --color-border: var(--ink-divider-dark-2);
-  --color-border-hover: var(--ink-divider-dark-1);
+  --ink-border-color: var(--ink-divider-dark-2);
+  --ink-border-color-hover: var(--ink-divider-dark-1);
   /* headings */
   --ink-color-heading: var(--ink-text-dark-1);
   --ink-color-text: var(--ink-text-dark-2);

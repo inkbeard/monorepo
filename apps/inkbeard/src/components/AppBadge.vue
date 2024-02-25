@@ -103,20 +103,20 @@
 
   /* Statuses */
   .is-danger {
-    background: var(--ink-danger);
+    background: var(--ink-danger-color);
   }
 
   .is-info {
-    background: var(--ink-info);
+    background: var(--ink-info-color);
   }
 
   .is-success {
-    background: var(--ink-success);
+    background: var(--ink-success-color);
   }
 
   .is-warning {
     color: var(--ink-black);
-    background: var(--ink-warning);
+    background: var(--ink-warning-color);
   }
 
   .is-counter {
