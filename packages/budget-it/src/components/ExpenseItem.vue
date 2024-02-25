@@ -3,6 +3,7 @@
   import type { ExpenseInfo } from '@/stores/expenses';
   import { useExpensesStore } from '@/stores/expenses';
   import { useSourcesStore } from '@/stores/sources';
+  import { AppIcon } from '@inkbeard/ui-vue';
 
   const props = defineProps<{
     expense: ExpenseInfo;
@@ -33,10 +34,10 @@
   <form @submit.prevent>
     <label :for="`${expense.categoryId}-${expense.name}`">
       {{ expense.name }}
-      <i
+      <AppIcon
         v-if="expense.description"
-        class="fa-duotone fa-circle-question"
-        :title="expense.description"
+        v-tooltip="expense.description"
+        icon="fa-duotone fa-circle-question"
       />
     </label>
     <input
