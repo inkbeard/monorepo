@@ -49,17 +49,17 @@ h5 {
 }
 
 .text-danger {
-  color: var(--ink-danger) !important;
+  color: var(--ink-danger-color) !important;
 }
 
 .text-info {
-  color: var(--ink-info) !important;
+  color: var(--ink-info-color) !important;
 }
 
 .text-success {
-  color: var(--ink-success) !important;
+  color: var(--ink-success-color) !important;
 }
 
 .text-warning {
-  color: var(--ink-warning) !important;
+  color: var(--ink-warning-color) !important;
 }

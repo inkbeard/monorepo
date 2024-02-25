@@ -74,18 +74,18 @@
 
 <style scoped>
   .is-danger {
-    color: var(--ink-danger);
+    color: var(--ink-danger-color);
   }
 
   .is-info {
-    color: var(--ink-info);
+    color: var(--ink-info-color);
   }
 
   .is-success {
-    color: var(--ink-success);
+    color: var(--ink-success-color);
   }
 
   .is-warning {
-    color: var(--ink-warning);
+    color: var(--ink-warning-color);
   }
 </style>
