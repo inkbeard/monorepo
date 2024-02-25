@@ -13,6 +13,9 @@
       required: true,
     },
   });
+  /**
+   * Get the information for all the expenses for this category.
+   */
   const categoryExpenses = computed(() => (
     Object.entries(useExpensesStore().expenseList).reduce((acc, [id, expense]) => {
       if (expense.categoryId === props.category.id) {
@@ -23,6 +26,12 @@
       }
       return acc;
     }, [] as ExpenseInfo[])
+  ));
+  /**
+   * Get the total amount of all the expenses for this category.
+   */
+  const totalExpenses = computed(() => (
+    categoryExpenses.value.reduce((acc, expense) => acc + expense.amount, 0)
   ));
   const isOpen = ref(false);
 
@@ -35,7 +44,17 @@
       :class="{ 'is-open': isOpen }"
     >
       <div class="category-title">
-        <span data-test="category name">{{ category.name }}</span>
+        <ul class="category-meta">
+          <li
+            class="category-name"
+            data-test="category name"
+          >
+            {{ category.name }}
+          </li>
+          <li class="category-total">
+            Total: ${{ totalExpenses }}
+          </li>
+        </ul>
         <AppButton
           class="toggle"
           data-test="toggle expenses"
@@ -95,5 +114,16 @@
   justify-content: space-between;
   padding: 1rem;
   border-bottom: 1px solid var(--ink-border-color-dark);
+}
+
+.category-meta {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-name {
+  margin: 0;
+  font-weight: bold;
 }
 </style>
