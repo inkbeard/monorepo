@@ -61,6 +61,8 @@
 form {
   display: flex;
   gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid var(--ink-border-color)
 }
 
 input {

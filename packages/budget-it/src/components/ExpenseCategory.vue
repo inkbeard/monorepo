@@ -79,14 +79,13 @@
 
 .category-section {
   flex: 1;
-  border: 1px solid #ccc;
+  border: 1px solid var(--ink-border-color-dark);
   border-radius: 4px;
   color: var(--vt-c-black-soft);
   background-color: var(--vt-c-white);
 }
 
-.category-title,
-.category-content {
+.category-title {
   padding: 1rem;
 }
 
@@ -94,6 +93,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--ink-border-color-dark);
 }
 </style>

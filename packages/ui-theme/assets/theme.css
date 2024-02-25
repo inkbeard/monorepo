@@ -47,8 +47,9 @@
   --color-background-mute: var(--ink-white-mute);
 
   /* borders */
-  --color-border: var(--ink-divider-light-2);
-  --color-border-hover: var(--ink-divider-light-1);
+  --ink-border-color: var(--ink-divider-light-1);
+  --ink-border-color-dark: var(--ink-divider-dark-2);
+  --ink-border-color-hover: var(--ink-divider-light-1);
 
   /* headings */
 
@@ -63,8 +64,8 @@ html.dark {
   --color-background-soft: var(--ink-black-soft);
   --color-background-mute: var(--ink-black-mute);
   /* borders */
-  --color-border: var(--ink-divider-dark-2);
-  --color-border-hover: var(--ink-divider-dark-1);
+  --ink-border-color: var(--ink-divider-dark-2);
+  --ink-border-color-hover: var(--ink-divider-dark-1);
   /* headings */
   --ink-color-heading: var(--ink-text-dark-1);
   --ink-color-text: var(--ink-text-dark-2);
