@@ -3,7 +3,7 @@
   import type { ExpenseInfo } from '@/stores/expenses';
   import { useExpensesStore } from '@/stores/expenses';
   import { useSourcesStore } from '@/stores/sources';
-  import { AppIcon } from '@inkbeard/ui-vue';
+  import { AppInputNumber, AppDropdown } from '@inkbeard/ui-vue';
 
   const props = defineProps<{
     expense: ExpenseInfo;
@@ -32,29 +32,22 @@
 
 <template>
   <form @submit.prevent>
-    <label :for="`${expense.categoryId}-${expense.name}`">
-      {{ expense.name }}
-      <AppIcon
-        v-if="expense.description"
-        v-tooltip="expense.description"
-        icon="fa-duotone fa-circle-question"
-      />
-    </label>
-    <input
+    <AppInputNumber
       :id="`${expense.categoryId}-${expense.name}`"
       v-model="expenseAmount"
-      type="number"
+      :input-id="`${expense.categoryId}-${expense.name}`"
+      :label="expense.name"
+      :label-description="expense.description"
       @blur="updateExpenseAmount"
-    >
-    <select v-model="expenseSourceId">
-      <option
-        v-for="({ id, source }) in useSourcesStore().alphabaticSourceList"
-        :key="id"
-        :value="id"
-      >
-        {{ source }}
-      </option>
-    </select>
+    />
+    <AppDropdown
+      v-model="expenseSourceId"
+      input-id="expense-source"
+      label="Source"
+      option-label="source"
+      option-value="id"
+      :options="useSourcesStore().alphabaticSourceList"
+    />
   </form>
 </template>
 
@@ -64,9 +57,10 @@ form {
   gap: 1rem;
   padding: 1rem;
   border-bottom: 1px solid var(--ink-border-color);
-}
+  justify-content: space-evenly;
 
-input {
-  flex: 1;
+  > * {
+    flex: 1;
+  }
 }
 </style>
