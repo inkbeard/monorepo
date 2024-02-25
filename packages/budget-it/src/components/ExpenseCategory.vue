@@ -86,13 +86,10 @@
 }
 
 .category-title {
-  padding: 1rem;
-}
-
-.category-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 1rem;
   border-bottom: 1px solid var(--ink-border-color-dark);
 }
 </style>
