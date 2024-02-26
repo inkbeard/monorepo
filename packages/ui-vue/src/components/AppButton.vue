@@ -4,13 +4,6 @@
   defineOptions({
     inheritAttrs: false,
   });
-  defineProps({
-    size: {
-      type: String,
-      default: 'md',
-      validator: (value: string) => ['sm', 'md', 'lg'].includes(value),
-    },
-  });
 </script>
 
 <template>
@@ -18,10 +11,12 @@
     v-bind="$attrs"
     :pt="{
       root: {
-        class: `app-button p-button-${size}`,
+        class: 'app-button',
       },
     }"
-  />
+  >
+    <slot />
+  </Button>
 </template>
 
 <style>
@@ -35,6 +30,21 @@
 
   &.align-start {
     justify-content: flex-start;
+  }
+}
+
+/* override primevue link colors for light/dark mode  */
+.p-button.p-button-link {
+  html.dark & {
+    color: var(--ink-black);
+  }
+
+  @media (width >= 768px) {
+    color: var(--ink-black);
+
+    html.dark & {
+      color: var(--ink-white);
+    }
   }
 }
 </style>

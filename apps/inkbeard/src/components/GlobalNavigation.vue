@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { RouterLink } from 'vue-router';
   import { ref, watch, onBeforeMount } from 'vue';
-  import { AppIcon } from '@inkbeard/ui-vue';
+  import { AppIcon, AppButton } from '@inkbeard/ui-vue';
 
   const darkMode = ref(false);
   const isActive = ref(false);
@@ -48,8 +48,11 @@
               :to="{ name: 'Home' }"
               @click="isActive = false"
             >
-              <AppIcon icon="fa-duotone fa-house" />
-              inkbeard
+              <AppButton
+                icon="fa-duotone fa-house"
+                label="inkbeard"
+                link
+              />
             </RouterLink>
           </li>
           <li
@@ -60,7 +63,11 @@
               :to="{ name: route }"
               @click="isActive = false"
             >
-              {{ label }}
+              <AppButton
+                :class="{ 'is-active-route': $route.name === route }"
+                :label="label"
+                link
+              />
             </RouterLink>
           </li>
         </ul>
@@ -101,7 +108,7 @@
         @click="isActive = !isActive"
         @keydown="isActive = !isActive"
       />
-      <button
+      <AppButton
         class="toggle-wrapper"
         :class="{ 'is-active': darkMode }"
         type="button"
@@ -113,7 +120,7 @@
             size="sm"
           />
         </span>
-      </button>
+      </AppButton>
     </div>
   </header>
 </template>
@@ -131,21 +138,9 @@
 
   a {
     display: block;
-    padding: 10px;
     text-decoration: none;
     color: var(--ink-white);
     transition: all .5s ease-in-out;
-
-    &.home-link {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    &.router-link-active:not(.home-link) {
-      cursor: default;
-      text-decoration: underline;
-    }
 
     html.dark & {
       color: var(--ink-black);
@@ -158,6 +153,10 @@
         color: var(--ink-white);
       }
     }
+  }
+
+  .is-active-route {
+    text-decoration: underline;
   }
 
   header {
@@ -293,11 +292,13 @@
     height: 19px;
     border-radius: 100%;
     background-color: rgb(255 255 255 / 70%);
+    color: var(--ink-black);
 
     .toggle-wrapper.is-active & {
       background-color: rgb(0 0 0 / 70%);
       border-color: rgb(0 0 0 / 70%);
       transform: translateX(16px);
+      color: var(--ink-white);
     }
   }
 </style>
