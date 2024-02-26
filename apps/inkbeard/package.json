@@ -16,7 +16,8 @@
     "stylelint": "stylelint \"**/*.{css,scss,vue}\""
   },
   "dependencies": {
-    "@inkbeard/ui-vue": "workspace:*",
+    "@inkbeard/budget-it": "workspace:*",
+    "@inkbeard/ui-theme": "workspace:*",
     "@vitejs/plugin-basic-ssl": "^1.1.0",
     "flagsmith": "^3.22.0",
     "pinia": "^2.1.7",

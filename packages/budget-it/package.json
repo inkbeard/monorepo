@@ -1,6 +1,9 @@
 {
   "name": "@inkbeard/budget-it",
   "version": "0.2.0",
+  "exports": {
+    ".": "./index.ts"
+  },
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",

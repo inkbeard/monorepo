@@ -1,13 +1,22 @@
 <script setup lang="ts">
   import { ref, computed } from 'vue';
-  import { useCategoriesStore } from '@/stores/categories';
   import { AppButton } from '@inkbeard/ui-vue';
+
+  const props = defineProps<{
+    categoryList: Array<any>;
+  }>();
+  const emits = defineEmits<{
+    /**
+     * Emit the category name.
+     */
+    (e: 'addCategory', categoryName: string): void
+  }>();
 
   const categoryName = ref('');
   const isActive = ref(false);
   const isDisabled = computed(() => (
     !categoryName.value
-    || useCategoriesStore().categoryList.some(({ name }) => (
+    || props.categoryList.some(({ name }) => (
       name.toLowerCase() === categoryName.value.trim().toLowerCase()))
   ));
 
@@ -15,10 +24,11 @@
     categoryName.value = '';
     isActive.value = false;
   }
+
   function addCategory() {
     if (isDisabled.value) return;
 
-    useCategoriesStore().addCategory(categoryName.value);
+    emits('addCategory', categoryName.value);
     cancelEdit();
   }
 </script>
