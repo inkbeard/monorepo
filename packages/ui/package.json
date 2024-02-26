@@ -13,7 +13,7 @@
   "devDependencies": {
     "@inkbeard/eslint-config": "workspace:*",
     "@inkbeard/typescript-config": "workspace:*",
-    "@turbo/gen": "^1.12.3",
+    "@turbo/gen": "^1.12.4",
     "@types/eslint": "^8.44.7",
     "@types/node": "^17.0.12",
     "@types/react": "^18.2.0",
