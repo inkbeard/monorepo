@@ -108,11 +108,12 @@
         @click="isActive = !isActive"
         @keydown="isActive = !isActive"
       />
-      <AppButton
+      <div
         class="toggle-wrapper"
         :class="{ 'is-active': darkMode }"
         type="button"
         @click="darkMode = !darkMode"
+        @keydown="darkMode = !darkMode"
       >
         <span class="toggle-icon">
           <AppIcon
@@ -120,7 +121,7 @@
             size="sm"
           />
         </span>
-      </AppButton>
+      </div>
     </div>
   </header>
 </template>
