@@ -73,7 +73,7 @@ export const useExpensesStore = defineStore('expenses', {
         categoryId: 2,
         name: 'Jewel',
         order: 1,
-        sourceId: 4,
+        sourceId: 2,
       },
       10: {
         amount: 99,
