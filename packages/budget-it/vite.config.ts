@@ -15,4 +15,21 @@ export default defineConfig({
   test: {
     globals: true,
   },
+  build: {
+    rollupOptions: {
+      input: {
+        main: fileURLToPath(new URL('./index.ts', import.meta.url)),
+      },
+      external: [
+        // 'primevue',
+        'vue',
+      ],
+      output: {
+        globals: {
+          vue: 'Vue',
+          // primevue: 'primevue',
+        },
+      },
+    },
+  },
 });
