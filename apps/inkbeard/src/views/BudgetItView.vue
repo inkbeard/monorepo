@@ -1,7 +1,6 @@
 <script setup lang="ts">
   import ProjectHeader from '@/components/ProjectHeader.vue';
   import { useFeatureFlagStore } from '@/stores/featureFlags';
-  // eslint-disable-next-line import/no-extraneous-dependencies
   import { AddCategory } from '@inkbeard/budget-it';
 </script>
 
