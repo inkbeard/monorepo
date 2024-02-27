@@ -4,7 +4,7 @@ import { defineStore } from 'pinia';
 export const useFeatureFlagStore = defineStore('featureFlags', () => (
   {
     flags: ref({
-      budgetIt: { enabled: true },
+      budget_it: { enabled: false },
       examples: { enabled: false },
     }),
   }

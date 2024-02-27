@@ -11,7 +11,7 @@
 
   <p>Estimated release: Q1</p>
 
-  <template v-if="useFeatureFlagStore().flags.budgetIt.enabled">
+  <template v-if="useFeatureFlagStore().flags.budget_it.enabled">
     <AddCategory :category-list="[]" />
   </template>
 </template>
