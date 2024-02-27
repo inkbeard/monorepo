@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import ProjectHeader from '@/components/ProjectHeader.vue';
   import { useFeatureFlagStore } from '@/stores/featureFlags';
-  import { AddCategory } from '@inkbeard/budget-it';
+  import TheBudgetItExample from './TheBudgetItExample.vue';
 </script>
 
 <template>
@@ -11,7 +11,5 @@
 
   <p>Estimated release: Q1</p>
 
-  <template v-if="useFeatureFlagStore().flags.budget_it.enabled">
-    <AddCategory :category-list="[]" />
-  </template>
+  <TheBudgetItExample v-if="useFeatureFlagStore().flags.budget_it.enabled" />
 </template>

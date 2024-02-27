@@ -45,7 +45,7 @@
     />
     <SourceListing
       v-for="({ id }) in useSourcesStore().alphabaticSourceList"
-      :key="`source-list-${id}-${defaultSourceId}`"
+      :key="`source-list-${id}`"
       v-model:default-source-id="defaultSourceId"
       v-model:source-list="sourceList"
       :expenses-from-sources="sourcesWithExpenses[id]?.length"
