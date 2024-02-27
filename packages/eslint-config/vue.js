@@ -27,7 +27,15 @@ module.exports = {
   ],
   overrides: [
     // Force ESLint to detect .tsx files
-    { files: ["*.js?(x)", "*.ts?(x)"] },
+    {
+      files: ["*.js?(x)", "*.ts?(x)"],
+      rules: {
+        'import/no-extraneous-dependencies': [
+          'error',
+          { devDependencies: true }
+        ],
+      }
+    },
     {
       "files": ["*.vue"],
       "rules": {
@@ -35,10 +43,12 @@ module.exports = {
         '@typescript-eslint/indent': ['off'],
         'import/no-extraneous-dependencies': [
           'error',
-          { devDependencies: true }
+          {
+            devDependencies: true,
+          },
         ],
-      }
-    }
+      },
+    },
   ],
   rules: {
     'vue/attributes-order': ['warn', {

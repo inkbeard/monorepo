@@ -3,15 +3,20 @@
   import ExportCategory from '@/components/ExpenseCategory.vue';
   import SourcesEditor from '@/components/SourcesEditor.vue';
   import { useCategoriesStore } from '@/stores/categories';
+
+  const { categoryList } = useCategoriesStore();
 </script>
 
 <template>
   <main>
     <section>
       <div>
-        <AddCategory />
+        <AddCategory
+          :category-list="categoryList"
+          @add-category="useCategoriesStore().addCategory"
+        />
         <ExportCategory
-          v-for="category in useCategoriesStore().categoryList"
+          v-for="category in categoryList"
           :key="category.id"
           :category="category"
         />
