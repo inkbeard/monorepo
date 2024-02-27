@@ -3,7 +3,7 @@ import { useExpensesStore } from './expenses';
 
 export const useSourcesStore = defineStore('sources', {
   state: () => ({
-    defaultSourceId: 4,
+    defaultSourceId: null as number | null,
     sourceList: {
       1: 'Credit Card',
       3: 'Checking Account',

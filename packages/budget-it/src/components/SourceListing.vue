@@ -1,28 +1,45 @@
 <script setup lang="ts">
   import { computed, ref } from 'vue';
-  import { useSourcesStore } from '@/stores/sources';
   import { AppButton } from '@inkbeard/ui-vue';
 
+  type SourceList = {
+    [sourceId: number]: string;
+  };
+
   const props = defineProps<{
-    sourceId?: number,
+    sourceId?: number;
+    expensesFromSources?: number;
   }>();
-  const {
-    addSource,
-    deleteSource,
-    sourceList,
-    sourcesWithExpenses,
-  } = useSourcesStore();
+  const emits = defineEmits<{
+    /**
+     * Emit the category name and if it should be the default.
+     */
+    (e: 'addSource',
+     { isDefault, sourceName }: {
+       isDefault: boolean,
+       sourceName: string
+     }): void
+    /**
+     * Emit the source id to delete.
+     */
+    (e: 'deleteSource', sourceId: number): void
+  }>();
+  const defaultSourceId = defineModel<number | null>('defaultSourceId');
+  const sourceList = defineModel<SourceList>('sourceList');
   const isDefault = ref(false);
-  const isEditing = defineModel('isEditing', { type: Boolean });
-  const sourceName = props.sourceId
-    ? ref(sourceList[props.sourceId])
-    : ref('');
+  const isEditing = defineModel<boolean>('isEditing');
+  const sourceName = ref('');
+
+  if (props.sourceId) {
+    sourceName.value = sourceList.value?.[props.sourceId] ?? '';
+  }
+
   /**
    * Check if the new source already exists or is missing.
    */
   const sourceIsDisabled = computed(() => (
     !sourceName.value
-    || Object.values(sourceList).some((source) => (
+    || Object.values(sourceList.value as SourceList).some((source) => (
       source.toLowerCase() === sourceName.value.toLowerCase()
     ))
   ));
@@ -32,7 +49,7 @@
   const cancelEdit = () => {
     isEditing.value = false;
     sourceName.value = props.sourceId
-      ? sourceList[props.sourceId]
+      ? sourceList.value?.[props.sourceId] ?? ''
       : '';
   };
   /**
@@ -43,10 +60,10 @@
       return;
     }
 
-    if (props.sourceId) {
-      sourceList[props.sourceId] = sourceName.value;
+    if (props.sourceId && sourceList.value?.[props.sourceId]) {
+      sourceList.value[props.sourceId] = sourceName.value;
     } else {
-      addSource({
+      emits('addSource', {
         isDefault: isDefault.value,
         sourceName: sourceName.value,
       });
@@ -108,13 +125,13 @@
         <AppButton
           aria-label="Set default source"
           data-test="set default"
-          :icon="useSourcesStore().defaultSourceId === sourceId
+          :icon="defaultSourceId === sourceId
             ? 'fa-duotone fa-star'
             : 'fa-regular fa-star'"
           size="sm"
           text
           title="Set as default source"
-          @click="useSourcesStore().defaultSourceId = sourceId"
+          @click="defaultSourceId = sourceId"
         />
         <AppButton
           aria-label="Edit source"
@@ -127,12 +144,12 @@
         <AppButton
           aria-label="Delete source"
           data-test="delete source"
-          :disabled="sourcesWithExpenses[sourceId]?.length"
+          :disabled="expensesFromSources"
           icon="fa-duotone fa-trash-can"
           severity="danger"
           size="sm"
           text
-          @click="deleteSource(sourceId)"
+          @click="emits('deleteSource', sourceId)"
         />
       </div>
     </template>
