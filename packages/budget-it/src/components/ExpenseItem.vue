@@ -1,13 +1,13 @@
 <script setup lang="ts">
   import { computed, ref } from 'vue';
-  import type { ExpenseInfo } from '@/types';
   import { AppInputNumber, AppDropdown } from '@inkbeard/ui-vue';
+  import type { ExpenseInfo } from '@/types';
 
   const props = defineProps<{
     sourceList: Record<string, string>;
   }>();
-  const expense = defineModel<ExpenseInfo>('expense');
-  const expenseAmount = ref(expense.value!.amount);
+  const expense = defineModel<ExpenseInfo>('expense', { required: true });
+  const expenseAmount = ref(expense.value.amount);
   /**
    * Get an alphabatize list of sources and their IDs.
    */
@@ -20,16 +20,16 @@
 <template>
   <form @submit.prevent>
     <AppInputNumber
-      :id="`${expense!.categoryId}-${expense!.name}`"
+      :id="`${expense.categoryId}-${expense.name}`"
       v-model="expenseAmount"
-      :input-id="`${expense!.categoryId}-${expense!.name}`"
-      :label="expense!.name"
-      :label-description="expense!.description"
-      @blur="expense!.amount = expenseAmount"
+      :input-id="`${expense.categoryId}-${expense.name}`"
+      :label="expense.name"
+      :label-description="expense.description"
+      @blur="expense.amount = expenseAmount"
     />
     <AppDropdown
-      :key="expense!.sourceId"
-      v-model="expense!.sourceId"
+      :key="expense.sourceId"
+      v-model="expense.sourceId"
       input-id="expense-source"
       label="Source"
       option-label="source"

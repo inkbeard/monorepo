@@ -1,20 +1,41 @@
 <script setup lang="ts">
   import { computed, ref } from 'vue';
   import { AppButton } from '@inkbeard/ui-vue';
-  import type { ExpenseInfo, CategoryInfo } from '@/types';
-  import { useCategoriesStore } from '@/stores/categories';
-  import { useExpensesStore } from '@/stores/expenses';
-  import { useSourcesStore } from '@/stores/sources';
+  import type { CategoryInfo, ExpenseInfo, ExpenseList } from '@/types';
   import ExpenseItem from './ExpenseItem.vue';
 
   const props = defineProps<{
     category: CategoryInfo,
+    sourceList: Record<string, string>,
   }>();
+  const emits = defineEmits<{
+    /**
+     * Emit the category id that was deleted.
+     */
+    (e: 'deleteCategory', categoryId: number): void
+  }>();
+
+  const categoryList = defineModel<CategoryInfo[]>('categoryList', { required: true });
+  const expenseList = defineModel<ExpenseList>('expenseList', { required: true });
+
+  /**
+   * Delete a category from the current list of categories.
+   */
+  const deleteCategory = () => {
+    const index = categoryList.value.findIndex(({ id }) => id === props.category.id) ?? -1;
+
+    if (index === -1) {
+      return;
+    }
+
+    categoryList.value.splice(index, 1);
+    emits('deleteCategory', props.category.id);
+  };
   /**
    * Get the information for all the expenses for this category.
    */
   const categoryExpenses = computed(() => (
-    Object.entries(useExpensesStore().expenseList).reduce((acc, [id, expense]) => {
+    Object.entries(expenseList.value as ExpenseList).reduce((acc, [id, expense]) => {
       if (expense.categoryId === props.category.id) {
         acc.push({
           ...expense,
@@ -70,9 +91,9 @@
             v-for="expense in categoryExpenses"
             :id="expense.id"
             :key="expense.id"
-            v-model:expense="(useExpensesStore().expenseList[expense.id] as ExpenseInfo)"
+            v-model:expense="expenseList[expense.id]"
             data-test="category expense"
-            :source-list="useSourcesStore().sourceList"
+            :source-list="sourceList"
           />
         </template>
         <p v-else>
@@ -81,12 +102,12 @@
       </div>
     </div>
     <AppButton
-      class="delete"
+      class="delete-category"
       data-test="delete category"
       icon="fa-duotone fa-trash-can fa-lg"
       severity="danger"
       text
-      @click="useCategoriesStore().deleteCategory(category.id)"
+      @click="deleteCategory"
     />
   </div>
 </template>
@@ -94,7 +115,7 @@
 <style scoped>
 .category-container {
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
   gap: 1rem;
   margin-bottom: 1rem;
 }
@@ -124,5 +145,9 @@
 .category-name {
   margin: 0;
   font-weight: bold;
+}
+
+.delete-category {
+  margin-top: 1.5rem;
 }
 </style>
