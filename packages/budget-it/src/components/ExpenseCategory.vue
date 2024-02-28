@@ -4,14 +4,12 @@
   import type { ExpenseInfo, CategoryInfo } from '@/types';
   import { useCategoriesStore } from '@/stores/categories';
   import { useExpensesStore } from '@/stores/expenses';
+  import { useSourcesStore } from '@/stores/sources';
   import ExpenseItem from './ExpenseItem.vue';
 
-  const props = defineProps({
-    category: {
-      type: Object as () => CategoryInfo,
-      required: true,
-    },
-  });
+  const props = defineProps<{
+    category: CategoryInfo,
+  }>();
   /**
    * Get the information for all the expenses for this category.
    */
@@ -33,7 +31,6 @@
     categoryExpenses.value.reduce((acc, expense) => acc + expense.amount, 0)
   ));
   const isOpen = ref(false);
-
 </script>
 
 <template>
@@ -68,11 +65,14 @@
         class="category-content"
       >
         <template v-if="categoryExpenses.length">
+          <!-- eslint-disable vue/valid-v-model -->
           <ExpenseItem
             v-for="expense in categoryExpenses"
+            :id="expense.id"
             :key="expense.id"
+            v-model:expense="(useExpensesStore().expenseList[expense.id] as ExpenseInfo)"
             data-test="category expense"
-            :expense="expense"
+            :source-list="useSourcesStore().sourceList"
           />
         </template>
         <p v-else>
