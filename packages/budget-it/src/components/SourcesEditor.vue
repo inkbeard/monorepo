@@ -1,9 +1,24 @@
 <script setup lang="ts">
-  import { ref } from 'vue';
+  import { computed, ref } from 'vue';
   import { AppButton } from '@inkbeard/ui-vue';
   import { useSourcesStore } from '@/stores/sources';
   import SourceListing from '@/components/SourceListing.vue';
 
+  const {
+    addSource,
+    deleteSource,
+    sourceList,
+    sourcesWithExpenses,
+  } = useSourcesStore();
+  /**
+   * Get and set the store's default source id.
+   */
+  const defaultSourceId = computed({
+    get: () => useSourcesStore().defaultSourceId,
+    set: (sourceId) => {
+      useSourcesStore().defaultSourceId = sourceId;
+    },
+  });
   const isAdding = ref(false);
 </script>
 
@@ -22,12 +37,21 @@
   <ul>
     <SourceListing
       v-if="isAdding"
+      v-model:default-source-id="defaultSourceId"
       v-model:is-editing="isAdding"
+      :source-list="sourceList"
+      :sources-with-expenses="sourcesWithExpenses"
+      @add-source="addSource"
     />
     <SourceListing
       v-for="({ id }) in useSourcesStore().alphabaticSourceList"
-      :key="id"
+      :key="`source-list-${id}`"
+      v-model:default-source-id="defaultSourceId"
+      v-model:source-list="sourceList"
+      :expenses-from-sources="sourcesWithExpenses[id]?.length"
       :source-id="id"
+      :sources-with-expenses="sourcesWithExpenses"
+      @delete-source="deleteSource"
     />
   </ul>
 </template>
