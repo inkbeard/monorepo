@@ -1,6 +1,5 @@
 <script lang="ts" setup>
   import { ref } from 'vue';
-  // eslint-disable-next-line import/no-extraneous-dependencies
   import { AddCategory, ExpenseCategory, SourcesEditor } from '@inkbeard/budget-it';
 
   const defaultSourceId = ref(1);
