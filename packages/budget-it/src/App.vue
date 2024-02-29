@@ -1,8 +1,10 @@
 <script setup lang="ts">
   import AddCategory from '@/components/AddCategory.vue';
-  import ExportCategory from '@/components/ExpenseCategory.vue';
+  import ExpenseCategory from '@/components/ExpenseCategory.vue';
   import SourcesEditor from '@/components/SourcesEditor.vue';
   import { useCategoriesStore } from '@/stores/categories';
+  import { useExpensesStore } from '@/stores/expenses';
+  import { useSourcesStore } from '@/stores/sources';
 
   const { categoryList } = useCategoriesStore();
 </script>
@@ -15,10 +17,13 @@
           :category-list="categoryList"
           @add-category="useCategoriesStore().addCategory"
         />
-        <ExportCategory
+        <ExpenseCategory
           v-for="category in categoryList"
           :key="category.id"
           :category="category"
+          :category-list="categoryList"
+          :expense-list="useExpensesStore().expenseList"
+          :source-list="useSourcesStore().sourceList"
         />
       </div>
       <aside>

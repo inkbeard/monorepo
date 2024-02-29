@@ -1,8 +1,50 @@
-import { defineStore } from 'pinia';
-import type { ExpenseInfo, ExpenseList } from '@/types/expenses';
+import { ExpenseCategory } from '@inkbeard/budget-it';
 
-export const useExpensesStore = defineStore('expenses', {
-  state: () => ({
+// More on how to set up stories at: https://storybook.js.org/docs/vue/writing-stories/introduction
+export default {
+  title: 'Budget It/ExpenseCategory',
+  component: ExpenseCategory,
+  tags: ['autodocs'],
+  parameters: {
+    layout: 'padded',
+  },
+};
+export const SampleExpenseCategory = {
+  args: {
+    category: {
+      name: 'Entertainment',
+      id: 1,
+    },
+    categoryList: [
+      {
+        name: 'Entertainment',
+        id: 1,
+      },
+      {
+        name: 'Food',
+        id: 2,
+      },
+      {
+        name: 'Housing',
+        id: 3,
+      },
+      {
+        name: 'Transportation',
+        id: 4,
+      },
+      {
+        name: 'Utilities',
+        id: 5,
+      },
+      {
+        name: 'Clothing',
+        id: 6,
+      },
+      {
+        name: 'Medical',
+        id: 7,
+      },
+    ],
     expenseList: {
       1: {
         amount: 2,
@@ -69,24 +111,12 @@ export const useExpensesStore = defineStore('expenses', {
         order: 1,
         sourceId: 1,
       },
-    } as ExpenseList,
-  }),
-  actions: {
-    /**
-     * Add a new expense to the current list of expenses.
-     */
-    addExpense(expenseInfo: ExpenseInfo) {
-      this.expenseList[Object.keys(this.expenseList).length + 1] = expenseInfo;
     },
-    /**
-     * Delete a expense from the current list of expenses.
-     */
-    deleteExpense(expenseId: number) {
-      if (!this.expenseList[expenseId]) {
-        throw new Error(`No expense with id ${expenseId}`);
-      } else {
-        delete this.expenseList[expenseId];
-      }
+    sourceList: {
+      1: 'Credit Card',
+      3: 'Checking Account',
+      4: 'Savings Account',
+      5: 'Cash',
     },
   },
-});
+};
