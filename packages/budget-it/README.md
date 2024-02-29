@@ -1,68 +1,36 @@
-# vue-project
+# `budget-it`
+A vue-3 component library for budgeting applications.
 
-This template should help get you started developing with Vue 3 in Vite.
+## Dependency installation
+  Install the package in your workspace (either an app or package) with the following command:
 
-## Recommended IDE Setup
+  ```bash
+  pnpm add @inkbeard/budget-it --filter name-of-workspace
+  ```
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Install peer dependencies
+  The `@inkbeard/ui-vue` is a dependency for this package so it will need to be install as a dependency in your the package.json in your workspace as well.
 
-## Type Support for `.vue` Imports in TS
+  ```bash
+  pnpm add @inkbeard/ui-vue --filter name-of-workspace
+  ```
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## Plugin installation
+  The `@inkbeard/ui-vue` plugin needs to be installed in your app or package as well. Refer to the [ui-vue README](../ui-vue/README.md) for more information on how to install the plugin.
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+## Usage
+  To use the package in your app or package, import the components you need and use them in your templates.
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+  ```vue
+  <script lang="ts" setup>
+    import { SourcesEditor } from '@inkbeard/budget-it';
+  </script>
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-pnpm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-pnpm dev --filter budget-it
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-pnpm build --filter budget-it
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-pnpm test:unit --filter budget-it
-```
-
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
-
-```sh
-pnpm test:e2e:dev --filter budget-it
-```
-
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
-
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-pnpm build --filter budget-it
-pnpm test:e2e --filter budget-it
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-pnpm lint --filter budget-it
-```
+  <template>
+    <SourcesEditor
+      :default-source-id="defaultSourceId"
+      :expense-list="expenseList"
+      :source-list="sourceList"
+    />
+  </template>
+  ```
