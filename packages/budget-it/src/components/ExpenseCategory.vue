@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { computed, ref } from 'vue';
   import { AppButton } from '@inkbeard/ui-vue';
-  import type { CategoryInfo, ExpenseInfo, ExpenseList } from '@/types';
+  import type { CategoryInfo, ExpenseInfo, ExpenseList } from '../types';
   import ExpenseItem from './ExpenseItem.vue';
 
   const props = defineProps<{
@@ -43,7 +43,7 @@
         });
       }
       return acc;
-    }, [] as ExpenseInfo[])
+    }, [] as ({ id: number } & ExpenseInfo)[])
   ));
   /**
    * Get the total amount of all the expenses for this category.

@@ -27,7 +27,11 @@
         />
       </div>
       <aside>
-        <SourcesEditor />
+        <SourcesEditor
+          :default-source-id="useSourcesStore().defaultSourceId"
+          :expense-list="useExpensesStore().expenseList"
+          :source-list="useSourcesStore().sourceList"
+        />
       </aside>
     </section>
   </main>
