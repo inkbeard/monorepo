@@ -1,52 +1,40 @@
 <script setup lang="ts">
   import { computed, ref } from 'vue';
   import type { ExpenseInfo } from '@/types';
-  import { useExpensesStore } from '@/stores/expenses';
-  import { useSourcesStore } from '@/stores/sources';
   import { AppInputNumber, AppDropdown } from '@inkbeard/ui-vue';
 
   const props = defineProps<{
-    expense: ExpenseInfo;
+    sourceList: Record<string, string>;
   }>();
-  const { expenseList } = useExpensesStore();
-  const expenseAmount = ref(props.expense.amount);
-  const expenseSourceId = computed({
-    get: () => props.expense.sourceId,
-    set: (value: number) => {
-      const { id } = props.expense;
-
-      if (id) {
-        expenseList[id].sourceId = value;
-      }
-    },
-  });
-  const updateExpenseAmount = () => {
-    const { id } = props.expense;
-
-    if (id) {
-      expenseList[id].amount = expenseAmount.value;
-    }
-  };
+  const expense = defineModel<ExpenseInfo>('expense');
+  const expenseAmount = ref(expense.value!.amount);
+  /**
+   * Get an alphabatize list of sources and their IDs.
+   */
+  const alphabaticSourceList = computed(() => Object.entries(props.sourceList)
+    .map(([id, source]) => ({ source, id: +id }))
+    .sort((a, b) => a.source.toLowerCase().localeCompare(b.source.toLowerCase())));
 
 </script>
 
 <template>
   <form @submit.prevent>
     <AppInputNumber
-      :id="`${expense.categoryId}-${expense.name}`"
+      :id="`${expense!.categoryId}-${expense!.name}`"
       v-model="expenseAmount"
-      :input-id="`${expense.categoryId}-${expense.name}`"
-      :label="expense.name"
-      :label-description="expense.description"
-      @blur="updateExpenseAmount"
+      :input-id="`${expense!.categoryId}-${expense!.name}`"
+      :label="expense!.name"
+      :label-description="expense!.description"
+      @blur="expense!.amount = expenseAmount"
     />
     <AppDropdown
-      v-model="expenseSourceId"
+      :key="expense!.sourceId"
+      v-model="expense!.sourceId"
       input-id="expense-source"
       label="Source"
       option-label="source"
       option-value="id"
-      :options="useSourcesStore().alphabaticSourceList"
+      :options="alphabaticSourceList"
     />
   </form>
 </template>
