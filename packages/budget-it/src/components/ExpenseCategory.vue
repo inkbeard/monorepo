@@ -1,8 +1,7 @@
 <script setup lang="ts">
   import { computed, ref } from 'vue';
   import { AppButton } from '@inkbeard/ui-vue';
-  import type { ExpenseInfo } from '@/stores/expenses';
-  import type { CategoryInfo } from '@/stores/categories';
+  import type { ExpenseInfo, CategoryInfo } from '@/types';
   import { useCategoriesStore } from '@/stores/categories';
   import { useExpensesStore } from '@/stores/expenses';
   import ExpenseItem from './ExpenseItem.vue';
