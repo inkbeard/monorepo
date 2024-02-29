@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { computed, ref } from 'vue';
-  import type { ExpenseInfo } from '@/stores/expenses';
+  import type { ExpenseInfo } from '@/types';
   import { useExpensesStore } from '@/stores/expenses';
   import { useSourcesStore } from '@/stores/sources';
   import { AppInputNumber, AppDropdown } from '@inkbeard/ui-vue';
