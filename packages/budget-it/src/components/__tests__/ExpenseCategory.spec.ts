@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { shallowMount } from '@vue/test-utils';
+import type { ExpenseList } from '../../types';
 import ExpenseCategory from '../ExpenseCategory.vue';
 
 describe('ExpenseCategory', () => {
@@ -81,7 +82,7 @@ describe('ExpenseCategory', () => {
             order: 1,
             sourceId: 1,
           },
-        },
+        } as ExpenseList,
         sourceList: {
           1: 'Credit Card',
           3: 'Checking Account',

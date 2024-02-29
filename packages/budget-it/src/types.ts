@@ -14,7 +14,7 @@ export interface ExpenseInfo {
   /**
    * Unique identifier for the expense.
    */
-  id: number
+  id?: number
   /**
    * Name of the expense.
    */

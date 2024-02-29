@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { computed, ref } from 'vue';
   import { AppInputNumber, AppDropdown } from '@inkbeard/ui-vue';
-  import type { ExpenseInfo } from '@/types';
+  import type { ExpenseInfo } from '../types';
 
   const props = defineProps<{
     sourceList: Record<string, string>;
