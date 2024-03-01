@@ -30,7 +30,7 @@ export interface ExpenseInfo {
 }
 
 export interface ExpenseList {
-  [key: number]: ExpenseInfo;
+  [key: string]: ExpenseInfo;
 }
 
 /**
@@ -43,5 +43,10 @@ export interface CategoryInfo {
 }
 
 export interface SourceList {
-  [sourceId: number]: string;
+  [sourceId: string]: string;
 }
+
+/**
+ * The default source id that will be applied to expenses if no source is selected.
+ */
+export type NullOrNumber = null | number;

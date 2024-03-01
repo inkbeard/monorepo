@@ -7,7 +7,7 @@
     SourcesEditor,
   } from '@inkbeard/budget-it';
 
-  const defaultSourceId = ref(1);
+  const defaultSourceId = ref(null);
   const sourceList = ref({
     1: 'Credit Card',
     3: 'Checking Account',
@@ -119,8 +119,8 @@
     <BudgetIt
       v-model:category-list="categoryList"
       v-model:default-source-id="defaultSourceId"
+      v-model:source-list="sourceList"
       :expense-list="expenseList"
-      :source-list="sourceList"
     >
       <section>
         <div>
@@ -132,11 +132,7 @@
           />
         </div>
         <aside>
-          <SourcesEditor
-            :default-source-id="defaultSourceId"
-            :expense-list="expenseList"
-            :source-list="sourceList"
-          />
+          <SourcesEditor />
         </aside>
       </section>
     </BudgetIt>
