@@ -1,6 +1,11 @@
 <script lang="ts" setup>
   import { ref } from 'vue';
-  import { AddCategory, ExpenseCategory, SourcesEditor } from '@inkbeard/budget-it';
+  import {
+    AddCategory,
+    BudgetIt,
+    ExpenseCategory,
+    SourcesEditor,
+  } from '@inkbeard/budget-it';
 
   const defaultSourceId = ref(1);
   const sourceList = ref({
@@ -106,43 +111,38 @@
       sourceId: 1,
     },
   });
-  /**
-   * Add a new category to the current list of categories.
-   */
-  const addCategory = (name: string) => {
-    categoryList.value.unshift({
-      name: name.trim(),
-      id: categoryList.value.length + 1,
-    });
-  };
 
 </script>
 
 <template>
   <main>
-    <section>
-      <div>
-        <AddCategory
-          :category-list="categoryList"
-          @add-category="addCategory"
-        />
-        <ExpenseCategory
-          v-for="category in categoryList"
-          :key="category.id"
-          :category="category"
-          :category-list="categoryList"
-          :expense-list="expenseList"
-          :source-list="sourceList"
-        />
-      </div>
-      <aside>
-        <SourcesEditor
-          :default-source-id="defaultSourceId"
-          :expense-list="expenseList"
-          :source-list="sourceList"
-        />
-      </aside>
-    </section>
+    <BudgetIt
+      v-model:category-list="categoryList"
+      v-model:default-source-id="defaultSourceId"
+      :expense-list="expenseList"
+      :source-list="sourceList"
+    >
+      <section>
+        <div>
+          <AddCategory />
+          <ExpenseCategory
+            v-for="category in categoryList"
+            :key="category.id"
+            :category="category"
+            :category-list="categoryList"
+            :expense-list="expenseList"
+            :source-list="sourceList"
+          />
+        </div>
+        <aside>
+          <SourcesEditor
+            :default-source-id="defaultSourceId"
+            :expense-list="expenseList"
+            :source-list="sourceList"
+          />
+        </aside>
+      </section>
+    </BudgetIt>
   </main>
 </template>
 
