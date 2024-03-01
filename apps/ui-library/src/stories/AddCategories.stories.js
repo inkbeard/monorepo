@@ -6,7 +6,7 @@ export default {
   component: AddCategory,
   tags: ['autodocs'],
   parameters: {
-    layout: 'centered',
+    layout: 'padded',
   },
 };
 export const SampleCategoryList = {
