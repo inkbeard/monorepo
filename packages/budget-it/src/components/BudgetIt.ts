@@ -1,7 +1,7 @@
 import { ref } from 'vue';
 
 export function useBudgetIt() {
-  const defaultSourceId = ref(1);
+  const defaultSourceId = ref(null);
   const sourceList = ref({
     1: 'Credit Card',
     3: 'Checking Account',

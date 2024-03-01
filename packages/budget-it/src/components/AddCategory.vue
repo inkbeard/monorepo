@@ -1,22 +1,15 @@
 <script setup lang="ts">
-  import { ref, computed } from 'vue';
+  import { ref, computed, inject } from 'vue';
   import { AppButton } from '@inkbeard/ui-vue';
+  import type { CategoryInfo } from '../types';
 
-  const props = defineProps<{
-    categoryList: Array<any>;
-  }>();
-  const emits = defineEmits<{
-    /**
-     * Emit the category name.
-     */
-    (e: 'addCategory', categoryName: string): void
-  }>();
-
+  const categoryList = inject<CategoryInfo[]>('categoryList', []);
+  const addCategory = inject<Function>('addCategory', () => () => {});
   const categoryName = ref('');
   const isActive = ref(false);
   const isDisabled = computed(() => (
     !categoryName.value
-    || props.categoryList.some(({ name }) => (
+    || categoryList.some(({ name }) => (
       name.toLowerCase() === categoryName.value.trim().toLowerCase()))
   ));
 
@@ -25,10 +18,10 @@
     isActive.value = false;
   }
 
-  function addCategory() {
+  function addNewCategory() {
     if (isDisabled.value) return;
 
-    emits('addCategory', categoryName.value);
+    addCategory(categoryName.value);
     cancelEdit();
   }
 </script>
@@ -54,7 +47,7 @@
         id="add-category"
         v-model="categoryName"
         type="text"
-        @keydown.enter="addCategory"
+        @keydown.enter="addNewCategory"
       />
       <div class="button-group">
         <AppButton
@@ -67,7 +60,7 @@
           :disabled="isDisabled"
           label="Add"
           raised
-          @click="addCategory"
+          @click="addNewCategory"
         />
       </div>
     </div>
