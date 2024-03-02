@@ -1,12 +1,66 @@
 <script lang="ts" setup>
-  import { provide } from 'vue';
-  import type { CategoryInfo, ExpenseList, SourceList } from '../types';
+  import { computed, provide } from 'vue';
+  import type {
+    NullOrNumber, CategoryInfo, ExpenseList, SourceList,
+  } from '../types';
 
   const props = defineProps<{
-    sourceList: SourceList;
     expenseList: ExpenseList;
   }>();
-  const defaultSourceId = defineModel<number | null>('defaultSourceId');
+  provide('expenseList', props.expenseList);
+  /**
+   * The default source ID to use when adding a new expense.
+   */
+  const sourceList = defineModel<SourceList>('sourceList', { required: true });
+  /**
+   * The default source ID to use when adding a new expense.
+   */
+  const defaultSourceId = defineModel<NullOrNumber>('defaultSourceId', { required: true });
+  /**
+   * Get an alphabatize list of sources and their IDs.
+   */
+  const alphabaticSourceList = computed(() => Object.entries(sourceList.value as SourceList)
+    .map(([id, source]) => ({ source, id: +id }))
+    .sort((a, b) => a.source.toLowerCase().localeCompare(b.source.toLowerCase())));
+  /**
+   * Get the expenses associated with the sources.
+   */
+  const sourcesWithExpenses = computed(() => Object.entries(props.expenseList)
+    .reduce((acc: any, [id, { sourceId }]) => {
+      if (acc[sourceId]) {
+        acc[sourceId].push(id);
+      } else {
+        acc[sourceId] = [id];
+      }
+
+      return acc;
+    }, {}));
+  /**
+     * Add a new source to the current list of sources with the ID + 1 of the highest ID so far.
+     */
+  const addSource = (
+    { sourceName, isDefault }: { sourceName: string, isDefault?: boolean },
+  ): number => {
+    const newSourceId = Math.max(...Object.keys(sourceList.value as SourceList).map(Number)) + 1;
+
+    sourceList.value![newSourceId] = sourceName;
+
+    if (isDefault) {
+      defaultSourceId.value = newSourceId;
+    }
+
+    return newSourceId;
+  };
+  provide('addSource', addSource);
+  provide('alphabaticSourceList', alphabaticSourceList);
+  // provide('defaultSourceId', defaultSourceId.value); // why doesn't this work?!
+  provide('defaultSourceId', defaultSourceId);
+  provide('sourceList', sourceList.value);
+  provide('sourcesWithExpenses', sourcesWithExpenses);
+
+  /**
+   * Get the current list of categories.
+   */
   const categoryList = defineModel<CategoryInfo[]>('categoryList', { required: true });
   /**
    * Add a new category to the current list of categories.
@@ -18,10 +72,7 @@
     });
   };
 
-  provide('defaultSourceId', defaultSourceId.value);
-  provide('sourceList', props.sourceList);
   provide('categoryList', categoryList.value);
-  provide('expenseList', props.expenseList);
   provide('addCategory', addCategory);
 </script>
 

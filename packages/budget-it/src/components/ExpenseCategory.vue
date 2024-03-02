@@ -1,10 +1,15 @@
 <script setup lang="ts">
   import { computed, inject, ref } from 'vue';
   import { AppButton } from '@inkbeard/ui-vue';
-  import type { CategoryInfo, ExpenseInfo, ExpenseList } from '../types';
+  import type {
+    CategoryInfo,
+    ExpenseInfo,
+    ExpenseList,
+    SourceList,
+  } from '../types';
   import ExpenseItem from './ExpenseItem.vue';
 
-  const sourceList = inject<Record<string, string>>('sourceList');
+  const sourceList = inject<SourceList>('sourceList');
   const categoryList = inject<CategoryInfo[]>('categoryList', []);
   const expenseList = inject<ExpenseList>('expenseList', {});
   const props = defineProps<{
@@ -34,7 +39,7 @@
    * Get the information for all the expenses for this category.
    */
   const categoryExpenses = computed(() => (
-    Object.entries(expenseList as ExpenseList).reduce((acc, [id, expense]) => {
+    Object.entries(expenseList).reduce((acc, [id, expense]) => {
       if (expense.categoryId === props.category.id) {
         acc.push({
           ...expense,
@@ -84,14 +89,13 @@
         class="category-content"
       >
         <template v-if="categoryExpenses.length">
-          <!-- eslint-disable vue/valid-v-model -->
           <ExpenseItem
             v-for="expense in categoryExpenses"
             :id="expense.id"
             :key="expense.id"
             v-model:expense="expenseList[expense.id]"
             data-test="category expense"
-            :source-list="sourceList"
+            :source-list="sourceList as SourceList"
           />
         </template>
         <p v-else>
