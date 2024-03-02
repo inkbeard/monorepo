@@ -2,8 +2,9 @@
   import { inject, ref } from 'vue';
   import { AppButton } from '@inkbeard/ui-vue';
   import SourceListing from './SourceListing.vue';
+  import type { LabelsAndIds } from '../types';
 
-  const alphabaticSourceList = inject<({ source: string, id: number }[])>('alphabaticSourceList', []);
+  const alphabaticSourceList = inject<LabelsAndIds>('alphabaticSourceList', []);
   const isAdding = ref(false);
 </script>
 

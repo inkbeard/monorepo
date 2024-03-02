@@ -1,19 +1,11 @@
 <script setup lang="ts">
-  import { computed, ref } from 'vue';
+  import { inject, ref } from 'vue';
   import { AppInputNumber, AppDropdown } from '@inkbeard/ui-vue';
-  import type { ExpenseInfo } from '../types';
+  import type { ExpenseInfo, LabelsAndIds } from '../types';
 
-  const props = defineProps<{
-    sourceList: Record<string, string>;
-  }>();
   const expense = defineModel<ExpenseInfo>('expense', { required: true });
   const expenseAmount = ref(expense.value.amount);
-  /**
-   * Get an alphabatize list of sources and their IDs.
-   */
-  const alphabaticSourceList = computed(() => Object.entries(props.sourceList)
-    .map(([id, source]) => ({ source, id: +id }))
-    .sort((a, b) => a.source.toLowerCase().localeCompare(b.source.toLowerCase())));
+  const alphabaticSourceList = inject<LabelsAndIds>('alphabaticSourceList', []);
 
 </script>
 
@@ -32,7 +24,7 @@
       v-model="expense.sourceId"
       input-id="expense-source"
       label="Source"
-      option-label="source"
+      option-label="label"
       option-value="id"
       :options="alphabaticSourceList"
     />

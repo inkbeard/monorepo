@@ -1,7 +1,11 @@
 <script lang="ts" setup>
   import { computed, provide } from 'vue';
   import type {
-    NullOrNumber, CategoryInfo, ExpenseList, SourceList,
+    NullOrNumber,
+    CategoryInfo,
+    ExpenseList,
+    LabelsAndIds,
+    SourceList,
   } from '../types';
 
   const props = defineProps<{
@@ -20,8 +24,8 @@
    * Get an alphabatize list of sources and their IDs.
    */
   const alphabaticSourceList = computed(() => Object.entries(sourceList.value as SourceList)
-    .map(([id, source]) => ({ source, id: +id }))
-    .sort((a, b) => a.source.toLowerCase().localeCompare(b.source.toLowerCase())));
+    .map(([id, label]) => ({ label, id: +id }))
+    .sort((a, b) => a.label.toLowerCase().localeCompare(b.label.toLowerCase())) as LabelsAndIds);
   /**
    * Get the expenses associated with the sources.
    */
