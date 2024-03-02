@@ -20,7 +20,6 @@
       @blur="expense.amount = expenseAmount"
     />
     <AppDropdown
-      :key="expense.sourceId"
       v-model="expense.sourceId"
       input-id="expense-source"
       label="Source"

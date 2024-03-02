@@ -1,13 +1,14 @@
 import { ref } from 'vue';
+import type { NullOrNumber, SourceList } from '../types';
 
 export function useBudgetIt() {
-  const defaultSourceId = ref(null);
-  const sourceList = ref({
+  const defaultSourceId = ref<NullOrNumber>(null);
+  const sourceList = ref<SourceList>({
     1: 'Credit Card',
     3: 'Checking Account',
     4: 'Savings Account',
     5: 'Cash',
-  } as Record<number, string>);
+  });
   const categoryList = ref([
     {
       name: 'Entertainment',
