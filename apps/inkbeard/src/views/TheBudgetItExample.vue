@@ -7,7 +7,7 @@
     SourcesEditor,
   } from '@inkbeard/budget-it';
 
-  const defaultSourceId = ref(null);
+  const defaultSourceId = ref(1);
   const sourceList = ref({
     1: 'Credit Card',
     3: 'Checking Account',

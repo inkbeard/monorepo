@@ -5,6 +5,7 @@
     AppButton,
     AppDropdown,
     AppInputNumber,
+    AppInputText,
   } from '@inkbeard/ui-vue';
   import type {
     CategoryInfo,
@@ -105,36 +106,55 @@
         v-if="isOpen"
         class="category-content"
       >
-        <form v-if="isAddingExpense">
-          <AppFormGroup
-            input-id="new-name"
-            label="New expense"
-            label-description="Add a new expense to this category."
-          >
-            <input id="new-name" v-model="newExpense.name" type="text" />
-          </AppFormGroup>
-          <AppFormGroup
-            input-id="new-description"
-            label="New description"
-            label-description="Add a new expense to this category."
-          >
-            <input id="new-description" v-model="newExpense.description" type="text" />
-          </AppFormGroup>
-          <AppInputNumber
-            :id="`${newExpense.categoryId}-${newExpense.name}`"
-            v-model="newExpense.amount"
-            :input-id="`${newExpense.categoryId}-${newExpense.name}`"
-            :label="newExpense.name"
-            :label-description="newExpense.description"
-          />
-          <AppDropdown
-            v-model="newExpense.sourceId"
-            input-id="expense-source"
-            label="Source"
-            option-label="label"
-            option-value="id"
-            :options="alphabaticSourceList"
-          />
+        <form
+          v-if="isAddingExpense"
+          class="add-expense-form"
+        >
+          <div class="expense-form-inputs">
+            <AppInputText
+              input-id="new-name"
+              label="Name"
+              label-description="Add a new expense to this category."
+            />
+            <AppInputText
+              input-id="new-description"
+              label="Description"
+              label-description="Add any notes for this expense you would like to remember later."
+            />
+            <AppInputNumber
+              :id="`${newExpense.categoryId}-${newExpense.name}`"
+              v-model="newExpense.amount"
+              :input-id="`${newExpense.categoryId}-${newExpense.name}`"
+              label="Amount"
+              :label-description="newExpense.description"
+            />
+            <AppDropdown
+              v-model="newExpense.sourceId"
+              input-id="expense-source"
+              label="Source"
+              option-label="label"
+              option-value="id"
+              :options="alphabaticSourceList"
+            />
+          </div>
+          <div class="btn-group align-end">
+            <AppButton
+              data-test="cancel add expense"
+              icon="fa-solid fa-xmark"
+              label="Cancel"
+              severity="secondary"
+              text
+              @click="isAddingExpense = false"
+            />
+            <AppButton
+              class="submit"
+              data-test="submit add expense"
+              icon="fa-solid fa-check"
+              label="Submit"
+              severity="primary"
+              @click="isAddingExpense = false"
+            />
+          </div>
         </form>
         <AppButton
           v-else
@@ -156,9 +176,6 @@
             :source-list="sourceList as SourceList"
           />
         </template>
-        <p v-else>
-          No expenses in for "{{ category.name }}."
-        </p>
       </div>
     </div>
     <AppButton
@@ -176,6 +193,28 @@
 .add-expense {
   width: calc(100% - 2rem);
   margin: 1rem;
+}
+
+.add-expense-form {
+  padding-bottom: 1rem;
+  background-color: var(--ink-white-mute);
+  border-bottom: 1px solid var(--ink-border-color-dark);
+}
+
+.btn-group {
+  margin: 0 1rem;
+}
+
+.expense-form-inputs {
+  display: flex;
+  align-self: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-top: 1px solid var(--ink-border-color-dark);
+
+  > * {
+    flex: 1;
+  }
 }
 
 .category-container {
