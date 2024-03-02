@@ -29,38 +29,8 @@ export interface ExpenseInfo {
   /**
    * Source Id of the expense that is mapped from the sources store.
    */
-  sourceId: null | number
+  sourceId: number
 }
-
-// export class Expense implements ExpenseInfo {
-//   categoryId: number;
-
-//   name: string;
-
-//   order: number;
-
-//   sourceId: number;
-
-//   description: string;
-
-//   amount: number;
-
-//   constructor(
-//     categoryId: number,
-//     name: string,
-//     order: number,
-//     sourceId: number,
-//     description: string,
-//     amount: number,
-//   ) {
-//     this.categoryId = categoryId;
-//     this.name = name;
-//     this.order = order;
-//     this.sourceId = sourceId;
-//     this.description = description;
-//     this.amount = amount;
-//   }
-// }
 
 /**
  * A dictionary of expenses with a `[expenseId]: ExpenseInfo` pair.

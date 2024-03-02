@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { ref, computed, inject } from 'vue';
-  import { AppButton } from '@inkbeard/ui-vue';
+  import { AppInputText, AppButton } from '@inkbeard/ui-vue';
   import type { CategoryInfo } from '../types';
 
   const categoryList = inject<CategoryInfo[]>('categoryList', []);
@@ -30,7 +30,7 @@
   <div class="add-category-container">
     <div
       v-if="!isActive"
-      class="button-group"
+      class="btn-group align-end"
     >
       <AppButton
         icon="fa-solid fa-plus"
@@ -40,24 +40,24 @@
       />
     </div>
     <div v-else>
-      <label for="add-category">
-        Category Name:
-      </label>
-      <input
-        id="add-category"
+      <AppInputText
         v-model="categoryName"
-        type="text"
+        class="add-category-input"
+        input-id="add-category"
+        label="Category name"
         @keydown.enter="addNewCategory"
       />
-      <div class="button-group">
+      <div class="btn-group align-end">
         <AppButton
+          icon="fa-solid fa-xmark"
           label="Cancel"
-          raised
           severity="secondary"
+          text
           @click="cancelEdit"
         />
         <AppButton
           :disabled="isDisabled"
+          icon="fa-solid fa-check"
           label="Add"
           raised
           @click="addNewCategory"
@@ -72,27 +72,7 @@
   padding: 1rem;
 }
 
-.button-group {
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
-}
-
-label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-}
-
-input {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+::v-deep(.add-category-input) {
   margin-bottom: 1rem;
-}
-
-button {
-  cursor: pointer;
 }
 </style>
