@@ -129,9 +129,6 @@
             v-for="category in categoryList"
             :key="category.id"
             :category="category"
-            :category-list="categoryList"
-            :expense-list="expenseList"
-            :source-list="sourceList"
           />
         </div>
         <aside>

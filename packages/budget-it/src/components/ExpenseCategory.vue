@@ -1,12 +1,14 @@
 <script setup lang="ts">
-  import { computed, ref } from 'vue';
+  import { computed, inject, ref } from 'vue';
   import { AppButton } from '@inkbeard/ui-vue';
   import type { CategoryInfo, ExpenseInfo, ExpenseList } from '../types';
   import ExpenseItem from './ExpenseItem.vue';
 
+  const sourceList = inject<Record<string, string>>('sourceList');
+  const categoryList = inject<CategoryInfo[]>('categoryList', []);
+  const expenseList = inject<ExpenseList>('expenseList', {});
   const props = defineProps<{
     category: CategoryInfo,
-    sourceList: Record<string, string>,
   }>();
   const emits = defineEmits<{
     /**
@@ -14,28 +16,25 @@
      */
     (e: 'deleteCategory', categoryId: number): void
   }>();
-
-  const categoryList = defineModel<CategoryInfo[]>('categoryList', { required: true });
-  const expenseList = defineModel<ExpenseList>('expenseList', { required: true });
-
+  const isOpen = ref(false);
   /**
    * Delete a category from the current list of categories.
    */
   const deleteCategory = () => {
-    const index = categoryList.value.findIndex(({ id }) => id === props.category.id) ?? -1;
+    const index = categoryList.findIndex(({ id }) => id === props.category.id) ?? -1;
 
     if (index === -1) {
       return;
     }
 
-    categoryList.value.splice(index, 1);
+    categoryList.splice(index, 1);
     emits('deleteCategory', props.category.id);
   };
   /**
    * Get the information for all the expenses for this category.
    */
   const categoryExpenses = computed(() => (
-    Object.entries(expenseList.value as ExpenseList).reduce((acc, [id, expense]) => {
+    Object.entries(expenseList as ExpenseList).reduce((acc, [id, expense]) => {
       if (expense.categoryId === props.category.id) {
         acc.push({
           ...expense,
@@ -51,7 +50,6 @@
   const totalExpenses = computed(() => (
     categoryExpenses.value.reduce((acc, expense) => acc + expense.amount, 0)
   ));
-  const isOpen = ref(false);
 </script>
 
 <template>
