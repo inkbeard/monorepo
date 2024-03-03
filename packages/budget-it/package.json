@@ -2,7 +2,8 @@
   "name": "@inkbeard/budget-it",
   "version": "0.2.0",
   "exports": {
-    ".": "./index.ts"
+    ".": "./index.ts",
+    "./types": "./types.ts"
   },
   "scripts": {
     "build": "run-p type-check \"build-only {@}\" --",
@@ -11,7 +12,7 @@
     "test:e2e": "start-server-and-test preview http://localhost:4173 'cypress run --e2e'",
     "test:e2e:dev": "start-server-and-test 'vite dev --port 4173' http://localhost:4173 'cypress open --e2e'",
     "build-only": "vite build",
-    "type-check": "vue-tsc --build --force",
+    "type-check": "vue-tsc --build --force --declaration --emitDeclarationOnly",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore",
     "lint:fix": "pnpm lint --fix",
     "stylelint": "stylelint \"**/*.{css,scss,vue}\""

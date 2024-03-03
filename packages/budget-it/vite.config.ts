@@ -19,6 +19,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: fileURLToPath(new URL('./index.ts', import.meta.url)),
+        types: './src/types.ts',
       },
       external: [
         // 'primevue',

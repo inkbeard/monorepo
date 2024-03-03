@@ -78,6 +78,13 @@
 
   provide('categoryList', categoryList.value);
   provide('addCategory', addCategory);
+
+  defineExpose({
+    addSource,
+    addCategory,
+    alphabaticSourceList,
+    sourcesWithExpenses,
+  });
 </script>
 
 <template>

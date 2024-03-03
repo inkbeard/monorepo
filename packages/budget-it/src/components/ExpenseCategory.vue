@@ -1,7 +1,6 @@
 <script setup lang="ts">
   import { computed, inject, ref } from 'vue';
   import {
-    AppFormGroup,
     AppButton,
     AppDropdown,
     AppInputNumber,
@@ -36,7 +35,7 @@
     categoryId: props.category.id,
     amount: 0,
     name: '',
-    sourceId: defaultSourceId,
+    sourceId: defaultSourceId as number,
     order: 0,
   });
   const isAddingExpense = defineModel<boolean>('isAddingExpense');
@@ -106,65 +105,68 @@
         v-if="isOpen"
         class="category-content"
       >
-        <form
-          v-if="isAddingExpense"
-          class="add-expense-form"
-        >
-          <div class="expense-form-inputs">
-            <AppInputText
-              input-id="new-name"
-              label="Name"
-              label-description="Add a new expense to this category."
-            />
-            <AppInputText
-              input-id="new-description"
-              label="Description"
-              label-description="Add any notes for this expense you would like to remember later."
-            />
-            <AppInputNumber
-              :id="`${newExpense.categoryId}-${newExpense.name}`"
-              v-model="newExpense.amount"
-              :input-id="`${newExpense.categoryId}-${newExpense.name}`"
-              label="Amount"
-              :label-description="newExpense.description"
-            />
-            <AppDropdown
-              v-model="newExpense.sourceId"
-              input-id="expense-source"
-              label="Source"
-              option-label="label"
-              option-value="id"
-              :options="alphabaticSourceList"
-            />
-          </div>
-          <div class="btn-group align-end">
-            <AppButton
-              data-test="cancel add expense"
-              icon="fa-solid fa-xmark"
-              label="Cancel"
-              severity="secondary"
-              text
-              @click="isAddingExpense = false"
-            />
-            <AppButton
-              class="submit"
-              data-test="submit add expense"
-              icon="fa-solid fa-check"
-              label="Submit"
-              severity="primary"
-              @click="isAddingExpense = false"
-            />
-          </div>
-        </form>
-        <AppButton
-          v-else
-          class="add-expense"
-          data-test="add expense"
-          icon="fa-duotone fa-plus"
-          label="Add expense"
-          severity="primary"
-          @click="isAddingExpense = true"
-        />
+        <div class="add-expense-container">
+          <form
+            v-if="isAddingExpense"
+            class="add-expense-form"
+          >
+            <div class="expense-form-inputs">
+              <AppInputText
+                input-id="new-name"
+                label="Name"
+                label-description="Add a new expense to this category."
+              />
+              <AppInputText
+                input-id="new-description"
+                label="Description"
+                label-description="Add any notes for this expense you would like to remember later."
+              />
+              <AppInputNumber
+                :id="`${newExpense.categoryId}-${newExpense.name}`"
+                v-model="newExpense.amount"
+                :input-id="`${newExpense.categoryId}-${newExpense.name}`"
+                label="Amount"
+                :label-description="newExpense.description"
+              />
+              <AppDropdown
+                v-model="newExpense.sourceId"
+                input-id="expense-source"
+                label="Source"
+                option-label="label"
+                option-value="id"
+                :options="alphabaticSourceList"
+              />
+            </div>
+            <div class="btn-group align-end">
+              <AppButton
+                data-test="cancel add expense"
+                icon="fa-solid fa-xmark"
+                label="Cancel"
+                severity="secondary"
+                text
+                @click="isAddingExpense = false"
+              />
+              <AppButton
+                class="submit"
+                data-test="submit add expense"
+                icon="fa-solid fa-check"
+                label="Submit"
+                severity="primary"
+                @click="isAddingExpense = false"
+              />
+            </div>
+          </form>
+          <AppButton
+            v-else
+            class="add-expense"
+            data-test="add expense"
+            icon="fa-duotone fa-plus"
+            is-full-width
+            label="Add expense"
+            severity="primary"
+            @click="isAddingExpense = true"
+          />
+        </div>
 
         <template v-if="categoryExpenses.length">
           <ExpenseItem
@@ -190,27 +192,22 @@
 </template>
 
 <style scoped>
-.add-expense {
-  width: calc(100% - 2rem);
-  margin: 1rem;
-}
-
-.add-expense-form {
-  padding-bottom: 1rem;
+.add-expense-container {
+  padding: 1rem;
   background-color: var(--ink-white-mute);
   border-bottom: 1px solid var(--ink-border-color-dark);
 }
 
-.btn-group {
-  margin: 0 1rem;
-}
+/*
+.add-expense {
+  width: 100%;
+} */
 
 .expense-form-inputs {
   display: flex;
   align-self: center;
   gap: 1rem;
-  padding: 1rem;
-  border-top: 1px solid var(--ink-border-color-dark);
+  padding-bottom: 1rem;
 
   > * {
     flex: 1;

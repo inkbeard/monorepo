@@ -112,11 +112,15 @@
     },
   });
 
+  const budgetIt = ref(null);
+  console.log(budgetIt.value.alphabaticSourceList);
+
 </script>
 
 <template>
   <main>
     <BudgetIt
+      ref="budgetIt"
       v-model:category-list="categoryList"
       v-model:default-source-id="defaultSourceId"
       v-model:source-list="sourceList"
