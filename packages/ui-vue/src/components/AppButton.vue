@@ -1,6 +1,16 @@
 <script lang="ts" setup>
   import Button from 'primevue/button';
 
+  export interface Props {
+    /**
+     * Whether the button should be full width and center the text/icon.
+     */
+    isFullWidth?: boolean;
+  }
+
+  withDefaults(defineProps<Props>(), {
+    isFullWidth: false,
+  });
   defineOptions({
     inheritAttrs: false,
   });
@@ -11,7 +21,7 @@
     v-bind="$attrs"
     :pt="{
       root: {
-        class: 'app-button',
+        class: `app-button ${isFullWidth ? 'is-full-width' : ''}`,
       },
     }"
   >
@@ -30,6 +40,15 @@
 
   &.align-start {
     justify-content: flex-start;
+  }
+}
+
+.app-button.is-full-width {
+  width: 100%;
+  justify-content: center;
+
+  .p-button-label {
+    flex: inherit;
   }
 }
 
