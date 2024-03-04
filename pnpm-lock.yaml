@@ -186,8 +186,8 @@ importers:
         specifier: ^8.0.0-beta.2
         version: 8.0.0-beta.2
       '@storybook/blocks':
-        specifier: ^8.0.0-beta.2
-        version: 8.0.0-beta.2(@types/react@18.2.5)(react-dom@18.2.0)(react@18.2.0)
+        specifier: ^8.0.0-rc.1
+        version: 8.0.0-rc.1(@types/react@18.2.5)(react-dom@18.2.0)(react@18.2.0)
       '@storybook/test':
         specifier: ^8.0.0-rc.1
         version: 8.0.0-rc.1
@@ -3242,6 +3242,49 @@ packages:
       - supports-color
     dev: true
 
+  /@storybook/blocks@8.0.0-rc.1(@types/react@18.2.5)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-AkFJPxetXgcVWyv2KyNud/za8p+UnHdMSnDXeEl9TEnh13A3pxby0ogOghIbtb28pW4yagc9rigpAeR71lQJMA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      '@storybook/channels': 8.0.0-rc.1
+      '@storybook/client-logger': 8.0.0-rc.1
+      '@storybook/components': 8.0.0-rc.1(@types/react@18.2.5)(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/core-events': 8.0.0-rc.1
+      '@storybook/csf': 0.1.2
+      '@storybook/docs-tools': 8.0.0-rc.1
+      '@storybook/global': 5.0.0
+      '@storybook/icons': 1.2.5(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/manager-api': 8.0.0-rc.1(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/preview-api': 8.0.0-rc.1
+      '@storybook/theming': 8.0.0-rc.1(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/types': 8.0.0-rc.1
+      '@types/lodash': 4.14.202
+      color-convert: 2.0.1
+      dequal: 2.0.3
+      lodash: 4.17.21
+      markdown-to-jsx: 7.3.2(react@18.2.0)
+      memoizerific: 1.11.3
+      polished: 4.3.1
+      react: 18.2.0
+      react-colorful: 5.6.1(react-dom@18.2.0)(react@18.2.0)
+      react-dom: 18.2.0(react@18.2.0)
+      telejson: 7.2.0
+      tocbot: 4.25.0
+      ts-dedent: 2.2.0
+      util-deprecate: 1.0.2
+    transitivePeerDependencies:
+      - '@types/react'
+      - encoding
+      - supports-color
+    dev: true
+
   /@storybook/builder-manager@8.0.0-beta.2:
     resolution: {integrity: sha512-YC9UFESllCLmo69R8xktieWcesCbJiDxeAhMdn9mosQLSOvPlZ/ElivTx423Ombrs3saXAxtLVY5rQJQKSUHEw==}
     dependencies:
@@ -3460,6 +3503,27 @@ packages:
       '@storybook/icons': 1.2.5(react-dom@18.2.0)(react@18.2.0)
       '@storybook/theming': 8.0.0-beta.2(react-dom@18.2.0)(react@18.2.0)
       '@storybook/types': 8.0.0-beta.2
+      memoizerific: 1.11.3
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      util-deprecate: 1.0.2
+    transitivePeerDependencies:
+      - '@types/react'
+    dev: true
+
+  /@storybook/components@8.0.0-rc.1(@types/react@18.2.5)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-yOL/m3s/uhjhMgy0FdjQZFDn3FOcbx9R0SA0ba07RLJ9qKQU6Ece5yg25Xp+kvAz643EwNr0HcpyfIvCMj0U7w==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      '@radix-ui/react-slot': 1.0.2(@types/react@18.2.5)(react@18.2.0)
+      '@storybook/client-logger': 8.0.0-rc.1
+      '@storybook/csf': 0.1.2
+      '@storybook/global': 5.0.0
+      '@storybook/icons': 1.2.5(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/theming': 8.0.0-rc.1(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/types': 8.0.0-rc.1
       memoizerific: 1.11.3
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -3797,6 +3861,21 @@ packages:
       '@storybook/core-common': 8.0.0-beta.3
       '@storybook/preview-api': 8.0.0-beta.3
       '@storybook/types': 8.0.0-beta.3
+      '@types/doctrine': 0.0.3
+      assert: 2.1.0
+      doctrine: 3.0.0
+      lodash: 4.17.21
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
+    dev: true
+
+  /@storybook/docs-tools@8.0.0-rc.1:
+    resolution: {integrity: sha512-KmXVzD32fQ7wRfktTHobnczv/NreNFtHg2fKj6HZqrmL/TluDkIfF5MQMz7+u+gVz0OKV6REcwqLIVB5VKxEqg==}
+    dependencies:
+      '@storybook/core-common': 8.0.0-rc.1
+      '@storybook/preview-api': 8.0.0-rc.1
+      '@storybook/types': 8.0.0-rc.1
       '@types/doctrine': 0.0.3
       assert: 2.1.0
       doctrine: 3.0.0
