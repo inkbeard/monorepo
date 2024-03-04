@@ -189,8 +189,8 @@ importers:
         specifier: ^8.0.0-beta.2
         version: 8.0.0-beta.2(@types/react@18.2.5)(react-dom@18.2.0)(react@18.2.0)
       '@storybook/test':
-        specifier: ^8.0.0-beta.2
-        version: 8.0.0-beta.2
+        specifier: ^8.0.0-rc.1
+        version: 8.0.0-rc.1
       '@storybook/vue3':
         specifier: ^8.0.0-beta.3
         version: 8.0.0-beta.3(vue@3.4.19)
@@ -3821,14 +3821,14 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: true
 
-  /@storybook/instrumenter@8.0.0-beta.2:
-    resolution: {integrity: sha512-44W0krseJHhJ4u8auD2QB6civNjBWdAuc7pxJ/IYgIO7Hd3yGnJpDrcOUpaUpPT3WhLFpbbASjQIlauED0DiXw==}
+  /@storybook/instrumenter@8.0.0-rc.1:
+    resolution: {integrity: sha512-YxB7UlU+s7D4Qjc2jor+pEBzGHFKCHgqaw15DoU1g2e6bSrzavg9NvcOkduqMUEh3hmuw0PXnLzHIC7epul1oQ==}
     dependencies:
-      '@storybook/channels': 8.0.0-beta.2
-      '@storybook/client-logger': 8.0.0-beta.2
-      '@storybook/core-events': 8.0.0-beta.2
+      '@storybook/channels': 8.0.0-rc.1
+      '@storybook/client-logger': 8.0.0-rc.1
+      '@storybook/core-events': 8.0.0-rc.1
       '@storybook/global': 5.0.0
-      '@storybook/preview-api': 8.0.0-beta.2
+      '@storybook/preview-api': 8.0.0-rc.1
       '@vitest/utils': 0.34.7
       util: 0.12.5
     dev: true
@@ -4016,16 +4016,16 @@ packages:
       - supports-color
     dev: true
 
-  /@storybook/test@8.0.0-beta.2:
-    resolution: {integrity: sha512-sMo5mUKMOLoPMOWvAvK++V9Db6qO5bgGr1JLmnX+1YTh3mzZzOlsKe5nEKdEBjT1iI1OstypDg+oKHAEfg5Oag==}
+  /@storybook/test@8.0.0-rc.1:
+    resolution: {integrity: sha512-yojmb5MBHSgIRuFQacNVTosyryfbsUBeM3YGHllOwOl7O2A72nwjyP5Zs73QmmZ9Z5zOENPRh/oDGlbinvdRIQ==}
     dependencies:
-      '@storybook/client-logger': 8.0.0-beta.2
-      '@storybook/core-events': 8.0.0-beta.2
-      '@storybook/instrumenter': 8.0.0-beta.2
-      '@storybook/preview-api': 8.0.0-beta.2
+      '@storybook/client-logger': 8.0.0-rc.1
+      '@storybook/core-events': 8.0.0-rc.1
+      '@storybook/instrumenter': 8.0.0-rc.1
+      '@storybook/preview-api': 8.0.0-rc.1
       '@testing-library/dom': 9.3.4
       '@testing-library/jest-dom': 6.4.2
-      '@testing-library/user-event': 14.3.0(@testing-library/dom@9.3.4)
+      '@testing-library/user-event': 14.5.2(@testing-library/dom@9.3.4)
       '@vitest/expect': 1.1.3
       '@vitest/spy': 1.2.2
       chai: 4.3.10
@@ -4225,8 +4225,8 @@ packages:
       redent: 3.0.0
     dev: true
 
-  /@testing-library/user-event@14.3.0(@testing-library/dom@9.3.4):
-    resolution: {integrity: sha512-P02xtBBa8yMaLhK8CzJCIns8rqwnF6FxhR9zs810flHOBXUYCFjLd8Io1rQrAkQRWEmW2PGdZIEdMxf/KLsqFA==}
+  /@testing-library/user-event@14.5.2(@testing-library/dom@9.3.4):
+    resolution: {integrity: sha512-YAh82Wh4TIrxYLmfGcixwD18oIjyC1pFQC2Y01F2lzV2HTMiYrI0nze0FD0ocB//CKS/7jIUgae+adPqxK5yCQ==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
       '@testing-library/dom': '>=7.21.4'
