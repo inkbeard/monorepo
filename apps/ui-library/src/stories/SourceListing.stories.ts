@@ -1,40 +1,33 @@
 import { SourceListing } from '@inkbeard/budget-it';
+import { ref, provide } from 'vue';
 
-// More on how to set up stories at: https://storybook.js.org/docs/vue/writing-stories/introduction
+export const CashSourceListing = {};
+
 export default {
   title: 'Budget It/SourceListing',
-  component: SourceListing,
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },
-};
+  render: (args: any) => ({
+    components: { SourceListing },
+    setup() {
+      provide('defaultSourceId', 1);
+      provide('sourceList', {
+        1: 'Credit Card',
+        3: 'Checking Account',
+        4: 'Savings Account',
+        5: 'Cash',
+      });
+      provide('sourcesWithExpenses', {
+        1: ['1', '4', '5', '8', '10'],
+        3: ['3', '7'],
+        4: ['9'],
+        5: ['2']
+      });
 
-export const SampleCategoryList = {
-  args: {
-    sourceId: 1,
-    sourceList: {
-      1: 'Credit Card',
-      3: 'Checking Account',
-      4: 'Savings Account',
-      5: 'Cash',
+      return { args };
     },
-    expensesFromSources: 2,
-    isEditing: false,
-  },
-  argTypes: {
-    sourceId: {
-      control: {
-        type: 'number',
-        max: 1,
-        min: 1,
-      },
-    },
-    expensesFromSources: {
-      control: {
-        type: 'number',
-        min: 0,
-      },
-    },
-  },
+    template: '<SourceListing :is-editing="false" :source-id="1" />',
+  }),
 };
