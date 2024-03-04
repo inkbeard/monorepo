@@ -6,8 +6,17 @@
     inheritAttrs: false,
   });
   defineProps<{
+    /**
+     * The label for the input.
+     */
     label: string;
+    /**
+     * The description for the label that will appear in a tooltip.
+     */
     labelDescription?: string;
+    /**
+     * The id for the input that will be used to associate the label with the input.
+     */
     inputId: string;
   }>();
 </script>
