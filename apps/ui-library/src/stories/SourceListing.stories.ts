@@ -1,14 +1,7 @@
 import { SourceListing } from '@inkbeard/budget-it';
 import { ref, provide } from 'vue';
 
-export const CashSourceListing = {};
-
-export default {
-  title: 'Budget It/SourceListing',
-  tags: ['autodocs'],
-  parameters: {
-    layout: 'centered',
-  },
+export const CashSourceListing = {
   render: (args: any) => ({
     components: { SourceListing },
     setup() {
@@ -28,6 +21,18 @@ export default {
 
       return { args };
     },
-    template: '<SourceListing :is-editing="false" :source-id="1" />',
+    template: '<SourceListing :is-editing="args.isEditing" :source-id="args.sourceId" />',
   }),
+};
+
+export default {
+  title: 'Budget It/SourceListing',
+  tags: ['autodocs'],
+  parameters: {
+    layout: 'centered',
+  },
+  args: {
+    isEditing: false,
+    sourceId: 1,
+  }
 };

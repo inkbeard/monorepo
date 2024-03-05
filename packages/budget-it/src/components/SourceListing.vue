@@ -4,6 +4,9 @@
   import type { NullOrNumber, SourceList } from '../types';
 
   const props = defineProps<{
+    /**
+     * The id of the source to display.
+     */
     sourceId?: number;
   }>();
   const addSource = inject<Function>('addSource', () => () => {});
@@ -11,6 +14,9 @@
   const sourceList = inject<SourceList>('sourceList', {});
   const sourcesWithExpenses = inject<Record<string, string[]>>('sourcesWithExpenses', {});
   const isDefault = ref(false);
+  /**
+   * Whether the user is currently editing a source.
+   */
   const isEditing = defineModel<boolean>('isEditing');
   const sourceName = ref('');
 
