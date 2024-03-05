@@ -6,7 +6,10 @@
   const categoryList = inject<CategoryInfo[]>('categoryList', []);
   const addCategory = inject<Function>('addCategory', () => () => {});
   const categoryName = ref('');
-  const isActive = ref(false);
+  /**
+   * Whether the user is currently adding a new category.
+   */
+  const isAdding = defineModel<boolean>('isAdding');
   const isDisabled = computed(() => (
     !categoryName.value
     || categoryList.some(({ name }) => (
@@ -15,7 +18,7 @@
 
   function cancelEdit() {
     categoryName.value = '';
-    isActive.value = false;
+    isAdding.value = false;
   }
 
   function addNewCategory() {
@@ -29,14 +32,14 @@
 <template>
   <div class="add-category-container">
     <div
-      v-if="!isActive"
+      v-if="!isAdding"
       class="button-group"
     >
       <AppButton
         icon="fa-solid fa-plus"
         label="Add category"
         raised
-        @click="isActive = true"
+        @click="isAdding = true"
       />
     </div>
     <div v-else>
