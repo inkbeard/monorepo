@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { computed, inject, ref } from 'vue';
+  import { computed, inject } from 'vue';
   import { AppButton } from '@inkbeard/ui-vue';
   import type {
     CategoryInfo,
@@ -10,10 +10,13 @@
   import ExpenseItem from './ExpenseItem.vue';
   import AddExpense from './AddExpense.vue';
 
-  const sourceList = inject<SourceList>('sourceList');
+  const sourceList = inject<SourceList>('sourceList', {});
   const categoryList = inject<CategoryInfo[]>('categoryList', []);
   const expenseList = inject<ExpenseList>('expenseList', {});
   const props = defineProps<{
+    /**
+     * The category to display.
+     */
     category: CategoryInfo,
   }>();
   const emits = defineEmits<{
@@ -22,7 +25,10 @@
      */
     (e: 'deleteCategory', categoryId: number): void
   }>();
-  const isOpen = ref(false);
+  /**
+   * Whether the category is open to view its expenses.
+   */
+  const isOpen = defineModel<boolean>('isOpen');
   /**
    * Delete a category from the current list of categories.
    */
