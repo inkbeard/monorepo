@@ -8,6 +8,7 @@
     SourceList,
   } from '../types';
   import ExpenseItem from './ExpenseItem.vue';
+  import AddExpense from './AddExpense.vue';
 
   const sourceList = inject<SourceList>('sourceList');
   const categoryList = inject<CategoryInfo[]>('categoryList', []);
@@ -88,6 +89,12 @@
         v-if="isOpen"
         class="category-content"
       >
+        <div class="add-expense-container">
+          <AddExpense
+            :category-id="category.id"
+            is-full-width
+          />
+        </div>
         <template v-if="categoryExpenses.length">
           <ExpenseItem
             v-for="expense in categoryExpenses"
@@ -115,6 +122,12 @@
 </template>
 
 <style scoped>
+.add-expense-container {
+  padding: 1rem;
+  background-color: var(--ink-white-mute);
+  border-bottom: 1px solid var(--ink-border-color-dark);
+}
+
 .category-container {
   display: flex;
   align-items: flex-start;
