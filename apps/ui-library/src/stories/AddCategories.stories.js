@@ -9,7 +9,7 @@ export default {
     layout: 'padded',
   },
 };
-export const SampleCategoryList = {
+export const AddCategoryComponent = {
   args: {
     categoryList: [
       {
