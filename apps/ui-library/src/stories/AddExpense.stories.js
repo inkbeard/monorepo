@@ -1,18 +1,21 @@
 import { AddExpense } from '@inkbeard/budget-it';
 import { provide } from 'vue';
 
-export const AddExpenseComponent = {
-  categoryId: 1,
-  isFullWidth: false,
-};
-
 export default {
+  component: AddExpense,
   title: 'Budget It/AddExpense',
   tags: ['autodocs'],
   parameters: {
     layout: 'padded',
   },
-  args: { ...AddExpenseComponent },
+  args: {
+    categoryId: 1,
+    isFullWidth: true,
+    isAddingExpense: false,
+  },
+};
+
+export const AddExpenseComponent = {
   render: (args) => ({
     components: { AddExpense },
     setup() {
@@ -24,10 +27,8 @@ export default {
         { id: 5, label: 'Cash' },
       ]);
 
-      console.log({ args })
-
       return { args };
     },
-    template: '<AddExpense :category-id="1" :is-full-width="false" />',
+    template: '<AddExpense :category-id="args.categoryId" :is-adding-expense="args.isAddingExpense" :is-full-width="args.isFullWidth" />',
   }),
 };
