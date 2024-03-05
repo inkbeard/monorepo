@@ -12,10 +12,20 @@
     NullOrNumber,
   } from '../types';
 
-  const props = defineProps<{
+  export interface AddExpenseProps {
+    /**
+     * The ID of the category to add the expense to.
+     */
     categoryId: number;
+    /**
+     * Whether the button should be full width and center the text/icon.
+     */
     isFullWidth?: boolean;
-  }>();
+  }
+
+  const props = withDefaults(defineProps<AddExpenseProps>(), {
+    isFullWidth: false,
+  });
 
   const alphabaticSourceList = inject<LabelsAndIds>('alphabaticSourceList', []);
   const defaultSourceId = inject<NullOrNumber>('defaultSourceId', null);
@@ -26,6 +36,9 @@
     sourceId: defaultSourceId as number,
     order: 0,
   });
+  /**
+   * Whether the user is currently adding a new expense.
+   */
   const isAddingExpense = defineModel<boolean>('isAddingExpense');
 </script>
 
