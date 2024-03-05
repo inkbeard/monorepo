@@ -1,6 +1,6 @@
 {
   "name": "@inkbeard/ui",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "exports": {
     "./button": "./src/button.tsx",
     "./card": "./src/card.tsx",
