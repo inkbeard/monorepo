@@ -1,122 +1,103 @@
+import { provide } from 'vue';
 import { ExpenseCategory } from '@inkbeard/budget-it';
 
-// More on how to set up stories at: https://storybook.js.org/docs/vue/writing-stories/introduction
+const categoryList = [
+  {
+    name: 'Entertainment',
+    id: 1,
+  },
+  {
+    name: 'Food',
+    id: 2,
+  },
+];
+
+const provideSetup = (args) => {
+  provide('defaultSourceId', 1);
+  provide('categoryList', categoryList);
+  provide('sourceList', {
+    1: 'Credit Card',
+    3: 'Checking Account',
+    4: 'Savings Account',
+    5: 'Cash',
+  });
+  provide('expenseList', {
+    1: {
+      amount: 2,
+      categoryId: 1,
+      name: 'Netflix',
+      order: 0,
+      sourceId: 1,
+    },
+    4: {
+      amount: 30,
+      categoryId: 4,
+      name: 'Gas',
+      order: 0,
+      sourceId: 1,
+    },
+    8: {
+      amount: 2,
+      categoryId: 1,
+      name: 'Hulu',
+      order: 1,
+      sourceId: 3,
+    },
+  });
+  provide('alphabaticSourceList', [
+    { id: 1, label: 'Credit Card' },
+    { id: 3, label: 'Checking Account' },
+    { id: 4, label: 'Savings Account' },
+    { id: 5, label: 'Cash' },
+  ]);
+}
+
 export default {
-  title: 'Budget It/ExpenseCategory',
   component: ExpenseCategory,
+  title: 'Budget It/ExpenseCategory',
   tags: ['autodocs'],
   parameters: {
     layout: 'padded',
   },
+  args: {
+    isOpen: false,
+  },
 };
-export const SampleExpenseCategory = {
+
+export const WithExpensesCollapsed = {
   args: {
     category: {
       name: 'Entertainment',
       id: 1,
     },
-    categoryList: [
-      {
-        name: 'Entertainment',
-        id: 1,
-      },
-      {
-        name: 'Food',
-        id: 2,
-      },
-      {
-        name: 'Housing',
-        id: 3,
-      },
-      {
-        name: 'Transportation',
-        id: 4,
-      },
-      {
-        name: 'Utilities',
-        id: 5,
-      },
-      {
-        name: 'Clothing',
-        id: 6,
-      },
-      {
-        name: 'Medical',
-        id: 7,
-      },
-    ],
-    expenseList: {
-      1: {
-        amount: 2,
-        categoryId: 1,
-        name: 'Netflix',
-        order: 0,
-        sourceId: 1,
-      },
-      2: {
-        amount: 2,
-        categoryId: 2,
-        name: 'HBFC',
-        order: 0,
-        sourceId: 5,
-      },
-      3: {
-        amount: 1000,
-        categoryId: 3,
-        description: 'Started with Guaranteed Rate and then refinanced with Better.com.',
-        name: 'Mortgage',
-        order: 0,
-        sourceId: 3,
-      },
-      4: {
-        amount: 30,
-        categoryId: 4,
-        name: 'Gas',
-        order: 0,
-        sourceId: 1,
-      },
-      5: {
-        amount: 50,
-        categoryId: 5,
-        name: 'Target',
-        order: 0,
-        sourceId: 1,
-      },
-      7: {
-        amount: 2260,
-        categoryId: 7,
-        description: 'Monthly premium for family of 4.',
-        name: 'BCBS',
-        order: 0,
-        sourceId: 3,
-      },
-      8: {
-        amount: 2,
-        categoryId: 1,
-        name: 'Hulu',
-        order: 1,
-        sourceId: 1,
-      },
-      9: {
-        amount: 300,
-        categoryId: 2,
-        name: 'Jewel',
-        order: 1,
-        sourceId: 4,
-      },
-      10: {
-        amount: 99,
-        categoryId: 4,
-        name: 'Metra',
-        order: 1,
-        sourceId: 1,
-      },
-    },
-    sourceList: {
-      1: 'Credit Card',
-      3: 'Checking Account',
-      4: 'Savings Account',
-      5: 'Cash',
-    },
   },
+  render: (args) => ({
+    components: { ExpenseCategory },
+    setup() {
+      provideSetup();
+
+      return { args };
+    },
+    template: '<ExpenseCategory :category="args.category" :is-open="args.isOpen" />',
+  }),
+};
+
+
+export const NoExpenses = {
+  args: {
+    category: {
+      name: 'Food',
+      id: 2,
+    },
+    isOpen: true,
+  },
+  render: (args) => ({
+    components: { ExpenseCategory },
+    setup() {
+      provideSetup();
+
+      return { args };
+    },
+    template: '<ExpenseCategory :category="args.category" :is-open="args.isOpen" />',
+  }),
 };
