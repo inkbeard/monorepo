@@ -1,38 +1,34 @@
 import { SourcesEditor } from '@inkbeard/budget-it';
+import { provide } from 'vue';
 
-// More on how to set up stories at: https://storybook.js.org/docs/vue/writing-stories/introduction
+export const SampleSourcesEditor = {};
+
 export default {
   title: 'Budget It/SourcesEditor',
-  component: SourcesEditor,
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },
-};
-export const SampleSourcesEditor = {
-  args: {
-    defaultSourceId: 1,
-    expenseList: {
-      1: {
-        amount: 2,
-        categoryId: 1,
-        name: 'Netflix',
-        order: 0,
-        sourceId: 1,
-      },
-      2: {
-        amount: 2,
-        categoryId: 2,
-        name: 'HBFC',
-        order: 0,
-        sourceId: 5,
-      },
+  args: { ...SampleSourcesEditor },
+  render: (args) => ({
+    components: { SourcesEditor },
+    setup() {
+      provide('alphabaticSourceList', [
+        { id: 1, label: 'Credit Card' },
+        { id: 3, label: 'Checking Account' },
+        { id: 4, label: 'Savings Account' },
+        { id: 5, label: 'Cash' },
+      ]);
+      provide('defaultSourceId', 1);
+      provide('sourceList', {
+        1: 'Credit Card',
+        3: 'Checking Account',
+        4: 'Savings Account',
+        5: 'Cash',
+      });
+
+      return { args };
     },
-    sourceList: {
-      1: 'Credit Card',
-      3: 'Checking Account',
-      4: 'Savings Account',
-      5: 'Cash',
-    },
-  },
+    template: '<SourcesEditor/>',
+  }),
 };
