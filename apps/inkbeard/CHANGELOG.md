@@ -1,5 +1,76 @@
 # inkbeard
 
+## 0.5.0
+
+### Minor Changes
+
+- 3d2f919: - Added ui-theme to ui-vue component package.
+  - Replaced old ui-theme with ui-vue component package.
+- a3dc056: Added redirect for netlify
+- eb8cab0: Adjusted border colors and added more data
+- e2b4b4e: Replaced local AppIcon component with ui-vue component
+- b5a36b7: Bump @vitejs/plugin-vue from 4.5.2 to 5.0.4
+- 19ddeea: - replaced local logic with SourcesEditor component
+- a8a45f2: - Added budget it example to inkbeard site
+  - Moved the example page to its own component
+- 67b08af: - renamed budgetIt flag to budget_it
+- c918309: Removed workspace eslint and replaced with root level package dependency
+- fc89e60: Replaced local budget it logic with new BudgetIt component
+- 3a58361: - Added @inkbeard/budget-it dependency
+  - Added budgetIt feature flag
+  - Added AddCategory behind budgetIt feature flag
+- 3172fb9: - replaced dependency on primevue
+  - replaced primevue config with ui-vue config
+- a84430d: Replaced local styles with @inkbeard/ui-theme
+
+### Patch Changes
+
+- b231613: Bump vue-router from 4.2.5 to 4.3.0
+- a402b2c: Bump vue from 3.4.15 to 3.4.18
+- Updated dependencies [3d2f919]
+- Updated dependencies [e9ccea6]
+- Updated dependencies [19ddeea]
+- Updated dependencies [6ac40c8]
+- Updated dependencies [5edb8a9]
+- Updated dependencies [b6f7d7e]
+- Updated dependencies [08307b3]
+- Updated dependencies [41d0939]
+- Updated dependencies [3172fb9]
+- Updated dependencies [867a453]
+- Updated dependencies [ebab5f8]
+- Updated dependencies [dd9c6d5]
+- Updated dependencies [ebfa74b]
+- Updated dependencies [2200a42]
+- Updated dependencies [b5a36b7]
+- Updated dependencies [f7b28e4]
+- Updated dependencies [1c8eeec]
+- Updated dependencies [fc89e60]
+- Updated dependencies [68e1654]
+- Updated dependencies [81ff104]
+- Updated dependencies [3a58361]
+- Updated dependencies [4bb1d79]
+- Updated dependencies [f3c95ee]
+- Updated dependencies [a721908]
+- Updated dependencies [68e1654]
+- Updated dependencies [b2258e3]
+- Updated dependencies [c918309]
+- Updated dependencies [b6f7d7e]
+- Updated dependencies [e2b4b4e]
+- Updated dependencies [f3c95ee]
+- Updated dependencies [5ff3d62]
+- Updated dependencies [08b34c2]
+- Updated dependencies [3172fb9]
+- Updated dependencies [5a6d37d]
+- Updated dependencies [ebb23de]
+- Updated dependencies [08770ee]
+- Updated dependencies [1b9a62b]
+- Updated dependencies [3305c0f]
+- Updated dependencies [a402b2c]
+- Updated dependencies [bbb4992]
+- Updated dependencies [a84430d]
+  - @inkbeard/budget-it@0.3.0
+  - @inkbeard/ui-vue@0.1.0
+
 ## 0.4.0
 
 ### Minor Changes

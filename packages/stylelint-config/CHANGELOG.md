@@ -1,5 +1,11 @@
 # @inkbeard/stylelint-config
 
+## 0.1.1
+
+### Patch Changes
+
+- 5868c66: Bump postcss-html from 1.5.0 to 1.6.0
+
 ## 0.1.0
 
 ### Minor Changes

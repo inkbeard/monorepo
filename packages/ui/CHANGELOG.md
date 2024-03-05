@@ -1,5 +1,11 @@
 # @inkbeard/ui
 
+## 0.2.0
+
+### Minor Changes
+
+- c918309: Removed workspace eslint and replaced with root level package dependency
+
 ## 0.1.0
 
 ### Minor Changes
