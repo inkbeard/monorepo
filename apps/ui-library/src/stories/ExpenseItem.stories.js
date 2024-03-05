@@ -1,23 +1,7 @@
 import { provide } from 'vue';
 import { ExpenseItem } from '@inkbeard/budget-it';
 
-const expense = {
-  amount: 2,
-  categoryId: 1,
-  name: 'Netflix',
-  order: 0,
-  sourceId: 1,
-};
-
-export const SampleExpenseItem = {};
-
-export default {
-  title: 'Budget It/ExpenseItem',
-  tags: ['autodocs'],
-  args: { expense },
-  parameters: {
-    layout: 'fullscreen',
-  },
+export const SampleExpenseItem = {
   render: (args) => ({
     components: { ExpenseItem },
     setup() {
@@ -30,6 +14,23 @@ export default {
 
       return { args };
     },
-    template: `<ExpenseItem :expense='${JSON.stringify(expense)}' />`,
+    template: '<ExpenseItem :expense="args.expense" />',
   }),
+};
+
+export default {
+  title: 'Budget It/ExpenseItem',
+  tags: ['autodocs'],
+  parameters: {
+    layout: 'fullscreen',
+  },
+  args: {
+    expense: {
+      amount: 2,
+      categoryId: 1,
+      name: 'Netflix',
+      order: 0,
+      sourceId: 1,
+    }
+  }
 };
