@@ -3,15 +3,26 @@
   import type {
     NullOrNumber,
     CategoryInfo,
+    ExpenseInfo,
     ExpenseList,
     LabelsAndIds,
     SourceList,
   } from '../types';
 
-  const props = defineProps<{
-    expenseList: ExpenseList;
-  }>();
-  provide('expenseList', props.expenseList);
+  const expenseList = defineModel<ExpenseList>('expenseList', { required: true });
+  /**
+     * Add a new source to the current list of sources with the ID + 1 of the highest ID so far.
+     */
+  const addExpense = async (expenseInfo: ExpenseInfo) => {
+    const newExpenseId = Math.max(...Object.keys(expenseList.value as ExpenseList).map(Number)) + 1;
+
+    expenseList.value![newExpenseId] = expenseInfo;
+
+    return newExpenseId;
+  };
+
+  provide('expenseList', expenseList.value);
+  provide('addExpense', addExpense);
   /**
    * The default source ID to use when adding a new expense.
    */
@@ -29,7 +40,7 @@
   /**
    * Get the expenses associated with the sources.
    */
-  const sourcesWithExpenses = computed(() => Object.entries(props.expenseList)
+  const sourcesWithExpenses = computed(() => Object.entries(expenseList.value)
     .reduce((acc: any, [id, { sourceId }]) => {
       if (acc[sourceId]) {
         acc[sourceId].push(id);

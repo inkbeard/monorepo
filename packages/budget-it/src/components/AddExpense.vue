@@ -26,34 +26,59 @@
   const props = withDefaults(defineProps<AddExpenseProps>(), {
     isFullWidth: false,
   });
-
+  const addExpense = inject<Function>('addExpense', () => () => {});
   const alphabaticSourceList = inject<LabelsAndIds>('alphabaticSourceList', []);
   const defaultSourceId = inject<NullOrNumber>('defaultSourceId', null);
+  const sourceId = ref<NullOrNumber>(defaultSourceId);
   const newExpense = ref<ExpenseInfo>({
     categoryId: props.categoryId,
     amount: 0,
+    description: '',
     name: '',
-    sourceId: defaultSourceId as number,
+    sourceId: sourceId.value,
     order: 0,
   });
   /**
    * Whether the user is currently adding a new expense.
    */
   const isAddingExpense = defineModel<boolean>('isAddingExpense');
+  /**
+   * Close the add expense form and reset the new expense object.
+   */
+  const closeAddExpense = () => {
+    isAddingExpense.value = false;
+    newExpense.value = {
+      ...newExpense.value,
+      amount: 0,
+      description: '',
+      name: '',
+      sourceId: sourceId.value,
+    };
+  };
+  /**
+   * Submit the new expense to the parent component and close the form.
+   */
+  const submitNewExpense = async () => {
+    await addExpense(newExpense.value);
+    closeAddExpense();
+  };
 </script>
 
 <template>
   <form
     v-if="isAddingExpense"
     class="add-expense-form"
+    @submit.prevent="submitNewExpense"
   >
     <div class="expense-form-inputs">
       <AppInputText
+        v-model="newExpense.name"
         input-id="new-name"
         label="Name"
         label-description="Add a new expense to this category."
       />
       <AppInputText
+        v-model="newExpense.description"
         input-id="new-description"
         label="Description"
         label-description="Add any notes for this expense you would like to remember later."
@@ -81,15 +106,16 @@
         label="Cancel"
         severity="secondary"
         text
-        @click="isAddingExpense = false"
+        @click="closeAddExpense"
       />
       <AppButton
         class="submit"
         data-test="submit add expense"
+        :disabled="!newExpense.name"
         icon="fa-solid fa-check"
         label="Submit"
         severity="primary"
-        @click="isAddingExpense = false"
+        @click="submitNewExpense"
       />
     </div>
   </form>

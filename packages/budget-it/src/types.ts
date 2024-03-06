@@ -29,7 +29,7 @@ export interface ExpenseInfo {
   /**
    * Source Id of the expense that is mapped from the sources store.
    */
-  sourceId: number
+  sourceId: NullOrNumber
 }
 
 /**
