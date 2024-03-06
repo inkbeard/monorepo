@@ -29,7 +29,7 @@ export interface ExpenseInfo {
   /**
    * Source Id of the expense that is mapped from the sources store.
    */
-  sourceId: NullOrNumber
+  sourceId: number
 }
 
 /**
@@ -54,11 +54,6 @@ export interface CategoryInfo {
 export interface SourceList {
   [sourceId: string]: string;
 }
-
-/**
- * The default source id that will be applied to expenses if no source is selected.
- */
-export type NullOrNumber = null | number;
 
 /**
  * A list of labels and ids used for select options.

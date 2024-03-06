@@ -9,7 +9,6 @@
   import type {
     ExpenseInfo,
     LabelsAndIds,
-    NullOrNumber,
   } from '../types';
 
   export interface AddExpenseProps {
@@ -28,8 +27,8 @@
   });
   const addExpense = inject<Function>('addExpense', () => () => {});
   const alphabaticSourceList = inject<LabelsAndIds>('alphabaticSourceList', []);
-  const defaultSourceId = inject<NullOrNumber>('defaultSourceId', null);
-  const sourceId = ref<NullOrNumber>(defaultSourceId);
+  const defaultSourceId = inject<number>('defaultSourceId', 0);
+  const sourceId = ref<number>(defaultSourceId);
   const newExpense = ref<ExpenseInfo>({
     categoryId: props.categoryId,
     amount: 0,
