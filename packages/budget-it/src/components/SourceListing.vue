@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { computed, inject, ref } from 'vue';
   import { AppButton } from '@inkbeard/ui-vue';
-  import type { NullOrNumber, SourceList } from '../types';
+  import type { SourceList } from '../types';
 
   const props = defineProps<{
     /**
@@ -10,7 +10,7 @@
     sourceId?: number;
   }>();
   const addSource = inject<Function>('addSource', () => () => {});
-  const defaultSourceId = inject<NullOrNumber>('defaultSourceId');
+  const defaultSourceId = inject<number>('defaultSourceId');
   const sourceList = inject<SourceList>('sourceList', {});
   const sourcesWithExpenses = inject<Record<string, string[]>>('sourcesWithExpenses', {});
   const isDefault = ref(false);

@@ -2,5 +2,6 @@
 "@inkbeard/budget-it": minor
 ---
 
-- Updated sourceId to be <NullOrNumber>
+- removed <NullOrNumber>
 - Added logic to add new new expenses from the AddExpense component
+- updated defaultSourceId to be a required <number>

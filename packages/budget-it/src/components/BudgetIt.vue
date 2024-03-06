@@ -1,7 +1,6 @@
 <script lang="ts" setup>
   import { computed, provide } from 'vue';
   import type {
-    NullOrNumber,
     CategoryInfo,
     ExpenseInfo,
     ExpenseList,
@@ -30,7 +29,7 @@
   /**
    * The default source ID to use when adding a new expense.
    */
-  const defaultSourceId = defineModel<NullOrNumber>('defaultSourceId', { required: true });
+  const defaultSourceId = defineModel<number>('defaultSourceId', { required: true });
   /**
    * Get an alphabatize list of sources and their IDs.
    */
