@@ -1,7 +1,6 @@
 <script setup lang="ts">
   import { inject, ref } from 'vue';
   import {
-    AppIcon,
     AppInputNumber,
     AppDropdown,
     Tooltip,
