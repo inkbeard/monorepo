@@ -15,9 +15,11 @@
       <AppInputNumber
         :id="`${expense.categoryId}-${expense.name}`"
         v-model="expenseAmount"
+        currency="USD"
         :input-id="`${expense.categoryId}-${expense.name}`"
         :label="expense.name"
         :label-description="expense.description"
+        mode="currency"
         @blur="expense.amount = expenseAmount"
       />
       <AppDropdown

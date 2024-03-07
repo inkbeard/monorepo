@@ -85,9 +85,11 @@
       <AppInputNumber
         :id="`${categoryId}-${newExpense.name}`"
         v-model="newExpense.amount"
+        currency="USD"
         :input-id="`${categoryId}-${newExpense.name}`"
         label="Amount"
         :label-description="newExpense.description"
+        mode="currency"
       />
       <AppDropdown
         v-model="newExpense.sourceId"
