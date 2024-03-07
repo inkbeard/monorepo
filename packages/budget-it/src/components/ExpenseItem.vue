@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { inject, ref } from 'vue';
   import {
+    AppButton,
     AppInputNumber,
     AppDropdown,
     Tooltip,
@@ -18,13 +19,11 @@
   <div class="expense-item">
     <h4
       v-tooltip="expense.description"
+      class="expense-item-name font-size-p"
+      :class="{ 'has-description': expense.description }"
     >
       {{ expense.name }}
-      <!-- <AppIcon
-        v-if="expense.description"
-        v-tooltip="expense.description"
-        icon="fa-duotone fa-circle-question fa-sm"
-      /> -->
+      <AppButton icon="fa-solid fa-pencil" text />
     </h4>
     <form class="expense-item-" @submit.prevent>
       <AppInputNumber
@@ -46,16 +45,24 @@
         :options="alphabaticSourceList"
       />
     </form>
-    <!-- <div class="btn-group">
-      <AppButton icon="fa-solid fa-pencil" text />
-    </div> -->
   </div>
 </template>
 
 <style scoped>
 .expense-item {
   display: flex;
+  flex-direction: column;
   border-bottom: 1px solid var(--ink-border-color);
+}
+
+.expense-item-name {
+  margin: 0;
+  padding: .5rem 1rem 0;
+}
+
+.has-description {
+  cursor: help;
+  text-decoration: underline;
 }
 
 form {
