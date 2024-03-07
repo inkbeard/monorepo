@@ -107,6 +107,7 @@
             :id="expense.id"
             :key="expense.id"
             v-model:expense="expenseList[expense.id]"
+            class="category-expense"
             data-test="category expense"
             :source-list="sourceList as SourceList"
           />
@@ -139,6 +140,10 @@
   align-items: flex-start;
   gap: 1rem;
   margin-bottom: 1rem;
+}
+
+.category-expense {
+  padding-left: 2rem;
 }
 
 .category-section {
