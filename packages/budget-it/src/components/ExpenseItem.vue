@@ -1,24 +1,38 @@
 <script setup lang="ts">
   import { inject, ref } from 'vue';
-  import { AppButton, AppInputNumber, AppDropdown } from '@inkbeard/ui-vue';
+  import {
+    AppInputNumber,
+    AppDropdown,
+    Tooltip,
+  } from '@inkbeard/ui-vue';
   import type { ExpenseInfo, LabelsAndIds } from '../types';
 
   const expense = defineModel<ExpenseInfo>('expense', { required: true });
   const expenseAmount = ref(expense.value.amount);
   const alphabaticSourceList = inject<LabelsAndIds>('alphabaticSourceList', []);
+  const vTooltip = Tooltip;
 
 </script>
 
 <template>
   <div class="expense-item">
+    <h4
+      v-tooltip="expense.description"
+    >
+      {{ expense.name }}
+      <!-- <AppIcon
+        v-if="expense.description"
+        v-tooltip="expense.description"
+        icon="fa-duotone fa-circle-question fa-sm"
+      /> -->
+    </h4>
     <form class="expense-item-" @submit.prevent>
       <AppInputNumber
         :id="`${expense.categoryId}-${expense.name}`"
         v-model="expenseAmount"
         currency="USD"
         :input-id="`${expense.categoryId}-${expense.name}`"
-        :label="expense.name"
-        :label-description="expense.description"
+        label="Amount"
         mode="currency"
         @blur="expense.amount = expenseAmount"
       />
@@ -32,9 +46,9 @@
         :options="alphabaticSourceList"
       />
     </form>
-    <div class="btn-group">
+    <!-- <div class="btn-group">
       <AppButton icon="fa-solid fa-pencil" text />
-    </div>
+    </div> -->
   </div>
 </template>
 

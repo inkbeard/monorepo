@@ -1,5 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import PrimeVue from 'primevue/config';
+import Tooltip from 'primevue/tooltip';
 import AppButton from './src/components/AppButton.vue';
 import AppDropdown from './src/components/AppDropdown.vue';
 import AppFormGroup from './src/components/AppFormGroup.vue';
@@ -14,6 +15,7 @@ export {
   AppIcon,
   AppInputNumber,
   AppInputText,
+  Tooltip,
 };
 
 export default {
