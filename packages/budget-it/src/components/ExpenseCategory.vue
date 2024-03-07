@@ -5,12 +5,10 @@
     CategoryInfo,
     ExpenseInfo,
     ExpenseList,
-    SourceList,
   } from '../types';
   import ExpenseItem from './ExpenseItem.vue';
   import AddExpense from './AddExpense.vue';
 
-  const sourceList = inject<SourceList>('sourceList', {});
   const categoryList = inject<CategoryInfo[]>('categoryList', []);
   const expenseList = inject<ExpenseList>('expenseList', {});
   const props = defineProps<{
@@ -62,6 +60,17 @@
   const totalExpenses = computed(() => (
     categoryExpenses.value.reduce((acc, expense) => acc + expense.amount, 0)
   ));
+  /**
+   * Show confirmation when the user has successfully edited an expense name or description.
+   */
+  function onEditExpense({ id, name, description }: {
+    id: number,
+    name: string,
+    description: string
+  }) {
+    // eslint-disable-next-line no-console
+    console.log('Edited expense:', { id, name, description });
+  }
 </script>
 
 <template>
@@ -103,13 +112,13 @@
         </div>
         <template v-if="categoryExpenses.length">
           <ExpenseItem
-            v-for="expense in categoryExpenses"
+            v-for="(expense, index) in categoryExpenses"
             :id="expense.id"
             :key="expense.id"
-            v-model:expense="expenseList[expense.id]"
+            v-model:expense="categoryExpenses[index]"
             class="category-expense"
             data-test="category expense"
-            :source-list="sourceList as SourceList"
+            @edit-expense="onEditExpense"
           />
         </template>
         <p v-else>
