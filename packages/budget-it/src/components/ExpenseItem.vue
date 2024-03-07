@@ -17,15 +17,17 @@
 
 <template>
   <div class="expense-item">
-    <h4
-      v-tooltip="expense.description"
-      class="expense-item-name font-size-p"
-      :class="{ 'has-description': expense.description }"
-    >
-      {{ expense.name }}
+    <div class="information-container">
+      <h4
+        v-tooltip.top="expense.description"
+        class="expense-item-name font-size-p"
+        :class="{ 'has-description': expense.description }"
+      >
+        {{ expense.name }}
+      </h4>
       <AppButton icon="fa-solid fa-pencil" text />
-    </h4>
-    <form class="expense-item-" @submit.prevent>
+    </div>
+    <form class="expense-item-form" @submit.prevent>
       <AppInputNumber
         :id="`${expense.categoryId}-${expense.name}`"
         v-model="expenseAmount"
@@ -55,9 +57,15 @@
   border-bottom: 1px solid var(--ink-border-color);
 }
 
+.information-container {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .5rem 1rem 0;
+}
+
 .expense-item-name {
   margin: 0;
-  padding: .5rem 1rem 0;
 }
 
 .has-description {
@@ -65,11 +73,11 @@
   text-decoration: underline;
 }
 
-form {
+.expense-item-form {
   display: flex;
   flex: 1;
   gap: 1rem;
-  padding: 1rem;
+  padding: .0 1rem 1rem;
   border-right: 1px solid var(--ink-border-color);
 
   > * {
