@@ -88,7 +88,6 @@
         currency="USD"
         :input-id="`${categoryId}-${newExpense.name}`"
         label="Amount"
-        :label-description="newExpense.description"
         mode="currency"
       />
       <AppDropdown
