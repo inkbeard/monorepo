@@ -21,7 +21,8 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-p {
+p,
+.font-size-p {
   font-size: var(--ink-body-font-size);
   margin: 10px 0;
   line-height: 18px;
@@ -32,19 +33,23 @@ a {
   transition: color .25s ease-in;
 }
 
-h2 {
+h2,
+.font-size-h2 {
   font-size: 30px;
 }
 
-h3 {
+h3,
+.font-size-h3 {
   font-size: 25px;
 }
 
-h4 {
+h4,
+.font-size-h4 {
   font-size: 20px;
 }
 
-h5 {
+h5,
+.font-size-h5 {
   font-size: 18px;
 }
 
