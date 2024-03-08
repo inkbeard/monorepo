@@ -86,6 +86,15 @@
             data-test="category name"
           >
             {{ category.name }}
+            <AppButton
+              class="delete-category"
+              data-test="delete category"
+              icon="fa-duotone fa-trash-can"
+              severity="danger"
+              size="sm"
+              text
+              @click="deleteCategory"
+            />
           </li>
           <li class="category-total">
             Total: ${{ totalExpenses }}
@@ -126,14 +135,6 @@
         </p>
       </div>
     </div>
-    <AppButton
-      class="delete-category"
-      data-test="delete category"
-      icon="fa-duotone fa-trash-can fa-lg"
-      severity="danger"
-      text
-      @click="deleteCategory"
-    />
   </div>
 </template>
 
@@ -178,11 +179,10 @@
 }
 
 .category-name {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   margin: 0;
   font-weight: bold;
-}
-
-.delete-category {
-  margin-top: 1.5rem;
 }
 </style>
