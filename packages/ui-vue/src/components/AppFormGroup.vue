@@ -33,5 +33,13 @@
   display: flex;
   flex-direction: column;
   gap: .5rem;
+
+  .app-form-vertical & {
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 </style>
