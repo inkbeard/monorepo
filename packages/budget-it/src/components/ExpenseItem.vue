@@ -15,9 +15,9 @@
      * Emit the edited name and description of the expense item.
      */
     editExpense: [{
-      id: number,
-      name: string,
-      description: string
+      name?: string,
+      description?: string,
+      amount?: number,
     }]
   }>();
 
@@ -41,7 +41,6 @@
     expense.value.description = expenseDescription.value;
     isEditing.value = false;
     emits('editExpense', {
-      id: expense.value.id as number,
       name: editableExpense.value.name,
       description: editableExpense.value.description || '',
     });
