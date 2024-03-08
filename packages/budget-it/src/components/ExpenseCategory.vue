@@ -2,8 +2,8 @@
   import { computed, inject } from 'vue';
   import { AppButton } from '@inkbeard/ui-vue';
   import type {
+    BaseExpenseInfo,
     CategoryInfo,
-    ExpenseInfo,
     ExpenseList,
   } from '../types';
   import ExpenseItem from './ExpenseItem.vue';
@@ -41,33 +41,32 @@
     emits('deleteCategory', props.category.id);
   };
   /**
-   * Get the information for all the expenses for this category.
+   * Get the id and amount for all the expenses for this category.
    */
   const categoryExpenses = computed(() => (
     Object.entries(expenseList).reduce((acc, [id, expense]) => {
       if (expense.categoryId === props.category.id) {
         acc.push({
-          ...expense,
           id: Number(id),
+          amount: expense.amount,
         });
       }
       return acc;
-    }, [] as ({ id: number } & ExpenseInfo)[])
+    }, [] as ({ id: number, amount: number })[])
   ));
   /**
    * Get the total amount of all the expenses for this category.
    */
   const totalExpenses = computed(() => (
-    categoryExpenses.value.reduce((acc, expense) => acc + expense.amount, 0)
+    categoryExpenses.value.reduce((acc, { amount }) => acc + amount, 0)
   ));
   /**
    * Show confirmation when the user has successfully edited an expense name or description.
    */
-  function onEditExpense({ id, name, description }: {
+  function onEditExpense(
     id: number,
-    name: string,
-    description: string
-  }) {
+    { name, description }: BaseExpenseInfo,
+  ) {
     // eslint-disable-next-line no-console
     console.log('Edited expense:', { id, name, description });
   }
@@ -121,13 +120,13 @@
         </div>
         <template v-if="categoryExpenses.length">
           <ExpenseItem
-            v-for="(expense, index) in categoryExpenses"
-            :id="expense.id"
-            :key="expense.id"
-            v-model:expense="categoryExpenses[index]"
+            v-for="({ id }) in categoryExpenses"
+            :id="id"
+            :key="id"
+            v-model:expense="expenseList[id]"
             class="category-expense"
             data-test="category expense"
-            @edit-expense="onEditExpense"
+            @edit-expense="onEditExpense(id, $event as BaseExpenseInfo)"
           />
         </template>
         <p v-else>
