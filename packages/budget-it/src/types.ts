@@ -1,7 +1,18 @@
+export interface BaseExpenseInfo {
+  /**
+   * Description of the expense.
+   */
+  description?: string
+  /**
+   * Name of the expense.
+   */
+  name: string
+}
+
 /**
  * General information about a particular expense.
  */
-export interface ExpenseInfo {
+export interface ExpenseInfo extends BaseExpenseInfo {
   /**
    * Amount of the expense.
    */
@@ -11,17 +22,9 @@ export interface ExpenseInfo {
    */
   categoryId: number
   /**
-   * Description of the expense.
-   */
-  description?: string
-  /**
    * Unique identifier for the expense.
    */
   id?: number
-  /**
-   * Name of the expense.
-   */
-  name: string
   /**
    * Order of the expense in the list.
    */

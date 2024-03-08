@@ -2,6 +2,7 @@
   import { computed, inject } from 'vue';
   import { AppButton } from '@inkbeard/ui-vue';
   import type {
+    BaseExpenseInfo,
     CategoryInfo,
     ExpenseList,
   } from '../types';
@@ -64,7 +65,7 @@
    */
   function onEditExpense(
     id: number,
-    { name, description }: { name: string, description: string },
+    { name, description }: BaseExpenseInfo,
   ) {
     // eslint-disable-next-line no-console
     console.log('Edited expense:', { id, name, description });
@@ -125,7 +126,7 @@
             v-model:expense="expenseList[id]"
             class="category-expense"
             data-test="category expense"
-            @edit-expense="onEditExpense(id, $event)"
+            @edit-expense="onEditExpense(id, $event as BaseExpenseInfo)"
           />
         </template>
         <p v-else>

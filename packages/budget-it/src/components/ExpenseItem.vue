@@ -8,17 +8,13 @@
     Tooltip,
     AppInputText,
   } from '@inkbeard/ui-vue';
-  import type { ExpenseInfo, LabelsAndIds } from '../types';
+  import type { BaseExpenseInfo, ExpenseInfo, LabelsAndIds } from '../types';
 
   const emits = defineEmits<{
     /**
      * Emit the edited name and description of the expense item.
      */
-    editExpense: [{
-      name?: string,
-      description?: string,
-      amount?: number,
-    }]
+    editExpense: [BaseExpenseInfo]
   }>();
 
   const alphabaticSourceList = inject<LabelsAndIds>('alphabaticSourceList', []);
@@ -40,6 +36,7 @@
     expense.value.name = expenseName.value;
     expense.value.description = expenseDescription.value;
     isEditing.value = false;
+
     emits('editExpense', {
       name: editableExpense.value.name,
       description: editableExpense.value.description || '',
