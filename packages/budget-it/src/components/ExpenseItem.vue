@@ -8,16 +8,29 @@
     Tooltip,
     AppInputText,
   } from '@inkbeard/ui-vue';
-  import type { BaseExpenseInfo, ExpenseInfo, LabelsAndIds } from '../types';
+  import type {
+    BaseExpenseInfo,
+    ExpenseInfo,
+    ExpenseList,
+    LabelsAndIds,
+  } from '../types';
 
   const emits = defineEmits<{
     /**
      * Emit the edited name and description of the expense item.
      */
-    editExpense: [BaseExpenseInfo]
+    editExpense: [BaseExpenseInfo];
+    deleteExpense: [expenseId: number];
+  }>();
+  const props = defineProps<{
+    /**
+     * The expense ID.
+     */
+    expenseId: number;
   }>();
 
   const alphabaticSourceList = inject<LabelsAndIds>('alphabaticSourceList', []);
+  const expenseList = inject<ExpenseList>('expenseList', {});
   const expense = defineModel<ExpenseInfo>('expense', { required: true });
   const expenseAmount = ref(expense.value.amount);
   const expenseName = ref(expense.value.name);
@@ -49,6 +62,14 @@
     isEditing.value = false;
     expenseName.value = expense.value.name;
     expenseDescription.value = expense.value.description;
+  }
+  /**
+   * Close the dialog, removed the expense and emit the deleted expense id.
+   */
+  function deleteExpense() {
+    isEditing.value = false;
+    emits('deleteExpense', props.expenseId);
+    delete expenseList[props.expenseId];
   }
 </script>
 
@@ -111,6 +132,7 @@
             data-test="cancel add expense"
             icon="fa-solid fa-xmark"
             label="Cancel"
+            raised
             severity="secondary"
             text
             @click="cancelEditing"
@@ -121,10 +143,21 @@
             :disabled="!editableExpense.name"
             icon="fa-solid fa-check"
             label="Create"
+            raised
             severity="primary"
             @click="saveExpense"
           />
         </div>
+        <AppButton
+          class="delete-expense"
+          data-test="delete expense"
+          icon="fa-solid fa-trash-can"
+          is-full-width
+          label="Delete expense"
+          severity="danger"
+          text
+          @click="deleteExpense"
+        />
       </form>
     </AppDialog>
   </div>
@@ -162,5 +195,11 @@
   > * {
     flex: 1;
   }
+}
+
+.delete-expense {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--ink-border-color);
 }
 </style>
