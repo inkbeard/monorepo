@@ -41,6 +41,10 @@
   &.align-start {
     justify-content: flex-start;
   }
+
+  > .app-button:not(:first-child) {
+    margin-left: 0.5rem;
+  }
 }
 
 .app-button.is-full-width {
