@@ -121,11 +121,11 @@
         <template v-if="categoryExpenses.length">
           <ExpenseItem
             v-for="({ id }) in categoryExpenses"
-            :id="id"
             :key="id"
             v-model:expense="expenseList[id]"
             class="category-expense"
             data-test="category expense"
+            :expense-id="id"
             @edit-expense="onEditExpense(id, $event as BaseExpenseInfo)"
           />
         </template>
