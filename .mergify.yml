@@ -1,6 +1,7 @@
 shared:
   ci_success: &ci_success
     - "check-success=Build and Test"
+    - "check-success=netlify/dainty-arithmetic-94f385/deploy-preview"
   queue_conditions: &queue_conditions
     - -label=Hold merge
     - -label=Addressing issues
