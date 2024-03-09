@@ -104,6 +104,7 @@
         data-test="cancel add expense"
         icon="fa-solid fa-xmark"
         label="Cancel"
+        raised
         severity="secondary"
         text
         @click="closeAddExpense"
@@ -114,6 +115,7 @@
         :disabled="!newExpense.name"
         icon="fa-solid fa-check"
         label="Submit"
+        raised
         severity="primary"
         @click="submitNewExpense"
       />
@@ -126,6 +128,7 @@
     icon="fa-duotone fa-plus"
     :is-full-width="isFullWidth"
     label="Add expense"
+    raised
     severity="primary"
     @click="isAddingExpense = true"
   />
