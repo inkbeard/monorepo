@@ -25,6 +25,14 @@
           class: 'app-input-number',
         },
       }"
-    />
+    >
+      <template
+        v-for="(_, name, index) in ($slots as {})"
+        :key="index"
+        #[name]="scope"
+      >
+        <slot :name="name" v-bind="{ scope }" />
+      </template>
+    </InputNumber>
   </AppFormGroup>
 </template>

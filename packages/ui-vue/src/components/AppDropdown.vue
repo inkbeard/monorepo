@@ -17,6 +17,13 @@
     :label="label"
   >
     <Dropdown v-bind="$attrs">
+      <template
+        v-for="(_, name, index) in ($slots as {})"
+        :key="index"
+        #[name]="scope"
+      >
+        <slot :name="name" v-bind="{ scope }" />
+      </template>
       <template #dropdownicon>
         <i class="fa-solid fa-caret-down" />
       </template>
