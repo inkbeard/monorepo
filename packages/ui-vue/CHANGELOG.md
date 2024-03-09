@@ -1,5 +1,14 @@
 # @inkbeard/ui-vue
 
+## 0.2.0
+
+### Minor Changes
+
+- d743355: - Added primevue's Tooltip to the library export
+- 3595fad: - Extended primvevue's `Dialog` component as AppDialog
+- d6ba32c: - Added utility class to be used on forms to stack form groups
+- 311826f: - Updated extended PrimeVue components to use dynamic slots
+
 ## 0.1.0
 
 ### Minor Changes

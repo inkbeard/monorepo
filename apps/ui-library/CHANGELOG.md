@@ -1,5 +1,36 @@
 # ui-library
 
+## 0.2.0
+
+### Minor Changes
+
+- 49e686b: Updated AddCategory story to be responsive
+- 60bd368: Fixed AddExpense story to be reactive
+- 5705f5f: - Fixed Expense Category story reactivity
+- 10ae8cd: Added AddExpense story
+- 5422d35: - Fixed SourceListing story reactivity
+- 0a5762a: - Fixed ExpenseItem reactivity
+
+### Patch Changes
+
+- Updated dependencies [c675847]
+- Updated dependencies [d743355]
+- Updated dependencies [0e38e69]
+- Updated dependencies [2c8727f]
+- Updated dependencies [3595fad]
+- Updated dependencies [10ae8cd]
+- Updated dependencies [c6a082d]
+- Updated dependencies [e47d42a]
+- Updated dependencies [d6ba32c]
+- Updated dependencies [49e686b]
+- Updated dependencies [1190571]
+- Updated dependencies [8550cc9]
+- Updated dependencies [c9e423e]
+- Updated dependencies [5705f5f]
+- Updated dependencies [311826f]
+  - @inkbeard/budget-it@0.4.0
+  - @inkbeard/ui-vue@0.2.0
+
 ## 0.1.0
 
 ### Minor Changes
