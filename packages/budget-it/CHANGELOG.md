@@ -1,5 +1,29 @@
 # @inkbeard/budget-it
 
+## 0.4.0
+
+### Minor Changes
+
+- c675847: - [INK-67] added "currency" and "mode" props for the expense amount components
+- 0e38e69: - Added AddExpense component to the ExpenseCategory component
+- 2c8727f: - Moved the category delete button next to the title
+- 10ae8cd: Added AddExpense component
+- c6a082d: - [INK-68] removed `labelDescription` prop from the "amount" input component
+- e47d42a: - Added dialog for editing expense names and descriptions
+  - Added emit for ExpenseCategory as an example
+- 49e686b: Updated `isActive` local ref to be `isAdding` model
+- 1190571: - [ink-71] fixed expense category not adding expenses
+  - Added <BaseExpenseInfo> and extended <ExpenseInfo> to include it
+- 8550cc9: - indented the expense items for the ExpenseCategory component
+  - Moved the expense edit button next to the name
+  - Replaced the expense name with "Amount" for label for the "amount" input
+  - Added the expense name to the top of the expenseItem component
+- c9e423e: - removed <NullOrNumber>
+  - Added logic to add new new expenses from the AddExpense component
+  - updated defaultSourceId to be a required <number>
+- 5705f5f: - Updated prop documentation
+  - Updated `isOpen` to be a v-model
+
 ## 0.3.0
 
 ### Minor Changes

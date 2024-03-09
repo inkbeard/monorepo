@@ -1,5 +1,11 @@
 # @inkbeard/ui-theme
 
+## 1.1.0
+
+### Minor Changes
+
+- 53f8e42: - Added utility classes for heading sizes
+
 ## 1.0.0
 
 ### Major Changes

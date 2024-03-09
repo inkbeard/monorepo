@@ -1,5 +1,27 @@
 # inkbeard
 
+## 0.5.1
+
+### Patch Changes
+
+- Updated dependencies [c675847]
+- Updated dependencies [d743355]
+- Updated dependencies [0e38e69]
+- Updated dependencies [2c8727f]
+- Updated dependencies [3595fad]
+- Updated dependencies [10ae8cd]
+- Updated dependencies [c6a082d]
+- Updated dependencies [e47d42a]
+- Updated dependencies [d6ba32c]
+- Updated dependencies [49e686b]
+- Updated dependencies [1190571]
+- Updated dependencies [8550cc9]
+- Updated dependencies [c9e423e]
+- Updated dependencies [5705f5f]
+- Updated dependencies [311826f]
+  - @inkbeard/budget-it@0.4.0
+  - @inkbeard/ui-vue@0.2.0
+
 ## 0.5.0
 
 ### Minor Changes
