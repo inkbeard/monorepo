@@ -5,9 +5,6 @@
   defineOptions({
     inheritAttrs: false,
   });
-  defineSlots<{
-    [key: string]: unknown;
-  }>();
 </script>
 
 <template>
