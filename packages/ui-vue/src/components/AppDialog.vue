@@ -5,6 +5,9 @@
   defineOptions({
     inheritAttrs: false,
   });
+  defineSlots<{
+    [key: string]: unknown;
+  }>();
 </script>
 
 <template>
@@ -16,11 +19,12 @@
       },
     }"
   >
-    <template v-for="(value, name) in $slots" #[name]="slotData">
-      <slot
-        :name="name"
-        v-bind="slotData"
-      />
+    <template
+      v-for="(_, name, index) in ($slots as {})"
+      :key="index"
+      #[name]="scope"
+    >
+      <slot :name="name" v-bind="{ scope }" />
     </template>
     <template #closeicon>
       <AppIcon icon="fa-solid fa-xmark" />
@@ -29,7 +33,6 @@
 </template>
 
 <style>
-
 .p-dialog-header-close {
   transform: translate(.5rem, -.5rem);
 }
