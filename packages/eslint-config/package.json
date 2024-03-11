@@ -14,7 +14,7 @@
     "@vue/eslint-config-airbnb-with-typescript": "^8.0.0",
     "@vue/eslint-config-typescript": "^12.0.0",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-config-turbo": "^1.12.4",
+    "eslint-config-turbo": "^1.12.5",
     "eslint-plugin-only-warn": "^1.1.0",
     "eslint-plugin-vue": "^9.21.1",
     "typescript": "^5.4.2"
