@@ -1,4 +1,4 @@
-# ui-library
+# @inkbeard/ui-library
 
 ## 0.2.0
 

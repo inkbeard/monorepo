@@ -8,6 +8,8 @@
   ],
   "exports": {
     ".": "./index.ts",
+    "./changelog.md": "./CHANGELOG.md",
+    "./readme.md": "./README.md",
     "./*.css": {
       "import": "./src/assets/*.css"
     }

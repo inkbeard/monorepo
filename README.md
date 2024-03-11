@@ -5,94 +5,39 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a4d75aa7-03c4-4638-9eb6-a34ba8d85174/deploy-status)](https://app.netlify.com/sites/dainty-arithmetic-94f385/deploys)
 
-# Turborepo starter
-
-This is an official starter Turborepo.
-
-## Using this example
-
-Run the following command:
-
-```sh
-npx create-turbo@latest
-```
+# inkbeard
+A Turborepo mono-repository for inkbeard projects.
 
 ## What's inside?
 
-This Turborepo includes the following packages/apps:
+This includes the following packages/apps:
 
-### Apps and Packages
-
+### Apps
+- `docs`: a [Next.js](https://nextjs.org/) app
 - `docs`: a [Next.js](https://nextjs.org/) app
 - `web`: another [Next.js](https://nextjs.org/) app
+
+### Packages
 - `@inkbeard/ui`: a stub React component library shared by both `web` and `docs` applications
+
+### Congigurations
 - `@inkbeard/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `@inkbeard/typescript-config`: `tsconfig.json`s used throughout the monorepo
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
-### Utilities
+## Getting started
+In order to start things out, you need to have the following installed:
 
-This Turborepo has some additional tools already setup for you:
+- [pnpm](https://pnpm.io/) and needs to be installed.
+- [Turborepo](https://turbo.build/repo/docs/installing).
+- [Node.js v18+](https://nodejs.org/en)
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+## Running applications
+To run any of the applications, you can use the following command (after `pnpm i` if not already done):
 
-### Create App
-
-To create a new app, run the following command from root:
-
-```
-pnpm turbo gen workspace
+```sh
+# pnpm dev --filter name-of-workspace
+pnpm dev --filter ui-library
 ```
 
-Check [Turborepo's documentation](https://turbo.build/repo/docs/core-concepts/monorepos/code-generation) for more information, including how to work with custom generators.
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+Each application and package has its own `README.md` file with further instructions on how to build, test, run, etc.
