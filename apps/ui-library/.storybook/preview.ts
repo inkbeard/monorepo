@@ -2,13 +2,14 @@
 import { setup } from '@storybook/vue3'
 import '../src/assets/global.css';
 import { createPinia } from 'pinia';
-import InkbeardUiVue from '@inkbeard/ui-vue';
+import InkbeardUiVue, { ConfirmationService } from '@inkbeard/ui-vue';
 
 const pinia = createPinia();
 
 setup((app) => {
   app.use(pinia);
   app.use(InkbeardUiVue);
+  app.use(ConfirmationService);
 });
 
 const preview = {

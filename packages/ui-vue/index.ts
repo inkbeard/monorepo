@@ -1,6 +1,9 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import PrimeVue from 'primevue/config';
 import Tooltip from 'primevue/tooltip';
+import AppConfirmPopup from 'primevue/confirmpopup';
+import ConfirmationService from 'primevue/confirmationservice';
+import { useConfirm } from 'primevue/useconfirm';
 import AppDialog from './src/components/AppDialog.vue';
 import AppButton from './src/components/AppButton.vue';
 import AppDropdown from './src/components/AppDropdown.vue';
@@ -18,6 +21,9 @@ export {
   AppInputText,
   AppDialog,
   Tooltip,
+  AppConfirmPopup,
+  ConfirmationService,
+  useConfirm,
 };
 
 export default {

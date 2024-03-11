@@ -3,7 +3,8 @@
   "version": "0.4.0",
   "exports": {
     ".": "./index.ts",
-    "./changelog.md": "./CHANGELOG.md"
+    "./changelog.md": "./CHANGELOG.md",
+    "./readme.md": "./README.md"
   },
   "scripts": {
     "build": "run-p type-check \"build-only {@}\" --",

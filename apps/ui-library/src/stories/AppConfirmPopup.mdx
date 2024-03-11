@@ -1,0 +1,56 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+
+import * as AppConfirmPopup from './AppConfirmPopup.stories';
+
+<Meta of={AppConfirmPopup} />
+
+# AppConfirmPopup
+A component extended from primevue\'s `ConfirmPopup` [component](https://primevue.org/confirmpopup/).
+
+## Installation
+[ConfirmationService](https://primevue.org/confirmpopup/#confirmation-service) needs to be installed first (replacing "primevue" with "@inkbeard/ui-vue").
+
+```js
+import {createApp} from 'vue';
+import ConfirmationService from '@inkbeard/ui-vue';
+
+const app = createApp(App);
+app.use(ConfirmationService);
+```
+
+## Usage
+Refer to [primevue's component](https://primevue.org/confirmpopup/) for instructions for advanced used. A simple use case would be as follows:
+```js
+<script lang="ts" setup>
+  import { AppButton, AppConfirmPopup } from '@inkbeard/ui-vue';
+
+  const confirm = useConfirm();
+
+  const showConfirm = ({ currentTarget }) => {
+    confirm.require({
+      target: currentTarget,
+      group: 'testConfirm',
+      message: 'Please confirm to proceed moving forward.',
+      icon: 'fa-solid fa-question-circle',
+      acceptClass: 'p-button-raised p-button-sm',
+      acceptIcon: 'fa-solid fa-check',
+      acceptLabel: 'Confirm',
+      rejectClass: 'p-button-secondary p-button-raised p-button-sm',
+      rejectIcon: 'fa-solid fa-xmark',
+      rejectLabel: 'Cancel',
+      accept: () => {
+        alert('You have accepted');
+      },
+      reject: () => {
+        alert('You have rejected');
+      }
+    });
+  }
+  }
+</script>
+
+<template>
+  <AppConfirmPopup group="testConfirm"/>
+  <AppButton label="Click me" @click="showConfirm" />
+</template>
+```
