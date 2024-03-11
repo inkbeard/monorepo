@@ -6,22 +6,13 @@
     AppInputNumber,
     AppDropdown,
     Tooltip,
-    AppInputText,
   } from '@inkbeard/ui-vue';
   import type {
-    BaseExpenseInfo,
     ExpenseInfo,
-    ExpenseList,
     LabelsAndIds,
   } from '../types';
+  import ExpenseEditor from './ExpenseEditor.vue';
 
-  const emits = defineEmits<{
-    /**
-     * Emit the edited name and description of the expense item.
-     */
-    editExpense: [BaseExpenseInfo];
-    deleteExpense: [expenseId: number];
-  }>();
   const props = defineProps<{
     /**
      * The expense ID.
@@ -30,47 +21,10 @@
   }>();
 
   const alphabaticSourceList = inject<LabelsAndIds>('alphabaticSourceList', []);
-  const expenseList = inject<ExpenseList>('expenseList', {});
   const expense = defineModel<ExpenseInfo>('expense', { required: true });
   const expenseAmount = ref(expense.value.amount);
-  const expenseName = ref(expense.value.name);
-  const expenseDescription = ref(expense.value.description);
-  const editableExpense = ref({
-    name: expenseName,
-    description: expenseDescription,
-  });
   const isEditing = ref(false);
   const vTooltip = Tooltip;
-
-  /**
-   * Save the expense with the new information and cancel editing.
-   */
-  function saveExpense() {
-    expense.value.name = expenseName.value;
-    expense.value.description = expenseDescription.value;
-    isEditing.value = false;
-
-    emits('editExpense', {
-      name: editableExpense.value.name,
-      description: editableExpense.value.description || '',
-    });
-  }
-  /**
-   * Cancel the editing of the expense and reset the form.
-   */
-  function cancelEditing() {
-    isEditing.value = false;
-    expenseName.value = expense.value.name;
-    expenseDescription.value = expense.value.description;
-  }
-  /**
-   * Close the dialog, removed the expense and emit the deleted expense id.
-   */
-  function deleteExpense() {
-    isEditing.value = false;
-    emits('deleteExpense', props.expenseId);
-    delete expenseList[props.expenseId];
-  }
 </script>
 
 <template>
@@ -114,51 +68,13 @@
       modal
       :style="{ width: '20rem' }"
     >
-      <form class="app-form-vertical" @submit.prevent="saveExpense">
-        <AppInputText
-          v-model="editableExpense.name"
-          :input-id="`edit-name-${expense.categoryId}-${expense.name}`"
-          label="Name"
-          label-description="Add a new expense to this category."
-        />
-        <AppInputText
-          v-model="editableExpense.description"
-          :input-id="`edit-description-${expense.categoryId}-${expense.name}`"
-          label="Description"
-          label-description="Add any notes for this expense you would like to remember later."
-        />
-        <div class="btn-group align-end">
-          <AppButton
-            data-test="cancel add expense"
-            icon="fa-solid fa-xmark"
-            label="Cancel"
-            raised
-            severity="secondary"
-            text
-            @click="cancelEditing"
-          />
-          <AppButton
-            class="submit"
-            data-test="submit add expense"
-            :disabled="!editableExpense.name"
-            icon="fa-solid fa-check"
-            label="Create"
-            raised
-            severity="primary"
-            @click="saveExpense"
-          />
-        </div>
-        <AppButton
-          class="delete-expense"
-          data-test="delete expense"
-          icon="fa-solid fa-trash-can"
-          is-full-width
-          label="Delete expense"
-          severity="danger"
-          text
-          @click="deleteExpense"
-        />
-      </form>
+      <ExpenseEditor
+        v-model:expense="expense"
+        :expense-id="props.expenseId"
+        @cancel-editing="isEditing = false"
+        @delete-expense="isEditing = false"
+        @edit-expense="isEditing = false"
+      />
     </AppDialog>
   </div>
 </template>

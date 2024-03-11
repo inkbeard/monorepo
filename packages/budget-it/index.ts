@@ -1,3 +1,4 @@
+import { ConfirmationService } from '@inkbeard/ui-vue';
 import { useBudgetIt } from './src/components/BudgetIt';
 import BudgetIt from './src/components/BudgetIt.vue';
 import AddCategory from './src/components/AddCategory.vue';
@@ -16,4 +17,10 @@ export {
   SourceListing,
   SourcesEditor,
   useBudgetIt,
+};
+
+export default {
+  install: (app: any) => {
+    app.use(ConfirmationService);
+  },
 };
