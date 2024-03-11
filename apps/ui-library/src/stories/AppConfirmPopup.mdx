@@ -22,7 +22,7 @@ app.use(ConfirmationService);
 Refer to [primevue's component](https://primevue.org/confirmpopup/) for instructions for advanced used. A simple use case would be as follows:
 ```js
 <script lang="ts" setup>
-  import { AppButton, AppConfirmPopup } from '@inkbeard/ui-vue';
+  import { AppButton, AppConfirmPopup, useConfirm } from '@inkbeard/ui-vue';
 
   const confirm = useConfirm();
 
@@ -45,8 +45,7 @@ Refer to [primevue's component](https://primevue.org/confirmpopup/) for instruct
         alert('You have rejected');
       }
     });
-  }
-  }
+  };
 </script>
 
 <template>

@@ -5,6 +5,7 @@ import { createPinia } from 'pinia';
 import { useFeatureFlagStore } from '@/stores/featureFlags';
 import flagsmith from 'flagsmith';
 import InkbeardUiVue from '@inkbeard/ui-vue';
+import InkbeardBudgetIt from '@inkbeard/budget-it';
 import App from './App.vue';
 import router from './router';
 
@@ -12,6 +13,7 @@ const app = createApp(App);
 
 app.use(createPinia());
 app.use(InkbeardUiVue);
+app.use(InkbeardBudgetIt);
 app.use(router);
 
 flagsmith.init({
