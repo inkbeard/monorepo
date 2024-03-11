@@ -6,6 +6,7 @@
     "assets"
   ],
   "exports": {
+    "./changelog.md": "./CHANGELOG.md",
     "./*.css": {
       "import": "./assets/*.css"
     }

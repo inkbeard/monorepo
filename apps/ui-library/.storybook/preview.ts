@@ -14,6 +14,11 @@ setup((app) => {
 const preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
+    options: {
+      storySort: {
+        order: ['UI Theme', 'ui-vue', 'Budget It', 'Changelog']
+      },
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
