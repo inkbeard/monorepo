@@ -1,6 +1,11 @@
 <script setup lang="ts">
   import { computed, inject } from 'vue';
-  import { AppButton } from '@inkbeard/ui-vue';
+  import {
+    AppButton,
+    AppConfirmPopup,
+
+    useConfirm,
+  } from '@inkbeard/ui-vue';
   import type {
     BaseExpenseInfo,
     CategoryInfo,
@@ -70,6 +75,34 @@
     // eslint-disable-next-line no-console
     console.log('Edited expense:', { id, name, description });
   }
+
+  const confirm = useConfirm();
+
+  /**
+   * Confirm the deletion of the category.
+   */
+  function confirmDelete(event: { currentTarget: HTMLElement;
+  }) {
+    if (!totalExpenses.value && !categoryExpenses.value.length) {
+      deleteCategory();
+    } else {
+      confirm.require({
+        target: event.currentTarget,
+        group: 'confirmDelete',
+        message: `This will permanently delete $${totalExpenses.value} worth of expenses.`,
+        icon: 'fa-solid fa-triangle-exclamation text-danger',
+        acceptClass: 'p-button-raised p-button-sm p-button-danger',
+        acceptIcon: 'fa-solid fa-check',
+        acceptLabel: 'Delete',
+        rejectClass: 'p-button-secondary p-button-raised p-button-sm',
+        rejectIcon: 'fa-solid fa-xmark',
+        rejectLabel: 'Cancel',
+        accept: () => {
+          deleteCategory();
+        },
+      });
+    }
+  }
 </script>
 
 <template>
@@ -92,8 +125,9 @@
               severity="danger"
               size="sm"
               text
-              @click="deleteCategory"
+              @click="confirmDelete"
             />
+            <AppConfirmPopup group="confirmDelete" />
           </li>
           <li class="category-total">
             Total: ${{ totalExpenses }}

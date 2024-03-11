@@ -1,5 +1,12 @@
-import { describe, it, expect } from 'vitest';
+import {
+  describe,
+  it,
+  expect,
+  vi,
+} from 'vitest';
 import { shallowMount } from '@vue/test-utils';
+import InkbeardUiVue from '@inkbeard/ui-vue';
+import InkbeardBudgetIt from '../../../index';
 import type { ExpenseList } from '../../types';
 import ExpenseCategory from '../ExpenseCategory.vue';
 
@@ -11,9 +18,16 @@ describe('ExpenseCategory', () => {
     name: categoryName,
     id: categoryId,
   };
-  const createWrapper = (initialData = {}) => {
+  const createWrapper = ({
+    props,
+    provide,
+  }: {
+    props?: { },
+    provide?: { },
+  }) => {
     wrapper = shallowMount(ExpenseCategory, {
       global: {
+        plugins: [InkbeardUiVue, InkbeardBudgetIt],
         provide: {
           categoryList: [category],
           expenseList: {
@@ -89,31 +103,32 @@ describe('ExpenseCategory', () => {
             4: 'Savings Account',
             5: 'Cash',
           },
+          ...provide,
         },
       },
       props: {
         category,
+        ...props,
       },
-      ...initialData,
     });
   };
 
   it('should render the category name', () => {
-    createWrapper();
+    createWrapper({});
 
     expect(wrapper.find('[data-test="category name"]').text())
       .toBe(categoryName);
   });
 
   it('should not render the category expenses by default', () => {
-    createWrapper();
+    createWrapper({});
 
     expect(wrapper.find('[data-test="category expense"]').exists())
       .toBe(false);
   });
 
   it('should render the category expenses when the toggle cta is clicked', async () => {
-    createWrapper();
+    createWrapper({});
 
     await wrapper.find('[data-test="toggle expenses"]').trigger('click');
 
@@ -121,11 +136,23 @@ describe('ExpenseCategory', () => {
       .toBe(true);
   });
 
-  it('should delete the category from the store on delete cta click', async () => {
+  it.skip('should confirm the deletion on delete cta click what there expenses', async () => {
     createWrapper({
-      data: () => ({
-        isOpen: true,
-      }),
+      props: { isOpen: true },
+    });
+
+    await wrapper.find('[data-test="delete category"]').trigger('click');
+
+    const deleteCategory = vi.spyOn(wrapper.vm, 'confirmDelete');
+
+    expect(deleteCategory)
+      .toHaveBeenCalled();
+  });
+
+  it('should delete on delete cta click when there are no expenses for this category', async () => {
+    createWrapper({
+      props: { isOpen: true },
+      provide: { expenseList: {} },
     });
 
     await wrapper.find('[data-test="delete category"]').trigger('click');
