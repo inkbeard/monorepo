@@ -10,7 +10,8 @@
     "postinstall": "manypkg check",
     "stylelint": "turbo stylelint",
     "test:unit": "turbo run test:unit",
-    "test:unit:watch": "turbo run test:unit:watch"
+    "test:unit:watch": "turbo run test:unit:watch",
+    "gen:vue-component": "turbo gen vue-component"
   },
   "packageManager": "pnpm@8.9.0",
   "engines": {

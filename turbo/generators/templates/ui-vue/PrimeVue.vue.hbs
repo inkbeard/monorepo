@@ -1,0 +1,36 @@
+<script lang="ts" setup>
+  /**
+   * A component extended from primevue's `{{ primeVueComponentNamePascal }}` component. Refer to the [documentation](https://primevue.org/{{ primeVueComponentNameLower }}) for a full list of features.
+   */
+
+  import {{ primeVueComponentNamePascal }} from 'primevue/{{ primeVueComponentNameLower }}';
+
+  defineOptions({
+    inheritAttrs: false,
+  });
+</script>
+
+<template>
+  <{{ primeVueComponentNamePascal }}
+    v-bind="$attrs"
+    :pt="{
+      root: {
+        class: '{{ componentNameKebabCase }}',
+      },
+    }"
+  >
+    <template
+      v-for="(_, name, index) in ($slots as {})"
+      :key="index"
+      #[name]="scope"
+    >
+      <slot :name="name" v-bind="{ scope }" />
+    </template>
+  </{{ primeVueComponentNamePascal }}>
+</template>
+
+<style>
+.{{ componentNameKebabCase }} {
+  background-color: var(--ink-danger-color);
+}
+</style>
