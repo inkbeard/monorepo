@@ -1,0 +1,15 @@
+import { {{ componentName }} } from '@inkbeard/ui-vue';
+
+export default {
+  title: 'ui-vue/{{ componentName }}',
+  component: {{ componentName }},
+  tags: ['autodocs'],
+  parameters: {
+    layout: 'centered',
+  },
+};
+export const {{ componentName }}Example = {
+  args: {
+    msg: 'Hello storybook!',
+  },
+};
