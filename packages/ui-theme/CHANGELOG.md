@@ -1,5 +1,11 @@
 # @inkbeard/ui-theme
 
+## 1.2.0
+
+### Minor Changes
+
+- db65170: - Exporting readme files and changelogs
+
 ## 1.1.0
 
 ### Minor Changes

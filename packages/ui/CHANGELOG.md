@@ -1,5 +1,11 @@
 # @inkbeard/ui
 
+## 0.3.0
+
+### Minor Changes
+
+- e1c2b95: pinned typescript version to 5.2.2 as workaround for https://github.com/vercel/turbo/issues/6656
+
 ## 0.2.0
 
 ### Minor Changes

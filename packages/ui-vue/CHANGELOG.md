@@ -1,5 +1,14 @@
 # @inkbeard/ui-vue
 
+## 0.3.0
+
+### Minor Changes
+
+- db65170: - Exporting readme files and changelogs
+- 220cdf0: - Extended the `ConfirmPopup` as `AppConfirmPopup`
+- 0154322: - Added margin between buttons within btn-groups
+- e1c2b95: pinned typescript version to 5.2.2 as workaround for https://github.com/vercel/turbo/issues/6656
+
 ## 0.2.0
 
 ### Minor Changes

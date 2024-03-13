@@ -1,5 +1,28 @@
 # @inkbeard/ui-library
 
+## 0.3.0
+
+### Minor Changes
+
+- 220cdf0: - Extended the `ConfirmPopup` as `AppConfirmPopup`
+- db65170: - Added changelogs and readmes to the libraries and theme
+  - Sorted table of contents
+- a69a601: Fixed documetation for the AppConfirmPopup component
+
+### Patch Changes
+
+- Updated dependencies [db65170]
+- Updated dependencies [a69a601]
+- Updated dependencies [220cdf0]
+- Updated dependencies [1369a92]
+- Updated dependencies [d91bbe4]
+- Updated dependencies [0154322]
+- Updated dependencies [e1c2b95]
+- Updated dependencies [a69a601]
+- Updated dependencies [8450a8f]
+  - @inkbeard/budget-it@0.5.0
+  - @inkbeard/ui-vue@0.3.0
+
 ## 0.2.0
 
 ### Minor Changes
