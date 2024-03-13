@@ -1,5 +1,26 @@
 # inkbeard
 
+## 0.6.0
+
+### Minor Changes
+
+- e1c2b95: pinned typescript version to 5.2.2 as workaround for https://github.com/vercel/turbo/issues/6656
+- a69a601: installed Budget It plugin
+
+### Patch Changes
+
+- Updated dependencies [db65170]
+- Updated dependencies [a69a601]
+- Updated dependencies [220cdf0]
+- Updated dependencies [1369a92]
+- Updated dependencies [d91bbe4]
+- Updated dependencies [0154322]
+- Updated dependencies [e1c2b95]
+- Updated dependencies [a69a601]
+- Updated dependencies [8450a8f]
+  - @inkbeard/budget-it@0.5.0
+  - @inkbeard/ui-vue@0.3.0
+
 ## 0.5.1
 
 ### Patch Changes

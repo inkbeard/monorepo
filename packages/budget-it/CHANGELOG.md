@@ -1,5 +1,19 @@
 # @inkbeard/budget-it
 
+## 0.5.0
+
+### Minor Changes
+
+- db65170: - Exporting readme files and changelogs
+- a69a601: - Added `ConfirmationService` installation to the plugin installation.
+  - Added confirmation of expense deletion
+- 1369a92: Added confirmation popup when deleting categories
+- d91bbe4: - Added delete button and logic for expense item
+- e1c2b95: pinned typescript version to 5.2.2 as workaround for https://github.com/vercel/turbo/issues/6656
+- a69a601: - Added ExpenseEditor component
+  - Replaced expense form in ExpenseItem component with ExpenseEditor
+- 8450a8f: - Added `raised` property for buttons in the AddExpense component
+
 ## 0.4.0
 
 ### Minor Changes
