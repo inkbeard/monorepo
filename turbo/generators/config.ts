@@ -151,11 +151,17 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
             const [data] = await eslint.lintFiles(filePath);
 
             if (data?.messages) {
-              console.error(data?.messages);
+              console.error({ messages: data?.messages });
             }
 
             return data?.output || contents;
           },
+        },
+        // Add component story file
+        {
+          type: 'add',
+          path: `${root}/apps/ui-library/src/stories/${componentName}.stories.js`,
+          templateFile: `${templateFolder}/${componentTemplate}.stories.js.hbs`,
         },
       ];
 

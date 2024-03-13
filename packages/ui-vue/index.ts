@@ -11,7 +11,6 @@ import AppFormGroup from './src/components/AppFormGroup.vue';
 import AppIcon from './src/components/AppIcon.vue';
 import AppInputNumber from './src/components/AppInputNumber.vue';
 import AppInputText from './src/components/AppInputText.vue';
-import Donkey from './src/components/Donkey.vue';
 
 export {
   AppButton,
@@ -23,7 +22,6 @@ export {
   AppInputNumber,
   AppInputText,
   ConfirmationService,
-  Donkey,
   Tooltip,
   useConfirm,
 };
