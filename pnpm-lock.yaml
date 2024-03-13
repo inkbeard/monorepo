@@ -364,8 +364,8 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0
       eslint-plugin-sort-exports:
-        specifier: ^0.8.0
-        version: 0.8.0(eslint@8.56.0)
+        specifier: ^0.9.1
+        version: 0.9.1(eslint@8.56.0)
       eslint-plugin-vue:
         specifier: ^9.21.1
         version: 9.21.1(eslint@8.56.0)
@@ -7293,12 +7293,13 @@ packages:
       string.prototype.matchall: 4.0.10
     dev: true
 
-  /eslint-plugin-sort-exports@0.8.0(eslint@8.56.0):
-    resolution: {integrity: sha512-5x7kJNjIS5bSyehFJ6Gk2gh2wUPt/rmhwDHF8JPDicSH7bvrLRFdlkhHu74YqYBjEySHYaOZVoKNP90TjI0v6w==}
+  /eslint-plugin-sort-exports@0.9.1(eslint@8.56.0):
+    resolution: {integrity: sha512-2w6jHusdF2K60bcGKpa9HEinETwNzVrvplZipVculCfu3ZDd5IW3xL54XVEnVkGIPJnp/LitFCg7owL4DOtuHg==}
     peerDependencies:
       eslint: '>=5.0.0'
     dependencies:
       eslint: 8.56.0
+      minimatch: 9.0.3
     dev: true
 
   /eslint-plugin-storybook@0.6.15(eslint@8.56.0)(typescript@5.2.2):
