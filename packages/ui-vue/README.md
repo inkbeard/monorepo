@@ -1,4 +1,4 @@
-# `ui-vue`
+# `ui vue`
 This is a package for Vue 3 that provides a set of UI components for use in Inkbeard apps and packages. A majority of the components are wrappers around the [PrimeVue](https://primefaces.org/primevue/) library, which provides a set of UI components for Vue 3. For a list of the components available, see the [inkbeard storybook](http://localhost:6006/).
 
 ## Dependency installation
