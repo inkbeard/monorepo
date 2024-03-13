@@ -105,6 +105,12 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
           path: `${uiVuePath}/src/components/${componentName}.vue`,
           templateFile: `${templateFolder}/${componentTemplate}.vue.hbs`,
         },
+        // Add component test file
+        {
+          type: 'add',
+          path: `${uiVuePath}/src/components/__tests__/${componentName}.spec.ts`,
+          templateFile: `${templateFolder}/${componentTemplate}.spec.ts.hbs`,
+        },
       ];
 
       return actions;
