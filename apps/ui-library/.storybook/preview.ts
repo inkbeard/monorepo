@@ -17,7 +17,7 @@ const preview = {
     actions: { argTypesRegex: "^on[A-Z].*" },
     options: {
       storySort: {
-        order: ['UI Theme', 'ui-vue', 'Budget It', 'Changelog']
+        order: ['UI Theme', 'ui vue', 'budget it', 'Changelog']
       },
     },
     controls: {

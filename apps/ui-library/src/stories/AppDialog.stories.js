@@ -11,7 +11,7 @@ export const SampleDialog = {
 };
 
 export default {
-  title: 'ui-vue/AppDialog',
+  title: 'ui vue/AppDialog',
   component: AppDialog,
   tags: ['autodocs'],
   parameters: {
