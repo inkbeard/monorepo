@@ -1,6 +1,7 @@
 import { ESLint } from 'eslint';
 import type { PlopTypes } from '@turbo/gen';
 import fs from 'fs';
+import path from 'path';
 
 export default function generator(plop: PlopTypes.NodePlopAPI): void {
   const kebabCase = plop.getHelper('kebabCase');
@@ -10,12 +11,41 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
   plop.setGenerator('vue-component', {
     description: 'Adds a new vue 3 typescript component.',
     prompts: [
+      // Get component's desired location
+      {
+        type: 'list',
+        name: 'workspace',
+        message: 'What workspace should the component be added to?',
+        choices: function () {
+          return fs
+            .readdirSync(path.join(
+              __dirname,
+              '../../packages/',
+            ))
+            .filter(function (file) {
+              return ![
+                'eslint-config',
+                'stylelint-config',
+                'typescript-config',
+                'ui',
+                'ui-theme',
+              ].includes(file)
+              && fs
+                .statSync(path.join(__dirname, '../../packages/', file))
+                .isDirectory();
+            });
+        },
+      },
       // Get component name
       {
         type: 'input',
         name: 'componentName',
         message: 'What is the name of the component?',
-        validate: (input: string) => {
+        validate: (input: string, data: any) => {
+          if (data.workspace === 'ui-vue' && !input.startsWith('App')) {
+            return 'Name must start with "App".';
+          }
+
           if (!input) {
             return 'Name is required.';
           }
@@ -28,7 +58,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
             return 'Name cannot include spaces.';
           }
 
-          if (fs.existsSync(`packages/ui-vue/src/components/${pascalCase(input)}.vue`)) {
+          if (fs.existsSync(`packages/${data.workspace}/src/components/${pascalCase(input)}.vue`)) {
             return `"${pascalCase(input)}.vue" already exists.`;
           }
 
@@ -37,6 +67,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
       },
       // Check if component extends PrimeVue component
       {
+        when: ({ workspace }) => workspace === 'ui-vue',
         type: 'confirm',
         name: 'isPrimeVue',
         message: 'Is this component extending a PrimeVue component?',
@@ -94,6 +125,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
       data.description = description.replace(/^\w/, (c: string) => c.toUpperCase());
       data.componentNameLower = lowerCase(componentName);
       data.componentNameKebabCase = kebabCase(componentName);
+      data.storyCategory = data.workspace.replace('-', ' ')
       data.primeVueComponentNameLower = lowerCase(data.PrimeVueComponentName);
       data.primeVueComponentNamePascal = pascalCase(data.PrimeVueComponentName);
       data.primeVueComponentNameKebab = kebabCase(data.PrimeVueComponentName);
