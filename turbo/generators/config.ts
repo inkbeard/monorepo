@@ -1,3 +1,4 @@
+import { ESLint } from 'eslint';
 import type { PlopTypes } from '@turbo/gen';
 import fs from 'fs';
 
@@ -110,6 +111,51 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
           type: 'add',
           path: `${uiVuePath}/src/components/__tests__/${componentName}.spec.ts`,
           templateFile: `${templateFolder}/${componentTemplate}.spec.ts.hbs`,
+        },
+        // Add component to ui-vue export
+        {
+          type: 'modify',
+          path: `${uiVuePath}/index.ts`,
+          transform: async function eslintAction(contents: string) {
+            console.log('modifying index.ts');
+            const filePath = `${uiVuePath}/index.ts`;
+            /**
+             * import/export the new component in the ui-vue index.ts file.
+             */
+            const content = fs.readFileSync(`${uiVuePath}/index.ts`, 'utf8');
+            const lines = content.split('\n');
+            const lineIndex = lines.findIndex(line => line.includes('export {'));
+            lines.splice(lineIndex + 1, 0, `  ${componentName},`);
+            lines.splice(lineIndex - 1, 0, `import ${componentName} from './src/components/${componentName}.vue';`);
+            const newContent = lines.join('\n');
+
+            fs.writeFileSync(filePath, newContent, 'utf8');
+
+            /**
+             * Run eslint to fix the import/export order and sort the exports.
+             */
+            const eslint = new ESLint({
+              fix: true,
+              cwd: plop.getDestBasePath(),
+              overrideConfig: {
+                plugins: ['sort-exports'],
+                rules: {
+                  'sort-exports/sort-exports': [
+                    'error',
+                    { sortDir: 'asc' },
+                  ],
+                },
+              },
+            });
+            console.log('sorting exports...');
+            const [data] = await eslint.lintFiles(filePath);
+
+            if (data?.messages) {
+              console.error(data?.messages);
+            }
+
+            return data?.output || contents;
+          },
         },
       ];
 
