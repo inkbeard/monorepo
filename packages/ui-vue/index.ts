@@ -14,15 +14,15 @@ import AppInputText from './src/components/AppInputText.vue';
 
 export {
   AppButton,
+  AppConfirmPopup,
+  AppDialog,
   AppDropdown,
   AppFormGroup,
   AppIcon,
   AppInputNumber,
   AppInputText,
-  AppDialog,
-  Tooltip,
-  AppConfirmPopup,
   ConfirmationService,
+  Tooltip,
   useConfirm,
 };
 
