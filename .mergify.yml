@@ -128,6 +128,13 @@ pull_request_rules:
       label:
         add:
           - PR stack
+  - name: toggle generator label
+    conditions:
+      - files~=turbo/generators/
+    actions:
+      label:
+        toggle:
+          - "feature: generator"
   # Partition rules
   # Would ideally have this as dynamic, but Mergify doesn't support the `partition-queue-name` attribute at the moment.
   - name: inkbeard partition workflow
