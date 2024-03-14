@@ -61,7 +61,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
           }
 
           if (!kebabCase(input).includes('-')) {
-            return 'Name must be at least 2 word (AppButton, ExpenseItem, etc).';
+            return 'Name must be at least 2 words (AppButton, ExpenseItem, etc).';
           }
 
           if (input.includes('.')) {
