@@ -1,11 +1,21 @@
 import { ESLint } from 'eslint';
 import type { PlopTypes } from '@turbo/gen';
+import child_process from 'child_process';
 import fs from 'fs';
 import path from 'path';
+import util from 'util';
+
+const exec = util.promisify(child_process.exec);
 
 export default function generator(plop: PlopTypes.NodePlopAPI): void {
   const pascalCase = plop.getHelper('pascalCase');
   const lowerCase = plop.getHelper('lowerCase');
+
+  plop.setActionType('openPr', ({ componentName }: { componentName?: string }) =>
+    exec(`git add .; git commit -m 'Added ${componentName} template'; mergify stack`)
+      .then(() => 'successfully created PR!')
+      .catch((err) => `error creating PR: ${err}`)
+  );
 
   plop.setGenerator('vue-component', {
     description: 'Adds a new vue 3 typescript component.',
@@ -207,6 +217,9 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
           type: 'add',
           path: `${root}/.changeset/${componentName}-ui-library.md`,
           templateFile: 'templates/ui-library/changeset.md.hbs',
+        },
+        {
+          type: 'openPr',
         },
       ];
 
