@@ -192,6 +192,18 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
           path: `${root}/apps/ui-library/src/stories/${componentName}.stories.js`,
           templateFile: `${templateFolder}/${componentTemplate}.stories.js.hbs`,
         },
+        // Add component changelog
+        {
+          type: 'add',
+          path: `${root}/.changeset/${componentName}-${data.workspace}.md`,
+          templateFile: `${templateFolder}/changeset.md.hbs`,
+        },
+        // Add ui library changelog
+        {
+          type: 'add',
+          path: `${root}/.changeset/${componentName}-ui-library.md`,
+          templateFile: 'templates/ui-library/changeset.md.hbs',
+        },
       ];
 
       return actions;
