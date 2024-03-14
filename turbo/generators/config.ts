@@ -12,12 +12,12 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
   const pascalCase = plop.getHelper('pascalCase');
   const lowerCase = plop.getHelper('lowerCase');
 
-  plop.setActionType('openPr', function (answers, config) {
-    console.log({answers, config})
-    return exec(`git add .; git commit -m '${config.componentName}'; mergify stack`)
+  plop.setActionType('openPr', ({ componentName }: { componentName?: string }) =>
+    // console.log({answers, config})
+    exec(`git add .; git commit -m '${componentName}'; mergify stack`)
       .then(() => 'successfully created PR!')
-      .catch((err) => `error creating PR: ${err}`);
-  });
+      .catch((err) => `error creating PR: ${err}`)
+  );
 
   plop.setGenerator('vue-component', {
     description: 'Adds a new vue 3 typescript component.',
@@ -208,7 +208,6 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
         },
         {
           type: 'openPr',
-          componentName,
         }
       ];
 

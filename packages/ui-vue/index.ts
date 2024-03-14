@@ -13,6 +13,7 @@ import AppInputNumber from './src/components/AppInputNumber.vue';
 import AppInputText from './src/components/AppInputText.vue';
 import AppDonkey from './src/components/AppDonkey.vue';
 import Donkey from './src/components/Donkey.vue';
+import Dragon from './src/components/Dragon.vue';
 
 export {
   AppButton,
@@ -25,6 +26,7 @@ export {
   AppInputNumber,
   AppInputText,
   ConfirmationService,
+  Dragon,
   Donkey,
   Tooltip,
   useConfirm,
