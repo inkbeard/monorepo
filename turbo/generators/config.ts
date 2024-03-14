@@ -1,12 +1,23 @@
 import { ESLint } from 'eslint';
 import type { PlopTypes } from '@turbo/gen';
+import child_process from 'child_process';
 import fs from 'fs';
 import path from 'path';
+import util from 'util';
+
+const exec = util.promisify(child_process.exec);
 
 export default function generator(plop: PlopTypes.NodePlopAPI): void {
   const kebabCase = plop.getHelper('kebabCase');
   const pascalCase = plop.getHelper('pascalCase');
   const lowerCase = plop.getHelper('lowerCase');
+
+  plop.setActionType('openPr', function (answers, config) {
+    console.log({answers, config})
+    return exec(`git add .; git commit -m '${config.componentName}'; mergify stack`)
+      .then(() => 'successfully created PR!')
+      .catch((err) => `error creating PR: ${err}`);
+  });
 
   plop.setGenerator('vue-component', {
     description: 'Adds a new vue 3 typescript component.',
@@ -195,6 +206,10 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
           path: `${root}/apps/ui-library/src/stories/${componentName}.stories.js`,
           templateFile: `${templateFolder}/${componentTemplate}.stories.js.hbs`,
         },
+        {
+          type: 'openPr',
+          componentName,
+        }
       ];
 
       return actions;

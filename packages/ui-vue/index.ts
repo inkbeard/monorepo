@@ -11,17 +11,21 @@ import AppFormGroup from './src/components/AppFormGroup.vue';
 import AppIcon from './src/components/AppIcon.vue';
 import AppInputNumber from './src/components/AppInputNumber.vue';
 import AppInputText from './src/components/AppInputText.vue';
+import AppDonkey from './src/components/AppDonkey.vue';
+import Donkey from './src/components/Donkey.vue';
 
 export {
   AppButton,
   AppConfirmPopup,
   AppDialog,
+  AppDonkey,
   AppDropdown,
   AppFormGroup,
   AppIcon,
   AppInputNumber,
   AppInputText,
   ConfirmationService,
+  Donkey,
   Tooltip,
   useConfirm,
 };
