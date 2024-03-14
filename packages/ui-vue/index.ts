@@ -21,6 +21,7 @@ export {
   AppDialog,
   AppDonkey,
   AppDonkey,
+  AppDonkey,
   AppDropdown,
   AppFormGroup,
   AppIcon,
