@@ -1,0 +1,12 @@
+---
+{{#if isPrimeVue}}
+"@inkbeard/{{ workspace }}": major
+{{else}}
+"@inkbeard/{{ workspace }}": minor
+{{/if}}
+---
+{{#if isPrimeVue}}
+- Extended PrimeVue's {{ primeVueComponentName }} as {{ componentName }}.
+{{else}}
+Added base {{ componentName }} component template and test.
+{{/if}}
