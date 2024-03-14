@@ -1,5 +1,11 @@
 # @inkbeard/ui-library
 
+## 1.0.0
+
+### Major Changes
+
+- 3a88514: Updated to storybook version 8
+
 ## 0.3.0
 
 ### Minor Changes
