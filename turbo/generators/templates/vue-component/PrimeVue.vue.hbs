@@ -15,7 +15,7 @@
     v-bind="$attrs"
     :pt="{
       root: {
-        class: '{{ componentNameKebabCase }}',
+        class: '{{ kebabCase componentName }}',
       },
     }"
   >
@@ -30,7 +30,7 @@
 </template>
 
 <style>
-.{{ componentNameKebabCase }} {
+.{{ kebabCase componentName }} {
   background-color: var(--ink-danger-color);
 }
 </style>
