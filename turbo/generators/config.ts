@@ -8,6 +8,7 @@ import util from 'util';
 const exec = util.promisify(child_process.exec);
 
 export default function generator(plop: PlopTypes.NodePlopAPI): void {
+  const kebabCase = plop.getHelper('kebabCase');
   const pascalCase = plop.getHelper('pascalCase');
   const lowerCase = plop.getHelper('lowerCase');
 
