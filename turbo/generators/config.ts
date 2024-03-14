@@ -3,7 +3,9 @@ import type { PlopTypes } from '@turbo/gen';
 import fs from 'fs';
 import path from 'path';
 
+
 export default function generator(plop: PlopTypes.NodePlopAPI): void {
+  const kebabCase = plop.getHelper('kebabCase');
   const pascalCase = plop.getHelper('pascalCase');
   const lowerCase = plop.getHelper('lowerCase');
 
@@ -47,6 +49,10 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
 
           if (!input) {
             return 'Name is required.';
+          }
+
+          if (!kebabCase(input).includes('-')) {
+            return 'Name must be at least 2 word (AppButton, ExpenseItem, etc).';
           }
 
           if (input.includes('.')) {
