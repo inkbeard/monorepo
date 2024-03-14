@@ -1,6 +1,6 @@
 <script setup lang="ts">
   /**
-   * Test test.
+   * Jlaksdf.
    */
   export interface Props {
     /**

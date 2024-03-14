@@ -8,13 +8,13 @@ import util from 'util';
 const exec = util.promisify(child_process.exec);
 
 export default function generator(plop: PlopTypes.NodePlopAPI): void {
-  const kebabCase = plop.getHelper('kebabCase');
+  // const kebabCase = plop.getHelper('kebabCase');
   const pascalCase = plop.getHelper('pascalCase');
   const lowerCase = plop.getHelper('lowerCase');
 
   plop.setActionType('openPr', ({ componentName }: { componentName?: string }) =>
     // console.log({answers, config})
-    exec(`git add .; git commit -m '${componentName}'; mergify stack`)
+    exec(`git add .; git commit -m 'Added ${componentName} template'; mergify stack`)
       .then(() => 'successfully created PR!')
       .catch((err) => `error creating PR: ${err}`)
   );
@@ -87,7 +87,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
       {
         when: ({ isPrimeVue }) => isPrimeVue,
         type: 'input',
-        name: 'PrimeVueComponentName',
+        name: 'primeVueComponentName',
         message: 'What is the name of the PrimeVue component?',
         default: ({ componentName = '' }) => componentName.replace('App', ''),
         validate: (input: string) => {
@@ -129,17 +129,15 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
         : `${data.description}.`;
       const componentTemplate = data.isPrimeVue ? 'PrimeVue' : 'TsComponent';
       const uiVuePath = `${root}/packages/ui-vue`;
-      const templateFolder = 'templates/ui-vue';
+      const templateFolder = 'templates/vue-component';
 
       /* eslint-disable no-param-reassign */
       data.componentName = componentName;
       data.description = description.replace(/^\w/, (c: string) => c.toUpperCase());
       data.componentNameLower = lowerCase(componentName);
-      data.componentNameKebabCase = kebabCase(componentName);
       data.storyCategory = data.workspace.replace('-', ' ')
-      data.primeVueComponentNameLower = lowerCase(data.PrimeVueComponentName);
-      data.primeVueComponentNamePascal = pascalCase(data.PrimeVueComponentName);
-      data.primeVueComponentNameKebab = kebabCase(data.PrimeVueComponentName);
+      data.primeVueComponentNameLower = lowerCase(data.primeVueComponentName);
+      data.primeVueComponentNamePascal = pascalCase(data.primeVueComponentName);
       /* eslint-enable no-param-reassign */
 
       const actions = [
@@ -208,7 +206,22 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
         },
         {
           type: 'openPr',
-        }
+        },
+        // Add component changelog
+        {
+          type: 'add',
+          path: `${root}/.changeset/{{ packageName }}.md`,
+          templateFile: `${templateFolder}/changeset.md.hbs`,
+        },
+        // Add ui library changelog
+        {
+          type: 'add',
+          path: `${root}/.changeset/{{ packageName }}.md`,
+          templateFile: `templates/ui-librar/changeset.md.hbs`,
+        },
+        // {
+        //   type: 'openPr',
+        // }
       ];
 
       return actions;
