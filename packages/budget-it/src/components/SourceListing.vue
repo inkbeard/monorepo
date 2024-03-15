@@ -1,6 +1,9 @@
 <script setup lang="ts">
   import { computed, inject, ref } from 'vue';
-  import { AppButton } from '@inkbeard/ui-vue';
+  import {
+    AppButton,
+    useToast,
+  } from '@inkbeard/ui-vue';
   import type { SourceList } from '../types';
 
   const props = defineProps<{
@@ -9,6 +12,7 @@
      */
     sourceId?: number;
   }>();
+  const toast = useToast();
   const addSource = inject<Function>('addSource', () => () => {});
   const defaultSourceId = inject<number>('defaultSourceId');
   const sourceList = inject<SourceList>('sourceList', {});
@@ -36,16 +40,16 @@
   /**
    * Restore the source name and cancel the source editing state.
    */
-  const cancelEdit = () => {
+  function cancelEdit() {
     isEditing.value = false;
     sourceName.value = props.sourceId
       ? sourceList?.[props.sourceId] ?? ''
       : '';
-  };
+  }
   /**
    * Add a new source if it doesn't exist already or edit an existing source, then cancel the source editing state.
    */
-  const onSourceSave = () => {
+  function onSourceSave() {
     if (sourceIsDisabled.value) {
       return;
     }
@@ -60,7 +64,23 @@
     }
 
     isEditing.value = false;
-  };
+  }
+  /**
+   * Remove the source from the list of sources.
+   */
+  function deleteSource() {
+    if (!props.sourceId) {
+      return;
+    }
+
+    delete sourceList[props.sourceId];
+    toast.add({
+      severity: 'success',
+      summary: 'Source deleted',
+      detail: `"${sourceName.value}" has been deleted.`,
+      life: 5000,
+    });
+  }
 </script>
 
 <template>
@@ -139,7 +159,7 @@
           severity="danger"
           size="sm"
           text
-          @click="delete sourceList[sourceId]"
+          @click="deleteSource"
         />
       </div>
     </template>
