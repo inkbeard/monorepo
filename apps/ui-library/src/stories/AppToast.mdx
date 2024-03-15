@@ -1,0 +1,43 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+
+import * as AppToast from './AppToast.stories';
+
+<Meta of={AppToast} />
+
+# AppToast
+A component extended from primevue\'s `Toast` [component](https://primevue.org/toast/).
+
+## Installation
+[ToastService](https://primevue.org/toast/#toast-service) needs to be installed first (replacing "primevue" with "@inkbeard/ui-vue").
+
+```js
+import {createApp} from 'vue';
+import ToastService from '@inkbeard/ui-vue';
+
+const app = createApp(App);
+app.use(ToastService);
+```
+
+## Usage
+Refer to [primevue's component](https://primevue.org/toast/) for instructions for advanced used. A simple use case would be as follows:
+```js
+<script lang="ts" setup>
+  import { AppButton, useToast } from "@inkbeard/ui-vue";
+
+  const toast = useToast();
+
+  const showToast = () => {
+    toast.add({
+      severity: 'info',
+      summary: 'Info',
+      detail: 'Message Content',
+      life: 3000
+    });
+  };
+</script>
+
+<template>
+  <AppToast />
+  <AppButton label="Show" @click="showToast" />
+</template>
+```

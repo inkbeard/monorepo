@@ -3,7 +3,9 @@ import PrimeVue from 'primevue/config';
 import Tooltip from 'primevue/tooltip';
 import AppConfirmPopup from 'primevue/confirmpopup';
 import ConfirmationService from 'primevue/confirmationservice';
+import ToastService from 'primevue/toastservice';
 import { useConfirm } from 'primevue/useconfirm';
+import { useToast } from 'primevue/usetoast';
 import AppDialog from './src/components/AppDialog.vue';
 import AppButton from './src/components/AppButton.vue';
 import AppDropdown from './src/components/AppDropdown.vue';
@@ -24,7 +26,9 @@ export {
   AppInputText,
   AppToast,
   ConfirmationService,
+  ToastService,
   Tooltip,
+  useToast,
   useConfirm,
 };
 
