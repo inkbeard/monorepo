@@ -1,5 +1,15 @@
 # @inkbeard/ui-vue
 
+## 1.0.0
+
+### Major Changes
+
+- 6128a04: - Extended PrimeVue's Toast as AppToast.
+
+### Minor Changes
+
+- c961fa1: Updated AppToast with correct icons
+
 ## 0.3.0
 
 ### Minor Changes

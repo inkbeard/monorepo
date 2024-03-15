@@ -1,5 +1,13 @@
 # @inkbeard/budget-it
 
+## 0.6.0
+
+### Minor Changes
+
+- 0a5d6bc: Added toast confirmation to category deletion
+- 0e676cd: Added toast message to successful expense deletion
+- a97e938: Added toast to successful source deletion
+
 ## 0.5.0
 
 ### Minor Changes

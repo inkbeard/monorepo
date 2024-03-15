@@ -1,5 +1,22 @@
 # @inkbeard/ui-library
 
+## 1.1.0
+
+### Minor Changes
+
+- 6128a04: Added AppToast component story.
+- c961fa1: Updated AppToast story
+
+### Patch Changes
+
+- Updated dependencies [6128a04]
+- Updated dependencies [0a5d6bc]
+- Updated dependencies [c961fa1]
+- Updated dependencies [0e676cd]
+- Updated dependencies [a97e938]
+  - @inkbeard/ui-vue@1.0.0
+  - @inkbeard/budget-it@0.6.0
+
 ## 1.0.0
 
 ### Major Changes
