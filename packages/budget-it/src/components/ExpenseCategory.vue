@@ -3,8 +3,9 @@
   import {
     AppButton,
     AppConfirmPopup,
-
+    AppToast,
     useConfirm,
+    useToast,
   } from '@inkbeard/ui-vue';
   import type {
     BaseExpenseInfo,
@@ -14,6 +15,8 @@
   import ExpenseItem from './ExpenseItem.vue';
   import AddExpense from './AddExpense.vue';
 
+  const confirm = useConfirm();
+  const toast = useToast();
   const categoryList = inject<CategoryInfo[]>('categoryList', []);
   const expenseList = inject<ExpenseList>('expenseList', {});
   const props = defineProps<{
@@ -44,6 +47,12 @@
 
     categoryList.splice(index, 1);
     emits('deleteCategory', props.category.id);
+    toast.add({
+      severity: 'success',
+      summary: 'Category deleted',
+      detail: `"${props.category.name}" has been deleted.`,
+      life: 5000,
+    });
   };
   /**
    * Get the id and amount for all the expenses for this category.
@@ -75,8 +84,6 @@
     // eslint-disable-next-line no-console
     console.log('Edited expense:', { id, name, description });
   }
-
-  const confirm = useConfirm();
 
   /**
    * Confirm the deletion of the category.
@@ -169,6 +176,7 @@
       </div>
     </div>
   </div>
+  <AppToast />
 </template>
 
 <style scoped>
