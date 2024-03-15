@@ -11,6 +11,7 @@ import AppFormGroup from './src/components/AppFormGroup.vue';
 import AppIcon from './src/components/AppIcon.vue';
 import AppInputNumber from './src/components/AppInputNumber.vue';
 import AppInputText from './src/components/AppInputText.vue';
+import AppToast from './src/components/AppToast.vue';
 
 export {
   AppButton,
@@ -21,6 +22,7 @@ export {
   AppIcon,
   AppInputNumber,
   AppInputText,
+  AppToast,
   ConfirmationService,
   Tooltip,
   useConfirm,
