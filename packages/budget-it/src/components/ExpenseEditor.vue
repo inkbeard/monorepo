@@ -5,6 +5,7 @@
     AppConfirmPopup,
     AppInputText,
     useConfirm,
+    useToast,
   } from '@inkbeard/ui-vue';
   import type {
     BaseExpenseInfo,
@@ -32,7 +33,8 @@
      */
     expenseId: number;
   }>();
-
+  const confirm = useConfirm();
+  const toast = useToast();
   const expenseList = inject<ExpenseList>('expenseList', {});
   const expense = defineModel<ExpenseInfo>('expense', { required: true });
   const expenseName = ref(expense.value.name);
@@ -52,7 +54,6 @@
       name.toLowerCase() === editableExpense.value.name.toLowerCase()
     ))
   ));
-
   /**
    * Save the expense with the new information and cancel editing.
    */
@@ -82,10 +83,14 @@
     isEditing.value = false;
     emits('deleteExpense', props.expenseId);
     delete expenseList[props.expenseId];
+
+    toast.add({
+      severity: 'success',
+      summary: 'Expense deleted',
+      detail: `"${expenseName.value}" has been deleted.`,
+      life: 5000,
+    });
   }
-
-  const confirm = useConfirm();
-
   /**
    * Confirm the deletion of the expense.
    */
