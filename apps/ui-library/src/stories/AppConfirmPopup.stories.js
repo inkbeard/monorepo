@@ -42,5 +42,4 @@ export const SampleConfirmPopup = {
 
 export default {
   title: 'ui vue/AppConfirmPopup',
-  component: AppButton,
 };
