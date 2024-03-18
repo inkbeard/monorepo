@@ -21,13 +21,13 @@ export default defineConfig({
         main: fileURLToPath(new URL('./index.ts', import.meta.url)),
       },
       external: [
-        // 'primevue',
+        'chart.js',
+        'vue-chartjs',
         'vue',
       ],
       output: {
         globals: {
           vue: 'Vue',
-          // primevue: 'primevue',
         },
       },
     },
