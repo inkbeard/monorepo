@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { computed, inject } from 'vue';
-  import { DoughnutChart } from 'vue-chart-3';
+  import { PieChart } from 'vue-chart-3';
   import { Chart, registerables } from 'chart.js';
   import type {
     CategoryInfo,
@@ -14,7 +14,7 @@
   /**
    * Get the category label and the total amount for each.
    */
-  const categoryBreakdown = computed(() => Object.values(expenseList).reduce((acc, { categoryId, amount }) => {
+  const chartData = computed(() => Object.values(expenseList).reduce((acc, { categoryId, amount }) => {
     const { name, backgroundColor } = categoryList.find(({ id }) => id === categoryId)
       ?? { name: '', backgroundColor: '' };
     const categoryIndex = acc.labels.findIndex((categoryName) => name === categoryName);
@@ -35,11 +35,29 @@
       backgroundColor: [] as string[],
     }],
   }));
+  const chartOptions = {
+    borderWidth: 1,
+    plugins: {
+      legend: {
+        position: 'bottom',
+      },
+      tooltip: {
+        callbacks: {
+          label({ formattedValue = '' }) {
+            return `$${formattedValue}`;
+          },
+        },
+      },
+    },
+  };
 </script>
 
 <template>
   <h2 class="font-size-h5">
     Category Breakdown
   </h2>
-  <DoughnutChart :chart-data="categoryBreakdown" />
+  <PieChart
+    :chart-data="chartData"
+    :options="chartOptions"
+  />
 </template>
