@@ -79,10 +79,11 @@
   /**
    * Add a new category to the current list of categories.
    */
-  const addCategory = (categoryName: string) => {
+  const addCategory = ({ backgroundColor = '', name = '' }) => {
     categoryList.value.unshift({
-      name: categoryName.trim(),
+      backgroundColor,
       id: categoryList.value.length + 1,
+      name: name.trim(),
     });
   };
 
