@@ -1,13 +1,18 @@
 <script setup lang="ts">
   import { computed, inject } from 'vue';
-  import { PieChart } from 'vue-chart-3';
-  import { Chart, registerables } from 'chart.js';
+  import { Pie } from 'vue-chartjs';
+  import {
+    Chart as ChartJS,
+    Tooltip,
+    Legend,
+    ArcElement,
+  } from 'chart.js';
   import type {
     CategoryInfo,
     ExpenseList,
   } from '../types';
 
-  Chart.register(...registerables);
+  ChartJS.register(ArcElement, Tooltip, Legend);
 
   const categoryList = inject<CategoryInfo[]>('categoryList', []);
   const expenseList = inject<ExpenseList>('expenseList', {});
@@ -56,8 +61,8 @@
   <h2 class="font-size-h5">
     Category Breakdown
   </h2>
-  <PieChart
-    :chart-data="chartData"
-    :options="chartOptions"
+  <Pie
+    :data="chartData"
+    :options="chartOptions as any"
   />
 </template>
