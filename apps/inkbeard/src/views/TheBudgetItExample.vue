@@ -3,6 +3,7 @@
   import {
     AddCategory,
     BudgetIt,
+    CategoryBreakdown,
     ExpenseCategory,
     SourcesEditor,
   } from '@inkbeard/budget-it';
@@ -140,6 +141,7 @@
         </div>
         <aside>
           <SourcesEditor />
+          <CategoryBreakdown />
         </aside>
       </section>
     </BudgetIt>
