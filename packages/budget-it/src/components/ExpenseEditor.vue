@@ -120,7 +120,6 @@
       v-model="editableExpense.name"
       :input-id="`edit-name-${expense.categoryId}-${expense.name}`"
       label="Name"
-      label-description="Add a new expense to this category."
     />
     <AppInputText
       v-model="editableExpense.description"
@@ -143,7 +142,7 @@
         data-test="submit add expense"
         :disabled="saveIsDisabled"
         icon="fa-solid fa-check"
-        label="Create"
+        label="Update"
         raised
         severity="primary"
         @click="saveExpense"
@@ -166,7 +165,7 @@
 <style scoped>
 .delete-expense {
   width: 100%;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   padding-top: 1rem;
   text-align: center;
   border-top: 1px solid var(--ink-border-color);
