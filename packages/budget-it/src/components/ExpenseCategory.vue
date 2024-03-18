@@ -1,72 +1,44 @@
 <script setup lang="ts">
-  import { computed, inject } from 'vue';
+  import { computed, inject, ref } from 'vue';
   import {
     AppButton,
-    AppConfirmPopup,
+    AppDialog,
     AppToast,
-    useConfirm,
-    useToast,
   } from '@inkbeard/ui-vue';
   import type {
     BaseExpenseInfo,
     CategoryInfo,
     ExpenseList,
   } from '../types';
+  import CategoryEditor from './CategoryEditor.vue';
   import ExpenseItem from './ExpenseItem.vue';
   import AddExpense from './AddExpense.vue';
 
-  const confirm = useConfirm();
-  const toast = useToast();
-  const categoryList = inject<CategoryInfo[]>('categoryList', []);
+  const isEditing = ref(false);
   const expenseList = inject<ExpenseList>('expenseList', {});
-  const props = defineProps<{
-    /**
-     * The category to display.
-     */
-    category: CategoryInfo,
-  }>();
-  const emits = defineEmits<{
-    /**
-     * Emit the category id that was deleted.
-     */
-    (e: 'deleteCategory', categoryId: number): void
-  }>();
+  const category = defineModel<CategoryInfo>('category', { required: true });
   /**
    * Whether the category is open to view its expenses.
    */
   const isOpen = defineModel<boolean>('isOpen');
   /**
-   * Delete a category from the current list of categories.
-   */
-  const deleteCategory = () => {
-    const index = categoryList.findIndex(({ id }) => id === props.category.id) ?? -1;
-
-    if (index === -1) {
-      return;
-    }
-
-    categoryList.splice(index, 1);
-    emits('deleteCategory', props.category.id);
-    toast.add({
-      severity: 'success',
-      summary: 'Category deleted',
-      detail: `"${props.category.name}" has been deleted.`,
-      life: 5000,
-    });
-  };
-  /**
    * Get the id and amount for all the expenses for this category.
    */
   const categoryExpenses = computed(() => (
     Object.entries(expenseList).reduce((acc, [id, expense]) => {
-      if (expense.categoryId === props.category.id) {
+      if (expense.categoryId === category.value.id) {
         acc.push({
           id: Number(id),
           amount: expense.amount,
+          name: expense.name,
         });
       }
       return acc;
-    }, [] as ({ id: number, amount: number })[])
+    }, [] as ({
+      id: number,
+      amount: number,
+      name: string
+    })[])
   ));
   /**
    * Get the total amount of all the expenses for this category.
@@ -84,32 +56,6 @@
     // eslint-disable-next-line no-console
     console.log('Edited expense:', { id, name, description });
   }
-
-  /**
-   * Confirm the deletion of the category.
-   */
-  function confirmDelete(event: { currentTarget: HTMLElement;
-  }) {
-    if (!totalExpenses.value && !categoryExpenses.value.length) {
-      deleteCategory();
-    } else {
-      confirm.require({
-        target: event.currentTarget,
-        group: 'confirmDelete',
-        message: `This will permanently delete $${totalExpenses.value} worth of expenses.`,
-        icon: 'fa-solid fa-triangle-exclamation text-danger',
-        acceptClass: 'p-button-raised p-button-sm p-button-danger',
-        acceptIcon: 'fa-solid fa-check',
-        acceptLabel: 'Delete',
-        rejectClass: 'p-button-secondary p-button-raised p-button-sm',
-        rejectIcon: 'fa-solid fa-xmark',
-        rejectLabel: 'Cancel',
-        accept: () => {
-          deleteCategory();
-        },
-      });
-    }
-  }
 </script>
 
 <template>
@@ -126,15 +72,10 @@
           >
             {{ category.name }}
             <AppButton
-              class="delete-category"
-              data-test="delete category"
-              icon="fa-duotone fa-trash-can"
-              severity="danger"
-              size="sm"
+              icon="fa-solid fa-pencil"
               text
-              @click="confirmDelete"
+              @click="isEditing = true"
             />
-            <AppConfirmPopup group="confirmDelete" />
           </li>
           <li class="category-total">
             Total: ${{ totalExpenses }}
@@ -177,6 +118,22 @@
     </div>
   </div>
   <AppToast />
+  <AppDialog
+    v-model:visible="isEditing"
+    header="Edit category"
+    modal
+    :style="{ width: '25rem' }"
+  >
+    <CategoryEditor
+      v-model:category="category"
+      :category-expenses="categoryExpenses"
+      :category-id="category.id"
+      :total-expenses="totalExpenses"
+      @cancel-editing="isEditing = false"
+      @delete-category="isEditing = false"
+      @edit-category="isEditing = false"
+    />
+  </AppDialog>
 </template>
 
 <style scoped>
