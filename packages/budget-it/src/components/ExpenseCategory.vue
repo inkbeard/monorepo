@@ -65,6 +65,10 @@
       :class="{ 'is-open': isOpen }"
     >
       <div class="category-title">
+        <div
+          class="category-color"
+          :style="{ backgroundColor: category.backgroundColor }"
+        />
         <ul class="category-meta">
           <li
             class="category-name"
@@ -162,11 +166,23 @@
   background-color: var(--vt-c-white);
 }
 
+.category-color {
+  position: absolute;
+  left: 0;
+  width: 1rem;
+  height: 100%;
+}
+
+.category-content {
+  border-top: 1px solid var(--ink-border-color-dark);
+}
+
 .category-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  position: relative;
+  padding: 1rem 1rem 1rem 2rem;
   border-bottom: 1px solid var(--ink-border-color-dark);
 }
 
@@ -182,5 +198,9 @@
   gap: 0.5rem;
   margin: 0;
   font-weight: bold;
+}
+
+.toggle {
+  margin-left: auto;
 }
 </style>
