@@ -98,7 +98,7 @@
           data-test="submit add category"
           :disabled="isDisabled"
           icon="fa-solid fa-check"
-          label="Submit"
+          label="Create"
           raised
           severity="primary"
           @click="addNewCategory"
