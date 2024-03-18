@@ -16,32 +16,39 @@
   } as Record<number, string>);
   const categoryList = ref([
     {
-      name: 'Entertainment',
+      backgroundColor: '#b30000',
       id: 1,
+      name: 'Entertainment',
     },
     {
-      name: 'Food',
+      backgroundColor: '#7c1158',
       id: 2,
+      name: 'Food',
     },
     {
-      name: 'Housing',
+      backgroundColor: '#4421af',
       id: 3,
+      name: 'Housing',
     },
     {
-      name: 'Transportation',
+      backgroundColor: '#1a53ff',
       id: 4,
+      name: 'Transportation',
     },
     {
-      name: 'Utilities',
+      backgroundColor: '#0d88e6',
       id: 5,
+      name: 'Utilities',
     },
     {
-      name: 'Clothing',
+      backgroundColor: '#00b7c7',
       id: 6,
+      name: 'Clothing',
     },
     {
-      name: 'Medical',
+      backgroundColor: '#5ad45a',
       id: 7,
+      name: 'Medical',
     },
   ]);
   const expenseList = ref({

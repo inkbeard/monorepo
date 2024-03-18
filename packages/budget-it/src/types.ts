@@ -46,7 +46,7 @@ export interface ExpenseList {
  * Required data for a category.
  */
 export interface CategoryInfo {
-  color?: string
+  backgroundColor: string
   id: number
   name: string
 }

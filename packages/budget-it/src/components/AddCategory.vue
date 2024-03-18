@@ -1,30 +1,57 @@
 <script setup lang="ts">
   import { ref, computed, inject } from 'vue';
-  import { AppButton } from '@inkbeard/ui-vue';
+  import {
+    AppButton,
+    AppInputText,
+    AppColorPicker,
+  } from '@inkbeard/ui-vue';
   import type { CategoryInfo } from '../types';
 
+  const presetColors = [
+    'b30000',
+    '7c1158',
+    '4421af',
+    '1a53ff',
+    '0d88e6',
+    '00b7c7',
+    '5ad45a',
+    '8be04e',
+    'ebdc78',
+  ];
   const categoryList = inject<CategoryInfo[]>('categoryList', []);
   const addCategory = inject<Function>('addCategory', () => () => {});
   const categoryName = ref('');
+  const categoryColor = ref(presetColors[0]);
   /**
    * Whether the user is currently adding a new category.
    */
   const isAdding = defineModel<boolean>('isAdding');
+  /**
+   * Disable the save button if the category name is empty or the category name already exists.
+   */
   const isDisabled = computed(() => (
     !categoryName.value
     || categoryList.some(({ name }) => (
       name.toLowerCase() === categoryName.value.trim().toLowerCase()))
   ));
-
+  /**
+   * Close the add category form and reset the category name.
+   */
   function cancelEdit() {
     categoryName.value = '';
+    [categoryColor.value] = presetColors;
     isAdding.value = false;
   }
-
+  /**
+   * Add a new category to the parent component and reset the form.
+   */
   function addNewCategory() {
     if (isDisabled.value) return;
 
-    addCategory(categoryName.value);
+    addCategory({
+      backgroundColor: `#${categoryColor.value}`,
+      name: categoryName.value,
+    });
     cancelEdit();
   }
 </script>
@@ -33,7 +60,7 @@
   <div class="add-category-container">
     <div
       v-if="!isAdding"
-      class="button-group"
+      class="btn-group align-end"
     >
       <AppButton
         icon="fa-solid fa-plus"
@@ -42,60 +69,62 @@
         @click="isAdding = true"
       />
     </div>
-    <div v-else>
-      <label for="add-category">
-        Category Name:
-      </label>
-      <input
-        id="add-category"
-        v-model="categoryName"
-        type="text"
-        @keydown.enter="addNewCategory"
-      />
-      <div class="button-group">
+    <template v-else>
+      <div class="category-info">
+        <AppColorPicker
+          v-model="categoryColor"
+          class="category-background"
+        />
+        <AppInputText
+          v-model="categoryName"
+          class="category-name"
+          data-test="edit category name"
+          input-id="add-category"
+          label="Category Name"
+          @keydown.enter="addNewCategory"
+        />
+      </div>
+      <div class="btn-group align-end">
         <AppButton
+          data-test="cancel add category"
+          icon="fa-solid fa-xmark"
           label="Cancel"
           raised
           severity="secondary"
+          text
           @click="cancelEdit"
         />
         <AppButton
+          data-test="submit add category"
           :disabled="isDisabled"
-          label="Add"
+          icon="fa-solid fa-check"
+          label="Submit"
           raised
+          severity="primary"
           @click="addNewCategory"
         />
       </div>
-    </div>
+    </template>
   </div>
 </template>
 
 <style scoped>
-.add-category-container {
-  padding: 1rem;
-}
-
-.button-group {
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
-}
-
-label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-}
-
-input {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.add-category-container,
+.category-info {
   margin-bottom: 1rem;
 }
 
-button {
-  cursor: pointer;
+.category-info {
+  display: flex;
+  gap: 1rem;
+  align-items: end;
+}
+
+.category-background {
+  transform: translateY(-5px);
+}
+
+::v-deep(.app-form-group)  {
+  flex: 1;
 }
 </style>
