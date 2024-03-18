@@ -1,5 +1,26 @@
 # inkbeard
 
+## 0.7.0
+
+### Minor Changes
+
+- a6665ea: Added CategoryBreakdown component
+- e8c8529: Added SourcesBreakdown
+- f911fc4: Added background colors to category list
+
+### Patch Changes
+
+- Updated dependencies [06be09b]
+- Updated dependencies [6a6553e]
+- Updated dependencies [1f596e0]
+- Updated dependencies [f911fc4]
+- Updated dependencies [a6665ea]
+- Updated dependencies [b65376f]
+- Updated dependencies [c0b2a67]
+- Updated dependencies [e8c8529]
+  - @inkbeard/ui-vue@2.0.0
+  - @inkbeard/budget-it@0.7.0
+
 ## 0.6.1
 
 ### Patch Changes

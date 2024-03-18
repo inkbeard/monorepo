@@ -1,5 +1,11 @@
 # @inkbeard/ui-vue
 
+## 2.0.0
+
+### Major Changes
+
+- 06be09b: - Extended PrimeVue's ColorPicker as AppColorPicker.
+
 ## 1.0.0
 
 ### Major Changes

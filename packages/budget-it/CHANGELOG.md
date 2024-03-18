@@ -1,5 +1,20 @@
 # @inkbeard/budget-it
 
+## 0.7.0
+
+### Minor Changes
+
+- 6a6553e: - Added CategoryEditor for editing category name and background color
+  - Replaced the delete button on the ExpenseCategory component with an edit button that opens the CategoryEditor
+- 1f596e0: Updated language for adding category button
+- f911fc4: - Added color picker to the AddCategory component
+  - Added background color to the CategoryInfo interface
+  - Added backgroundColor option to the addCategory function
+- a6665ea: Added CategoryBreakdown component
+- b65376f: Updated wording for ExpenseEditor's save button
+- c0b2a67: Added category color to title
+- e8c8529: Added SourcesBreakdown
+
 ## 0.6.0
 
 ### Minor Changes
