@@ -120,7 +120,6 @@
       v-model="editableExpense.name"
       :input-id="`edit-name-${expense.categoryId}-${expense.name}`"
       label="Name"
-      label-description="Add a new expense to this category."
     />
     <AppInputText
       v-model="editableExpense.description"
