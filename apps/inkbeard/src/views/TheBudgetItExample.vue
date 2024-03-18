@@ -4,6 +4,7 @@
     AddCategory,
     BudgetIt,
     CategoryBreakdown,
+    SourcesBreakdown,
     ExpenseCategory,
     SourcesEditor,
   } from '@inkbeard/budget-it';
@@ -142,6 +143,7 @@
         <aside>
           <SourcesEditor />
           <CategoryBreakdown />
+          <SourcesBreakdown />
         </aside>
       </section>
     </BudgetIt>
