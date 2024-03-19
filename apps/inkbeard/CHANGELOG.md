@@ -1,5 +1,12 @@
 # inkbeard
 
+## 0.7.1
+
+### Patch Changes
+
+- Updated dependencies [d3770a4]
+  - @inkbeard/budget-it@0.7.1
+
 ## 0.7.0
 
 ### Minor Changes

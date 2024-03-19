@@ -1,5 +1,11 @@
 # @inkbeard/budget-it
 
+## 0.7.1
+
+### Patch Changes
+
+- d3770a4: [ink-74] delete category on delete confirm
+
 ## 0.7.0
 
 ### Minor Changes
