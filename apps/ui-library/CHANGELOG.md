@@ -1,5 +1,12 @@
 # @inkbeard/ui-library
 
+## 1.2.1
+
+### Patch Changes
+
+- Updated dependencies [d3770a4]
+  - @inkbeard/budget-it@0.7.1
+
 ## 1.2.0
 
 ### Minor Changes
