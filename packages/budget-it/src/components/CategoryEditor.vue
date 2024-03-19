@@ -85,8 +85,10 @@
    * Close the dialog, removed the category and emit the deleted category id.
    */
   function deleteCategory() {
+    const index = categoryList.findIndex(({ id }) => id === category.value.id);
+    categoryList.splice(index, 1);
+
     emits('deleteCategory', category.value.id);
-    // delete expenseList[props.expenseId];
 
     toast.add({
       severity: 'success',
