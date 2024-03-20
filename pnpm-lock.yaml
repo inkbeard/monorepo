@@ -171,8 +171,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/stylelint-config
       '@rushstack/eslint-patch':
-        specifier: ^1.7.2
-        version: 1.7.2
+        specifier: ^1.8.0
+        version: 1.8.0
       '@storybook/addon-essentials':
         specifier: ^8.0.2
         version: 8.0.2(@types/react@18.2.5)(react-dom@18.2.0)(react@18.2.0)
@@ -271,8 +271,8 @@ importers:
         specifier: workspace:*
         version: link:../ui-vue
       '@rushstack/eslint-patch':
-        specifier: ^1.7.2
-        version: 1.7.2
+        specifier: ^1.8.0
+        version: 1.8.0
       '@tsconfig/node18':
         specifier: ^18.2.2
         version: 18.2.2
@@ -337,8 +337,8 @@ importers:
   packages/eslint-config:
     devDependencies:
       '@rushstack/eslint-patch':
-        specifier: ^1.7.2
-        version: 1.7.2
+        specifier: ^1.8.0
+        version: 1.8.0
       '@typescript-eslint/eslint-plugin':
         specifier: ^7.3.1
         version: 7.3.1(@typescript-eslint/parser@7.3.1)(eslint@8.57.0)(typescript@5.4.2)
@@ -2858,8 +2858,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@rushstack/eslint-patch@1.7.2:
-    resolution: {integrity: sha512-RbhOOTCNoCrbfkRyoXODZp75MlpiHMgbE5MEBZAnnnLyQNgrigEj4p0lzsMDyc1zVsJDLrivB58tgg3emX0eEA==}
+  /@rushstack/eslint-patch@1.8.0:
+    resolution: {integrity: sha512-0HejFckBN2W+ucM6cUOlwsByTKt9/+0tWhqUffNIcHqCXkthY/mZ7AuYPK/2IIaGWhdl0h+tICDO0ssLMd6XMQ==}
     dev: true
 
   /@sideway/address@4.1.4:
@@ -4554,7 +4554,7 @@ packages:
     dependencies:
       '@babel/core': 7.24.0
       '@babel/eslint-parser': 7.23.3(@babel/core@7.24.0)(eslint@8.57.0)
-      '@rushstack/eslint-patch': 1.7.2
+      '@rushstack/eslint-patch': 1.8.0
       '@typescript-eslint/eslint-plugin': 6.17.0(@typescript-eslint/parser@6.17.0)(eslint@8.57.0)(typescript@5.4.2)
       '@typescript-eslint/parser': 6.17.0(eslint@8.57.0)(typescript@5.4.2)
       eslint: 8.57.0
