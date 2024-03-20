@@ -22,7 +22,7 @@
     "@inkbeard/eslint-config": "workspace:*",
     "@inkbeard/stylelint-config": "workspace:*",
     "@inkbeard/ui-vue": "workspace:*",
-    "@rushstack/eslint-patch": "^1.7.2",
+    "@rushstack/eslint-patch": "^1.8.0",
     "@tsconfig/node18": "^18.2.2",
     "@types/jest": "^29.5.12",
     "@types/jsdom": "^21.1.6",
