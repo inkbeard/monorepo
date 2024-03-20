@@ -74,6 +74,16 @@
         <ul class="external-links">
           <li>
             <a
+              aria-label="Calendly link"
+              href="https://calendly.com/inkbeard/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <AppIcon icon="fa-solid fa-calendar-plus" />
+            </a>
+          </li>
+          <li>
+            <a
               aria-label="GitHub profile link"
               href="https://github.com/inkbeard"
               rel="noopener noreferrer"
@@ -229,12 +239,13 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: .5rem;
     width: 100%;
     padding: 20px 30px;
 
     @media (width >= 768px) {
       position: relative;
-      width: 90px;
+      width: 130px;
       margin-left: 0;
       padding: 0;
 
@@ -266,7 +277,7 @@
     align-items: center;
     width: 37px;
     height: 21px;
-    margin-left: 10px;
+    margin-left: 20px;
     padding: 0;
     cursor: pointer;
     border: 1px solid var(--ink-border-color);
