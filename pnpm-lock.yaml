@@ -204,8 +204,8 @@ importers:
         specifier: ^0.6.15
         version: 0.6.15(eslint@8.56.0)(typescript@5.4.2)
       eslint-plugin-vue:
-        specifier: ^9.21.1
-        version: 9.21.1(eslint@8.56.0)
+        specifier: ^9.23.0
+        version: 9.23.0(eslint@8.56.0)
       msw:
         specifier: ^2.2.1
         version: 2.2.7(typescript@5.4.2)
@@ -290,7 +290,7 @@ importers:
         version: 5.0.4(vite@5.2.2)(vue@3.4.21)
       '@vue/eslint-config-typescript':
         specifier: ^13.0.0
-        version: 13.0.0(eslint-plugin-vue@9.21.1)(eslint@8.56.0)(typescript@5.4.2)
+        version: 13.0.0(eslint-plugin-vue@9.23.0)(eslint@8.56.0)(typescript@5.4.2)
       '@vue/test-utils':
         specifier: ^2.4.3
         version: 2.4.3(vue@3.4.21)
@@ -307,8 +307,8 @@ importers:
         specifier: ^2.15.1
         version: 2.15.1(eslint@8.56.0)
       eslint-plugin-vue:
-        specifier: ^9.21.1
-        version: 9.21.1(eslint@8.56.0)
+        specifier: ^9.23.0
+        version: 9.23.0(eslint@8.56.0)
       npm-run-all2:
         specifier: ^6.1.2
         version: 6.1.2
@@ -350,10 +350,10 @@ importers:
         version: 5.2.0(eslint@8.56.0)(prettier@3.1.0)(typescript@5.4.2)
       '@vue/eslint-config-airbnb-with-typescript':
         specifier: ^8.0.0
-        version: 8.0.0(eslint-plugin-vue@9.21.1)(eslint@8.56.0)(typescript@5.4.2)
+        version: 8.0.0(eslint-plugin-vue@9.23.0)(eslint@8.56.0)(typescript@5.4.2)
       '@vue/eslint-config-typescript':
         specifier: ^13.0.0
-        version: 13.0.0(eslint-plugin-vue@9.21.1)(eslint@8.56.0)(typescript@5.4.2)
+        version: 13.0.0(eslint-plugin-vue@9.23.0)(eslint@8.56.0)(typescript@5.4.2)
       eslint-config-prettier:
         specifier: ^9.0.0
         version: 9.0.0(eslint@8.56.0)
@@ -367,8 +367,8 @@ importers:
         specifier: ^0.9.1
         version: 0.9.1(eslint@8.56.0)
       eslint-plugin-vue:
-        specifier: ^9.21.1
-        version: 9.21.1(eslint@8.56.0)
+        specifier: ^9.23.0
+        version: 9.23.0(eslint@8.56.0)
       typescript:
         specifier: 5.4.2
         version: 5.4.2
@@ -426,8 +426,8 @@ importers:
   packages/ui-vue:
     dependencies:
       primevue:
-        specifier: ^3.48.1
-        version: 3.48.1(vue@3.4.21)
+        specifier: ^3.50.0
+        version: 3.50.0(vue@3.4.21)
       vue:
         specifier: ^3.4.21
         version: 3.4.21(typescript@5.4.2)
@@ -4734,7 +4734,7 @@ packages:
     resolution: {integrity: sha512-+KpckaAQyfbvshdDW5xQylLni1asvNSGme1JFs8I1+/H5pHEhqUKMEQD/qn3Nx5+/nycBq11qAEi8lk+LXI2dA==}
     dev: false
 
-  /@vue/eslint-config-airbnb-with-typescript@8.0.0(eslint-plugin-vue@9.21.1)(eslint@8.56.0)(typescript@5.4.2):
+  /@vue/eslint-config-airbnb-with-typescript@8.0.0(eslint-plugin-vue@9.23.0)(eslint@8.56.0)(typescript@5.4.2):
     resolution: {integrity: sha512-gMaApQBRAOebJtI9NyDfic7XhjXGramJXx/PHcOQBUkmpPhDCDeX7N0oQqZKR6cY9la7LDvELfPRs62KJcAtjg==}
     peerDependencies:
       eslint: ^8.2.0
@@ -4745,14 +4745,14 @@ packages:
       '@eslint-types/typescript-eslint': 6.17.0
       '@typescript-eslint/eslint-plugin': 6.17.0(@typescript-eslint/parser@6.17.0)(eslint@8.56.0)(typescript@5.4.2)
       '@typescript-eslint/parser': 6.17.0(eslint@8.56.0)(typescript@5.4.2)
-      '@vue/eslint-config-airbnb': 8.0.0(@typescript-eslint/parser@6.17.0)(eslint-import-resolver-typescript@3.6.1)(eslint-plugin-vue@9.21.1)(eslint@8.56.0)
+      '@vue/eslint-config-airbnb': 8.0.0(@typescript-eslint/parser@6.17.0)(eslint-import-resolver-typescript@3.6.1)(eslint-plugin-vue@9.23.0)(eslint@8.56.0)
       eslint: 8.56.0
       eslint-config-airbnb-typescript: 17.1.0(@typescript-eslint/eslint-plugin@6.17.0)(@typescript-eslint/parser@6.17.0)(eslint-plugin-import@2.29.1)(eslint@8.56.0)
       eslint-define-config: 2.1.0
       eslint-import-resolver-node: 0.3.9
       eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@6.17.0)(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@8.56.0)
       eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.11.0)(eslint@8.56.0)
-      eslint-plugin-vue: 9.21.1(eslint@8.56.0)
+      eslint-plugin-vue: 9.23.0(eslint@8.56.0)
       typescript: 5.4.2
       vue-eslint-parser: 9.3.2(eslint@8.56.0)
     transitivePeerDependencies:
@@ -4760,7 +4760,7 @@ packages:
       - supports-color
     dev: true
 
-  /@vue/eslint-config-airbnb@8.0.0(@typescript-eslint/parser@6.17.0)(eslint-import-resolver-typescript@3.6.1)(eslint-plugin-vue@9.21.1)(eslint@8.56.0):
+  /@vue/eslint-config-airbnb@8.0.0(@typescript-eslint/parser@6.17.0)(eslint-import-resolver-typescript@3.6.1)(eslint-plugin-vue@9.23.0)(eslint@8.56.0):
     resolution: {integrity: sha512-0PGJubVK8+arJC+07xeL7gFLLfr5hxub7UCl+x+bxgvE2qtJodbOXZ27mdt1tAYsgUuhmp3ymn9mNbAIvNGahA==}
     peerDependencies:
       eslint: ^8.2.0
@@ -4773,7 +4773,7 @@ packages:
       eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.17.0)(eslint-import-resolver-typescript@3.6.1)(eslint@8.56.0)
       eslint-plugin-jsx-a11y: 6.8.0(eslint@8.56.0)
       eslint-plugin-react: 7.33.2(eslint@8.56.0)
-      eslint-plugin-vue: 9.21.1(eslint@8.56.0)
+      eslint-plugin-vue: 9.23.0(eslint@8.56.0)
       eslint-plugin-vuejs-accessibility: 2.2.0(eslint@8.56.0)
       vue-eslint-parser: 9.4.2(eslint@8.56.0)
     transitivePeerDependencies:
@@ -4783,7 +4783,7 @@ packages:
       - supports-color
     dev: true
 
-  /@vue/eslint-config-typescript@13.0.0(eslint-plugin-vue@9.21.1)(eslint@8.56.0)(typescript@5.4.2):
+  /@vue/eslint-config-typescript@13.0.0(eslint-plugin-vue@9.23.0)(eslint@8.56.0)(typescript@5.4.2):
     resolution: {integrity: sha512-MHh9SncG/sfqjVqjcuFLOLD6Ed4dRAis4HNt0dXASeAuLqIAx4YMB1/m2o4pUKK1vCt8fUvYG8KKX2Ot3BVZTg==}
     engines: {node: ^18.18.0 || >=20.0.0}
     peerDependencies:
@@ -4797,7 +4797,7 @@ packages:
       '@typescript-eslint/eslint-plugin': 7.2.0(@typescript-eslint/parser@7.2.0)(eslint@8.56.0)(typescript@5.4.2)
       '@typescript-eslint/parser': 7.2.0(eslint@8.56.0)(typescript@5.4.2)
       eslint: 8.56.0
-      eslint-plugin-vue: 9.21.1(eslint@8.56.0)
+      eslint-plugin-vue: 9.23.0(eslint@8.56.0)
       typescript: 5.4.2
       vue-eslint-parser: 9.4.2(eslint@8.56.0)
     transitivePeerDependencies:
@@ -7196,8 +7196,8 @@ packages:
       strip-indent: 3.0.0
     dev: true
 
-  /eslint-plugin-vue@9.21.1(eslint@8.56.0):
-    resolution: {integrity: sha512-XVtI7z39yOVBFJyi8Ljbn7kY9yHzznKXL02qQYn+ta63Iy4A9JFBw6o4OSB9hyD2++tVT+su9kQqetUyCCwhjw==}
+  /eslint-plugin-vue@9.23.0(eslint@8.56.0):
+    resolution: {integrity: sha512-Bqd/b7hGYGrlV+wP/g77tjyFmp81lh5TMw0be9093X02SyelxRRfCI6/IsGq/J7Um0YwB9s0Ry0wlFyjPdmtUw==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0
@@ -7207,7 +7207,7 @@ packages:
       natural-compare: 1.4.0
       nth-check: 2.1.1
       postcss-selector-parser: 6.0.15
-      semver: 7.5.4
+      semver: 7.6.0
       vue-eslint-parser: 9.4.2(eslint@8.56.0)
       xml-name-validator: 4.0.0
     transitivePeerDependencies:
@@ -10881,8 +10881,8 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /primevue@3.48.1(vue@3.4.21):
-    resolution: {integrity: sha512-lyJ+E0ZCv2pR9jIpdPLBysU8zB2hOKrN7q78orloWelPx05zSYoMVKAWaqKTHNpunD52xffjaqovt1y6B/9XoQ==}
+  /primevue@3.50.0(vue@3.4.21):
+    resolution: {integrity: sha512-vYpQzvIXSmF0hWUkviHEGnwbFY/G8jI2RSxoa75noJloI2rWhzOX+JarJ8iaesVOr7b2se31N/p7zOx6uh3ddQ==}
     peerDependencies:
       vue: ^3.0.0
     dependencies:
@@ -11645,6 +11645,14 @@ packages:
     hasBin: true
     dependencies:
       lru-cache: 6.0.0
+
+  /semver@7.6.0:
+    resolution: {integrity: sha512-EnwXhrlwXMk9gKu5/flx5sv/an57AkRplG3hTK68W7FRDN+k+OWBj65M7719OkA82XLBxrcX0KSHj+X5COhOVg==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      lru-cache: 6.0.0
+    dev: true
 
   /send@0.18.0:
     resolution: {integrity: sha512-qqWzuOjSFOuqPjFe4NOsMLafToQQwBSOEpS+FwEt3A2V3vKubTquT3vmLTQpFgMXp8AlFWFuP1qKaJZOtPpVXg==}
@@ -13223,7 +13231,7 @@ packages:
       espree: 9.6.1
       esquery: 1.5.0
       lodash: 4.17.21
-      semver: 7.5.4
+      semver: 7.6.0
     transitivePeerDependencies:
       - supports-color
     dev: true
