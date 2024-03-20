@@ -21,7 +21,7 @@
     "@vitejs/plugin-basic-ssl": "^1.1.0",
     "flagsmith": "^3.22.0",
     "pinia": "^2.1.7",
-    "vue": "^3.4.18",
+    "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {

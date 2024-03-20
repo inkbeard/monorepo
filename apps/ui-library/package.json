@@ -13,7 +13,7 @@
     "@inkbeard/budget-it": "workspace:*",
     "@inkbeard/ui-vue": "workspace:*",
     "pinia": "^2.1.7",
-    "vue": "^3.4.18"
+    "vue": "^3.4.21"
   },
   "devDependencies": {
     "@inkbeard/eslint-config": "workspace:*",
