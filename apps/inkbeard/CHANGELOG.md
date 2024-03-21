@@ -1,5 +1,11 @@
 # inkbeard
 
+## 0.8.0
+
+### Minor Changes
+
+- c562695: Added calendly link
+
 ## 0.7.1
 
 ### Patch Changes
