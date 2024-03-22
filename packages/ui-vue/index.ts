@@ -15,12 +15,14 @@ import AppInputNumber from './src/components/AppInputNumber.vue';
 import AppInputText from './src/components/AppInputText.vue';
 import AppToast from './src/components/AppToast.vue';
 import AppColorPicker from './src/components/AppColorPicker.vue';
+import AppDonkey from './src/components/AppDonkey.vue';
 
 export {
   AppButton,
   AppColorPicker,
   AppConfirmPopup,
   AppDialog,
+  AppDonkey,
   AppDropdown,
   AppFormGroup,
   AppIcon,
