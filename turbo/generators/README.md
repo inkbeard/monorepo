@@ -7,4 +7,4 @@ At the moment, inkbeard's generators are configured from the root so running the
 ### Common generators
 
 #### vue-component
-Adds a new vue 3 typescript component.
+`pnpm gen:vue-component` adds a new vue 3 typescript component to either the `ui-vue` or `budget-it` packages. `ui-vue` requires particular naming conventions for the component to be added.
