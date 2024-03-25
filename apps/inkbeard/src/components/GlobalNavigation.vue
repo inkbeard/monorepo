@@ -5,6 +5,23 @@
 
   const darkMode = ref(false);
   const isActive = ref(false);
+  const externalLinks = [
+    {
+      ariaLabel: 'Calendly link',
+      href: 'https://calendly.com/inkbeard/',
+      icon: 'fa-solid fa-calendar-plus',
+    },
+    {
+      ariaLabel: 'GitHub profile link',
+      href: 'https://github.com/inkbeard',
+      icon: 'fa-brands fa-github',
+    },
+    {
+      ariaLabel: 'LinkedIn profile link',
+      href: 'https://www.linkedin.com/in/inkbeard/',
+      icon: 'fa-brands fa-linkedin',
+    },
+  ];
   const projects = [
     {
       label: 'Budget It',
@@ -72,34 +89,17 @@
           </li>
         </ul>
         <ul class="external-links">
-          <li>
+          <li
+            v-for="({ ariaLabel, href, icon }) in externalLinks"
+            :key="href"
+          >
             <a
-              aria-label="Calendly link"
-              href="https://calendly.com/inkbeard/"
+              :aria-label="ariaLabel"
+              :href="href"
               rel="noopener noreferrer"
               target="_blank"
             >
-              <AppIcon icon="fa-solid fa-calendar-plus" />
-            </a>
-          </li>
-          <li>
-            <a
-              aria-label="GitHub profile link"
-              href="https://github.com/inkbeard"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <AppIcon icon="fa-brands fa-github" />
-            </a>
-          </li>
-          <li>
-            <a
-              aria-label="LinkedIn profile link"
-              href="https://www.linkedin.com/in/inkbeard/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <AppIcon icon="fa-brands fa-linkedin" />
+              <AppIcon :icon="icon" />
             </a>
           </li>
           <li>
