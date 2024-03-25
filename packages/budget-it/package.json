@@ -37,7 +37,7 @@
     "eslint-plugin-vue": "^9.23.0",
     "npm-run-all2": "^6.1.2",
     "start-server-and-test": "^2.0.3",
-    "typescript": "5.4.2",
+    "typescript": "5.2.2",
     "vite": "^5.2.2",
     "vitest": "^1.4.0",
     "vue": "^3.4.21",
