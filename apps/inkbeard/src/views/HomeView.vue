@@ -2,5 +2,5 @@
 </script>
 
 <template>
-  hello
+  {{ $t('greetings') }}
 </template>
