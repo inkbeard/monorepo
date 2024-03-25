@@ -123,6 +123,12 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
           return true;
         },
       },
+      // Create PR
+      {
+        type: 'confirm',
+        name: 'createPr',
+        message: 'Would you like a PR created?',
+      },
     ],
     actions(data = {}) {
       const { root } = data.turbo.paths
@@ -143,7 +149,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
       data.primeVueComponentNamePascal = pascalCase(data.primeVueComponentName);
       /* eslint-enable no-param-reassign */
 
-      const actions = [
+      const actions: PlopTypes.Actions = [
         // Add component file
         {
           type: 'add',
@@ -219,10 +225,13 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
           path: `${root}/.changeset/${componentName}-ui-library.md`,
           templateFile: 'templates/ui-library/changeset.md.hbs',
         },
-        {
-          type: 'openPr',
-        },
       ];
+
+      if (data.createPr) {
+        actions.push({
+          type: 'openPr',
+        });
+      }
 
       return actions;
     },
