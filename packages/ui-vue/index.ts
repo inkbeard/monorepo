@@ -15,6 +15,7 @@ import AppInputNumber from './src/components/AppInputNumber.vue';
 import AppInputText from './src/components/AppInputText.vue';
 import AppToast from './src/components/AppToast.vue';
 import AppColorPicker from './src/components/AppColorPicker.vue';
+import AppOverlayPanel from './src/components/AppOverlayPanel.vue';
 
 export {
   AppButton,
@@ -26,6 +27,7 @@ export {
   AppIcon,
   AppInputNumber,
   AppInputText,
+  AppOverlayPanel,
   AppToast,
   ConfirmationService,
   ToastService,
