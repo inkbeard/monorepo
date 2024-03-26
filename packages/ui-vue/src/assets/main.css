@@ -2,3 +2,14 @@
 @import url('@inkbeard/ui-theme/theme.css');
 @import url('@inkbeard/ui-theme/typography.css');
 @import url('primevue/resources/themes/aura-light-blue/theme.css');
+
+ /**
+  * PrimeVue's Toast component always has a summary element, even if it's not provided.
+  */
+.p-toast-detail {
+  margin-top: 0;
+}
+
+.p-toast-summary:not(:empty) + .p-toast-detail {
+  margin-top: 0.5rem;
+}
