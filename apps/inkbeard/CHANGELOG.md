@@ -1,5 +1,23 @@
 # inkbeard
 
+## 0.9.0
+
+### Minor Changes
+
+- 857f73c: Added ResetBudgetIt component, story, test, and example
+- b8490e3: Updated externalLinks to be loop data
+- bd7733d: Added Vue I18n
+- 8d20c92: - Initialized Vue I18n
+  - Added greetings messages for multiple languages
+
+### Patch Changes
+
+- Updated dependencies [6c28879]
+- Updated dependencies [857f73c]
+- Updated dependencies [d938ec4]
+  - @inkbeard/ui-vue@3.0.0
+  - @inkbeard/budget-it@0.8.0
+
 ## 0.8.0
 
 ### Minor Changes

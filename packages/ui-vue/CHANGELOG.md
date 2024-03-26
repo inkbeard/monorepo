@@ -1,5 +1,16 @@
 # @inkbeard/ui-vue
 
+## 3.0.0
+
+### Major Changes
+
+- 6c28879: - Extended PrimeVue's OverlayPanel as AppOverlayPanel.
+
+### Minor Changes
+
+- 857f73c: Added ResetBudgetIt component, story, test, and example
+- d938ec4: Fixed styling for toast w/o summary
+
 ## 2.0.0
 
 ### Major Changes

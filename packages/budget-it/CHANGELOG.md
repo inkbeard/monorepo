@@ -1,5 +1,11 @@
 # @inkbeard/budget-it
 
+## 0.8.0
+
+### Minor Changes
+
+- 857f73c: Added ResetBudgetIt component, story, test, and example
+
 ## 0.7.1
 
 ### Patch Changes
