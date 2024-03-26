@@ -7,6 +7,7 @@
     SourcesBreakdown,
     ExpenseCategory,
     SourcesEditor,
+    ResetBudgetIt,
   } from '@inkbeard/budget-it';
 
   const defaultSourceId = ref(1);
@@ -144,6 +145,7 @@
           <SourcesEditor />
           <CategoryBreakdown />
           <SourcesBreakdown />
+          <ResetBudgetIt is-full-width />
         </aside>
       </section>
     </BudgetIt>

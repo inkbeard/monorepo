@@ -9,6 +9,7 @@ import ExpenseItem from './src/components/ExpenseItem.vue';
 import SourceListing from './src/components/SourceListing.vue';
 import SourcesBreakdown from './src/components/SourcesBreakdown.vue';
 import SourcesEditor from './src/components/SourcesEditor.vue';
+import ResetBudgetIt from './src/components/ResetBudgetIt.vue';
 
 export {
   AddCategory,
@@ -17,6 +18,7 @@ export {
   CategoryBreakdown,
   ExpenseCategory,
   ExpenseItem,
+  ResetBudgetIt,
   SourceListing,
   SourcesBreakdown,
   SourcesEditor,
