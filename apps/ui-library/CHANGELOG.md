@@ -1,5 +1,20 @@
 # @inkbeard/ui-library
 
+## 1.3.0
+
+### Minor Changes
+
+- 6c28879: Added AppOverlayPanel component story.
+- 857f73c: Added ResetBudgetIt component, story, test, and example
+
+### Patch Changes
+
+- Updated dependencies [6c28879]
+- Updated dependencies [857f73c]
+- Updated dependencies [d938ec4]
+  - @inkbeard/ui-vue@3.0.0
+  - @inkbeard/budget-it@0.8.0
+
 ## 1.2.1
 
 ### Patch Changes
