@@ -4,12 +4,13 @@ export default {
   title: 'ui vue/AppAlert',
   component: AppAlert,
   tags: ['autodocs'],
-  parameters: {
-    layout: 'centered',
-  },
 };
 export const AppAlertExample = {
   args: {
-    msg: 'Hello storybook!',
-  },
+    title: 'Lorem Ipsum',
+    description: 'lorem ipsum dolor sit amet!',
+    severity: 'danger',
+    closable: true,
+    showIcon: true,
+  }
 };
