@@ -9,8 +9,10 @@
     SourcesEditor,
     ResetBudgetIt,
   } from '@inkbeard/budget-it';
+  import { AppButton, AppAlert } from '@inkbeard/ui-vue';
 
   const defaultSourceId = ref(1);
+  const isAddingCategory = ref(false);
   const sourceList = ref({
     1: 'Credit Card',
     3: 'Checking Account',
@@ -134,17 +136,35 @@
     >
       <section>
         <div>
-          <AddCategory />
-          <ExpenseCategory
-            v-for="category in categoryList"
-            :key="category.id"
-            :category="category"
+          <AddCategory
+            v-if="isAddingCategory"
+            v-model:is-adding="isAddingCategory"
           />
+          <AppAlert
+            v-else-if="!categoryList.length"
+            show-icon
+          >
+            There are no categories. <AppButton
+              label="Add one"
+              text
+              @click="isAddingCategory = true"
+            /> to get started.
+          </AppAlert>
+          <template v-else>
+            <AddCategory />
+            <ExpenseCategory
+              v-for="category in categoryList"
+              :key="category.id"
+              :category="category"
+            />
+          </template>
         </div>
-        <aside>
+        <aside v-if="categoryList.length">
           <SourcesEditor />
-          <CategoryBreakdown />
-          <SourcesBreakdown />
+          <template v-if="Object.keys(expenseList).length">
+            <CategoryBreakdown />
+            <SourcesBreakdown />
+          </template>
           <ResetBudgetIt is-full-width />
         </aside>
       </section>
