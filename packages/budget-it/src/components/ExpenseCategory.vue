@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { computed, inject, ref } from 'vue';
   import {
+    AppAlert,
     AppButton,
     AppDialog,
     AppToast,
@@ -115,9 +116,13 @@
             @edit-expense="onEditExpense(id, $event as BaseExpenseInfo)"
           />
         </template>
-        <p v-else>
-          No expenses in for "{{ category.name }}."
-        </p>
+        <AppAlert
+          v-else
+          class="empty-category"
+          show-icon
+        >
+          No expenses in for "{{ category.name }}".
+        </AppAlert>
       </div>
     </div>
   </div>
@@ -198,6 +203,10 @@
   gap: 0.5rem;
   margin: 0;
   font-weight: bold;
+}
+
+.empty-category {
+  margin: 1rem auto;
 }
 
 .toggle {
