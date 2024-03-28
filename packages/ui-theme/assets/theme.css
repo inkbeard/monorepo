@@ -36,9 +36,13 @@
   --ink-h1-font-weight: 600;
   /* themes */
   --ink-info-color: #0b78d0;
+  --ink-info-color-light: rgba(239, 246, 255, 0.95);
   --ink-success-color: #22851e;
+  --ink-success-color-light: rgba(240, 253, 244, 0.95);
   --ink-warning-color: #fb8c00;
+  --ink-warning-color-light: rgba(254, 252, 232, 0.95);
   --ink-danger-color: #b00020;
+  --ink-danger-color-light: rgba(254, 242, 242, 0.95);
 
   /* semantic color variables for this project */
   /* backgrounds */
