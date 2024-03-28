@@ -46,7 +46,7 @@
 
   function deleteData() {
     Object.keys(expenseList).forEach((key) => delete expenseList[key]);
-    Object.keys(sourceList).forEach((key) => delete expenseList[key]);
+    Object.keys(sourceList).forEach((key) => delete sourceList[key]);
     categoryList.length = 0;
 
     toast.add({
