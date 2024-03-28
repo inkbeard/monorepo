@@ -184,4 +184,11 @@
   p {
     margin: 0 0 3px;
   }
+
+  :slotted(.p-button-text ) {
+    display: inline;
+    padding: 0;
+    text-decoration: underline;
+    border: none;
+  }
 </style>
