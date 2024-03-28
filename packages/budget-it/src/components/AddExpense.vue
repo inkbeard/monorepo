@@ -5,6 +5,7 @@
     AppDropdown,
     AppInputNumber,
     AppInputText,
+    Tooltip,
   } from '@inkbeard/ui-vue';
   import type {
     ExpenseInfo,
@@ -21,7 +22,7 @@
      */
     isFullWidth?: boolean;
   }
-
+  const vTooltip = Tooltip;
   const props = withDefaults(defineProps<AddExpenseProps>(), {
     isFullWidth: false,
   });
@@ -121,17 +122,22 @@
       />
     </div>
   </form>
-  <AppButton
+  <div
     v-else
-    class="add-expense"
-    data-test="add expense"
-    icon="fa-duotone fa-plus"
-    :is-full-width="isFullWidth"
-    label="Add expense"
-    raised
-    severity="primary"
-    @click="isAddingExpense = true"
-  />
+    v-tooltip.top="alphabaticSourceList.length ? '' : 'At least one source must be added to add an expense.'"
+  >
+    <AppButton
+      class="add-expense"
+      data-test="add expense"
+      :disabled="!alphabaticSourceList.length"
+      icon="fa-duotone fa-plus"
+      :is-full-width="isFullWidth"
+      label="Add expense"
+      raised
+      severity="primary"
+      @click="isAddingExpense = true"
+    />
+  </div>
 </template>
 
 <style scoped>
