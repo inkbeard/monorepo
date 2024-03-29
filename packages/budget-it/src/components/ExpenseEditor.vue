@@ -4,6 +4,7 @@
     AppButton,
     AppConfirmPopup,
     AppInputText,
+    Tooltip,
     useConfirm,
     useToast,
   } from '@inkbeard/ui-vue';
@@ -13,6 +14,7 @@
     ExpenseList,
   } from '../types';
 
+  const vTooltip = Tooltip;
   const emits = defineEmits<{
     /**
      * Emit the edited name and description of the expense item.
@@ -112,6 +114,21 @@
       },
     });
   }
+  /**
+   * Hide/Show the expense from the budget.
+   */
+  function hideExpense() {
+    expense.value.isHidden = !expense.value.isHidden;
+
+    const action = expense.value.isHidden ? 'hidden' : 'shown';
+
+    toast.add({
+      severity: 'success',
+      summary: `Expense ${action}`,
+      detail: `"${expenseName.value}" has been ${action}.`,
+      life: 5000,
+    });
+  }
 </script>
 
 <template>
@@ -128,6 +145,15 @@
       label-description="Add any notes for this expense you would like to remember later."
     />
     <div class="btn-group align-end">
+      <AppButton
+        v-tooltip.left="`${expense.isHidden ? 'Show' : 'Hide'} the expense to calculate your budget ${expense.isHidden ? 'with' : 'without'} it.`"
+        class="hide-expense"
+        data-test="hide expense"
+        :icon="`fa-duotone ${expense.isHidden ? 'fa-eye' : 'fa-eye-slash'}`"
+        severity="secondary"
+        text
+        @click="hideExpense"
+      />
       <AppButton
         data-test="cancel add expense"
         icon="fa-solid fa-xmark"
@@ -169,5 +195,9 @@
   padding-top: 1rem;
   text-align: center;
   border-top: 1px solid var(--ink-border-color);
+}
+
+.hide-expense {
+  margin-right: auto;
 }
 </style>

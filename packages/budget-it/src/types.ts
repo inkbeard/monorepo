@@ -24,7 +24,11 @@ export interface ExpenseInfo extends BaseExpenseInfo {
   /**
    * Unique identifier for the expense.
    */
-  id?: number
+  id?: number,
+  /**
+   * Whether the expense is hidden or not.
+   */
+  isHidden: boolean
   /**
    * Order of the expense in the list.
    */
