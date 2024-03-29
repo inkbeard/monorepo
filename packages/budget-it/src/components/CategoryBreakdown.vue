@@ -19,7 +19,11 @@
   /**
    * Get the category label and the total amount for each.
    */
-  const chartData = computed(() => Object.values(expenseList).reduce((acc, { categoryId, amount }) => {
+  const chartData = computed(() => Object.values(expenseList).reduce((acc, { categoryId, amount, isHidden }) => {
+    if (isHidden) {
+      return acc;
+    }
+
     const { name, backgroundColor } = categoryList.find(({ id }) => id === categoryId)
       ?? { name: '', backgroundColor: '' };
     const categoryIndex = acc.labels.findIndex((categoryName) => name === categoryName);

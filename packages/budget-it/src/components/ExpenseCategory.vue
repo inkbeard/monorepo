@@ -30,6 +30,7 @@
       if (expense.categoryId === category.value.id) {
         acc.push({
           id: Number(id),
+          isHidden: expense.isHidden,
           amount: expense.amount,
           name: expense.name,
         });
@@ -37,6 +38,7 @@
       return acc;
     }, [] as ({
       id: number,
+      isHidden: boolean,
       amount: number,
       name: string
     })[])
@@ -45,7 +47,13 @@
    * Get the total amount of all the expenses for this category.
    */
   const totalExpenses = computed(() => (
-    categoryExpenses.value.reduce((acc, { amount }) => acc + amount, 0)
+    categoryExpenses.value.reduce((acc, { amount, isHidden }) => {
+      if (!isHidden) {
+        return acc + amount;
+      }
+
+      return acc;
+    }, 0)
   ));
   /**
    * Show confirmation when the user has successfully edited an expense name or description.

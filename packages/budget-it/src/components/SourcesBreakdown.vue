@@ -18,7 +18,11 @@
   /**
    * Get the source name and the total amount for each.
    */
-  const chartData = computed(() => Object.values(expenseList).reduce((acc, { sourceId, amount }) => {
+  const chartData = computed(() => Object.values(expenseList).reduce((acc, { sourceId, amount, isHidden }) => {
+    if (isHidden) {
+      return acc;
+    }
+
     const sourceIndex = acc.labels.findIndex((sourceName) => sourceList[sourceId] === sourceName);
 
     if (sourceIndex === -1) {
