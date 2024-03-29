@@ -1,6 +1,6 @@
 {
   "name": "@inkbeard/budget-it",
-  "version": "0.7.1",
+  "version": "0.8.0",
   "exports": {
     ".": "./index.ts",
     "./changelog.md": "./CHANGELOG.md",
