@@ -1,5 +1,14 @@
 # @inkbeard/budget-it
 
+## 0.8.0
+
+### Minor Changes
+
+- 857f73c: Added ResetBudgetIt component, story, test, and example
+- 1bad85a: Added AppAlert for empty category
+- 2e0d59a: [ink-76] Cleared sourceList object with deleting data in ResetBudgetIt
+- f210c1d: Disabled "Add expense" button and added tooltip if no sources
+
 ## 0.7.1
 
 ### Patch Changes

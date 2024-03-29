@@ -1,5 +1,15 @@
 # @inkbeard/ui-vue
 
+## 0.6.0
+
+### Minor Changes
+
+- 032e60c: Added AppAlert component template and test.
+- 6c28879: - Extended PrimeVue's OverlayPanel as AppOverlayPanel.
+- 857f73c: Added ResetBudgetIt component, story, test, and example
+- d938ec4: Fixed styling for toast w/o summary
+- 5504202: Added slotted styles for text buttons in the AppAlert component
+
 ## 0.5.0
 
 ### Minor Changes
