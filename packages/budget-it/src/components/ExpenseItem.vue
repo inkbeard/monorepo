@@ -66,7 +66,7 @@
       v-model:visible="isEditing"
       :header="`Edit ${expense.name}`"
       modal
-      :style="{ width: '20rem' }"
+      :style="{ width: '30rem' }"
     >
       <ExpenseEditor
         v-model:expense="expense"
