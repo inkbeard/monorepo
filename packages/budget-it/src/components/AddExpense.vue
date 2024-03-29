@@ -34,6 +34,7 @@
     categoryId: props.categoryId,
     amount: 0,
     description: '',
+    isHidden: false,
     name: '',
     sourceId: sourceId.value,
     order: 0,
