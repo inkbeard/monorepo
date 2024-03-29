@@ -123,7 +123,6 @@
       sourceId: 1,
     },
   });
-
 </script>
 
 <template>
