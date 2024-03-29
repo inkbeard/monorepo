@@ -1,19 +1,16 @@
 # @inkbeard/ui-vue
 
-## 2.0.0
-
-### Major Changes
-
-- 06be09b: - Extended PrimeVue's ColorPicker as AppColorPicker.
-
-## 1.0.0
-
-### Major Changes
-
-- 6128a04: - Extended PrimeVue's Toast as AppToast.
+## 0.5.0
 
 ### Minor Changes
 
+- 06be09b: - Extended PrimeVue's ColorPicker as AppColorPicker.
+
+## 0.4.0
+
+### Minor Changes
+
+- 6128a04: - Extended PrimeVue's Toast as AppToast.
 - c961fa1: Updated AppToast with correct icons
 
 ## 0.3.0
