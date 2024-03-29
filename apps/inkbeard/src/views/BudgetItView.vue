@@ -9,7 +9,9 @@
     Budget it
   </ProjectHeader>
 
-  <p>Estimated release: Q1</p>
+  <p v-if="!useFeatureFlagStore().flags.budget_it.enabled">
+    Estimated release: Q1
+  </p>
 
   <TheBudgetItExample v-if="useFeatureFlagStore().flags.budget_it.enabled" />
 </template>
