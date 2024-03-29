@@ -31,6 +31,7 @@ describe('ResetBudgetIt', () => {
                 amount: 2,
                 categoryId: 1,
                 name: 'Netflix',
+                isHidden: false,
                 order: 0,
                 sourceId: 1,
               },
