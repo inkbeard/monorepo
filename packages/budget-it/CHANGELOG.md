@@ -1,5 +1,13 @@
 # @inkbeard/budget-it
 
+## 0.9.0
+
+### Minor Changes
+
+- b9b9d02: [ink-79] Disabled inputs for ExpenseItem when expense is hidden.
+- d4e71e7: [ink-77] Added option to hide/show expenses
+- a8c84bf: [ink-78] Ignore hidden expense when calculating totals
+
 ## 0.8.0
 
 ### Minor Changes

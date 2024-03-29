@@ -1,5 +1,18 @@
 # inkbeard
 
+## 0.10.0
+
+### Minor Changes
+
+- d4e71e7: Added `isHidden` property to `expenseList`
+
+### Patch Changes
+
+- Updated dependencies [b9b9d02]
+- Updated dependencies [d4e71e7]
+- Updated dependencies [a8c84bf]
+  - @inkbeard/budget-it@0.9.0
+
 ## 0.9.0
 
 ### Minor Changes
