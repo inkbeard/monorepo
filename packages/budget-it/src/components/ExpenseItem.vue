@@ -46,7 +46,9 @@
     <form class="expense-item-form" @submit.prevent>
       <AppInputNumber
         v-model="expenseAmount"
+        v-tooltip.bottom="expense.isHidden ? 'This expense is hidden and cannot be editted.' : ''"
         currency="USD"
+        :disabled="expense.isHidden"
         :input-id="`${expense.categoryId}-${expense.name}`"
         label="Amount"
         mode="currency"
@@ -55,6 +57,8 @@
       <AppDropdown
         :key="expense.sourceId"
         v-model="expense.sourceId"
+        v-tooltip.bottom="expense.isHidden ? 'This expense is hidden and cannot be editted.' : ''"
+        :disabled="expense.isHidden"
         input-id="expense-source"
         label="Source"
         option-label="label"
