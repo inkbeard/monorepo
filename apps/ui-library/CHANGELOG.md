@@ -1,5 +1,14 @@
 # @inkbeard/ui-library
 
+## 1.3.1
+
+### Patch Changes
+
+- Updated dependencies [b9b9d02]
+- Updated dependencies [d4e71e7]
+- Updated dependencies [a8c84bf]
+  - @inkbeard/budget-it@0.9.0
+
 ## 1.3.0
 
 ### Minor Changes
