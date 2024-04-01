@@ -1,5 +1,4 @@
 import { ConfirmationService, ToastService } from '@inkbeard/ui-vue';
-import { useBudgetIt } from './src/components/BudgetIt';
 import AddCategory from './src/components/AddCategory.vue';
 import AddExpense from './src/components/AddExpense.vue';
 import BudgetIt from './src/components/BudgetIt.vue';
@@ -22,7 +21,6 @@ export {
   SourceListing,
   SourcesBreakdown,
   SourcesEditor,
-  useBudgetIt,
 };
 
 export default {
