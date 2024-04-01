@@ -66,3 +66,21 @@ To use the package in your app or package, import the components you need and us
   </BudgetIt>
 </template>
 ```
+
+## Testing
+There are multiple ways to run the units tests for this package. The following commands can be run from the root of the workspace:
+
+### Single run
+```bash
+pnpm test:unit --filter budget-it
+```
+
+### Watch mode
+```bash
+pnpm test:unit:watch --filter budget-it
+```
+
+### With UI (including coverage report)
+```bash
+pnpm test:unit:watch --filter budget-it -- --ui
+```
