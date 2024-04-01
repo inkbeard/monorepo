@@ -183,8 +183,8 @@ importers:
         specifier: ^8.0.2
         version: 8.0.2
       '@storybook/addon-links':
-        specifier: ^8.0.2
-        version: 8.0.2(react@18.2.0)
+        specifier: ^8.0.5
+        version: 8.0.5(react@18.2.0)
       '@storybook/addon-mdx-gfm':
         specifier: ^8.0.2
         version: 8.0.2
@@ -2992,8 +2992,8 @@ packages:
       - vitest
     dev: true
 
-  /@storybook/addon-links@8.0.2(react@18.2.0):
-    resolution: {integrity: sha512-Y22kCHRQIEE8yhTbWLTR2VMa9KJdMDRpWyYCIMzmTlCWAk1vyMZXC2ERruKIpM7AKKtTMEmNc2qHAmOieHfr3A==}
+  /@storybook/addon-links@8.0.5(react@18.2.0):
+    resolution: {integrity: sha512-B5EAs0+LxgYH59GSVVAfgW8rAzGUmzdAAR3XJKbTXp3/d9e27uXwpLVYhi/VQHKLIsshDQRbc0s109APHs/SjQ==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     peerDependenciesMeta:
@@ -3547,15 +3547,6 @@ packages:
       - react-dom
       - supports-color
       - utf-8-validate
-    dev: true
-
-  /@storybook/csf-plugin@8.0.2:
-    resolution: {integrity: sha512-QlnTNnX8hKK/C3I89rp4zNhQ/ZYmBiHC4RSWJf03lRd3FT6+/pzsGr3USD1y+zUtu6W5OmoV15xCzhmFopC69w==}
-    dependencies:
-      '@storybook/csf-tools': 8.0.2
-      unplugin: 1.7.1
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /@storybook/csf-plugin@8.0.4:
