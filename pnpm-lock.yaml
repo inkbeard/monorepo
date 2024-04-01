@@ -294,9 +294,6 @@ importers:
       '@vitest/coverage-istanbul':
         specifier: ^1.4.0
         version: 1.4.0(vitest@1.4.0)
-      '@vitest/coverage-v8':
-        specifier: ^1.4.0
-        version: 1.4.0(vitest@1.4.0)
       '@vitest/ui':
         specifier: ^1.4.0
         version: 1.4.0(vitest@1.4.0)
@@ -465,6 +462,12 @@ importers:
       '@vitejs/plugin-vue':
         specifier: ^5.0.4
         version: 5.0.4(vite@5.2.7)(vue@3.4.21)
+      '@vitest/coverage-istanbul':
+        specifier: ^1.4.0
+        version: 1.4.0(vitest@1.4.0)
+      '@vitest/ui':
+        specifier: ^1.4.0
+        version: 1.4.0(vitest@1.4.0)
       '@vue/test-utils':
         specifier: ^2.4.5
         version: 2.4.5
@@ -496,7 +499,7 @@ packages:
     engines: {node: '>=6.0.0'}
     dependencies:
       '@jridgewell/gen-mapping': 0.3.3
-      '@jridgewell/trace-mapping': 0.3.20
+      '@jridgewell/trace-mapping': 0.3.25
     dev: true
 
   /@aw-web-design/x-default-browser@1.4.126:
@@ -561,7 +564,7 @@ packages:
     dependencies:
       '@babel/types': 7.24.0
       '@jridgewell/gen-mapping': 0.3.3
-      '@jridgewell/trace-mapping': 0.3.20
+      '@jridgewell/trace-mapping': 0.3.25
       jsesc: 2.5.2
     dev: true
 
@@ -1780,10 +1783,6 @@ packages:
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
 
-  /@bcoe/v8-coverage@0.2.3:
-    resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
-    dev: true
-
   /@bundled-es-modules/cookie@2.0.0:
     resolution: {integrity: sha512-Or6YHg/kamKHpxULAdSqhGqnWFneIXu1NKvvfBBzKGwpVsYuFIQ5aBPHDnnoR3ghW1nvSkALd+EF9iMtY7Vjxw==}
     dependencies:
@@ -2435,7 +2434,7 @@ packages:
     dependencies:
       '@jridgewell/set-array': 1.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
-      '@jridgewell/trace-mapping': 0.3.20
+      '@jridgewell/trace-mapping': 0.3.25
     dev: true
 
   /@jridgewell/resolve-uri@3.1.1:
@@ -2450,13 +2449,6 @@ packages:
 
   /@jridgewell/sourcemap-codec@1.4.15:
     resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
-
-  /@jridgewell/trace-mapping@0.3.20:
-    resolution: {integrity: sha512-R8LcPeWZol2zR8mmH3JeKQ6QRCFb7XgUhV9ZlGhHLGyg4wpPiPZNQOOWhFZhxKw8u//yTbNGI42Bx/3paXEQ+Q==}
-    dependencies:
-      '@jridgewell/resolve-uri': 3.1.1
-      '@jridgewell/sourcemap-codec': 1.4.15
-    dev: true
 
   /@jridgewell/trace-mapping@0.3.25:
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
@@ -4647,30 +4639,6 @@ packages:
       magicast: 0.3.3
       picocolors: 1.0.0
       test-exclude: 6.0.0
-      vitest: 1.4.0(@types/node@20.12.2)(@vitest/ui@1.4.0)(jsdom@24.0.0)
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
-  /@vitest/coverage-v8@1.4.0(vitest@1.4.0):
-    resolution: {integrity: sha512-4hDGyH1SvKpgZnIByr9LhGgCEuF9DKM34IBLCC/fVfy24Z3+PZ+Ii9hsVBsHvY1umM1aGPEjceRkzxCfcQ10wg==}
-    peerDependencies:
-      vitest: 1.4.0
-    dependencies:
-      '@ampproject/remapping': 2.2.1
-      '@bcoe/v8-coverage': 0.2.3
-      debug: 4.3.4(supports-color@8.1.1)
-      istanbul-lib-coverage: 3.2.2
-      istanbul-lib-report: 3.0.1
-      istanbul-lib-source-maps: 5.0.4
-      istanbul-reports: 3.1.7
-      magic-string: 0.30.7
-      magicast: 0.3.3
-      picocolors: 1.0.0
-      std-env: 3.7.0
-      strip-literal: 2.0.0
-      test-exclude: 6.0.0
-      v8-to-istanbul: 9.2.0
       vitest: 1.4.0(@types/node@20.12.2)(@vitest/ui@1.4.0)(jsdom@24.0.0)
     transitivePeerDependencies:
       - supports-color
@@ -13153,15 +13121,6 @@ packages:
 
   /v8-compile-cache-lib@3.0.1:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
-    dev: true
-
-  /v8-to-istanbul@9.2.0:
-    resolution: {integrity: sha512-/EH/sDgxU2eGxajKdwLCDmQ4FWq+kpi3uCmBGpw1xJtnAxEjlD8j8PEiGWpCIMIs3ciNAgH0d3TTJiUkYzyZjA==}
-    engines: {node: '>=10.12.0'}
-    dependencies:
-      '@jridgewell/trace-mapping': 0.3.20
-      '@types/istanbul-lib-coverage': 2.0.6
-      convert-source-map: 2.0.0
     dev: true
 
   /validate-npm-package-license@3.0.4:
