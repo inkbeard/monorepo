@@ -29,7 +29,7 @@
     "@storybook/vue3-vite": "^8.0.4",
     "@vitejs/plugin-vue": "^5.0.4",
     "eslint-plugin-storybook": "^0.8.0",
-    "eslint-plugin-vue": "^9.23.0",
+    "eslint-plugin-vue": "^9.24.0",
     "msw": "^2.2.1",
     "msw-storybook-addon": "^1.10.0",
     "storybook": "^8.0.2",
