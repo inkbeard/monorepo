@@ -174,8 +174,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/stylelint-config
       '@rushstack/eslint-patch':
-        specifier: ^1.8.0
-        version: 1.8.0
+        specifier: ^1.10.1
+        version: 1.10.1
       '@storybook/addon-essentials':
         specifier: ^8.0.4
         version: 8.0.4(@types/react@18.2.5)(react-dom@18.2.0)(react@18.2.0)
@@ -274,8 +274,8 @@ importers:
         specifier: workspace:*
         version: link:../ui-vue
       '@rushstack/eslint-patch':
-        specifier: ^1.8.0
-        version: 1.8.0
+        specifier: ^1.10.1
+        version: 1.10.1
       '@tsconfig/node18':
         specifier: ^18.2.3
         version: 18.2.3
@@ -340,8 +340,8 @@ importers:
   packages/eslint-config:
     devDependencies:
       '@rushstack/eslint-patch':
-        specifier: ^1.8.0
-        version: 1.8.0
+        specifier: ^1.10.1
+        version: 1.10.1
       '@typescript-eslint/eslint-plugin':
         specifier: ^7.3.1
         version: 7.3.1(@typescript-eslint/parser@7.3.1)(eslint@8.57.0)(typescript@5.2.2)
@@ -2856,8 +2856,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@rushstack/eslint-patch@1.8.0:
-    resolution: {integrity: sha512-0HejFckBN2W+ucM6cUOlwsByTKt9/+0tWhqUffNIcHqCXkthY/mZ7AuYPK/2IIaGWhdl0h+tICDO0ssLMd6XMQ==}
+  /@rushstack/eslint-patch@1.10.1:
+    resolution: {integrity: sha512-S3Kq8e7LqxkA9s7HKLqXGTGck1uwis5vAXan3FnU5yw1Ec5hsSGnq4s/UCaSqABPOnOTg7zASLyst7+ohgWexg==}
     dev: true
 
   /@sideway/address@4.1.4:
@@ -3547,15 +3547,6 @@ packages:
       - react-dom
       - supports-color
       - utf-8-validate
-    dev: true
-
-  /@storybook/csf-plugin@8.0.2:
-    resolution: {integrity: sha512-QlnTNnX8hKK/C3I89rp4zNhQ/ZYmBiHC4RSWJf03lRd3FT6+/pzsGr3USD1y+zUtu6W5OmoV15xCzhmFopC69w==}
-    dependencies:
-      '@storybook/csf-tools': 8.0.2
-      unplugin: 1.7.1
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /@storybook/csf-plugin@8.0.4:
@@ -4947,7 +4938,7 @@ packages:
     dependencies:
       '@babel/core': 7.24.0
       '@babel/eslint-parser': 7.23.3(@babel/core@7.24.0)(eslint@8.57.0)
-      '@rushstack/eslint-patch': 1.8.0
+      '@rushstack/eslint-patch': 1.10.1
       '@typescript-eslint/eslint-plugin': 6.17.0(@typescript-eslint/parser@6.17.0)(eslint@8.57.0)(typescript@5.2.2)
       '@typescript-eslint/parser': 6.17.0(eslint@8.57.0)(typescript@5.2.2)
       eslint: 8.57.0
