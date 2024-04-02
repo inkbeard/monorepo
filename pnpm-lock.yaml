@@ -230,6 +230,9 @@ importers:
       '@inkbeard/budget-it':
         specifier: workspace:*
         version: link:../../packages/budget-it
+      '@inkbeard/ui-theme':
+        specifier: workspace:*
+        version: link:../../packages/ui-theme
       '@inkbeard/ui-vue':
         specifier: workspace:*
         version: link:../../packages/ui-vue
