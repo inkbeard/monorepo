@@ -63,6 +63,7 @@
       class="btn-group align-end"
     >
       <AppButton
+        data-test="add new category"
         icon="fa-solid fa-plus"
         label="Add category"
         raised
@@ -86,7 +87,7 @@
       </div>
       <div class="btn-group align-end">
         <AppButton
-          data-test="cancel add category"
+          data-test="cancel editing new category"
           icon="fa-solid fa-xmark"
           label="Cancel"
           raised
@@ -95,7 +96,7 @@
           @click="cancelEdit"
         />
         <AppButton
-          data-test="submit add category"
+          data-test="submit category"
           :disabled="isDisabled"
           icon="fa-solid fa-check"
           label="Create"
