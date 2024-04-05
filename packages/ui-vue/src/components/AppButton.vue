@@ -6,9 +6,14 @@
      * Whether the button should be full width and center the text/icon.
      */
     isFullWidth?: boolean;
+    /**
+     * Whether the button should be disabled. (this is a PrimeVue prop but needed here for better unit testing.)
+     */
+    disabled?: boolean;
   }
 
   withDefaults(defineProps<Props>(), {
+    disabled: false,
     isFullWidth: false,
   });
   defineOptions({
@@ -18,7 +23,10 @@
 
 <template>
   <Button
-    v-bind="$attrs"
+    v-bind="{
+      ...$attrs,
+      disabled,
+    }"
     :pt="{
       root: {
         class: `app-button ${isFullWidth ? 'is-full-width' : ''}`,
