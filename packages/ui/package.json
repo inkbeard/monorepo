@@ -15,7 +15,7 @@
     "@inkbeard/typescript-config": "workspace:*",
     "@turbo/gen": "^1.12.5",
     "@types/eslint": "^8.56.7",
-    "@types/node": "^20.12.2",
+    "@types/node": "^20.12.5",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.18",
     "react": "^18.2.0",
