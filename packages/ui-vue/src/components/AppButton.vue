@@ -9,7 +9,7 @@
     /**
      * Whether the button should be disabled. (this is a PrimeVue prop but needed here for better unit testing.)
      */
-    disabled?: boolean;
+    disabled?: boolean | number;
   }
 
   withDefaults(defineProps<Props>(), {
@@ -25,7 +25,7 @@
   <Button
     v-bind="{
       ...$attrs,
-      disabled,
+      disabled: Boolean(disabled),
     }"
     :pt="{
       root: {
