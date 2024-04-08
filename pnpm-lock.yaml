@@ -143,8 +143,8 @@ importers:
         specifier: ^18.2.0
         version: 18.2.5
       '@types/react-dom':
-        specifier: ^18.2.18
-        version: 18.2.18
+        specifier: ^18.2.24
+        version: 18.2.24
       typescript:
         specifier: 5.4.3
         version: 5.4.3
@@ -332,8 +332,8 @@ importers:
         specifier: ^18.2.0
         version: 18.2.5
       '@types/react-dom':
-        specifier: ^18.2.18
-        version: 18.2.18
+        specifier: ^18.2.24
+        version: 18.2.24
       typescript:
         specifier: 5.4.3
         version: 5.4.3
@@ -493,8 +493,8 @@ importers:
         specifier: ^18.2.0
         version: 18.2.5
       '@types/react-dom':
-        specifier: ^18.2.18
-        version: 18.2.18
+        specifier: ^18.2.24
+        version: 18.2.24
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -3788,7 +3788,7 @@ packages:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.4.21(typescript@5.4.3)
-      vue-component-type-helpers: 2.0.7
+      vue-component-type-helpers: 2.0.11
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -4152,8 +4152,8 @@ packages:
     resolution: {integrity: sha512-hKormJbkJqzQGhziax5PItDUTMAM9uE2XXQmM37dyd4hVM+5aVl7oVxMVUiVQn2oCQFN/LKCZdvSM0pFRqbSmQ==}
     dev: true
 
-  /@types/react-dom@18.2.18:
-    resolution: {integrity: sha512-TJxDm6OfAX2KJWJdMEVTwWke5Sc/E/RlnPGvGfS0W7+6ocy2xhDVQVh/KvC2Uf7kACs+gDytdusDSdWfWkaNzw==}
+  /@types/react-dom@18.2.24:
+    resolution: {integrity: sha512-cN6upcKd8zkGy4HU9F1+/s98Hrp6D4MOcippK4PoE8OZRngohHZpbJn1GsaDLz87MqvHNoT13nHvNqM9ocRHZg==}
     dependencies:
       '@types/react': 18.2.5
     dev: true
@@ -13530,6 +13530,10 @@ packages:
       path-browserify: 1.0.1
       typescript: 5.4.3
       vue-component-type-helpers: 2.0.7
+    dev: true
+
+  /vue-component-type-helpers@2.0.11:
+    resolution: {integrity: sha512-8aluKz5oVC8PvVQAYgyIefOlqzKVmAOTCx2imbrFBVLbF7mnJvyMsE2A7rqX/4f4uT6ee9o8u3GcoRpUWc0xsw==}
     dev: true
 
   /vue-component-type-helpers@2.0.7:
