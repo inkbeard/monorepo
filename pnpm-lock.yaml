@@ -262,8 +262,8 @@ importers:
         specifier: ^8.0.5
         version: 8.0.5(react@18.2.0)
       '@storybook/addon-mdx-gfm':
-        specifier: ^8.0.5
-        version: 8.0.5
+        specifier: ^8.0.6
+        version: 8.0.6
       '@storybook/blocks':
         specifier: ^8.0.5
         version: 8.0.5(@types/react@18.2.5)(react-dom@18.2.0)(react@18.2.0)
@@ -3182,10 +3182,10 @@ packages:
       ts-dedent: 2.2.0
     dev: true
 
-  /@storybook/addon-mdx-gfm@8.0.5:
-    resolution: {integrity: sha512-YbKbCJRITN60lptQGGmiQjdLJjyyIoy4kqEuV2p7gIqSCwa9djgI2+aQ1DzDEo8qLDY/DGdZUQVKlZ8TfVuJcA==}
+  /@storybook/addon-mdx-gfm@8.0.6:
+    resolution: {integrity: sha512-MB3In50x7Jw/raxZ1R3PVUPUiU+w8tqlmspIoTH6eYb4GwdaTwOPOcOzMu8A1pbNFdWcB50j9t+sXHHvHe0jtg==}
     dependencies:
-      '@storybook/node-logger': 8.0.5
+      '@storybook/node-logger': 8.0.6
       remark-gfm: 4.0.0
       ts-dedent: 2.2.0
     transitivePeerDependencies:
@@ -3640,6 +3640,10 @@ packages:
     resolution: {integrity: sha512-ssT8YCcCqgc89ee+EeExCxcOpueOsU05iek2roR+NCZnoCL1DmzcUp8H9t0utLaK/ngPV8zatlzSDVgKTHSIJw==}
     dev: true
 
+  /@storybook/node-logger@8.0.6:
+    resolution: {integrity: sha512-mDRJLVAuTWauO0mnrwajfJV/6zKBJVPp/9g0ULccE3Q+cuqNfUefqfCd17cZBlJHeRsdB9jy9tod48d4qzGEkQ==}
+    dev: true
+
   /@storybook/preview-api@8.0.5:
     resolution: {integrity: sha512-BSDVTR9/X6DHVA4rIhN6d/SB6PiaRdns8ky/TKTzwFEyO3NOASHe8051O+uNtXzgCtMUj/8imNrTdMTYgUm1LA==}
     dependencies:
@@ -3788,7 +3792,7 @@ packages:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.4.21(typescript@5.4.3)
-      vue-component-type-helpers: 2.0.7
+      vue-component-type-helpers: 2.0.11
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -13530,6 +13534,10 @@ packages:
       path-browserify: 1.0.1
       typescript: 5.4.3
       vue-component-type-helpers: 2.0.7
+    dev: true
+
+  /vue-component-type-helpers@2.0.11:
+    resolution: {integrity: sha512-8aluKz5oVC8PvVQAYgyIefOlqzKVmAOTCx2imbrFBVLbF7mnJvyMsE2A7rqX/4f4uT6ee9o8u3GcoRpUWc0xsw==}
     dev: true
 
   /vue-component-type-helpers@2.0.7:
