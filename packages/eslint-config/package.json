@@ -10,7 +10,7 @@
     "@rushstack/eslint-patch": "^1.10.1",
     "@typescript-eslint/eslint-plugin": "^7.7.0",
     "@typescript-eslint/parser": "^7.4.0",
-    "@vercel/style-guide": "^5.2.0",
+    "@vercel/style-guide": "^6.0.0",
     "@vue/eslint-config-airbnb-with-typescript": "^8.0.0",
     "@vue/eslint-config-typescript": "^13.0.0",
     "eslint-config-prettier": "^9.1.0",
