@@ -413,8 +413,8 @@ importers:
         specifier: ^3.4.21
         version: 3.4.21(typescript@5.4.5)
       vue-chartjs:
-        specifier: ^5.3.0
-        version: 5.3.0(chart.js@4.4.2)(vue@3.4.21)
+        specifier: ^5.3.1
+        version: 5.3.1(chart.js@4.4.2)(vue@3.4.21)
       vue-tsc:
         specifier: ^1.8.27
         version: 1.8.27(typescript@5.4.5)
@@ -3875,7 +3875,7 @@ packages:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.4.21(typescript@5.4.5)
-      vue-component-type-helpers: 2.0.13
+      vue-component-type-helpers: 2.0.14
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -13585,8 +13585,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /vue-chartjs@5.3.0(chart.js@4.4.2)(vue@3.4.21):
-    resolution: {integrity: sha512-8XqX0JU8vFZ+WA2/knz4z3ThClduni2Nm0BMe2u0mXgTfd9pXrmJ07QBI+WAij5P/aPmPMX54HCE1seWL37ZdQ==}
+  /vue-chartjs@5.3.1(chart.js@4.4.2)(vue@3.4.21):
+    resolution: {integrity: sha512-rZjqcHBxKiHrBl0CIvcOlVEBwRhpWAVf6rDU3vUfa7HuSRmGtCslc0Oc8m16oAVuk0erzc1FCtH1VCriHsrz+A==}
     peerDependencies:
       chart.js: ^4.1.1
       vue: ^3.0.0-0 || ^2.7.0
@@ -13610,8 +13610,8 @@ packages:
       vue-component-type-helpers: 2.0.7
     dev: true
 
-  /vue-component-type-helpers@2.0.13:
-    resolution: {integrity: sha512-xNO5B7DstNWETnoYflLkVgh8dK8h2ZDgxY1M2O0zrqGeBNq5yAZ8a10yCS9+HnixouNGYNX+ggU9MQQq86HTpg==}
+  /vue-component-type-helpers@2.0.14:
+    resolution: {integrity: sha512-DInfgOyXlMyliyqAAD9frK28tTfch0+tMi4qoWJcZlRxUf+NFAtraJBnAsKLep+FOyLMiajkhfyEb3xLK08i7w==}
     dev: true
 
   /vue-component-type-helpers@2.0.7:
