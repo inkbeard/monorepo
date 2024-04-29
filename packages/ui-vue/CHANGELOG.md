@@ -1,5 +1,12 @@
 # @inkbeard/ui-vue
 
+## 0.7.0
+
+### Minor Changes
+
+- fb5d42b: Changed `disabled` AppButton to allow for `number` type.
+- 06e0443: Added coverage report
+
 ## 0.6.0
 
 ### Minor Changes

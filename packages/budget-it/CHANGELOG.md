@@ -1,5 +1,11 @@
 # @inkbeard/budget-it
 
+## 0.10.0
+
+### Minor Changes
+
+- a53fdb7: Added vitest coverage
+
 ## 0.9.0
 
 ### Minor Changes
