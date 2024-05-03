@@ -1,14 +1,18 @@
-import { {{ componentName }} } from '@inkbeard/ui-vue';
+import { {{ componentName }} } from '@inkbeard/{{ componentName }}';
 
 export default {
+  {{#if hasStoryCategory}}
   title: '{{ storyCategory }}/{{ componentName }}',
+  {{else}}
+  title: '{{ componentName }}',
+  {{/if}}
   component: {{ componentName }},
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },
 };
-export const {{ componentName }}Example = {
+export const {{ componentName }} = {
   args: {
     msg: 'Hello storybook!',
   },

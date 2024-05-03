@@ -8,6 +8,7 @@ import util from 'util';
 const exec = util.promisify(child_process.exec);
 
 export default function generator(plop: PlopTypes.NodePlopAPI): void {
+  // const isNewPackage = (componentType: string) => componentType === 'packages';
   const kebabCase = plop.getHelper('kebabCase');
   const pascalCase = plop.getHelper('pascalCase');
   const lowerCase = plop.getHelper('lowerCase');
@@ -21,11 +22,18 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
   plop.setGenerator('vue-component', {
     description: 'Adds a new vue 3 typescript component.',
     prompts: [
+      // Confirm if new package
+      {
+        type: 'confirm',
+        name: 'isNewPackage',
+        message: 'Is this a new component/package?',
+      },
       // Get component's desired location
       {
+        when: ({ isNewPackage }) => !isNewPackage,
         type: 'list',
         name: 'workspace',
-        message: 'What workspace should the component be added to?',
+        message: 'What current package should the component be added to?',
         choices: function () {
           return fs
             .readdirSync(path.join(
@@ -34,6 +42,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
             ))
             .filter(function (file) {
               return ![
+                'apps',
                 'eslint-config',
                 'stylelint-config',
                 'typescript-config',
@@ -52,7 +61,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
         name: 'componentName',
         message: 'What is the name of the component?',
         validate: (input: string, data: any) => {
-          if (data.workspace === 'ui-vue' && !input.startsWith('App')) {
+          if (data.isNewPackage && !input.startsWith('App')) {
             return 'Name must start with "App".';
           }
 
@@ -72,8 +81,17 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
             return 'Name cannot include spaces.';
           }
 
-          if (fs.existsSync(`packages/${data.workspace}/src/components/${pascalCase(input)}.vue`)) {
-            return `"${pascalCase(input)}.vue" already exists.`;
+          if (
+            (
+              !data.isNewPackage
+              && fs.existsSync(`packages/${input}/`)
+            )
+            || (
+              !data.isNewPackage &&
+              fs.existsSync(`packages/${data.workspace}/src/components/${pascalCase(input)}.vue`)
+            )
+          ) {
+            return `"${input}" already exists.`;
           }
 
           return true;
@@ -81,7 +99,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
       },
       // Check if component extends PrimeVue component
       {
-        when: ({ workspace }) => workspace === 'ui-vue',
+        when: ({ isNewPackage }) => isNewPackage,
         type: 'confirm',
         name: 'isPrimeVue',
         message: 'Is this component extending a PrimeVue component?',
@@ -133,90 +151,128 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
     actions(data = {}) {
       const { root } = data.turbo.paths
       const componentName = pascalCase(data.componentName);
+      const componentNameKebab = kebabCase(data.componentName);
       const description = !data.isPrimeVue && data.description.slice(-1) === '.'
         ? data.description
         : `${data.description}.`;
       const componentTemplate = data.isPrimeVue ? 'PrimeVue' : 'TsComponent';
-      const uiVuePath = `${root}/packages/ui-vue`;
+      // const uiVuePath = `${root}/packages/ui-vue`;
       const templateFolder = 'templates/vue-component';
+      const uiLibraryPath = `${root}/apps/ui-library`;
+      let workspacePath = `${root}/packages`;
+
+      if (data.isNewPackage) {
+        workspacePath += `/${data.componentNameKebab}`;
+      } else {
+        workspacePath += `/${data.workspace}`;
+      }
 
       /* eslint-disable no-param-reassign */
       data.componentName = componentName;
       data.description = description.replace(/^\w/, (c: string) => c.toUpperCase());
       data.componentNameLower = lowerCase(componentName);
-      data.storyCategory = data.workspace.replace('-', ' ')
+      data.storyCategory = data.workspace ? data.workspace.replace('-', ' ') : null;
       data.primeVueComponentNameLower = lowerCase(data.primeVueComponentName);
       data.primeVueComponentNamePascal = pascalCase(data.primeVueComponentName);
+      data.extendsPrimeVue = data.primeVueComponentName;
+      data.hasStoryCategory = data.workspace !== 'packages';
       /* eslint-enable no-param-reassign */
+
+      const newPackageActions: PlopTypes.Actions = [
+        // Add readme
+        {
+          type: 'add',
+          path: `${workspacePath}/README.md`,
+          templateFile: `${templateFolder}/README.md.hbs`,
+        },
+        // Add package
+        {
+          type: 'add',
+          path: `${workspacePath}/package.json`,
+          templateFile: `${templateFolder}/package.json.hbs`,
+        },
+        // Add tsconfig
+        {
+          type: 'add',
+          path: `${workspacePath}/tsconfig.json`,
+          templateFile: `${templateFolder}/tsconfig.json.hbs`,
+        },
+        // Add tsconfig.app
+        {
+          type: 'add',
+          path: `${workspacePath}/tsconfig.app.json`,
+          templateFile: `${templateFolder}/tsconfig.app.json.hbs`,
+        },
+        // Add tsconfig.node
+        {
+          type: 'add',
+          path: `${workspacePath}/tsconfig.node.json`,
+          templateFile: `${templateFolder}/tsconfig.node.json.hbs`,
+        },
+        // Add tsconfig.vitest
+        {
+          type: 'add',
+          path: `${workspacePath}/tsconfig.vitest.json`,
+          templateFile: `${templateFolder}/tsconfig.vitest.json.hbs`,
+        },
+        // Add index.ts
+        {
+          type: 'add',
+          path: `${workspacePath}/index.ts`,
+          templateFile: `${templateFolder}/index.ts.hbs`,
+        },
+        // Add vite.config.js
+        {
+          type: 'add',
+          path: `${workspacePath}/vite.config.ts`,
+          templateFile: `${templateFolder}/vite.config.ts.hbs`,
+        },
+        // Add vitest.config.js
+        {
+          type: 'add',
+          path: `${workspacePath}/vitest.config.ts`,
+          templateFile: `${templateFolder}/vitest.config.ts.hbs`,
+        },
+        // Add component to ui-component-library dependencies
+        {
+          type: 'modify',
+          path: `${uiLibraryPath}/package.json`,
+          transform: (fileContents) => {
+            const packageJson = JSON.parse(fileContents);
+
+            packageJson.dependencies[`@inkbeard/${componentNameKebab}`] = 'workspace:*';
+            packageJson.dependencies = Object.fromEntries(
+              Object.entries(packageJson.dependencies).sort((a, b) => a[0].localeCompare(b[0])),
+            );
+
+            return JSON.stringify(packageJson, null, 2);
+          },
+        },
+      ];
 
       const actions: PlopTypes.Actions = [
         // Add component file
         {
           type: 'add',
-          path: `${uiVuePath}/src/components/${componentName}.vue`,
+          path: `${workspacePath}/src/components/${componentName}.vue`,
           templateFile: `${templateFolder}/${componentTemplate}.vue.hbs`,
         },
         // Add component test file
         {
           type: 'add',
-          path: `${uiVuePath}/src/components/__tests__/${componentName}.spec.ts`,
+          path: `${workspacePath}/src/components/__tests__/${componentName}.spec.ts`,
           templateFile: `${templateFolder}/${componentTemplate}.spec.ts.hbs`,
-        },
-        // Add component to ui-vue export
-        {
-          type: 'modify',
-          path: `${uiVuePath}/index.ts`,
-          transform: async function eslintAction(contents: string) {
-            console.log('modifying index.ts');
-            const filePath = `${uiVuePath}/index.ts`;
-            /**
-             * import/export the new component in the ui-vue index.ts file.
-             */
-            const content = fs.readFileSync(`${uiVuePath}/index.ts`, 'utf8');
-            const lines = content.split('\n');
-            const lineIndex = lines.findIndex(line => line.includes('export {'));
-            lines.splice(lineIndex + 1, 0, `  ${componentName},`);
-            lines.splice(lineIndex - 1, 0, `import ${componentName} from './src/components/${componentName}.vue';`);
-            const newContent = lines.join('\n');
-
-            fs.writeFileSync(filePath, newContent, 'utf8');
-
-            /**
-             * Run eslint to fix the import/export order and sort the exports.
-             */
-            const eslint = new ESLint({
-              fix: true,
-              cwd: plop.getDestBasePath(),
-              overrideConfig: {
-                plugins: ['sort-exports'],
-                rules: {
-                  'sort-exports/sort-exports': [
-                    'error',
-                    { sortDir: 'asc' },
-                  ],
-                },
-              },
-            });
-            console.log('sorting exports...');
-            const [data] = await eslint.lintFiles(filePath);
-
-            if (data?.messages) {
-              console.error({ messages: data?.messages });
-            }
-
-            return data?.output || contents;
-          },
         },
         // Add component story file
         {
           type: 'add',
-          path: `${root}/apps/ui-library/src/stories/${componentName}.stories.js`,
+          path: `${uiLibraryPath}/src/stories/${componentName}.stories.js`,
           templateFile: `${templateFolder}/${componentTemplate}.stories.js.hbs`,
         },
         // Add component changelog
         {
           type: 'add',
-          path: `${root}/.changeset/${componentName}-${data.workspace}.md`,
+          path: `${root}/.changeset/${componentName}-${data.workspace || 'component'}.md`,
           templateFile: `${templateFolder}/changeset.md.hbs`,
         },
         // Add ui library changelog
@@ -226,6 +282,59 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
           templateFile: 'templates/ui-library/changeset.md.hbs',
         },
       ];
+
+      if (data.isNewPackage) {
+        actions.unshift(...newPackageActions);
+      } else {
+        // Add component to ui-vue export
+        actions.push(
+          {
+            type: 'modify',
+              path: `${workspacePath}/index.ts`,
+                transform: async function eslintAction(contents: string) {
+                  console.log('modifying index.ts');
+                  const filePath = `${workspacePath}/index.ts`;
+                  /**
+                   * import/export the new component in the ui-vue index.ts file.
+                   */
+                  const content = fs.readFileSync(`${workspacePath}/index.ts`, 'utf8');
+                  const lines = content.split('\n');
+                  const lineIndex = lines.findIndex(line => line.includes('export {'));
+                  lines.splice(lineIndex + 1, 0, `  ${componentName},`);
+                  lines.splice(lineIndex - 1, 0, `import ${componentName} from './src/components/${componentName}.vue';`);
+                  const newContent = lines.join('\n');
+
+                  fs.writeFileSync(filePath, newContent, 'utf8');
+
+                  /**
+                   * Run eslint to fix the import/export order and sort the exports.
+                   */
+                  const eslint = new ESLint({
+                    fix: true,
+                    cwd: plop.getDestBasePath(),
+                    overrideConfig: {
+                      plugins: ['sort-exports'],
+                      rules: {
+                        'sort-exports/sort-exports': [
+                          'error',
+                          { sortDir: 'asc' },
+                        ],
+                      },
+                    },
+                  });
+                  console.log('sorting exports...');
+                  const [data] = await eslint.lintFiles(filePath);
+
+                  if (data?.messages) {
+                    console.error({ messages: data?.messages });
+                  }
+
+                  return data?.output || contents;
+                },
+          },
+        );
+      }
+
 
       if (data.createPr) {
         actions.push({
