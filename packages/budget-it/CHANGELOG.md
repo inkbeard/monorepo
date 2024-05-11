@@ -1,5 +1,14 @@
 # @inkbeard/budget-it
 
+## 0.11.0
+
+### Minor Changes
+
+- ea37d64: Updated vue related packages
+- 6fbaedd: Updated @rushstack/eslint-patch to latest
+- 504690a: Updated vue to latest version
+- 504690a: Updated all packages to their latest versions.
+
 ## 0.10.0
 
 ### Minor Changes

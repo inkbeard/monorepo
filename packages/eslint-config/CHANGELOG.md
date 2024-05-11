@@ -1,5 +1,13 @@
 # @inkbeard/eslint-config
 
+## 0.4.0
+
+### Minor Changes
+
+- ea37d64: Updated vue related packages
+- 6fbaedd: Updated @rushstack/eslint-patch to latest
+- 39ac8f2: Removed react projects/apps/configs
+
 ## 0.3.0
 
 ### Minor Changes
