@@ -1,5 +1,11 @@
 # @inkbeard/ui-vue
 
+## 0.9.0
+
+### Minor Changes
+
+- 0003a29: Updated remaining packages to latest minor/patch
+
 ## 0.8.0
 
 ### Minor Changes

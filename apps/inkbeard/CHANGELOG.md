@@ -1,5 +1,17 @@
 # @inkbeard/website
 
+## 0.12.0
+
+### Minor Changes
+
+- 0003a29: Updated remaining packages to latest minor/patch
+
+### Patch Changes
+
+- Updated dependencies [0003a29]
+  - @inkbeard/budget-it@0.12.0
+  - @inkbeard/ui-vue@0.9.0
+
 ## 0.11.0
 
 ### Minor Changes
