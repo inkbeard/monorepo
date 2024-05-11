@@ -7,7 +7,7 @@
     "react-internal.js"
   ],
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.10.1",
+    "@rushstack/eslint-patch": "^1.10.2",
     "@typescript-eslint/eslint-plugin": "^7.7.0",
     "@typescript-eslint/parser": "^7.4.0",
     "@vercel/style-guide": "^6.0.0",
