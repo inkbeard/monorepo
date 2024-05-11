@@ -1,5 +1,11 @@
 # @inkbeard/eslint-config
 
+## 0.5.0
+
+### Minor Changes
+
+- 0003a29: Updated remaining packages to latest minor/patch
+
 ## 0.4.0
 
 ### Minor Changes

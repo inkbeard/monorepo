@@ -1,5 +1,11 @@
 # @inkbeard/build-a-budget
 
+## 0.3.0
+
+### Minor Changes
+
+- 0003a29: Updated remaining packages to latest minor/patch
+
 ## 0.2.0
 
 ### Minor Changes
