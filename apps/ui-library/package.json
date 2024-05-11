@@ -14,7 +14,7 @@
     "@inkbeard/ui-theme": "workspace:*",
     "@inkbeard/ui-vue": "workspace:*",
     "pinia": "^2.1.7",
-    "vue": "^3.4.21"
+    "vue": "^3.4.27"
   },
   "devDependencies": {
     "@inkbeard/eslint-config": "workspace:*",
