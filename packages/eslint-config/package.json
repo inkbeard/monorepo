@@ -2,19 +2,17 @@
   "name": "@inkbeard/eslint-config",
   "version": "0.4.0",
   "files": [
-    "library.js",
-    "next.js",
-    "react-internal.js"
+    "library.js"
   ],
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.10.2",
-    "@typescript-eslint/eslint-plugin": "^7.7.0",
-    "@typescript-eslint/parser": "^7.4.0",
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/parser": "^7.8.0",
     "@vercel/style-guide": "^6.0.0",
     "@vue/eslint-config-airbnb-with-typescript": "^8.0.0",
     "@vue/eslint-config-typescript": "^13.0.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-config-turbo": "^1.13.1",
+    "eslint-config-turbo": "^1.13.3",
     "eslint-plugin-only-warn": "^1.1.0",
     "eslint-plugin-sort-exports": "^0.9.1",
     "eslint-plugin-vue": "^9.26.0",
