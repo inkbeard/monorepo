@@ -1,5 +1,23 @@
 # @inkbeard/ui-library
 
+## 1.4.0
+
+### Minor Changes
+
+- ea37d64: Updated vue related packages
+- 6fbaedd: Updated @rushstack/eslint-patch to latest
+- 504690a: Updated vue to latest version
+
+### Patch Changes
+
+- d94be62: updated storybook packages to the latest
+- Updated dependencies [ea37d64]
+- Updated dependencies [6fbaedd]
+- Updated dependencies [504690a]
+- Updated dependencies [504690a]
+  - @inkbeard/budget-it@0.11.0
+  - @inkbeard/ui-vue@0.8.0
+
 ## 1.3.2
 
 ### Patch Changes

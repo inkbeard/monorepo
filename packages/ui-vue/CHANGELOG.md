@@ -1,5 +1,12 @@
 # @inkbeard/ui-vue
 
+## 0.8.0
+
+### Minor Changes
+
+- ea37d64: Updated vue related packages
+- 504690a: Updated vue to latest version
+
 ## 0.7.0
 
 ### Minor Changes
