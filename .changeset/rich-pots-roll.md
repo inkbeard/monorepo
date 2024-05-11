@@ -3,7 +3,7 @@
 "@inkbeard/budget-it": minor
 "@inkbeard/ui-library": minor
 "@inkbeard/ui-vue": minor
-"inkbeard": minor
+"@inkbeard/website": minor
 ---
 
 Updated vue to latest version
