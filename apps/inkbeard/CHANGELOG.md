@@ -1,4 +1,4 @@
-# inkbeard
+# @inkbeard/website
 
 ## 0.10.1
 
