@@ -14,14 +14,11 @@ This includes the following packages/apps:
 ### Apps
 - `ui-library`: a [storybook](https://storybook.js.org/) app for all the inkbeard components
 - `inkbeard`: a vue3 app for [inkbeard.com](https://www.inkbeard.com)
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
 
 ### Packages
 - `@inkbeard/ui-vue`: a vue3/typescript component library shared throughout the monorepo
 - `@inkbeard/budget-it`: a vue3/typescript package that provides budgeting tools that relies on `@inkbeard/ui-vue`
-- `@inkbeard/ui-them`: a set of theme variables shared throughout the monorepo
-- `@inkbeard/ui`: a stub React component library shared by both `web` and `docs` applications
+- `@inkbeard/ui-theme`: a set of theme variables shared throughout the monorepo
 
 ### Congigurations
 - `@inkbeard/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
