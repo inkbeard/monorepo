@@ -121,8 +121,8 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0(vite@5.2.11)
       flagsmith:
-        specifier: ^3.24.0
-        version: 3.24.0
+        specifier: ^4.0.1
+        version: 4.0.1
       pinia:
         specifier: ^2.1.7
         version: 2.1.7(typescript@5.4.5)(vue@3.4.27)
@@ -7873,8 +7873,8 @@ packages:
       pkg-dir: 4.2.0
     dev: false
 
-  /flagsmith@3.24.0:
-    resolution: {integrity: sha512-X+ELfgra30d6zsgwyr4OkS3juT3+xsnCuPZLwHbBrOmh5b+KN/28ZbpqAH8YI5jRjJ7Z6AxfK1zGFIt82kXINA==}
+  /flagsmith@4.0.1:
+    resolution: {integrity: sha512-M24lnzSfnObpq9rdAB0SXWuUWiz+1TdK2oxVN2uKydsmxW82f/V7JnYxVdN2Ck+fsiLu+vvDvcXR9qU6tr8T+Q==}
     dev: false
 
   /flat-cache@3.0.4:
