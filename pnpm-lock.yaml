@@ -79,8 +79,8 @@ importers:
         specifier: ^8.57.0
         version: 8.57.0
       eslint-plugin-cypress:
-        specifier: ^2.15.1
-        version: 2.15.1(eslint@8.57.0)
+        specifier: ^3.2.0
+        version: 3.2.0(eslint@8.57.0)
       eslint-plugin-vue:
         specifier: ^9.26.0
         version: 9.26.0(eslint@8.57.0)
@@ -164,8 +164,8 @@ importers:
         specifier: ^13.9.0
         version: 13.9.0
       eslint-plugin-cypress:
-        specifier: ^2.15.1
-        version: 2.15.1(eslint@8.57.0)
+        specifier: ^3.2.0
+        version: 3.2.0(eslint@8.57.0)
       npm-run-all2:
         specifier: ^6.1.2
         version: 6.1.2
@@ -309,8 +309,8 @@ importers:
         specifier: ^13.9.0
         version: 13.9.0
       eslint-plugin-cypress:
-        specifier: ^2.15.1
-        version: 2.15.1(eslint@8.57.0)
+        specifier: ^3.2.0
+        version: 3.2.0(eslint@8.57.0)
       eslint-plugin-vue:
         specifier: ^9.26.0
         version: 9.26.0(eslint@8.57.0)
@@ -7063,10 +7063,10 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-cypress@2.15.1(eslint@8.57.0):
-    resolution: {integrity: sha512-eLHLWP5Q+I4j2AWepYq0PgFEei9/s5LvjuSqWrxurkg1YZ8ltxdvMNmdSf0drnsNo57CTgYY/NIHHLRSWejR7w==}
+  /eslint-plugin-cypress@3.2.0(eslint@8.57.0):
+    resolution: {integrity: sha512-HaxMz6BoU4ay+K4WrG9ZJC1NdX06FqSlAwtRDStjM0ORFT7zCNPNuRJ+kUPc17Rt2AMUBSqeD9L0zTR3uZhPpw==}
     peerDependencies:
-      eslint: '>= 3.2.1'
+      eslint: '>=7'
     dependencies:
       eslint: 8.57.0
       globals: 13.24.0
