@@ -14,7 +14,7 @@
     "@inkbeard/ui-theme": "workspace:*",
     "@inkbeard/ui-vue": "workspace:*",
     "pinia": "^2.1.7",
-    "vue": "^3.4.27"
+    "vue": "^3.4.30"
   },
   "devDependencies": {
     "@inkbeard/eslint-config": "workspace:*",
@@ -34,7 +34,7 @@
     "msw": "^2.3.0",
     "msw-storybook-addon": "^1.10.0",
     "storybook": "^8.0.10",
-    "vite": "^5.2.11"
+    "vite": "^5.3.1"
   },
   "resolutions": {
     "jackspeak": "2.1.1"
