@@ -26,11 +26,11 @@ const router = createRouter({
           },
         },
         {
-          path: '/gbt-mad-libs',
-          name: 'GbtMadLibs',
-          component: () => import('@/views/GbtMadLibsView.vue'),
+          path: '/gpt-mad-libs',
+          name: 'GptMadLibs',
+          component: () => import('@/views/GptMadLibsView.vue'),
           meta: {
-            title: 'GBT Mad Libs',
+            title: 'GPT Mad Libs',
           },
         },
         {

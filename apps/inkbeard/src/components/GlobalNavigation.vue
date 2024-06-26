@@ -28,8 +28,8 @@
       route: 'BudgetIt',
     },
     {
-      label: 'GBT Mad Libs',
-      route: 'GbtMadLibs',
+      label: 'GPT Mad Libs',
+      route: 'GptMadLibs',
     },
     {
       label: 'Icon Memory',
