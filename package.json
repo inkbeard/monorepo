@@ -13,7 +13,7 @@
     "test:unit:watch": "turbo run test:unit:watch",
     "gen:vue-component": "turbo gen vue-component"
   },
-  "packageManager": "pnpm@8.9.0",
+  "packageManager": "pnpm@9.2.0",
   "engines": {
     "node": ">=18"
   },
@@ -26,7 +26,7 @@
     "jsdom": "^24.1.0",
     "prettier": "^3.2.5",
     "stylelint": "^16.6.1",
-    "turbo": "^1.13.3"
+    "turbo": "^2.0.5"
   },
   "manypkg": {
     "ignoredRules": [
