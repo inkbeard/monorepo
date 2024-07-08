@@ -219,8 +219,8 @@ importers:
         specifier: ^8.1.3
         version: 8.1.3(@types/jest@29.5.12)(vitest@1.6.0(@types/node@20.12.11)(jsdom@24.1.0))
       '@storybook/addon-links':
-        specifier: ^8.1.10
-        version: 8.1.10(react@18.2.0)
+        specifier: ^8.1.11
+        version: 8.1.11(react@18.2.0)
       '@storybook/addon-mdx-gfm':
         specifier: ^8.1.10
         version: 8.1.10
@@ -2154,8 +2154,8 @@ packages:
   '@storybook/addon-interactions@8.1.3':
     resolution: {integrity: sha512-+4+fGo1nSr5Re48oW2RBlXS8Jq7ZtHNXJ2dSXkxYE1uXLu8K4/a4WvtvAVPZK93+qKP1T2hTLL7eOSApVnUvJQ==}
 
-  '@storybook/addon-links@8.1.10':
-    resolution: {integrity: sha512-SxCuK7k7A0/qIPzV68u25qfye3Fb0PkC1izlRbt7u64wIUIxGzgfjM3dFRWK2VaJzCsEQWSmIdv7YHi7Wv5y3w==}
+  '@storybook/addon-links@8.1.11':
+    resolution: {integrity: sha512-HlV2RQSrZyi+55W1B1a9eWNuJdNpWx0g3j7s2arNlNmbd6/kfWAp84axBstI1tL0nW4svut7bWlCsMSOIden+A==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
     peerDependenciesMeta:
@@ -7491,8 +7491,8 @@ packages:
   vue-component-type-helpers@2.0.17:
     resolution: {integrity: sha512-2car49m8ciqg/JjgMBkx7o/Fd2A7fHESxNqL/2vJYFLXm4VwYO4yH0rexOi4a35vwNgDyvt17B07Vj126l9rAQ==}
 
-  vue-component-type-helpers@2.0.24:
-    resolution: {integrity: sha512-Jr5N8QVYEcbQuMN1LRgvg61758G8HTnzUlQsAFOxx6Y6X8kmhJ7C+jOvWsQruYxi3uHhhS6BghyRlyiwO99DBg==}
+  vue-component-type-helpers@2.0.26:
+    resolution: {integrity: sha512-sO9qQ8oC520SW6kqlls0iqDak53gsTVSrYylajgjmkt1c0vcgjsGSy1KzlDrbEx8pm02IEYhlUkU5hCYf8rwtg==}
 
   vue-component-type-helpers@2.0.7:
     resolution: {integrity: sha512-7e12Evdll7JcTIocojgnCgwocX4WzIYStGClBQ+QuWPinZo/vQolv2EMq4a3lg16TKfwWafLimG77bxb56UauA==}
@@ -9728,7 +9728,7 @@ snapshots:
       - jest
       - vitest
 
-  '@storybook/addon-links@8.1.10(react@18.2.0)':
+  '@storybook/addon-links@8.1.11(react@18.2.0)':
     dependencies:
       '@storybook/csf': 0.1.7
       '@storybook/global': 5.0.0
@@ -10311,7 +10311,7 @@ snapshots:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.4.30(typescript@5.5.2)
-      vue-component-type-helpers: 2.0.24
+      vue-component-type-helpers: 2.0.26
     transitivePeerDependencies:
       - encoding
       - prettier
@@ -16617,7 +16617,7 @@ snapshots:
 
   vue-component-type-helpers@2.0.17: {}
 
-  vue-component-type-helpers@2.0.24: {}
+  vue-component-type-helpers@2.0.26: {}
 
   vue-component-type-helpers@2.0.7: {}
 
