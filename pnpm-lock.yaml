@@ -219,8 +219,8 @@ importers:
         specifier: ^8.1.3
         version: 8.1.3(@types/jest@29.5.12)(vitest@1.6.0(@types/node@20.12.11)(jsdom@24.1.0))
       '@storybook/addon-links':
-        specifier: ^8.1.10
-        version: 8.1.10(react@18.2.0)
+        specifier: ^8.1.11
+        version: 8.1.11(react@18.2.0)
       '@storybook/addon-mdx-gfm':
         specifier: ^8.1.10
         version: 8.1.10
@@ -2154,8 +2154,8 @@ packages:
   '@storybook/addon-interactions@8.1.3':
     resolution: {integrity: sha512-+4+fGo1nSr5Re48oW2RBlXS8Jq7ZtHNXJ2dSXkxYE1uXLu8K4/a4WvtvAVPZK93+qKP1T2hTLL7eOSApVnUvJQ==}
 
-  '@storybook/addon-links@8.1.10':
-    resolution: {integrity: sha512-SxCuK7k7A0/qIPzV68u25qfye3Fb0PkC1izlRbt7u64wIUIxGzgfjM3dFRWK2VaJzCsEQWSmIdv7YHi7Wv5y3w==}
+  '@storybook/addon-links@8.1.11':
+    resolution: {integrity: sha512-HlV2RQSrZyi+55W1B1a9eWNuJdNpWx0g3j7s2arNlNmbd6/kfWAp84axBstI1tL0nW4svut7bWlCsMSOIden+A==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
     peerDependenciesMeta:
@@ -9701,7 +9701,7 @@ snapshots:
       - jest
       - vitest
 
-  '@storybook/addon-links@8.1.10(react@18.2.0)':
+  '@storybook/addon-links@8.1.11(react@18.2.0)':
     dependencies:
       '@storybook/csf': 0.1.7
       '@storybook/global': 5.0.0
