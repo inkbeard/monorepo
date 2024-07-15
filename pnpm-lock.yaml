@@ -231,8 +231,8 @@ importers:
         specifier: ^8.1.10
         version: 8.1.10(@types/jest@29.5.12)(vitest@1.6.0(@types/node@20.12.11)(jsdom@24.1.0))
       '@storybook/vue3':
-        specifier: ^8.1.10
-        version: 8.1.10(prettier@3.2.5)(vue@3.4.30(typescript@5.5.2))
+        specifier: ^8.2.2
+        version: 8.2.2(storybook@8.1.10(@babel/preset-env@7.24.7(@babel/core@7.24.7))(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(vue@3.4.30(typescript@5.5.2))
       '@storybook/vue3-vite':
         specifier: ^8.1.10
         version: 8.1.10(prettier@3.2.5)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(vite@5.3.3(@types/node@20.12.11))(vue@3.4.30(typescript@5.5.2))
@@ -2348,6 +2348,13 @@ packages:
     resolution: {integrity: sha512-mNalklegjc+EA1nTPJtvk0dQrrB4crnuF4+bxuUTYfHBZeEFjfISu4kbWYnV+B5Q4S2svH16nfwbf4FPvDV7uw==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
+      vue: ^3.0.0
+
+  '@storybook/vue3@8.2.2':
+    resolution: {integrity: sha512-6XlbAZB02AS62lCrYY6JmwXJrSbZQgduyYyXn7qAUJ/HGVmQ05CHXU6ONAcypkOu+4ZUhgpmZP6ft0acdesEGQ==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      storybook: ^8.2.2
       vue: ^3.0.0
 
   '@szmarczak/http-timer@5.0.1':
@@ -10166,6 +10173,17 @@ snapshots:
       - encoding
       - prettier
       - supports-color
+
+  '@storybook/vue3@8.2.2(storybook@8.1.10(@babel/preset-env@7.24.7(@babel/core@7.24.7))(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(vue@3.4.30(typescript@5.5.2))':
+    dependencies:
+      '@storybook/global': 5.0.0
+      '@vue/compiler-core': 3.4.30
+      lodash: 4.17.21
+      storybook: 8.1.10(@babel/preset-env@7.24.7(@babel/core@7.24.7))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      ts-dedent: 2.2.0
+      type-fest: 2.19.0
+      vue: 3.4.30(typescript@5.5.2)
+      vue-component-type-helpers: 2.0.26
 
   '@szmarczak/http-timer@5.0.1':
     dependencies:
