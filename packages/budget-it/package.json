@@ -30,7 +30,7 @@
     "@types/node": "^20.12.11",
     "@vitejs/plugin-vue": "^5.0.5",
     "@vitest/coverage-istanbul": "^1.6.0",
-    "@vitest/ui": "^1.6.0",
+    "@vitest/ui": "^2.0.3",
     "@vue/eslint-config-typescript": "^13.0.0",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.5.1",
