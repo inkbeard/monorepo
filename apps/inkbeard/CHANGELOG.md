@@ -1,5 +1,19 @@
 # @inkbeard/website
 
+## 0.13.0
+
+### Minor Changes
+
+- 4c52861: Finalized build-a-budget example and removed flag
+- 55797b1: Pinned typsecript version
+
+### Patch Changes
+
+- Updated dependencies [55797b1]
+- Updated dependencies [4c52861]
+  - @inkbeard/budget-it@1.0.0
+  - @inkbeard/ui-vue@0.10.0
+
 ## 0.12.0
 
 ### Minor Changes

@@ -1,5 +1,14 @@
 # @inkbeard/ui-library
 
+## 1.4.2
+
+### Patch Changes
+
+- Updated dependencies [55797b1]
+- Updated dependencies [4c52861]
+  - @inkbeard/budget-it@1.0.0
+  - @inkbeard/ui-vue@0.10.0
+
 ## 1.4.1
 
 ### Patch Changes

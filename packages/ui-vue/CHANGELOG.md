@@ -1,5 +1,11 @@
 # @inkbeard/ui-vue
 
+## 0.10.0
+
+### Minor Changes
+
+- 55797b1: Pinned typsecript version
+
 ## 0.9.0
 
 ### Minor Changes

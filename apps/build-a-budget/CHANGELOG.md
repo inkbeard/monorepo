@@ -1,5 +1,15 @@
 # @inkbeard/build-a-budget
 
+## 0.4.0
+
+### Minor Changes
+
+- 55797b1: Pinned typsecript version
+
+### Patch Changes
+
+- 753bb21: moved to nuxt v3 template
+
 ## 0.3.0
 
 ### Minor Changes
