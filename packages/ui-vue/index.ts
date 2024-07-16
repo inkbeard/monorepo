@@ -17,10 +17,12 @@ import AppToast from './src/components/AppToast.vue';
 import AppColorPicker from './src/components/AppColorPicker.vue';
 import AppOverlayPanel from './src/components/AppOverlayPanel.vue';
 import AppAlert from './src/components/AppAlert.vue';
+import AppCard from './src/components/AppCard.vue';
 
 export {
   AppAlert,
   AppButton,
+  AppCard,
   AppColorPicker,
   AppConfirmPopup,
   AppDialog,
