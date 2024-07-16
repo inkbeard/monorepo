@@ -16,7 +16,7 @@ pnpm add @inkbeard/ui-vue --filter name-of-workspace
 ```
 
 ## Plugins installation
-The `@inkbeard/ui-vue` plugin needs to be installed in your app or package as well. Refer to the [ui-vue README](../ui-vue/README.md) for more information on how to install the plugin.
+The `@inkbeard/ui-vue` plugin needs to be installed in your app or package as well. Refer to the [ui-vue README](https://github.com/inkbeard/monorepo/tree/main/packages/ui-vue) for more information on how to install the plugin.
 
 ```javascript
 import { createApp } from 'vue';
@@ -30,57 +30,22 @@ app.use(InkbeardBudgetIt);
 ```
 
 ## Usage
-To use the package in your app or package, import the components you need and use them in your templates.
-
-```vue
-<script lang="ts" setup>
-  import { BudgetIt, SourcesEditor } from '@inkbeard/budget-it';
-  import {
-    categoryList,
-    defaultSourceId,
-    sourceList,
-    expenseList,
-  } from 'path-to-data-or-store';
-</script>
-
-<template>
-  <BudgetIt
-    v-model:category-list="categoryList"
-    v-model:default-source-id="defaultSourceId"
-    v-model:source-list="sourceList"
-    :expense-list="expenseList"
-  >
-    <section>
-      <div>
-        <AddCategory />
-        <ExpenseCategory
-          v-for="category in categoryList"
-          :key="category.id"
-          :category="category"
-        />
-      </div>
-      <aside>
-        <SourcesEditor />
-      </aside>
-    </section>
-  </BudgetIt>
-</template>
-```
+For a an example of how to import and use the components in your app or package, refer to the [build-a-budget example](https://github.com/inkbeard/monorepo/blob/main/apps/inkbeard/src/views/TheBudgetItExample.vue)
 
 ## Testing
 There are multiple ways to run the units tests for this package. The following commands can be run from the root of the workspace:
 
 ### Single run
 ```bash
-pnpm test:unit --filter budget-it
+pnpm test:unit --filter @inkbeard/budget-it
 ```
 
 ### Watch mode
 ```bash
-pnpm test:unit:watch --filter budget-it
+pnpm test:unit:watch --filter @inkbeard/budget-it
 ```
 
 ### With UI (including coverage report)
 ```bash
-pnpm test:unit:watch --filter budget-it -- --ui
+pnpm test:unit:watch --filter @inkbeard/budget-it -- --ui
 ```
