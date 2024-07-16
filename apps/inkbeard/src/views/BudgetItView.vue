@@ -43,6 +43,10 @@
     border: 1px solid var(--ink-border-color);
     border-radius: .5rem;
     box-shadow: .25rem .25rem .25rem rgb(0 0 0 / 10%);
+
+    .dark & {
+      box-shadow: .25rem .25rem .25rem rgb(255 255 255 / 20%);
+    }
   }
 
   .header-link {
