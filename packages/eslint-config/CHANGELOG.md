@@ -1,5 +1,11 @@
 # @inkbeard/eslint-config
 
+## 0.6.0
+
+### Minor Changes
+
+- 55797b1: Pinned typsecript version
+
 ## 0.5.0
 
 ### Minor Changes

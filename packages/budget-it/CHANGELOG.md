@@ -1,5 +1,15 @@
 # @inkbeard/budget-it
 
+## 1.0.0
+
+### Major Changes
+
+- 4c52861: Cleaned up readme and released
+
+### Minor Changes
+
+- 55797b1: Pinned typsecript version
+
 ## 0.12.0
 
 ### Minor Changes
