@@ -14,20 +14,30 @@
 </script>
 
 <template>
-  <div>
-    <h2><slot /></h2>
-    <AppBadge
-      :status="badgeStatus"
-      :value="badgeValue"
-    />
-  </div>
+  <header>
+    <div>
+      <h2><slot /></h2>
+      <AppBadge
+        :status="badgeStatus"
+        :value="badgeValue"
+      />
+    </div>
+    <p><slot name="description" /></p>
+  </header>
 </template>
 
 <style scoped>
+header {
+  margin-top: 15px;
+}
+
 div {
   display: flex;
   align-items: center;
   gap: 15px;
-  margin-top: 15px;
+}
+
+h2 {
+  margin: 0;
 }
 </style>
