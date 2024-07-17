@@ -40,9 +40,9 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
                 'ui',
                 'ui-theme',
               ].includes(file)
-              && fs
-                .statSync(path.join(__dirname, '../../packages/', file))
-                .isDirectory();
+                && fs
+                  .statSync(path.join(__dirname, '../../packages/', file))
+                  .isDirectory();
             });
         },
       },
@@ -234,6 +234,48 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
       }
 
       return actions;
+    },
+  });
+
+  plop.setGenerator('vue-component-package', {
+    description: 'Adds a new vue 3 typescript component package.',
+    prompts: [
+      // Get package name
+      {
+        type: 'input',
+        name: 'packageName',
+        message: 'What is the hyphenated name of the package?',
+        validate: (input: string, data: any) => {
+          if (!input) {
+            return 'Name is required.';
+          }
+
+          if (input.includes('.')) {
+            return 'Name cannot include an extension.';
+          }
+
+          if (input.includes(' ')) {
+            return 'Name cannot include spaces.';
+          }
+
+          if (fs.existsSync(`packages/${data.workspace}`)) {
+            return `"input" already exists.`;
+          }
+
+          return true;
+        },
+      },
+    ],
+    actions(data = {}) {
+      return [
+        // Add all files
+        {
+          type: 'addMany',
+          destination: `${data.turbo.paths.root}/packages/${data.packageName}`,
+          base: 'templates/vue-component-package',
+          templateFiles: 'templates/vue-component-package/**/*',
+        },
+      ];
     },
   });
 }
