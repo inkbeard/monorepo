@@ -317,6 +317,78 @@ importers:
         specifier: 5.2.2
         version: 5.2.2
 
+  packages/icon-memory:
+    devDependencies:
+      '@inkbeard/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@inkbeard/stylelint-config':
+        specifier: workspace:*
+        version: link:../stylelint-config
+      '@inkbeard/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+      '@inkbeard/ui-vue':
+        specifier: workspace:*
+        version: link:../ui-vue
+      '@rushstack/eslint-patch':
+        specifier: ^1.10.2
+        version: 1.10.3
+      '@tsconfig/node20':
+        specifier: ^20.1.4
+        version: 20.1.4
+      '@types/jest':
+        specifier: ^29.5.12
+        version: 29.5.12
+      '@types/jsdom':
+        specifier: ^21.1.6
+        version: 21.1.7
+      '@types/node':
+        specifier: ^20.14.11
+        version: 20.14.11
+      '@vitejs/plugin-vue':
+        specifier: ^5.0.5
+        version: 5.0.5(vite@5.3.3)(vue@3.4.31)
+      '@vitest/coverage-istanbul':
+        specifier: ^2.0.3
+        version: 2.0.3(vitest@2.0.3)
+      '@vitest/ui':
+        specifier: ^2.0.3
+        version: 2.0.3(vitest@2.0.3)
+      '@vue/eslint-config-typescript':
+        specifier: ^13.0.0
+        version: 13.0.0(eslint-plugin-vue@9.27.0)(eslint@8.57.0)(typescript@5.2.2)
+      '@vue/test-utils':
+        specifier: ^2.4.6
+        version: 2.4.6
+      '@vue/tsconfig':
+        specifier: ^0.5.1
+        version: 0.5.1
+      eslint-plugin-vue:
+        specifier: ^9.26.0
+        version: 9.27.0(eslint@8.57.0)
+      npm-run-all2:
+        specifier: ^6.1.2
+        version: 6.2.2
+      start-server-and-test:
+        specifier: ^2.0.3
+        version: 2.0.4
+      typescript:
+        specifier: 5.2.2
+        version: 5.2.2
+      vite:
+        specifier: ^5.3.3
+        version: 5.3.3(@types/node@20.14.11)
+      vitest:
+        specifier: ^2.0.3
+        version: 2.0.3(@types/node@20.14.11)(@vitest/ui@2.0.3)(jsdom@24.1.0)
+      vue:
+        specifier: ^3.4.30
+        version: 3.4.31(typescript@5.2.2)
+      vue-tsc:
+        specifier: ^2.0.26
+        version: 2.0.26(typescript@5.2.2)
+
   packages/stylelint-config:
     dependencies:
       postcss-html:
