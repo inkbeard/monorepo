@@ -3,8 +3,10 @@
 </script>
 
 <template>
-  <ProjectHeader badge-status="warning" badge-value="Backlog">
-    Icon Memory Game
+  <ProjectHeader badge-value="In Progress">
+    <template #title>
+      Icon Memory Game
+    </template>
+    <p>Estimated release: 2024</p>
   </ProjectHeader>
-  <p>Estimated release: 2024</p>
 </template>

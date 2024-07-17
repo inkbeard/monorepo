@@ -24,8 +24,18 @@ html {
 p,
 .font-size-p {
   font-size: var(--ink-body-font-size);
-  margin: 10px 0;
+  margin: .7rem 0;
   line-height: 18px;
+}
+
+p {
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 a {
