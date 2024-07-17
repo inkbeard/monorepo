@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import AppBadge from '@/components/AppBadge.vue';
+  import { AppCard } from '@inkbeard/ui-vue';
 
   defineProps({
     badgeStatus: {
@@ -15,29 +16,30 @@
 
 <template>
   <header>
-    <div>
-      <h2><slot /></h2>
-      <AppBadge
-        :status="badgeStatus"
-        :value="badgeValue"
-      />
-    </div>
-    <p><slot name="description" /></p>
+    <AppCard>
+      <template #title>
+        <h2>
+          <slot name="title" />
+          <AppBadge
+            :status="badgeStatus"
+            :value="badgeValue"
+          />
+        </h2>
+      </template>
+      <slot />
+    </AppCard>
   </header>
 </template>
 
 <style scoped>
-header {
-  margin-top: 15px;
-}
+  header {
+    margin: 2rem 0;
+  }
 
-div {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-h2 {
-  margin: 0;
-}
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+  }
 </style>

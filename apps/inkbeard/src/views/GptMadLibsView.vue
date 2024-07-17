@@ -4,7 +4,9 @@
 
 <template>
   <ProjectHeader badge-status="warning" badge-value="Backlog">
-    GPT Mad Libs
+    <template #title>
+      GPT Mad Libs
+    </template>
+    <p>Estimated release: 2024</p>
   </ProjectHeader>
-  <p>Estimated release: 2024</p>
 </template>
