@@ -9,11 +9,16 @@
     label: string;
     labelDescription?: string;
     inputId: string;
+    /**
+     * The class to apply to the wrapper element.
+     */
+    wrapperClass?: string;
   }>();
 </script>
 
 <template>
   <AppFormGroup
+    :class="wrapperClass"
     :input-id="inputId"
     :label="label"
     :label-description="labelDescription"
