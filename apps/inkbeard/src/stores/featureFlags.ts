@@ -4,7 +4,7 @@ import { defineStore } from 'pinia';
 export const useFeatureFlagStore = defineStore('featureFlags', () => (
   {
     flags: ref({
-      examples: { enabled: false },
+      memory_game: { enabled: false },
     }),
   }
 ));
