@@ -18,11 +18,16 @@
      * The id for the input that will be used to associate the label with the input.
      */
     inputId: string;
+    /**
+     * The class to apply to the wrapper element.
+     */
+    wrapperClass?: string;
   }>();
 </script>
 
 <template>
   <AppFormGroup
+    :class="wrapperClass"
     :input-id="inputId"
     :label="label"
     :label-description="labelDescription"
