@@ -6,9 +6,17 @@
     inheritAttrs: false,
   });
   defineProps<{
+    /**
+     * Whether the input should be disabled. (this is a PrimeVue prop but needed here for better unit testing.)
+     */
+    disabled?: boolean;
     label: string;
     labelDescription?: string;
     inputId: string;
+    /**
+     * The model to be passed to the input. (this is a PrimeVue prop but needed here for better unit testing.)
+     */
+    modelValue: number;
     /**
      * The class to apply to the wrapper element.
      */
@@ -24,7 +32,11 @@
     :label-description="labelDescription"
   >
     <InputNumber
-      v-bind="$attrs"
+      v-bind="{
+        ...$attrs,
+        disabled,
+        modelValue,
+      }"
       :pt="{
         root: {
           class: 'app-input-number',
