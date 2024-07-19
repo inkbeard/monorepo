@@ -129,6 +129,9 @@ importers:
       '@inkbeard/budget-it':
         specifier: workspace:*
         version: link:../../packages/budget-it
+      '@inkbeard/icon-memory':
+        specifier: workspace:*
+        version: link:../../packages/icon-memory
       '@inkbeard/ui-theme':
         specifier: workspace:*
         version: link:../../packages/ui-theme
