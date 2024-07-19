@@ -1,5 +1,5 @@
-import AddCategory from './src/components/AddCategory.vue';
+import IconMemory from './src/components/IconMemory.vue';
 
 export {
-  AddCategory,
+  IconMemory,
 };

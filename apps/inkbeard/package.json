@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@inkbeard/budget-it": "workspace:*",
+    "@inkbeard/icon-memory": "workspace:*",
     "@inkbeard/ui-vue": "workspace:*",
     "@vitejs/plugin-basic-ssl": "^1.1.0",
     "flagsmith": "^4.0.3",
