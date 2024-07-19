@@ -25,7 +25,3 @@
   />
   <p>Turn count: {{ turnCount }}</p>
 </template>
-
-<style scoped>
-
-</style>
