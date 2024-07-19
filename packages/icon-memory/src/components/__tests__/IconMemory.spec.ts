@@ -2,10 +2,10 @@ import {
   describe, it, expect,
 } from 'vitest';
 import { shallowMount } from '@vue/test-utils';
-import { categoryList } from '@/assets/mockData';
-import AddCategory from '../IconMemory.vue';
+import IconMemory from '../IconMemory.vue';
 
-describe.skip('AddCategory', () => {
+describe('IconMemory', () => {
+  const pairCount = 2;
   let wrapper: any;
   const createWrapper = ({
     props,
@@ -13,53 +13,47 @@ describe.skip('AddCategory', () => {
     props?: object,
   } = {}) => {
     wrapper = shallowMount(
-      AddCategory,
+      IconMemory,
       {
         props: { ...props },
       },
     );
   };
 
-  describe('submit cta', () => {
-    let submitCta: any;
+  describe('GameSetup', () => {
+    it('should render the component and pass the pair count and game started state', () => {
+      createWrapper();
 
-    beforeEach(() => {
-      createWrapper({
-        props: { categoryList },
-      });
+      const gameSetup = wrapper.findComponent({ name: 'GameSetup' });
 
-      submitCta = wrapper.findComponent('[data-test="submit category"]');
+      expect(gameSetup.exists())
+        .toBe(true);
+      expect(gameSetup.props('pairCount'))
+        .toBe(pairCount);
+      expect(gameSetup.props('gameHasStarted'))
+        .toBe(false);
     });
 
-    it('should be disabled if the category name is empty', () => {
-      expect(submitCta.props('disabled'))
+    it('should update the game started state on @startGame', async () => {
+      createWrapper();
+
+      const gameSetup = wrapper.findComponent({ name: 'GameSetup' });
+
+      await gameSetup.vm.$emit('startGame');
+
+      expect(wrapper.vm.gameHasStarted)
         .toBe(true);
     });
+  });
 
-    it('should be disabled if the category name is already taken', async () => {
-      wrapper.vm.categoryName = categoryList[0].name;
+  describe('board', () => {
+    it('should render twice the amount of cards than the pair count', () => {
+      createWrapper();
 
-      await wrapper.vm.$nextTick();
+      const cards = wrapper.findAll('.card');
 
-      expect(submitCta.props('disabled'))
-        .toBe(true);
-    });
-
-    describe('when enabled', () => {
-      beforeEach(async () => {
-        wrapper.vm.categoryName = 'test category name';
-
-        await wrapper.vm.$nextTick();
-        await submitCta.trigger('click');
-      });
-
-      it('should call addCategory when form is submitted', () => {
-        expect(wrapper.vm.addCategory)
-          .toHaveBeenCalledWith({
-            backgroundColor: '#b30000',
-            name: 'test category name',
-          });
-      });
+      expect(cards.length)
+        .toBe(pairCount * 2);
     });
   });
 });
