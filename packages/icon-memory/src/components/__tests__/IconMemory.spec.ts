@@ -3,7 +3,7 @@ import {
 } from 'vitest';
 import { shallowMount } from '@vue/test-utils';
 import { categoryList } from '@/assets/mockData';
-import AddCategory from '../AddCategory.vue';
+import AddCategory from '../IconMemory.vue';
 
 describe.skip('AddCategory', () => {
   let wrapper: any;
