@@ -173,8 +173,8 @@ importers:
         specifier: ^8.2.4
         version: 8.2.4(storybook@8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9)))(vue@3.4.31(typescript@5.2.2))
       '@storybook/vue3-vite':
-        specifier: ^8.2.4
-        version: 8.2.4(storybook@8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9)))(vite@5.3.3(@types/node@20.14.11)(terser@5.31.2))(vue@3.4.31(typescript@5.2.2))
+        specifier: ^8.2.5
+        version: 8.2.5(storybook@8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9)))(vite@5.3.3(@types/node@20.14.11)(terser@5.31.2))(vue@3.4.31(typescript@5.2.2))
       '@tsconfig/node20':
         specifier: ^20.1.4
         version: 20.1.4
@@ -2264,11 +2264,11 @@ packages:
       react-dom:
         optional: true
 
-  '@storybook/builder-vite@8.2.4':
-    resolution: {integrity: sha512-hDx0ZLcnFrIJaVoFMu41d9w1uWmwy/DDUuIbSd0T7xHwWyVqgI8lmaQlBIp81/QmSKaUB964UduHcdIjkoWoYA==}
+  '@storybook/builder-vite@8.2.5':
+    resolution: {integrity: sha512-5CiJY+vJKt8FpEK0MVAXrIj4UDahi4fxPoUYcxawaYHTCpspaxFtLrHuNQkDbyDSjBednIMOIAm8ei2pha3Z6Q==}
     peerDependencies:
       '@preact/preset-vite': '*'
-      storybook: ^8.2.4
+      storybook: ^8.2.5
       typescript: '>= 4.3.x'
       vite: ^4.0.0 || ^5.0.0
       vite-plugin-glimmerx: '*'
@@ -2288,6 +2288,11 @@ packages:
     peerDependencies:
       storybook: ^8.2.4
 
+  '@storybook/components@8.2.5':
+    resolution: {integrity: sha512-/cqAzQ1w9tK44BvKDNkY3MxcqoDaMvZeI5c4rGh/nYMjulXV4cAOTSlVK07XfkOJENj/wHHSDz8tZTrl2FhmuQ==}
+    peerDependencies:
+      storybook: ^8.2.5
+
   '@storybook/core@8.2.4':
     resolution: {integrity: sha512-jePmsGZT2hhUNQs8ED6+hFVt2m4hrMseO8kkN7Mcsve1MIujzHUS7Gjo4uguBwHJJOtiXB2fw4OSiQCmsXscZA==}
 
@@ -2295,6 +2300,11 @@ packages:
     resolution: {integrity: sha512-7V2tmeyAwv4/AQiBpB+7fCpphnY1yhcz+Zv9esUOHKqFn5+7u9FKpEXFFcf6fcbqXr2KoNw2F1EnTv3K/SxXrg==}
     peerDependencies:
       storybook: ^8.2.4
+
+  '@storybook/csf-plugin@8.2.5':
+    resolution: {integrity: sha512-YpkvfDbKyilI54QMz/NyHGOlXxVeE+3LTKLx4GV/JrnGW+EtqQTYNaWWnTsesX0AsUICBAvxqyO9HtFtRjeL+Q==}
+    peerDependencies:
+      storybook: ^8.2.5
 
   '@storybook/csf@0.0.1':
     resolution: {integrity: sha512-USTLkZze5gkel8MYCujSRBVIrUQ3YPBrLOx7GNk/0wttvVtlzWXAq9eLbQ4p/NicGxP+3T7KPEMVV//g+yubpw==}
@@ -2322,10 +2332,20 @@ packages:
     peerDependencies:
       storybook: ^8.2.4
 
+  '@storybook/manager-api@8.2.5':
+    resolution: {integrity: sha512-4UHRlpcbYF2UiO9tonafnJMC2wJXWjTXivHjuf3ehbJXmopkNe/4zLtNTRyf3Hozf4CuYtNotw0tXflBrGlIlw==}
+    peerDependencies:
+      storybook: ^8.2.5
+
   '@storybook/preview-api@8.2.4':
     resolution: {integrity: sha512-IxOiUYYzNnk1OOz3zQBhsa3P1fsgqeMBZcH7TjiQWs9osuWG20oqsFR6+Z3dxoW8IuQHvpnREGKvAbRsDsThcA==}
     peerDependencies:
       storybook: ^8.2.4
+
+  '@storybook/preview-api@8.2.5':
+    resolution: {integrity: sha512-C5A3MtubUM5Tq1An1gIqiEmiBX4ybaTzAeBuohsqToPmWHvM2uIdSl6XpTyQQJowkvrqBKjchqZUy/2mynX4lQ==}
+    peerDependencies:
+      storybook: ^8.2.5
 
   '@storybook/react-dom-shim@8.2.4':
     resolution: {integrity: sha512-p2ypPWuKKFY/ij7yYjvdnrOcfdpxnAJd9D4/2Hm2eVioE4y8HQSND54t9OfkW+498Ez7ph4zW9ez005XqzH/+w==}
@@ -2344,11 +2364,16 @@ packages:
     peerDependencies:
       storybook: ^8.2.4
 
-  '@storybook/vue3-vite@8.2.4':
-    resolution: {integrity: sha512-tRXduE0Ez1nxaz15iF483ofxm/tCr4a9kk7VXZluCgqu8vCyMYkZUaujc1DweuaIWCCVC0p+JfowOx/dl5oxFg==}
+  '@storybook/theming@8.2.5':
+    resolution: {integrity: sha512-EEOSmW55MeLB3iskf5uUqffsqu003tTta8XQ1Xg8em3gePxPsjqzQtly1Ws5PtRg1Zvt1Zc6NKHwabiVzxothA==}
+    peerDependencies:
+      storybook: ^8.2.5
+
+  '@storybook/vue3-vite@8.2.5':
+    resolution: {integrity: sha512-O39XHAu+uh3fA7Qc3nV5ZsPhVlW2RntnMtBlE6SexYr4bG9hK2I7Y2EvUQbqgBDC0lJ+62fg8vszGjcbGfgwxw==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
-      storybook: ^8.2.4
+      storybook: ^8.2.5
       vite: ^4.0.0 || ^5.0.0
 
   '@storybook/vue3@8.2.4':
@@ -2356,6 +2381,13 @@ packages:
     engines: {node: '>=18.0.0'}
     peerDependencies:
       storybook: ^8.2.4
+      vue: ^3.0.0
+
+  '@storybook/vue3@8.2.5':
+    resolution: {integrity: sha512-DtYPg5FwUxzVMoSRt01n8Je4mPjZWivcamQrmaLji9YSNV4qBLC/IqHH0SPiDPhklu0TmXG2PW+Riaalb0nQqg==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      storybook: ^8.2.5
       vue: ^3.0.0
 
   '@szmarczak/http-timer@5.0.1':
@@ -10267,9 +10299,9 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@storybook/builder-vite@8.2.4(storybook@8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9)))(typescript@5.2.2)(vite@5.3.3(@types/node@20.14.11)(terser@5.31.2))':
+  '@storybook/builder-vite@8.2.5(storybook@8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9)))(typescript@5.2.2)(vite@5.3.3(@types/node@20.14.11)(terser@5.31.2))':
     dependencies:
-      '@storybook/csf-plugin': 8.2.4(storybook@8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9)))
+      '@storybook/csf-plugin': 8.2.5(storybook@8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9)))
       '@types/find-cache-dir': 3.2.1
       browser-assert: 1.2.1
       es-module-lexer: 1.5.4
@@ -10309,6 +10341,10 @@ snapshots:
     dependencies:
       storybook: 8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9))
 
+  '@storybook/components@8.2.5(storybook@8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9)))':
+    dependencies:
+      storybook: 8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9))
+
   '@storybook/core@8.2.4':
     dependencies:
       '@storybook/csf': 0.1.11
@@ -10328,6 +10364,11 @@ snapshots:
       - utf-8-validate
 
   '@storybook/csf-plugin@8.2.4(storybook@8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9)))':
+    dependencies:
+      storybook: 8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9))
+      unplugin: 1.11.0
+
+  '@storybook/csf-plugin@8.2.5(storybook@8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9)))':
     dependencies:
       storybook: 8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9))
       unplugin: 1.11.0
@@ -10358,7 +10399,15 @@ snapshots:
     dependencies:
       storybook: 8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9))
 
+  '@storybook/manager-api@8.2.5(storybook@8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9)))':
+    dependencies:
+      storybook: 8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9))
+
   '@storybook/preview-api@8.2.4(storybook@8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9)))':
+    dependencies:
+      storybook: 8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9))
+
+  '@storybook/preview-api@8.2.5(storybook@8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9)))':
     dependencies:
       storybook: 8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9))
 
@@ -10390,10 +10439,14 @@ snapshots:
     dependencies:
       storybook: 8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9))
 
-  '@storybook/vue3-vite@8.2.4(storybook@8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9)))(vite@5.3.3(@types/node@20.14.11)(terser@5.31.2))(vue@3.4.31(typescript@5.2.2))':
+  '@storybook/theming@8.2.5(storybook@8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9)))':
     dependencies:
-      '@storybook/builder-vite': 8.2.4(storybook@8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9)))(typescript@5.2.2)(vite@5.3.3(@types/node@20.14.11)(terser@5.31.2))
-      '@storybook/vue3': 8.2.4(storybook@8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9)))(vue@3.4.31(typescript@5.2.2))
+      storybook: 8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9))
+
+  '@storybook/vue3-vite@8.2.5(storybook@8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9)))(vite@5.3.3(@types/node@20.14.11)(terser@5.31.2))(vue@3.4.31(typescript@5.2.2))':
+    dependencies:
+      '@storybook/builder-vite': 8.2.5(storybook@8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9)))(typescript@5.2.2)(vite@5.3.3(@types/node@20.14.11)(terser@5.31.2))
+      '@storybook/vue3': 8.2.5(storybook@8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9)))(vue@3.4.31(typescript@5.2.2))
       find-package-json: 1.2.0
       magic-string: 0.30.10
       storybook: 8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9))
@@ -10414,6 +10467,21 @@ snapshots:
       '@storybook/manager-api': 8.2.4(storybook@8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9)))
       '@storybook/preview-api': 8.2.4(storybook@8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9)))
       '@storybook/theming': 8.2.4(storybook@8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9)))
+      '@vue/compiler-core': 3.4.31
+      lodash: 4.17.21
+      storybook: 8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9))
+      ts-dedent: 2.2.0
+      type-fest: 2.19.0
+      vue: 3.4.31(typescript@5.2.2)
+      vue-component-type-helpers: 2.0.28
+
+  '@storybook/vue3@8.2.5(storybook@8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9)))(vue@3.4.31(typescript@5.2.2))':
+    dependencies:
+      '@storybook/components': 8.2.5(storybook@8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9)))
+      '@storybook/global': 5.0.0
+      '@storybook/manager-api': 8.2.5(storybook@8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9)))
+      '@storybook/preview-api': 8.2.5(storybook@8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9)))
+      '@storybook/theming': 8.2.5(storybook@8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9)))
       '@vue/compiler-core': 3.4.31
       lodash: 4.17.21
       storybook: 8.2.4(@babel/preset-env@7.24.8(@babel/core@7.24.9))
