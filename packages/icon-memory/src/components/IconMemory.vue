@@ -1,13 +1,114 @@
 <script setup lang="ts">
-  import { ref } from 'vue';
+  import {
+    nextTick,
+    onMounted,
+    ref,
+    watch,
+  } from 'vue';
   import GameSetup from './GameSetup.vue';
+  import IconCard from './IconCard.vue';
 
-  // const turnCount = ref(0);
-  const pairCount = ref(2);
+  const shuffleArray = (array: any[]) => {
+    for (let i = array.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+
+      // eslint-disable-next-line no-param-reassign
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+
+    return array;
+  };
+  const cards = ref([]);
+  const icons = ref({});
+  const matchedIds = ref([]);
   const gameHasStarted = ref(false);
+  const pairCount = ref(0);
   const startGame = () => {
     gameHasStarted.value = true;
+    cards.value = shuffleArray(cards.value);
   };
+
+  /**
+   * Calculate if the flipped cards are a match.
+   * If they are, keep them flipped and add them to the matched cards.
+   * If not, flip them back after 2 seconds.
+   */
+  const flippedCards = ref<[number, number]>([]);
+  const isCalculating = ref(false);
+  const calculateCards = async (cardId: number) => {
+    flippedCards.value.push(cardId);
+
+    if (flippedCards.value.length === 1) return;
+
+    const resetFlippedCards = () => {
+      flippedCards.value = [];
+      isCalculating.value = false;
+    };
+
+    isCalculating.value = true;
+
+    if (flippedCards.value[0] !== flippedCards.value[1]) {
+      setTimeout(() => {
+        resetFlippedCards();
+      }, 1000);
+    } else {
+      await nextTick();
+
+      matchedIds.value.push(cardId);
+      resetFlippedCards();
+    }
+  };
+
+  /**
+   * Shuffle the icons and set the pair count to 2 when the component is mounted.
+   */
+  onMounted(() => {
+    const shuffledIcons = shuffleArray([
+      'fa-duotone fa-solid fa-house',
+      'fa-duotone fa-solid fa-car',
+      'fa-duotone fa-solid fa-cat-space',
+      'fa-duotone fa-solid fa-dog-leashed',
+      'fa-duotone fa-solid fa-leafy-green',
+      'fa-duotone fa-solid fa-shield-check',
+      'fa-duotone fa-solid fa-sun',
+      'fa-duotone fa-solid fa-planet-moon',
+      'fa-duotone fa-solid fa-rocket-launch',
+      'fa-duotone fa-solid fa-cloud-moon',
+      'fa-duotone fa-solid fa-bug',
+      'fa-duotone fa-solid fa-ghost',
+      'fa-duotone fa-solid fa-dolphin',
+      'fa-duotone fa-solid fa-joystick',
+      'fa-duotone fa-solid fa-kiwi-bird',
+      'fa-duotone fa-solid fa-block-question',
+      'fa-duotone fa-solid fa-crab',
+      'fa-duotone fa-solid fa-volcano',
+      'fa-duotone fa-solid fa-tree-christmas',
+      'fa-duotone fa-solid fa-sheep',
+    ]);
+
+    icons.value = shuffledIcons.reduce((acc, icon, index) => {
+      acc[index + 1] = icon;
+
+      return acc;
+    }, {});
+
+    pairCount.value = 2;
+  });
+
+  watch(pairCount, (newValue) => {
+    cards.value = [];
+
+    for (let i = 1; i <= newValue; i += 1) {
+      cards.value.push({
+        cardId: i,
+        icon: icons.value[i],
+      });
+      cards.value.push({
+        cardId: i,
+        icon: icons.value[i],
+      });
+    }
+  });
 </script>
 
 <template>
@@ -20,13 +121,18 @@
       />
     </aside>
     <section>
-      <div
-        v-for="card in (pairCount * 2)"
-        :key="card"
-        class="card"
-      >
-        {{ card }}
-      </div>
+      <IconCard
+        v-for="({ cardId, icon }, index) in cards"
+        :key="index"
+        v-bind="{
+          cardId,
+          icon,
+          isCalculating,
+          gameHasStarted,
+          isMatched: matchedIds.includes(cardId),
+        }"
+        @card-clicked="calculateCards"
+      />
     </section>
   </div>
 </template>
@@ -50,18 +156,5 @@ section {
   html.dark & {
     box-shadow: .1rem .1rem .5rem rgba(255 255 255 / 50%);
   }
-}
-
-.card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 10rem;
-  height: 10rem;
-  border: 1px solid var(--ink-border-color);
-}
-
-:deep(.app-form-group)  {
-  margin-bottom: 1rem;
 }
 </style>

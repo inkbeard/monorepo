@@ -1,8 +1,12 @@
 import {
-  describe, it, expect,
+  describe,
+  it,
+  expect,
+  vi,
 } from 'vitest';
 import { shallowMount } from '@vue/test-utils';
 import IconMemory from '../IconMemory.vue';
+import type { IconCard } from '../IconCard.vue';
 
 describe('IconMemory', () => {
   const pairCount = 2;
@@ -20,10 +24,14 @@ describe('IconMemory', () => {
     );
   };
 
+  beforeEach(async () => {
+    createWrapper();
+
+    await wrapper.vm.$nextTick();
+  });
+
   describe('GameSetup', () => {
     it('should render the component and pass the pair count and game started state', () => {
-      createWrapper();
-
       const gameSetup = wrapper.findComponent({ name: 'GameSetup' });
 
       expect(gameSetup.exists())
@@ -34,26 +42,112 @@ describe('IconMemory', () => {
         .toBe(false);
     });
 
-    it('should update the game started state on @startGame', async () => {
-      createWrapper();
+    it('should update the game started state and shuffle the cards on @startGame', async () => {
+      wrapper.vm.pairCount = 6;
+      await wrapper.vm.$nextTick();
 
       const gameSetup = wrapper.findComponent({ name: 'GameSetup' });
 
-      await gameSetup.vm.$emit('startGame');
+      gameSetup.vm.$emit('startGame');
+
+      await wrapper.vm.$nextTick();
+
+      const cardIds = wrapper.vm.cards.map((card: IconCard) => card.cardId);
 
       expect(wrapper.vm.gameHasStarted)
         .toBe(true);
+      expect(cardIds)
+        .toHaveLength(12);
+      expect(cardIds)
+        .not.toEqual([
+          1, 1,
+          2, 2,
+          3, 3,
+          4, 4,
+          5, 5,
+          6, 6,
+        ]);
     });
   });
 
-  describe('board', () => {
-    it('should render twice the amount of cards than the pair count', () => {
-      createWrapper();
+  describe('game board', () => {
+    let firstCard: IconCard;
+    let secondCard: IconCard;
+    let thirdCard: IconCard;
+    let cards: IconCard[];
 
-      const cards = wrapper.findAll('.card');
+    beforeEach(() => {
+      vi.useFakeTimers();
+      cards = wrapper.findAllComponents({ name: 'IconCard' });
+      [firstCard, secondCard, thirdCard] = cards;
+    });
 
+    it('should render two cards for each pair count', () => {
       expect(cards.length)
         .toBe(pairCount * 2);
+    });
+
+    it('should push the card ID when a card is flipped and not calculate', async () => {
+      const firstCardId = firstCard.props('cardId');
+
+      firstCard.vm.$emit('cardClicked', firstCardId);
+
+      expect(wrapper.vm.flippedCards)
+        .toEqual([firstCardId]);
+      expect(wrapper.vm.isCalculating)
+        .toBe(false);
+    });
+
+    describe('2nd card flipped', () => {
+      beforeEach(async () => {
+        wrapper.vm.flippedCards = [firstCard.props('cardId')];
+
+        await wrapper.vm.$nextTick();
+      });
+
+      it('should calculate on 2nd card flip', async () => {
+        const secondCardId = secondCard.props('cardId');
+
+        secondCard.vm.$emit('cardClicked', secondCardId);
+
+        expect(wrapper.vm.isCalculating)
+          .toBe(true);
+        expect(wrapper.vm.flippedCards)
+          .toEqual([firstCard.props('cardId'), secondCardId]);
+      });
+
+      it('should add matched card ID to stack and reset flipped cards and calculating state on successful match', async () => {
+        const secondCardId = secondCard.props('cardId');
+
+        secondCard.vm.$emit('cardClicked', secondCardId);
+
+        await wrapper.vm.$nextTick();
+
+        expect(wrapper.vm.matchedIds)
+          .toEqual([firstCard.props('cardId')]);
+        expect(wrapper.vm.flippedCards)
+          .toEqual([]);
+        expect(wrapper.vm.isCalculating)
+          .toBe(false);
+      });
+
+      it('should not add matched card ID to stack and reset card and calculating state after 1 second on unsuccessful match', async () => {
+        const thirdCardId = thirdCard.props('cardId');
+
+        thirdCard.vm.$emit('cardClicked', thirdCardId);
+
+        expect(wrapper.vm.matchedIds)
+          .toEqual([]);
+        expect(wrapper.vm.flippedCards)
+          .toEqual([firstCard.props('cardId'), thirdCardId]);
+
+        vi.advanceTimersByTime(1000);
+
+        expect(wrapper.vm.flippedCards)
+          .toEqual([]);
+        expect(wrapper.vm.isCalculating)
+          .toBe(false);
+      });
     });
   });
 });
