@@ -19,6 +19,7 @@
     :disabled="gameHasStarted"
     input-id="pair-count"
     label="Pairs"
+    :max="20"
     :min="2"
   />
   <AppButton
@@ -33,7 +34,7 @@
 </template>
 
 <style scoped>
-:deep(.app-form-group)  {
+.app-form-group  {
   margin-bottom: 1rem;
 }
 </style>
