@@ -150,4 +150,44 @@ describe('IconMemory', () => {
       });
     });
   });
+
+  describe('turn counter', () => {
+    it('should render a turn counter', () => {
+      expect(wrapper.findComponent({ name: 'TurnCounter' }).exists())
+        .toBe(true);
+    });
+
+    it('should increment the turn count and matched count on successful match', async () => {
+      const [firstCard, secondCard] = wrapper.findAllComponents({ name: 'IconCard' });
+      const turnCounter = wrapper.findComponent({ name: 'TurnCounter' });
+
+      firstCard.vm.$emit('cardClicked', firstCard.props('cardId'));
+      secondCard.vm.$emit('cardClicked', secondCard.props('cardId'));
+
+      await wrapper.vm.$nextTick();
+      // need to wait for additional tick to allow the calculation to run
+      await wrapper.vm.$nextTick();
+
+      expect(turnCounter.props('turnCount'))
+        .toBe(1);
+      expect(turnCounter.props('matchedCount'))
+        .toBe(1);
+    });
+
+    it('should increment the turn count and missed count on unsuccessful match', async () => {
+      const [firstCard,,thirdCard] = wrapper.findAllComponents({ name: 'IconCard' });
+      const turnCounter = wrapper.findComponent({ name: 'TurnCounter' });
+
+      firstCard.vm.$emit('cardClicked', firstCard.props('cardId'));
+      thirdCard.vm.$emit('cardClicked', thirdCard.props('cardId'));
+
+      await wrapper.vm.$nextTick();
+      vi.advanceTimersByTime(1000);
+
+      expect(turnCounter.props('turnCount'))
+        .toBe(1);
+      expect(turnCounter.props('missedCount'))
+        .toBe(1);
+    });
+  });
 });

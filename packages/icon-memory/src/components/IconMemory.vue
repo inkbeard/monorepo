@@ -7,6 +7,7 @@
   } from 'vue';
   import GameSetup from './GameSetup.vue';
   import IconCard from './IconCard.vue';
+  import TurnCounter from './TurnCounter.vue';
 
   const shuffleArray = (array: any[]) => {
     for (let i = array.length - 1; i > 0; i -= 1) {
@@ -32,9 +33,13 @@
    * Calculate if the flipped cards are a match.
    * If they are, keep them flipped and add them to the matched cards.
    * If not, flip them back after 2 seconds.
+   * Increase the turn count by 1 after each pair of cards is flipped.
    */
   const flippedCards = ref<[number, number]>([]);
   const isCalculating = ref(false);
+  const turnCount = ref(0);
+  const matchedCount = ref(0);
+  const missedCount = ref(0);
   const calculateCards = async (cardId: number) => {
     flippedCards.value.push(cardId);
 
@@ -48,15 +53,19 @@
     isCalculating.value = true;
 
     if (flippedCards.value[0] !== flippedCards.value[1]) {
+      missedCount.value += 1;
       setTimeout(() => {
         resetFlippedCards();
       }, 1000);
     } else {
       await nextTick();
 
+      matchedCount.value += 1;
       matchedIds.value.push(cardId);
       resetFlippedCards();
     }
+
+    turnCount.value += 1;
   };
 
   /**
@@ -119,6 +128,15 @@
         v-model:pair-count="pairCount"
         @start-game="startGame"
       />
+      <div class="turn-counter-container">
+        <TurnCounter
+          v-bind="{
+            turnCount,
+            matchedCount,
+            missedCount,
+          }"
+        />
+      </div>
     </aside>
     <section>
       <IconCard
@@ -156,5 +174,11 @@ section {
   html.dark & {
     box-shadow: .1rem .1rem .5rem rgba(255 255 255 / 50%);
   }
+}
+
+.turn-counter-container {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--ink-border-color);
 }
 </style>
