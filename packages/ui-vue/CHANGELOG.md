@@ -1,5 +1,18 @@
 # @inkbeard/ui-vue
 
+## 0.11.0
+
+### Minor Changes
+
+- 2b32714: Added base AppCard component template and test.
+- 2535f79: Updated h4 font-weight to 600
+- ecb4d2a: - Updated vue-tsc to v2
+  - Updated to @tsconfig/node20
+- cb92d71: Added disabled and modelValue to AppInputNumber props
+- dc87cab: Added wrapperClass prop for root level class.
+- 2535f79: Added styles to the AppCard component
+- 680c3fb: Added the AppCard markup, slots, and tests
+
 ## 0.10.0
 
 ### Minor Changes
