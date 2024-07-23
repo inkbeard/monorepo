@@ -1,7 +1,7 @@
 import { IconCard } from '@inkbeard/icon-memory';
 
 export default {
-  title: 'IconMemory/IconCard',
+  title: 'Icon Memory/IconCard',
   component: IconCard,
   tags: ['autodocs'],
   parameters: {
