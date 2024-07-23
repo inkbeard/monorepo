@@ -1,5 +1,11 @@
 # @inkbeard/ui-theme
 
+## 1.3.0
+
+### Minor Changes
+
+- 5d6a40c: Update paragraph first/last margins.
+
 ## 1.2.0
 
 ### Minor Changes

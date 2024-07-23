@@ -1,5 +1,35 @@
 # @inkbeard/ui-library
 
+## 1.5.0
+
+### Minor Changes
+
+- 2b32714: Added AppCard component story.
+- 9fa3a78: updated storybook and related packages
+- ecb4d2a: - Updated vue-tsc to v2
+  - Updated to @tsconfig/node20
+
+### Patch Changes
+
+- Updated dependencies [2b32714]
+- Updated dependencies [2535f79]
+- Updated dependencies [549a193]
+- Updated dependencies [5d6a40c]
+- Updated dependencies [40b65ad]
+- Updated dependencies [ecb4d2a]
+- Updated dependencies [cb92d71]
+- Updated dependencies [2df5b5b]
+- Updated dependencies [2cffda9]
+- Updated dependencies [dc87cab]
+- Updated dependencies [2535f79]
+- Updated dependencies [709a835]
+- Updated dependencies [680c3fb]
+- Updated dependencies [65fbc7c]
+  - @inkbeard/ui-vue@0.11.0
+  - @inkbeard/icon-memory@0.1.0
+  - @inkbeard/ui-theme@1.3.0
+  - @inkbeard/budget-it@1.1.0
+
 ## 1.4.2
 
 ### Patch Changes

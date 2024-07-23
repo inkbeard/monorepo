@@ -1,5 +1,12 @@
 # @inkbeard/budget-it
 
+## 1.1.0
+
+### Minor Changes
+
+- ecb4d2a: - Updated vue-tsc to v2
+  - Updated to @tsconfig/node20
+
 ## 1.0.0
 
 ### Major Changes
