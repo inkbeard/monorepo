@@ -44,7 +44,7 @@
     if (
       props.isMatched
       || props.isCalculating
-      || props.isActive
+      || isActive.value
       || !props.gameHasStarted
     ) return;
 
