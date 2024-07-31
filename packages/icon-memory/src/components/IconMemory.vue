@@ -8,6 +8,12 @@
   import GameSetup from './GameSetup.vue';
   import IconCard from './IconCard.vue';
   import TurnCounter from './TurnCounter.vue';
+  import TimeCounter from './TimeCounter.vue';
+
+  export interface Card {
+    cardId: number;
+    icon: string;
+  }
 
   const shuffleArray = (array: any[]) => {
     for (let i = array.length - 1; i > 0; i -= 1) {
@@ -19,14 +25,20 @@
 
     return array;
   };
-  const cards = ref([]);
-  const icons = ref({});
-  const matchedIds = ref([]);
+  const cards = ref<Card[]>([]);
+  const icons = ref<{ [key: number]: string }>({});
+  const matchedIds = ref<number[]>([]);
   const gameHasStarted = ref(false);
   const pairCount = ref(0);
   const startGame = () => {
     gameHasStarted.value = true;
     cards.value = shuffleArray(cards.value);
+  };
+  const finishGame = () => {
+    gameHasStarted.value = false;
+  };
+  const onTimeStopped = ({ time, readableTime }: { time: number, readableTime: string }) => {
+    console.log(`Game time: ${time}ms (${readableTime})`);
   };
 
   /**
@@ -35,7 +47,7 @@
    * If not, flip them back after 2 seconds.
    * Increase the turn count by 1 after each pair of cards is flipped.
    */
-  const flippedCards = ref<[number, number]>([]);
+  const flippedCards = ref<number[]>([]);
   const isCalculating = ref(false);
   const turnCount = ref(0);
   const matchedCount = ref(0);
@@ -43,7 +55,7 @@
   const calculateCards = async (cardId: number) => {
     flippedCards.value.push(cardId);
 
-    if (flippedCards.value.length === 1) return;
+    if (flippedCards.value.length < 2) return;
 
     const resetFlippedCards = () => {
       flippedCards.value = [];
@@ -63,6 +75,10 @@
       matchedCount.value += 1;
       matchedIds.value.push(cardId);
       resetFlippedCards();
+    }
+
+    if (matchedIds.value.length === pairCount.value) {
+      finishGame();
     }
 
     turnCount.value += 1;
@@ -135,6 +151,14 @@
             matchedCount,
             missedCount,
           }"
+        />
+      </div>
+      <div class="turn-counter-container">
+        <TimeCounter
+          v-bind="{
+            gameHasStarted,
+          }"
+          @time-stopped="onTimeStopped"
         />
       </div>
     </aside>
