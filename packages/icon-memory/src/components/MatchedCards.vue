@@ -1,14 +1,15 @@
 <script setup lang="ts">
   import IconCard from './IconCard.vue';
-  import type { IconCardProps } from './IconCard.vue';
+  import type { Card } from './IconMemory.vue';
 
   defineProps<{
-    cards: IconCardProps[];
+    cards: Card[];
   }>();
 </script>
 
 <template>
-  <div>
+  <div class="match-cards-container">
+    <p><strong>Matched cards</strong></p>
     <div
       v-for="card in cards"
       :key="card.cardId"
@@ -24,6 +25,12 @@
 </template>
 
 <style scoped>
+.match-cards-container {
+  min-width: 11rem;
+  padding: .5rem;
+  text-align: center;
+}
+
 .matched-card {
   transition: all 0.5s;
   cursor: pointer !important;
@@ -32,7 +39,7 @@
 .matched-card-container {
   position: relative;
 
-  &:not(:first-child) {
+  &:not(:first-of-type) {
     margin-top: -7rem;
   }
 

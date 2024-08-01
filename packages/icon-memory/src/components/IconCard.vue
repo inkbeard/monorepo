@@ -6,7 +6,7 @@
     /**
      * Whether the game has started or not.
      */
-    gameHasStarted: boolean;
+    gameHasStarted?: boolean;
     /**
      * The icon to display on the card.
      */
@@ -37,7 +37,7 @@
   }>();
   const props = defineProps<{
     cardId: number;
-    gameHasStarted: boolean;
+    gameHasStarted?: boolean;
     icon: string;
     isCalculating?: boolean;
     isMatched?: boolean;
