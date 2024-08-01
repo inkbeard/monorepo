@@ -1,5 +1,18 @@
 # @inkbeard/ui-library
 
+## 1.5.1
+
+### Patch Changes
+
+- Updated dependencies [80e4aff]
+- Updated dependencies [2b583fa]
+- Updated dependencies [4073f3d]
+- Updated dependencies [54a4b4a]
+- Updated dependencies [7217c00]
+- Updated dependencies [ade77e6]
+- Updated dependencies [c51cd32]
+  - @inkbeard/icon-memory@0.2.0
+
 ## 1.5.0
 
 ### Minor Changes
