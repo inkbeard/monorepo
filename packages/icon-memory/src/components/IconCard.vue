@@ -23,6 +23,10 @@
      * The id of the card.
      */
     cardId: number;
+    /**
+     * Whether the icon requires a pro license.
+     */
+    pro?: boolean;
   }
 
   const emits = defineEmits<{
@@ -32,11 +36,12 @@
     cardClicked: [number];
   }>();
   const props = defineProps<{
+    cardId: number;
     gameHasStarted: boolean;
     icon: string;
     isCalculating?: boolean;
     isMatched?: boolean;
-    cardId: number;
+    pro?: boolean;
   }>();
   const isActive = ref(false);
   const showIcon = ref(false);
