@@ -6,6 +6,7 @@
     ref,
     watch,
   } from 'vue';
+  import { AppButton } from '@inkbeard/ui-vue';
   import GameSetup from './GameSetup.vue';
   import IconCard from './IconCard.vue';
   import TurnCounter from './TurnCounter.vue';
@@ -42,14 +43,19 @@
 
     return acc;
   }, [] as Card[]));
-  const gameHasStarted = ref(false);
   const pairCount = ref(0);
+  /**
+   * Load the page with a dialog to set the pair count and start the game
+   */
+  const startDialogIsVisible = ref(true);
+  const gameHasStarted = ref(false);
   /**
    * Start the game by shuffling the cards and updating the game state.
    */
   const startGame = () => {
-    gameHasStarted.value = true;
     cards.value = shuffleArray(cards.value);
+    startDialogIsVisible.value = false;
+    gameHasStarted.value = true;
   };
   /**
    * Finish the game by updating the game state.
@@ -160,44 +166,51 @@
 </script>
 
 <template>
-  <div class="icon-memory-container">
-    <aside>
-      <GameSetup
-        v-model:game-has-started="gameHasStarted"
-        v-model:pair-count="pairCount"
-        @start-game="startGame"
-      />
-      <div class="turn-counter-container">
-        <TurnCounter
-          v-bind="{
-            turnCount,
-            matchedCount,
-            missedCount,
-          }"
-        />
-      </div>
-      <div class="turn-counter-container">
-        <TimeCounter
-          v-bind="{
-            gameHasStarted,
-          }"
-          @time-stopped="onTimeStopped"
-        />
-      </div>
-    </aside>
+  <div v-if="gameHasStarted" class="icon-memory-container">
     <section>
-      <IconCard
-        v-for="({ cardId, icon }, index) in cards"
-        :key="index"
-        v-bind="{
-          cardId,
-          icon,
-          isCalculating,
-          gameHasStarted,
-          isMatched: matchedIds.includes(cardId),
-        }"
-        @card-clicked="calculateCards"
-      />
+      <div class="game-board">
+        <IconCard
+          v-for="({ cardId, icon }, index) in cards"
+          :key="index"
+          v-bind="{
+            cardId,
+            icon,
+            isCalculating,
+            gameHasStarted,
+            isMatched: matchedIds.includes(cardId),
+          }"
+          @card-clicked="calculateCards"
+        />
+      </div>
+      <div class="game-stats">
+        <div class="game-stats-grouping">
+          <TurnCounter
+            v-bind="{
+              turnCount,
+              matchedCount,
+              missedCount,
+            }"
+          />
+        </div>
+        <div class="game-stats-grouping">
+          <TimeCounter
+            v-bind="{
+              gameHasStarted,
+            }"
+            @time-stopped="onTimeStopped"
+          />
+        </div>
+        <div class="game-stats-grouping">
+          <AppButton
+            icon="fa-duotone fa-solid fa-circle-stop"
+            is-full-width
+            label="Stop game"
+            raised
+            severity="danger"
+            @click="finishGame"
+          />
+        </div>
+      </div>
     </section>
     <aside>
       <MatchedCards
@@ -207,16 +220,40 @@
       />
     </aside>
   </div>
+  <div
+    v-if="!gameHasStarted"
+    class="game-setup"
+  >
+    <GameSetup
+      v-model:game-has-started="gameHasStarted"
+      v-model:pair-count="pairCount"
+      @start-game="startGame"
+    />
+  </div>
 </template>
 
 <style scoped>
 .icon-memory-container {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
+  flex-direction: row;
 }
 
 section {
   display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.game-stats {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+}
+
+.game-board {
+  display: flex;
+  flex: 1;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
@@ -230,9 +267,20 @@ section {
   }
 }
 
-.turn-counter-container {
-  margin-top: 2rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--ink-border-color);
+.game-setup {
+  width: 25rem;
+  margin: 15rem auto 0;
+}
+
+.game-stats-grouping {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 1rem;
+  padding: 0 2rem;
+
+  &:not(:first-of-type) {
+    border-left: 1px solid var(--ink-border-color);
+  }
 }
 </style>
