@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import {
+    computed,
     nextTick,
     onMounted,
     ref,
@@ -9,6 +10,7 @@
   import IconCard from './IconCard.vue';
   import TurnCounter from './TurnCounter.vue';
   import TimeCounter from './TimeCounter.vue';
+  import MatchedCards from './MatchedCards.vue';
 
   export interface Card {
     cardId: number;
@@ -28,15 +30,36 @@
   const cards = ref<Card[]>([]);
   const icons = ref<{ [key: number]: string }>({});
   const matchedIds = ref<number[]>([]);
+  /**
+   * Get an array of cards that have been matched.
+   */
+  const matchedCards = computed(() => matchedIds.value.reduce((acc, id: number) => {
+    const card = cards.value.find(({ cardId }) => cardId === id);
+
+    if (card) {
+      acc.push(card);
+    }
+
+    return acc;
+  }, [] as Card[]));
   const gameHasStarted = ref(false);
   const pairCount = ref(0);
+  /**
+   * Start the game by shuffling the cards and updating the game state.
+   */
   const startGame = () => {
     gameHasStarted.value = true;
     cards.value = shuffleArray(cards.value);
   };
+  /**
+   * Finish the game by updating the game state.
+   */
   const finishGame = () => {
     gameHasStarted.value = false;
   };
+  /**
+   * Log the game time when the game stops.
+   */
   const onTimeStopped = ({ time, readableTime }: { time: number, readableTime: string }) => {
     console.log(`Game time: ${time}ms (${readableTime})`);
   };
@@ -176,6 +199,13 @@
         @card-clicked="calculateCards"
       />
     </section>
+    <aside>
+      <MatchedCards
+        v-bind="{
+          cards: matchedCards,
+        }"
+      />
+    </aside>
   </div>
 </template>
 
