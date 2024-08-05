@@ -152,8 +152,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/stylelint-config
       '@rushstack/eslint-patch':
-        specifier: ^1.10.2
-        version: 1.10.3
+        specifier: ^1.10.4
+        version: 1.10.4
       '@storybook/addon-essentials':
         specifier: ^8.2.7
         version: 8.2.7(storybook@8.2.5(@babel/preset-env@7.24.8(@babel/core@7.24.9)))
@@ -215,8 +215,8 @@ importers:
         specifier: workspace:*
         version: link:../ui-vue
       '@rushstack/eslint-patch':
-        specifier: ^1.10.2
-        version: 1.10.3
+        specifier: ^1.10.4
+        version: 1.10.4
       '@tsconfig/node20':
         specifier: ^20.1.4
         version: 20.1.4
@@ -287,8 +287,8 @@ importers:
   packages/eslint-config:
     devDependencies:
       '@rushstack/eslint-patch':
-        specifier: ^1.10.2
-        version: 1.10.3
+        specifier: ^1.10.4
+        version: 1.10.4
       '@typescript-eslint/eslint-plugin':
         specifier: ^7.15.0
         version: 7.16.1(@typescript-eslint/parser@7.16.1(eslint@8.57.0)(typescript@5.2.2))(eslint@8.57.0)(typescript@5.2.2)
@@ -338,8 +338,8 @@ importers:
         specifier: workspace:*
         version: link:../ui-vue
       '@rushstack/eslint-patch':
-        specifier: ^1.10.2
-        version: 1.10.3
+        specifier: ^1.10.4
+        version: 1.10.4
       '@tsconfig/node20':
         specifier: ^20.1.4
         version: 20.1.4
@@ -2163,8 +2163,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@rushstack/eslint-patch@1.10.3':
-    resolution: {integrity: sha512-qC/xYId4NMebE6w/V33Fh9gWxLgURiNYgVNObbJl2LZv0GUUItCcCqC5axQSwRaAgaxl2mELq1rMzlswaQ0Zxg==}
+  '@rushstack/eslint-patch@1.10.4':
+    resolution: {integrity: sha512-WJgX9nzTqknM393q1QJDJmoW28kUfEnybeTfVNcNAPnIx210RXm2DiXiHzfNPJNIUUb1tJnz/l4QGtJ30PgWmA==}
 
   '@sideway/address@4.1.5':
     resolution: {integrity: sha512-IqO/DUQHUkPeixNQ8n0JA6102hT9CmaljNTPmQ1u8MEhBo/R4Q8eKLN/vGZxuebwOroDB4cbpjheD4+/sKFK4Q==}
@@ -10215,7 +10215,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.18.1':
     optional: true
 
-  '@rushstack/eslint-patch@1.10.3': {}
+  '@rushstack/eslint-patch@1.10.4': {}
 
   '@sideway/address@4.1.5':
     dependencies:
@@ -11062,7 +11062,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.24.9
       '@babel/eslint-parser': 7.24.8(@babel/core@7.24.9)(eslint@8.57.0)
-      '@rushstack/eslint-patch': 1.10.3
+      '@rushstack/eslint-patch': 1.10.4
       '@typescript-eslint/eslint-plugin': 7.16.1(@typescript-eslint/parser@7.16.1(eslint@8.57.0)(typescript@5.2.2))(eslint@8.57.0)(typescript@5.2.2)
       '@typescript-eslint/parser': 7.16.1(eslint@8.57.0)(typescript@5.2.2)
       eslint-config-prettier: 9.1.0(eslint@8.57.0)
