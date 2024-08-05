@@ -20,7 +20,7 @@
   "devDependencies": {
     "@inkbeard/eslint-config": "workspace:*",
     "@inkbeard/stylelint-config": "workspace:*",
-    "@rushstack/eslint-patch": "^1.10.2",
+    "@rushstack/eslint-patch": "^1.10.4",
     "@storybook/addon-essentials": "^8.2.7",
     "@storybook/addon-interactions": "^8.2.4",
     "@storybook/addon-links": "^8.2.4",
