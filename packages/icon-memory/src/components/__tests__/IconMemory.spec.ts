@@ -162,7 +162,7 @@ describe('IconMemory', () => {
       await wrapper.vm.$nextTick();
     });
 
-    it('should render a turn counter', () => {
+    it.only('should render a turn counter', () => {
       expect(wrapper.findComponent({ name: 'TurnCounter' }).exists())
         .toBe(true);
     });
