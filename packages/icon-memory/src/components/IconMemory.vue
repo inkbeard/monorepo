@@ -6,7 +6,7 @@
     ref,
     watch,
   } from 'vue';
-  import { AppButton } from '@inkbeard/ui-vue';
+  import { AppButton, AppIcon } from '@inkbeard/ui-vue';
   import GameSetup from './GameSetup.vue';
   import IconCard from './IconCard.vue';
   import TurnCounter from './TurnCounter.vue';
@@ -31,6 +31,20 @@
   const cards = ref<Card[]>([]);
   const icons = ref<{ [key: number]: string }>({});
   const matchedIds = ref<number[]>([]);
+  const createDeck = (count: number) => {
+    cards.value = [];
+
+    for (let i = 1; i <= count; i += 1) {
+      cards.value.push({
+        cardId: i,
+        icon: icons.value[i],
+      });
+      cards.value.push({
+        cardId: i,
+        icon: icons.value[i],
+      });
+    }
+  };
   /**
    * Get an array of cards that have been matched.
    */
@@ -47,14 +61,13 @@
   /**
    * Load the page with a dialog to set the pair count and start the game
    */
-  const startDialogIsVisible = ref(true);
   const gameHasStarted = ref(false);
+  const gameIsFinished = ref(false);
   /**
    * Start the game by shuffling the cards and updating the game state.
    */
   const startGame = () => {
     cards.value = shuffleArray(cards.value);
-    startDialogIsVisible.value = false;
     gameHasStarted.value = true;
   };
   /**
@@ -62,12 +75,20 @@
    */
   const finishGame = () => {
     gameHasStarted.value = false;
+    gameIsFinished.value = true;
+  };
+  /**
+   * Stop the game but do not finish it.
+   */
+  const stopGame = () => {
+    gameHasStarted.value = false;
   };
   /**
    * Log the game time when the game stops.
    */
-  const onTimeStopped = ({ time, readableTime }: { time: number, readableTime: string }) => {
-    console.log(`Game time: ${time}ms (${readableTime})`);
+  const finishedTime = ref('');
+  const onTimeStopped = ({ readableTime }: { readableTime: string }) => {
+    finishedTime.value = readableTime;
   };
 
   /**
@@ -114,6 +135,21 @@
   };
 
   /**
+   * Start a new game by resetting the game state.
+   */
+  const startNewGame = () => {
+    console.log('donkey');
+    createDeck(pairCount.value);
+    matchedIds.value = [];
+    matchedCount.value = 0;
+    missedCount.value = 0;
+    turnCount.value = 0;
+    finishedTime.value = '';
+    gameIsFinished.value = false;
+    startGame();
+  };
+
+  /**
    * Shuffle the icons and set the pair count to 2 when the component is mounted.
    */
   onMounted(() => {
@@ -149,40 +185,48 @@
     pairCount.value = 2;
   });
 
-  watch(pairCount, (newValue) => {
-    cards.value = [];
-
-    for (let i = 1; i <= newValue; i += 1) {
-      cards.value.push({
-        cardId: i,
-        icon: icons.value[i],
-      });
-      cards.value.push({
-        cardId: i,
-        icon: icons.value[i],
-      });
-    }
+  watch(pairCount, (newValue: number) => {
+    createDeck(newValue);
   });
 </script>
 
 <template>
-  <div v-if="gameHasStarted" class="icon-memory-container">
+  <div v-if="gameHasStarted || gameIsFinished" class="icon-memory-container">
     <section>
       <div class="game-board">
-        <IconCard
-          v-for="({ cardId, icon }, index) in cards"
-          :key="index"
-          v-bind="{
-            cardId,
-            icon,
-            isCalculating,
-            gameHasStarted,
-            isMatched: matchedIds.includes(cardId),
-          }"
-          @card-clicked="calculateCards"
-        />
+        <template v-if="!gameIsFinished">
+          <IconCard
+            v-for="({ cardId, icon }, index) in cards"
+            :key="index"
+            v-bind="{
+              cardId,
+              icon,
+              isCalculating,
+              gameHasStarted,
+              isMatched: matchedIds.includes(cardId),
+            }"
+            @card-clicked="calculateCards"
+          />
+        </template>
+        <div
+          v-else
+          class="finished-game-container"
+        >
+          <h3 class="finished-title">
+            <AppIcon icon="fa-duotone fa-solid fa-party-horn" />
+            Congratulations!
+            <AppIcon icon="fa-duotone fa-solid fa-party-horn" />
+          </h3>
+          <h4>In {{ finishedTime }}, you've matched {{ pairCount }} pairs in {{ turnCount }} turns. That's a {{ ((matchedCount / turnCount) * 100).toFixed(2) }}% accuracy!</h4>
+          <GameSetup
+            v-model:game-has-started="gameHasStarted"
+            v-model:pair-count="pairCount"
+            cta-label="Start new game"
+            @start-game="startNewGame"
+          />
+        </div>
       </div>
-      <div class="game-stats">
+      <div v-show="!gameIsFinished" class="game-stats">
         <div class="game-stats-grouping">
           <TurnCounter
             v-bind="{
@@ -202,12 +246,13 @@
         </div>
         <div class="game-stats-grouping">
           <AppButton
+            :disabled="gameIsFinished"
             icon="fa-duotone fa-solid fa-circle-stop"
             is-full-width
             label="Stop game"
             raised
             severity="danger"
-            @click="finishGame"
+            @click="stopGame"
           />
         </div>
       </div>
@@ -221,7 +266,7 @@
     </aside>
   </div>
   <div
-    v-if="!gameHasStarted"
+    v-if="!gameHasStarted && !gameIsFinished"
     class="game-setup"
   >
     <GameSetup
@@ -240,6 +285,7 @@
 }
 
 section {
+  position: relative;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -269,7 +315,7 @@ section {
 
 .game-setup {
   width: 25rem;
-  margin: 15rem auto 0;
+  margin: 5rem auto 0;
 }
 
 .game-stats-grouping {
@@ -282,5 +328,18 @@ section {
   &:not(:first-of-type) {
     border-left: 1px solid var(--ink-border-color);
   }
+}
+
+.finished-game-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.finished-title {
+  margin: 0;
+  color: var(--ink-success-color)
 }
 </style>

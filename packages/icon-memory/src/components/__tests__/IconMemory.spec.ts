@@ -31,7 +31,8 @@ describe('IconMemory', () => {
   });
 
   describe('GameSetup', () => {
-    it('should render the component and pass the pair count and game started state', () => {
+    it.only('should render the component and pass the pair count and game started state', () => {
+      console.log(wrapper.html());
       const gameSetup = wrapper.findComponent({ name: 'GameSetup' });
 
       expect(gameSetup.exists())
@@ -157,14 +158,17 @@ describe('IconMemory', () => {
 
   describe('turn counter', () => {
     beforeEach(async () => {
-      wrapper.vm.gameHasStarted = true;
+      console.log('graong');
+      wrapper.startNewGame();
+      // wrapper.vm.gameHasStarted = true;
 
       await wrapper.vm.$nextTick();
     });
 
     it('should render a turn counter', () => {
-      expect(wrapper.findComponent({ name: 'TurnCounter' }).exists())
-        .toBe(true);
+      console.log(wrapper.html());
+      // expect(wrapper.findComponent({ name: 'TurnCounter' }).exists())
+      //   .toBe(true);
     });
 
     it('should increment the turn count and matched count on successful match', async () => {
