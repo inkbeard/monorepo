@@ -22,7 +22,7 @@
     "@vitejs/plugin-basic-ssl": "^1.1.0",
     "flagsmith": "^4.0.3",
     "pinia": "^2.1.7",
-    "vue": "^3.4.30",
+    "vue": "^3.4.36",
     "vue-i18n": "^9.13.1",
     "vue-router": "^4.4.0"
   },
@@ -40,8 +40,8 @@
     "npm-run-all2": "^6.1.2",
     "start-server-and-test": "^2.0.5",
     "typescript": "5.2.2",
-    "vite": "^5.3.4",
-    "vitest": "^2.0.3",
+    "vite": "^5.3.5",
+    "vitest": "^2.0.5",
     "vue-tsc": "^2.0.26"
   },
   "license": "MIT"

@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "primevue": "^3.52.0",
-    "vue": "^3.4.30"
+    "vue": "^3.4.36"
   },
   "devDependencies": {
     "@inkbeard/eslint-config": "workspace:*",
@@ -39,7 +39,7 @@
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.5.1",
     "typescript": "5.2.2",
-    "vite": "^5.3.4",
-    "vitest": "^2.0.3"
+    "vite": "^5.3.5",
+    "vitest": "^2.0.5"
   }
 }
