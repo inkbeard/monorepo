@@ -157,7 +157,7 @@ describe('IconMemory', () => {
 
   describe('turn counter', () => {
     beforeEach(async () => {
-      wrapper.vm.gameHasStarted = true;
+      wrapper.vm.startNewGame();
 
       await wrapper.vm.$nextTick();
     });
@@ -168,8 +168,10 @@ describe('IconMemory', () => {
     });
 
     it('should increment the turn count and matched count on successful match', async () => {
-      const [firstCard, secondCard] = wrapper.findAllComponents({ name: 'IconCard' });
+      const cards = wrapper.findAllComponents({ name: 'IconCard' });
       const turnCounter = wrapper.findComponent({ name: 'TurnCounter' });
+
+      const [firstCard, secondCard] = cards.filter((card: IconCard) => card.props('cardId') === 1);
 
       firstCard.vm.$emit('cardClicked', firstCard.props('cardId'));
       secondCard.vm.$emit('cardClicked', secondCard.props('cardId'));
@@ -185,11 +187,13 @@ describe('IconMemory', () => {
     });
 
     it('should increment the turn count and missed count on unsuccessful match', async () => {
-      const [firstCard,,thirdCard] = wrapper.findAllComponents({ name: 'IconCard' });
+      const cards = wrapper.findAllComponents({ name: 'IconCard' });
       const turnCounter = wrapper.findComponent({ name: 'TurnCounter' });
+      const [firstCard] = cards.filter((card: IconCard) => card.props('cardId') === 1);
+      const [secondCard] = cards.filter((card: IconCard) => card.props('cardId') !== 1);
 
       firstCard.vm.$emit('cardClicked', firstCard.props('cardId'));
-      thirdCard.vm.$emit('cardClicked', thirdCard.props('cardId'));
+      secondCard.vm.$emit('cardClicked', secondCard.props('cardId'));
 
       await wrapper.vm.$nextTick();
       vi.advanceTimersByTime(1000);
@@ -198,6 +202,38 @@ describe('IconMemory', () => {
         .toBe(1);
       expect(turnCounter.props('missedCount'))
         .toBe(1);
+    });
+  });
+
+  describe('finish game', () => {
+    beforeEach(async () => {
+      wrapper.vm.startNewGame();
+
+      await wrapper.vm.$nextTick();
+
+      const cards = wrapper.findAllComponents({ name: 'IconCard' });
+      const [firstMatchOne, firstMatchTwo] = cards.filter((card: IconCard) => card.props('cardId') === 1);
+      const [secondMatchOne, secondMatchTwo] = cards.filter((card: IconCard) => card.props('cardId') === 2);
+
+      firstMatchOne.vm.$emit('cardClicked', firstMatchOne.props('cardId'));
+      firstMatchTwo.vm.$emit('cardClicked', firstMatchTwo.props('cardId'));
+      secondMatchOne.vm.$emit('cardClicked', secondMatchOne.props('cardId'));
+      secondMatchTwo.vm.$emit('cardClicked', secondMatchTwo.props('cardId'));
+
+      await wrapper.vm.$nextTick();
+      // need to wait for additional tick to allow the calculation to run
+      await wrapper.vm.$nextTick();
+    });
+
+    it('should hide the game stats when the game is finished', async () => {
+      expect(wrapper.find('[data-test="game stats"]').attributes('style'))
+        .toBe('display: none;');
+    });
+
+    // Will flesh out component testing later.
+    it('should show the game stats when the game is finished', async () => {
+      expect(wrapper.find('[data-test="finished game stats"]').text())
+        .toBe('In , you\'ve matched 2 pairs in 3 turns. That\'s a 100.00% accuracy!');
     });
   });
 });

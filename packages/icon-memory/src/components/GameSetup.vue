@@ -4,6 +4,16 @@
     AppInputNumber,
   } from '@inkbeard/ui-vue';
 
+  export interface GameSetupProps {
+    /**
+     * The number of pairs of cards to display.
+     */
+    ctaLabel?: string;
+  }
+
+  withDefaults(defineProps<GameSetupProps>(), {
+    ctaLabel: 'Start game',
+  });
   defineEmits<{
     startGame: [];
   }>();
@@ -18,15 +28,14 @@
     data-test="edit pair count"
     :disabled="gameHasStarted"
     input-id="pair-count"
-    label="Pairs"
+    label="Number of pairs"
     :max="20"
     :min="2"
   />
   <AppButton
     data-test="start game"
     :disabled="gameHasStarted"
-    is-full-width
-    label="Start game"
+    :label="ctaLabel"
     raised
     severity="primary"
     @click="$emit('startGame')"
