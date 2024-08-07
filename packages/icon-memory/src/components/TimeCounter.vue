@@ -43,7 +43,7 @@
 
   watch(
     () => props.gameHasStarted,
-    (newValue) => {
+    (newValue, oldValue) => {
       if (newValue) {
         timeBegan.value = new Date();
         clock.value = 0;
@@ -51,7 +51,7 @@
           clock.value += 1;
           timeCurrent.value = new Date();
         }, 10);
-      } else {
+      } else if (!newValue && oldValue) {
         clearInterval(timer);
         timer = 0;
         emits('timeStopped', {
@@ -60,6 +60,7 @@
         });
       }
     },
+    { immediate: true },
   );
 </script>
 

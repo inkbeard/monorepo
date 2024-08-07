@@ -76,7 +76,11 @@ describe('IconMemory', () => {
     let thirdCard: IconCard;
     let cards: IconCard[];
 
-    beforeEach(() => {
+    beforeEach(async () => {
+      wrapper.vm.gameHasStarted = true;
+
+      await wrapper.vm.$nextTick();
+
       vi.useFakeTimers();
       cards = wrapper.findAllComponents({ name: 'IconCard' });
       [firstCard, secondCard, thirdCard] = cards;
@@ -152,6 +156,12 @@ describe('IconMemory', () => {
   });
 
   describe('turn counter', () => {
+    beforeEach(async () => {
+      wrapper.vm.gameHasStarted = true;
+
+      await wrapper.vm.$nextTick();
+    });
+
     it('should render a turn counter', () => {
       expect(wrapper.findComponent({ name: 'TurnCounter' }).exists())
         .toBe(true);
