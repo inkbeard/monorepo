@@ -12,19 +12,19 @@ describe('MatchedCards', () => {
       icon: 'fa-duotone fa-solid fa-house',
       cardId: 1,
       pro: false,
-      gameHasStarted: false,
+      isActive: false,
     },
     {
       icon: 'fa-duotone fa-solid fa-car',
       cardId: 2,
       pro: true,
-      gameHasStarted: false,
+      isActive: false,
     },
     {
       icon: 'fa-duotone fa-solid fa-t-rex',
       cardId: 3,
       pro: true,
-      gameHasStarted: false,
+      isActive: false,
     },
   ];
   let wrapper: any;
@@ -37,7 +37,7 @@ describe('MatchedCards', () => {
     );
   };
 
-  it('should render an IconCard for each card', () => {
+  it('should render an IconCard for each card with both an `isActive` and `isMatched` state', () => {
     createWrapper();
 
     const iconCards = wrapper.findAllComponents({ name: 'IconCard' });
@@ -46,7 +46,12 @@ describe('MatchedCards', () => {
       .toHaveLength(cards.length);
     cards.forEach((card, index) => {
       expect(iconCards[index].props())
-        .toMatchObject(cards[index]);
+        .toEqual({
+          ...cards[index],
+          isActive: true,
+          isCalculating: false,
+          isMatched: true,
+        });
     });
   });
 });

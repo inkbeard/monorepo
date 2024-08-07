@@ -16,6 +16,8 @@
   export interface Card {
     cardId: number;
     icon: string;
+    isActive: boolean;
+    pro: boolean;
   }
 
   const shuffleArray = (array: any[]) => {
@@ -38,10 +40,14 @@
       cards.value.push({
         cardId: i,
         icon: icons.value[i],
+        isActive: false,
+        pro: false,
       });
       cards.value.push({
         cardId: i,
         icon: icons.value[i],
+        isActive: false,
+        pro: false,
       });
     }
   };
@@ -110,6 +116,10 @@
     const resetFlippedCards = () => {
       flippedCards.value = [];
       isCalculating.value = false;
+
+      cards.value.forEach((card, index) => {
+        cards.value[index].isActive = false;
+      });
     };
 
     isCalculating.value = true;
@@ -195,16 +205,17 @@
       <div class="game-board">
         <template v-if="!gameIsFinished">
           <IconCard
-            v-for="({ cardId, icon }, index) in cards"
+            v-for="({ cardId, icon, pro }, index) in cards"
             :key="index"
             v-bind="{
               cardId,
               icon,
               isCalculating,
-              gameHasStarted,
               isMatched: matchedIds.includes(cardId),
+              pro,
             }"
-            @card-clicked="calculateCards"
+            v-model:is-active="cards[index].isActive"
+            @card-clicked="calculateCards(cardId)"
           />
         </template>
         <div

@@ -19,6 +19,8 @@
       <IconCard
         class="matched-card"
         v-bind="{ ...card }"
+        is-active
+        is-matched
       />
     </div>
   </div>
