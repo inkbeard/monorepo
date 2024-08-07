@@ -22,25 +22,28 @@ export const MatchedCardsExample = {
     cards: [
       {
         icon: 'fa-duotone fa-solid fa-house',
-        cardId: 1,
+        iconId: 1,
         pro: false,
-        isActive: true,
-        isMatched: true,
       },
       {
         icon: 'fa-duotone fa-solid fa-car',
-        cardId: 2,
+        iconId: 2,
         pro: true,
-        isActive: true,
-        isMatched: true,
       },
       {
         icon: 'fa-duotone fa-solid fa-t-rex',
-        cardId: 3,
+        iconId: 3,
         pro: true,
+      }
+    ].reduce((acc, card) => {
+      acc.push({
+        ...card,
         isActive: true,
         isMatched: true,
-      }
-    ],
+        name: card.icon.split(' ')[2].replace('fa-', ''),
+      });
+
+      return acc;
+    }, []),
   },
 };

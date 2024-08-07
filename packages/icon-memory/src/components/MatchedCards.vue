@@ -1,10 +1,11 @@
 <script setup lang="ts">
   import IconCard from './IconCard.vue';
-  import type { Card } from './IconMemory.vue';
+  import type { IconCardProps } from './IconCard.vue';
 
   defineProps<{
-    cards: Card[];
+    cards: IconCardProps[];
   }>();
+
 </script>
 
 <template>
@@ -12,7 +13,7 @@
     <p><strong>Matched cards</strong></p>
     <div
       v-for="card in cards"
-      :key="card.cardId"
+      :key="card.iconId"
       class="matched-card-container"
     >
       <div class="empty-card" />

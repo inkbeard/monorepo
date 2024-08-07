@@ -8,9 +8,13 @@
      */
     icon: string;
     /**
+     * The id of the icon.
+     */
+    iconId: number;
+    /**
      * Whether the card is active.
      */
-    isActive?: boolean;
+    isActive: boolean;
     /**
      * Whether the game is currently calculating a match.
      */
@@ -19,14 +23,6 @@
      * Whether the card has been matched.
      */
     isMatched: boolean;
-    /**
-     * The id of the card.
-     */
-    cardId: number;
-    /**
-     * Whether the icon requires a pro license.
-     */
-    pro: boolean;
   }
 
   const emits = defineEmits<{
@@ -36,11 +32,10 @@
     cardClicked: [];
   }>();
   const props = defineProps<{
-    cardId: number;
+    iconId: number;
     icon: string;
     isCalculating?: boolean;
     isMatched: boolean;
-    pro: boolean;
   }>();
   const isActive = defineModel<boolean>('isActive');
   const showIcon = ref(false);
@@ -50,12 +45,20 @@
   const activateCard = async () => {
     if (
       props.isMatched
+      && isActive.value
+    ) {
+      emits('cardClicked');
+      return;
+    }
+
+    if (
+      props.isMatched
       || props.isCalculating
       || isActive.value
     ) return;
 
-    isActive.value = true;
     emits('cardClicked');
+    isActive.value = true;
   };
 
   /**
@@ -85,7 +88,7 @@
     @click="activateCard"
     @keydown.enter="activateCard"
   >
-    <div class="content" :data-id="props.cardId">
+    <div class="content" :data-id="props.iconId">
       <div class="front" />
       <div class="back">
         <AppIcon

@@ -53,7 +53,7 @@ describe('IconMemory', () => {
 
       await wrapper.vm.$nextTick();
 
-      const cardIds = wrapper.vm.cards.map((card: IconCard) => card.cardId);
+      const cardIds = wrapper.vm.cards.map((card: IconCard) => card.iconId);
 
       expect(wrapper.vm.gameHasStarted)
         .toBe(true);
@@ -92,7 +92,7 @@ describe('IconMemory', () => {
     });
 
     it('should push the card ID when a card is flipped and not calculate', async () => {
-      const firstCardId = firstCard.props('cardId');
+      const firstCardId = firstCard.props('iconId');
 
       firstCard.vm.$emit('cardClicked', firstCardId);
 
@@ -104,31 +104,31 @@ describe('IconMemory', () => {
 
     describe('2nd card flipped', () => {
       beforeEach(async () => {
-        wrapper.vm.flippedCards = [firstCard.props('cardId')];
+        wrapper.vm.flippedCards = [firstCard.props('iconId')];
 
         await wrapper.vm.$nextTick();
       });
 
       it('should calculate on 2nd card flip', async () => {
-        const secondCardId = secondCard.props('cardId');
+        const secondCardId = secondCard.props('iconId');
 
         secondCard.vm.$emit('cardClicked', secondCardId);
 
         expect(wrapper.vm.isCalculating)
           .toBe(true);
         expect(wrapper.vm.flippedCards)
-          .toEqual([firstCard.props('cardId'), secondCardId]);
+          .toEqual([firstCard.props('iconId'), secondCardId]);
       });
 
       it('should add matched card ID to stack and reset flipped cards/calculating states on successful match', async () => {
-        const secondCardId = secondCard.props('cardId');
+        const secondCardId = secondCard.props('iconId');
 
         secondCard.vm.$emit('cardClicked', secondCardId);
 
         await wrapper.vm.$nextTick();
 
         expect(wrapper.vm.matchedIds)
-          .toEqual([firstCard.props('cardId')]);
+          .toEqual([firstCard.props('iconId')]);
         expect(wrapper.vm.flippedCards)
           .toEqual([]);
         expect(wrapper.vm.isCalculating)
@@ -140,14 +140,14 @@ describe('IconMemory', () => {
       });
 
       it('should not add matched card ID to stack and reset card and calculating state after 1 second on unsuccessful match', async () => {
-        const thirdCardId = thirdCard.props('cardId');
+        const thirdCardId = thirdCard.props('iconId');
 
         thirdCard.vm.$emit('cardClicked', thirdCardId);
 
         expect(wrapper.vm.matchedIds)
           .toEqual([]);
         expect(wrapper.vm.flippedCards)
-          .toEqual([firstCard.props('cardId'), thirdCardId]);
+          .toEqual([firstCard.props('iconId'), thirdCardId]);
 
         vi.advanceTimersByTime(1000);
 
@@ -175,13 +175,10 @@ describe('IconMemory', () => {
       const cards = wrapper.findAllComponents({ name: 'IconCard' });
       const turnCounter = wrapper.findComponent({ name: 'TurnCounter' });
 
-      const [firstCard, secondCard] = cards.filter((card: IconCard) => card.props('cardId') === 1);
+      const [firstCard, secondCard] = cards.filter((card: IconCard) => card.props('iconId') === 1);
 
       firstCard.vm.$emit('cardClicked');
       secondCard.vm.$emit('cardClicked');
-
-      // firstCard.vm.$emit('cardClicked', firstCard.props('cardId'));
-      // secondCard.vm.$emit('cardClicked', secondCard.props('cardId'));
 
       await wrapper.vm.$nextTick();
       // need to wait for additional tick to allow the calculation to run
@@ -196,11 +193,9 @@ describe('IconMemory', () => {
     it('should increment the turn count and missed count on unsuccessful match', async () => {
       const cards = wrapper.findAllComponents({ name: 'IconCard' });
       const turnCounter = wrapper.findComponent({ name: 'TurnCounter' });
-      const [firstCard] = cards.filter((card: IconCard) => card.props('cardId') === 1);
-      const [secondCard] = cards.filter((card: IconCard) => card.props('cardId') !== 1);
+      const [firstCard] = cards.filter((card: IconCard) => card.props('iconId') === 1);
+      const [secondCard] = cards.filter((card: IconCard) => card.props('iconId') !== 1);
 
-      // firstCard.vm.$emit('cardClicked', firstCard.props('cardId'));
-      // secondCard.vm.$emit('cardClicked', secondCard.props('cardId'));
       firstCard.vm.$emit('cardClicked');
       secondCard.vm.$emit('cardClicked');
 
@@ -221,12 +216,12 @@ describe('IconMemory', () => {
       await wrapper.vm.$nextTick();
 
       const cards = wrapper.findAllComponents({ name: 'IconCard' });
-      const [firstMatchOne, firstMatchTwo] = cards.filter((card: IconCard) => card.props('cardId') === 1);
-      const [secondMatchOne, secondMatchTwo] = cards.filter((card: IconCard) => card.props('cardId') === 2);
+      const [firstMatchOne, firstMatchTwo] = cards.filter((card: IconCard) => card.props('iconId') === 1);
+      const [secondMatchOne, secondMatchTwo] = cards.filter((card: IconCard) => card.props('iconId') === 2);
 
-      firstMatchOne.vm.$emit('cardClicked', firstMatchOne.props('cardId'));
-      firstMatchTwo.vm.$emit('cardClicked', firstMatchTwo.props('cardId'));
-      secondMatchOne.vm.$emit('cardClicked', secondMatchOne.props('cardId'));
+      firstMatchOne.vm.$emit('cardClicked', firstMatchOne.props('iconId'));
+      firstMatchTwo.vm.$emit('cardClicked', firstMatchTwo.props('iconId'));
+      secondMatchOne.vm.$emit('cardClicked', secondMatchOne.props('iconId'));
       secondMatchTwo.vm.$emit('cardClicked', secondMatchTwo.props('cardId'));
 
       await wrapper.vm.$nextTick();

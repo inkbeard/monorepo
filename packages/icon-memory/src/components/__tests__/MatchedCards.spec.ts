@@ -5,28 +5,30 @@ import {
 } from 'vitest';
 import { shallowMount } from '@vue/test-utils';
 import MatchedCards from '../MatchedCards.vue';
+import type { IconCardProps } from '../IconCard.vue';
 
 describe('MatchedCards', () => {
   const cards = [
     {
       icon: 'fa-duotone fa-solid fa-house',
-      cardId: 1,
-      pro: false,
-      isActive: false,
+      iconId: 1,
     },
     {
       icon: 'fa-duotone fa-solid fa-car',
-      cardId: 2,
-      pro: true,
-      isActive: false,
+      iconId: 2,
     },
     {
       icon: 'fa-duotone fa-solid fa-t-rex',
-      cardId: 3,
-      pro: true,
-      isActive: false,
+      iconId: 3,
     },
-  ];
+  ].reduce((acc, card) => {
+    acc.push({
+      ...card,
+      isActive: true,
+      isMatched: true,
+    });
+    return acc;
+  }, [] as IconCardProps[]);
   let wrapper: any;
   const createWrapper = () => {
     wrapper = shallowMount(
