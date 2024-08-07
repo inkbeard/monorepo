@@ -1,18 +1,15 @@
 <script setup lang="ts">
   import { computed, ref, watch } from 'vue';
+  import type { TimeStopped } from '../types';
 
   export interface TimeCounterProps {
-    /**
-     * Whether the game has started or not.
-     */
     gameHasStarted: boolean;
-  }
-  export interface TimeStopped {
-    readableTime: string;
-    time: number;
   }
 
   const props = withDefaults(defineProps<TimeCounterProps>(), {
+    /**
+     * Whether the game has started or not.
+     */
     gameHasStarted: false,
   });
   const emits = defineEmits<{
@@ -47,12 +44,12 @@
       if (newValue) {
         timeBegan.value = new Date();
         clock.value = 0;
-        timer = setInterval(() => {
+        timer = window.setInterval(() => {
           clock.value += 1;
           timeCurrent.value = new Date();
         }, 10);
       } else if (!newValue && oldValue) {
-        clearInterval(timer);
+        window.clearInterval(timer);
         timer = 0;
         emits('timeStopped', {
           time: clock.value,

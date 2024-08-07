@@ -1,41 +1,25 @@
 import type {
-  CategoryInfo,
+  IconCardProps,
 } from '@/types';
 
-export const categoryList: CategoryInfo[] = [
+export const cards = [
   {
-    backgroundColor: '#b30000',
-    id: 1,
-    name: 'Entertainment',
+    icon: 'fa-duotone fa-solid fa-house',
+    iconId: 1,
   },
   {
-    backgroundColor: '#7c1158',
-    id: 2,
-    name: 'Food',
+    icon: 'fa-duotone fa-solid fa-car',
+    iconId: 2,
   },
   {
-    backgroundColor: '#4421af',
-    id: 3,
-    name: 'Housing',
+    icon: 'fa-duotone fa-solid fa-t-rex',
+    iconId: 3,
   },
-  {
-    backgroundColor: '#1a53ff',
-    id: 4,
-    name: 'Transportation',
-  },
-  {
-    backgroundColor: '#0d88e6',
-    id: 5,
-    name: 'Utilities',
-  },
-  {
-    backgroundColor: '#00b7c7',
-    id: 6,
-    name: 'Clothing',
-  },
-  {
-    backgroundColor: '#5ad45a',
-    id: 7,
-    name: 'Medical',
-  },
-];
+].reduce((acc, card) => {
+  acc.push({
+    ...card,
+    isActive: true,
+    isMatched: true,
+  });
+  return acc;
+}, [] as IconCardProps[]);
