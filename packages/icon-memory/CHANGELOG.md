@@ -1,5 +1,14 @@
 # @inkbeard/icon-memory
 
+## 0.3.0
+
+### Minor Changes
+
+- 6dba90d: Added finished game screen
+- 9f9373e: - Updated layout of starting board
+  - Updated tests
+  - Updated the TimeCounter watch to account for 'oldValue'
+
 ## 0.2.0
 
 ### Minor Changes
