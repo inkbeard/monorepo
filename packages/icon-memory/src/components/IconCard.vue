@@ -2,29 +2,6 @@
   import { AppIcon } from '@inkbeard/ui-vue';
   import { ref, watch } from 'vue';
 
-  export interface IconCardProps {
-    /**
-     * The icon to display on the card.
-     */
-    icon: string;
-    /**
-     * The id of the icon.
-     */
-    iconId: number;
-    /**
-     * Whether the card is active.
-     */
-    isActive: boolean;
-    /**
-     * Whether the game is currently calculating a match.
-     */
-    isCalculating?: boolean;
-    /**
-     * Whether the card has been matched.
-     */
-    isMatched: boolean;
-  }
-
   const emits = defineEmits<{
     /**
      * Emit the card id that was clicked.
@@ -32,12 +9,30 @@
     cardClicked: [];
   }>();
   const props = defineProps<{
+    /**
+     * The id of the icon.
+     */
     iconId: number;
+    /**
+     * The icon to display on the card.
+     */
     icon: string;
+    /**
+     * Whether the game is currently calculating a match.
+     */
     isCalculating?: boolean;
-    isMatched: boolean;
+    /**
+     * Whether the card has been matched.
+     */
+    isMatched?: boolean;
   }>();
+  /**
+   * Whether the card is active.
+   */
   const isActive = defineModel<boolean>('isActive');
+  /**
+   * Whether the icon should be shown.
+   */
   const showIcon = ref(false);
   /**
    * Flip the card if it is not already matched, calculating, or already active and emit.

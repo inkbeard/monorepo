@@ -5,7 +5,8 @@
   "exports": {
     ".": "./index.ts",
     "./changelog.md": "./CHANGELOG.md",
-    "./readme.md": "./README.md"
+    "./readme.md": "./README.md",
+    "./mockData.ts": "./src/assets/mockData.ts"
   },
   "scripts": {
     "build": "run-p type-check \"build-only {@}\" --",

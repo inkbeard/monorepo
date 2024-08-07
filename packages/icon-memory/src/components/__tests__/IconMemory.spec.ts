@@ -6,7 +6,7 @@ import {
 } from 'vitest';
 import { shallowMount } from '@vue/test-utils';
 import IconMemory from '../IconMemory.vue';
-import type { IconCard } from '../IconCard.vue';
+import IconCard from '../IconCard.vue';
 
 describe('IconMemory', () => {
   const pairCount = 2;
@@ -53,7 +53,7 @@ describe('IconMemory', () => {
 
       await wrapper.vm.$nextTick();
 
-      const cardIds = wrapper.vm.cards.map((card: IconCard) => card.iconId);
+      const cardIds = wrapper.vm.cards.map((card: typeof IconCard) => card.iconId);
 
       expect(wrapper.vm.gameHasStarted)
         .toBe(true);
@@ -72,10 +72,10 @@ describe('IconMemory', () => {
   });
 
   describe('game board', () => {
-    let firstCard: IconCard;
-    let secondCard: IconCard;
-    let thirdCard: IconCard;
-    let cards: IconCard[];
+    let firstCard: typeof IconCard;
+    let secondCard: typeof IconCard;
+    let thirdCard: typeof IconCard;
+    let cards: typeof IconCard[];
 
     beforeEach(async () => {
       wrapper.vm.gameHasStarted = true;
@@ -175,7 +175,7 @@ describe('IconMemory', () => {
       const cards = wrapper.findAllComponents({ name: 'IconCard' });
       const turnCounter = wrapper.findComponent({ name: 'TurnCounter' });
 
-      const [firstCard, secondCard] = cards.filter((card: IconCard) => card.props('iconId') === 1);
+      const [firstCard, secondCard] = cards.filter((card: typeof IconCard) => card.props('iconId') === 1);
 
       firstCard.vm.$emit('cardClicked');
       secondCard.vm.$emit('cardClicked');
@@ -193,8 +193,8 @@ describe('IconMemory', () => {
     it('should increment the turn count and missed count on unsuccessful match', async () => {
       const cards = wrapper.findAllComponents({ name: 'IconCard' });
       const turnCounter = wrapper.findComponent({ name: 'TurnCounter' });
-      const [firstCard] = cards.filter((card: IconCard) => card.props('iconId') === 1);
-      const [secondCard] = cards.filter((card: IconCard) => card.props('iconId') !== 1);
+      const [firstCard] = cards.filter((card: typeof IconCard) => card.props('iconId') === 1);
+      const [secondCard] = cards.filter((card: typeof IconCard) => card.props('iconId') !== 1);
 
       firstCard.vm.$emit('cardClicked');
       secondCard.vm.$emit('cardClicked');
@@ -216,8 +216,8 @@ describe('IconMemory', () => {
       await wrapper.vm.$nextTick();
 
       const cards = wrapper.findAllComponents({ name: 'IconCard' });
-      const [firstMatchOne, firstMatchTwo] = cards.filter((card: IconCard) => card.props('iconId') === 1);
-      const [secondMatchOne, secondMatchTwo] = cards.filter((card: IconCard) => card.props('iconId') === 2);
+      const [firstMatchOne, firstMatchTwo] = cards.filter((card: typeof IconCard) => card.props('iconId') === 1);
+      const [secondMatchOne, secondMatchTwo] = cards.filter((card: typeof IconCard) => card.props('iconId') === 2);
 
       firstMatchOne.vm.$emit('cardClicked', firstMatchOne.props('iconId'));
       firstMatchTwo.vm.$emit('cardClicked', firstMatchTwo.props('iconId'));
