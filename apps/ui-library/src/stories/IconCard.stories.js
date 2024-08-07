@@ -8,7 +8,7 @@ export default {
     layout: 'centered',
   },
   argTypes: {
-    cardId: {
+    iconId: {
       table: {
         type: { summary: 'number' },
         readonly: true,
@@ -26,7 +26,7 @@ export default {
 export const IconCardExample = {
   args: {
     icon: 'fa-duotone fa-solid fa-house',
-    cardId: 1,
+    iconId: 1,
     isActive: false,
     isCalculating: false,
     isMatched: false,
