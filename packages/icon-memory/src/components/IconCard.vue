@@ -52,8 +52,8 @@
       || isActive.value
       || !props.gameHasStarted
     ) return;
-    emits('cardClicked', props.cardId);
 
+    emits('cardClicked', props.cardId);
     isActive.value = true;
   };
 

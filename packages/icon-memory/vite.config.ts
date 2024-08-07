@@ -21,8 +21,6 @@ export default defineConfig({
         main: fileURLToPath(new URL('./index.ts', import.meta.url)),
       },
       external: [
-        'chart.js',
-        'vue-chartjs',
         'vue',
       ],
       output: {
