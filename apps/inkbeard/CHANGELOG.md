@@ -1,5 +1,13 @@
 # @inkbeard/website
 
+## 0.14.2
+
+### Patch Changes
+
+- Updated dependencies [6dba90d]
+- Updated dependencies [9f9373e]
+  - @inkbeard/icon-memory@0.3.0
+
 ## 0.14.1
 
 ### Patch Changes
