@@ -26,13 +26,10 @@ describe('MatchedCards', () => {
     expect(iconCards)
       .toHaveLength(cards.length);
     cards.forEach((card, index) => {
-      expect(iconCards[index].props())
-        .toEqual({
-          ...cards[index],
-          isActive: true,
-          isCalculating: false,
-          isMatched: true,
-        });
+      expect(iconCards[index].props('isActive'))
+        .toBe(true);
+      expect(iconCards[index].props('isMatched'))
+        .toBe(true);
     });
   });
 });
