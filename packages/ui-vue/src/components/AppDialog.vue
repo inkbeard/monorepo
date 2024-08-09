@@ -14,6 +14,9 @@
       root: {
         class: 'app-dialog',
       },
+      closeButton: {
+        class: 'app-close-dialog',
+      },
     }"
   >
     <template
@@ -24,13 +27,46 @@
       <slot :name="name" v-bind="{ scope }" />
     </template>
     <template #closeicon>
-      <AppIcon icon="fa-solid fa-xmark" />
+      <AppIcon
+        class="close-icon"
+        icon="fa-solid fa-xmark"
+      />
     </template>
   </Dialog>
 </template>
 
 <style>
-.p-dialog-header-close {
-  transform: translate(.5rem, -.5rem);
+.p-dialog-header {
+  padding: 0;
+}
+
+.p-dialog-title {
+  padding: 1.5rem 1.5rem 1rem;
+}
+
+.p-dialog-header-icons {
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+}
+
+.p-dialog .p-dialog-content:last-of-type {
+  margin-top: .5rem;
+}
+
+.app-close-dialog {
+  background-color: var(--ink-indigo);
+  color: var(--ink-white);
+  transition: background-color 0.3s ease-out;
+
+  &:hover {
+    background-color: var(--ink-black);
+  }
+}
+</style>
+
+<style scoped>
+.close-icon {
+  margin-top: 1px;
 }
 </style>
