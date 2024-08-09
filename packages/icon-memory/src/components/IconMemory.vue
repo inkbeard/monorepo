@@ -12,17 +12,8 @@
   import TurnCounter from './TurnCounter.vue';
   import TimeCounter from './TimeCounter.vue';
   import MatchedCards from './MatchedCards.vue';
+  import type { IconDetails, IconCardProps } from '../types';
 
-  export interface IconDetails {
-    icon: string;
-    name: string;
-    pro: boolean
-  }
-
-  export interface Card extends IconDetails {
-    iconId: number;
-    isActive: boolean;
-  }
   const shuffleArray = (array: any[]) => {
     for (let i = array.length - 1; i > 0; i -= 1) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -33,7 +24,7 @@
 
     return array;
   };
-  const cards = ref<Card[]>([]);
+  const cards = ref<IconCardProps[]>([]);
   const icons = ref<{ [key: number]: IconDetails }>({});
   const matchedIds = ref<number[]>([]);
   const createDeck = (count: number) => {
@@ -63,7 +54,7 @@
     }
 
     return acc;
-  }, [] as Card[]));
+  }, [] as IconCardProps[]));
   const pairCount = ref(0);
   /**
    * Load the page with a dialog to set the pair count and start the game

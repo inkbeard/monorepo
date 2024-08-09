@@ -1,4 +1,5 @@
 import { MatchedCards } from '@inkbeard/icon-memory';
+import { cards } from '@inkbeard/icon-memory/mockData.ts'
 
 export default {
   title: 'Icon Memory/MatchedCards',
@@ -18,32 +19,5 @@ export default {
 };
 
 export const MatchedCardsExample = {
-  args: {
-    cards: [
-      {
-        icon: 'fa-duotone fa-solid fa-house',
-        iconId: 1,
-        pro: false,
-      },
-      {
-        icon: 'fa-duotone fa-solid fa-car',
-        iconId: 2,
-        pro: true,
-      },
-      {
-        icon: 'fa-duotone fa-solid fa-t-rex',
-        iconId: 3,
-        pro: true,
-      }
-    ].reduce((acc, card) => {
-      acc.push({
-        ...card,
-        isActive: true,
-        isMatched: true,
-        name: card.icon.split(' ')[2].replace('fa-', ''),
-      });
-
-      return acc;
-    }, []),
-  },
+  args: { cards },
 };

@@ -1,11 +1,10 @@
 <script setup lang="ts">
   import IconCard from './IconCard.vue';
-  import type { IconCardProps } from './IconCard.vue';
+  import type { IconCardProps } from '../types';
 
   defineProps<{
     cards: IconCardProps[];
   }>();
-
 </script>
 
 <template>
