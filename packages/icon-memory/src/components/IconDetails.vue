@@ -253,7 +253,7 @@
 .icon-detail-header {
   display: flex;
   gap: 1rem;
-  margin: 0;
+  margin: 0 0 .5rem;
 }
 
 .example {
