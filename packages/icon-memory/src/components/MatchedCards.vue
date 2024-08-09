@@ -1,10 +1,21 @@
 <script setup lang="ts">
+  import { ref } from 'vue';
+  import { AppDialog } from '@inkbeard/ui-vue';
   import IconCard from './IconCard.vue';
-  import type { IconCardProps } from '../types';
+  import IconDetails from './IconDetails.vue';
+  import type { IconCardProps, IconDetails as IconDetailsProps } from '../types';
 
-  defineProps<{
+  const props = defineProps<{
     cards: IconCardProps[];
   }>();
+
+  const dialogIsVisible = ref(false);
+  const activeIconDetails = ref<IconDetailsProps | null>(null);
+  const loadCard = (iconId: number) => {
+    activeIconDetails.value = props.cards.find((card) => card.iconId === iconId) as IconDetailsProps;
+    dialogIsVisible.value = true;
+  };
+
 </script>
 
 <template>
@@ -21,9 +32,20 @@
         v-bind="{ ...card }"
         is-active
         is-matched
+        @card-clicked="loadCard(card.iconId)"
       />
     </div>
   </div>
+  <AppDialog
+    v-model:visible="dialogIsVisible"
+    class="match-cards-dialog"
+    modal
+  >
+    <IconDetails
+      v-if="activeIconDetails"
+      :icon-details="activeIconDetails"
+    />
+  </AppDialog>
 </template>
 
 <style scoped>

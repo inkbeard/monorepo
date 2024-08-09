@@ -6,7 +6,7 @@
     ref,
     watch,
   } from 'vue';
-  import { AppButton, AppIcon } from '@inkbeard/ui-vue';
+  import { AppButton, AppCard, AppIcon } from '@inkbeard/ui-vue';
   import GameSetup from './GameSetup.vue';
   import IconCard from './IconCard.vue';
   import TurnCounter from './TurnCounter.vue';
@@ -31,13 +31,18 @@
     cards.value = [];
 
     for (let i = 1; i <= count; i += 1) {
+      const iconDetails = icons.value[i];
+      const icon = `${iconDetails.family} ${iconDetails.style} fa-${iconDetails.name}`;
+
       cards.value.push({
-        ...icons.value[i],
+        ...iconDetails,
+        icon,
         iconId: i,
         isActive: false,
       });
       cards.value.push({
-        ...icons.value[i],
+        ...iconDetails,
+        icon,
         iconId: i,
         isActive: false,
       });
@@ -156,102 +161,122 @@
   onMounted(() => {
     const shuffledIcons = shuffleArray([
       {
-        icon: 'fa-duotone fa-solid fa-house',
+        family: 'fa-duotone',
+        style: 'fa-solid',
         name: 'house',
         pro: false,
       },
       {
-        icon: 'fa-duotone fa-solid fa-car',
+        family: 'fa-duotone',
+        style: 'fa-solid',
         name: 'car',
         pro: false,
       },
       {
-        icon: 'fa-duotone fa-solid fa-cat-space',
-        name: 'cat space',
+        family: 'fa-duotone',
+        style: 'fa-solid',
+        name: 'cat-space',
         pro: false,
       },
       {
-        icon: 'fa-duotone fa-solid fa-dog-leashed',
-        name: 'dog leashed',
+        family: 'fa-duotone',
+        style: 'fa-solid',
+        name: 'dog-leashed',
         pro: false,
       },
       {
-        icon: 'fa-duotone fa-solid fa-leafy-green',
-        name: 'leafy green',
+        family: 'fa-duotone',
+        style: 'fa-solid',
+        name: 'leafy-green',
         pro: false,
       },
       {
-        icon: 'fa-duotone fa-solid fa-shield-check',
-        name: 'shield check',
+        family: 'fa-duotone',
+        style: 'fa-solid',
+        name: 'shield-check',
         pro: false,
       },
       {
-        icon: 'fa-duotone fa-solid fa-sun',
+        family: 'fa-duotone',
+        style: 'fa-solid',
         name: 'sun',
         pro: false,
       },
       {
-        icon: 'fa-duotone fa-solid fa-planet-moon',
-        name: 'planet moon',
+        family: 'fa-duotone',
+        style: 'fa-solid',
+        name: 'planet-moon',
         pro: false,
       },
       {
-        icon: 'fa-duotone fa-solid fa-rocket-launch',
-        name: 'rocket launch',
+        family: 'fa-duotone',
+        style: 'fa-solid',
+        name: 'rocket-launch',
         pro: false,
       },
       {
-        icon: 'fa-duotone fa-solid fa-cloud-moon',
-        name: 'cloud moon',
+        family: 'fa-duotone',
+        style: 'fa-solid',
+        name: 'cloud-moon',
         pro: false,
       },
       {
-        icon: 'fa-duotone fa-solid fa-bug',
+        family: 'fa-duotone',
+        style: 'fa-solid',
         name: 'bug',
         pro: false,
       },
       {
-        icon: 'fa-duotone fa-solid fa-ghost',
+        family: 'fa-duotone',
+        style: 'fa-solid',
         name: 'ghost',
         pro: false,
       },
       {
-        icon: 'fa-duotone fa-solid fa-dolphin',
+        family: 'fa-duotone',
+        style: 'fa-solid',
         name: 'dolphin',
         pro: false,
       },
       {
-        icon: 'fa-duotone fa-solid fa-joystick',
+        family: 'fa-duotone',
+        style: 'fa-solid',
         name: 'joystick',
         pro: false,
       },
       {
-        icon: 'fa-duotone fa-solid fa-kiwi-bird',
-        name: 'kiwi bird',
+        family: 'fa-duotone',
+        style: 'fa-solid',
+        name: 'kiwi-bird',
         pro: false,
       },
       {
-        icon: 'fa-duotone fa-solid fa-block-question',
-        name: 'block question',
+        family: 'fa-duotone',
+        style: 'fa-solid',
+        name: 'block-question',
         pro: false,
       },
       {
-        icon: 'fa-duotone fa-solid fa-crab',
+        family: 'fa-duotone',
+        style: 'fa-solid',
         name: 'crab',
         pro: false,
       },
       {
-        icon: 'fa-duotone fa-solid fa-volcano',
+        family: 'fa-duotone',
+        style: 'fa-solid',
         name: 'volcano',
         pro: false,
       },
       {
-        icon: 'fa-duotone fa-solid fa-tree-christmas',
-        name: 'tree christmas',
+        family: 'fa-duotone',
+        style: 'fa-solid',
+        name: 'tree-christmas',
         pro: false,
       },
       {
-        icon: 'fa-duotone fa-solid fa-sheep',
+        family: 'fa-duotone',
+        style: 'fa-solid',
         name: 'sheep',
         pro: false,
       },
@@ -277,11 +302,11 @@
       <div class="game-board">
         <template v-if="!gameIsFinished">
           <IconCard
-            v-for="({ iconId }, index) in cards"
+            v-for="({ iconId, icon }, index) in cards"
             :key="index"
             v-bind="{
               iconId,
-              icon: icons[iconId].icon,
+              icon,
               isCalculating,
               isMatched: matchedIds.includes(iconId),
               pro: icons[iconId].pro,
@@ -303,12 +328,18 @@
             In {{ finishedTime }}, you've matched {{ pairCount }} pairs in {{ turnCount }} turns.
             That's a {{ ((matchedCount / turnCount) * 100).toFixed(2) }}% accuracy!
           </h4>
-          <GameSetup
-            v-model:game-has-started="gameHasStarted"
-            v-model:pair-count="pairCount"
-            cta-label="Start new game"
-            @start-game="startNewGame"
-          />
+          <p>Make sure to click the matched cards to see more details about the icon before starting a new game!</p>
+          <AppCard>
+            <template #title>
+              Try new game to beat your score!
+            </template>
+            <GameSetup
+              v-model:game-has-started="gameHasStarted"
+              v-model:pair-count="pairCount"
+              cta-label="Start new game"
+              @start-game="startNewGame"
+            />
+          </AppCard>
         </div>
       </div>
       <div
@@ -358,11 +389,16 @@
     v-if="!gameHasStarted && !gameIsFinished"
     class="game-setup"
   >
-    <GameSetup
-      v-model:game-has-started="gameHasStarted"
-      v-model:pair-count="pairCount"
-      @start-game="startGame"
-    />
+    <AppCard>
+      <template #title>
+        Start a new game
+      </template>
+      <GameSetup
+        v-model:game-has-started="gameHasStarted"
+        v-model:pair-count="pairCount"
+        @start-game="startGame"
+      />
+    </AppCard>
   </div>
 </template>
 
