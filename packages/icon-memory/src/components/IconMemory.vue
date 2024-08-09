@@ -13,13 +13,16 @@
   import TimeCounter from './TimeCounter.vue';
   import MatchedCards from './MatchedCards.vue';
 
-  export interface Card {
-    cardId: number;
+  export interface IconDetails {
     icon: string;
-    isActive: boolean;
-    pro: boolean;
+    name: string;
+    pro: boolean
   }
 
+  export interface Card extends IconDetails {
+    iconId: number;
+    isActive: boolean;
+  }
   const shuffleArray = (array: any[]) => {
     for (let i = array.length - 1; i > 0; i -= 1) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -31,23 +34,21 @@
     return array;
   };
   const cards = ref<Card[]>([]);
-  const icons = ref<{ [key: number]: string }>({});
+  const icons = ref<{ [key: number]: IconDetails }>({});
   const matchedIds = ref<number[]>([]);
   const createDeck = (count: number) => {
     cards.value = [];
 
     for (let i = 1; i <= count; i += 1) {
       cards.value.push({
-        cardId: i,
-        icon: icons.value[i],
+        ...icons.value[i],
+        iconId: i,
         isActive: false,
-        pro: false,
       });
       cards.value.push({
-        cardId: i,
-        icon: icons.value[i],
+        ...icons.value[i],
+        iconId: i,
         isActive: false,
-        pro: false,
       });
     }
   };
@@ -55,7 +56,7 @@
    * Get an array of cards that have been matched.
    */
   const matchedCards = computed(() => matchedIds.value.reduce((acc, id: number) => {
-    const card = cards.value.find(({ cardId }) => cardId === id);
+    const card = cards.value.find(({ iconId }) => iconId === id);
 
     if (card) {
       acc.push(card);
@@ -108,8 +109,8 @@
   const turnCount = ref(0);
   const matchedCount = ref(0);
   const missedCount = ref(0);
-  const calculateCards = async (cardId: number) => {
-    flippedCards.value.push(cardId);
+  const calculateCards = async (iconId: number) => {
+    flippedCards.value.push(iconId);
 
     if (flippedCards.value.length < 2) return;
 
@@ -133,7 +134,7 @@
       await nextTick();
 
       matchedCount.value += 1;
-      matchedIds.value.push(cardId);
+      matchedIds.value.push(iconId);
       resetFlippedCards();
     }
 
@@ -163,26 +164,106 @@
    */
   onMounted(() => {
     const shuffledIcons = shuffleArray([
-      'fa-duotone fa-solid fa-house',
-      'fa-duotone fa-solid fa-car',
-      'fa-duotone fa-solid fa-cat-space',
-      'fa-duotone fa-solid fa-dog-leashed',
-      'fa-duotone fa-solid fa-leafy-green',
-      'fa-duotone fa-solid fa-shield-check',
-      'fa-duotone fa-solid fa-sun',
-      'fa-duotone fa-solid fa-planet-moon',
-      'fa-duotone fa-solid fa-rocket-launch',
-      'fa-duotone fa-solid fa-cloud-moon',
-      'fa-duotone fa-solid fa-bug',
-      'fa-duotone fa-solid fa-ghost',
-      'fa-duotone fa-solid fa-dolphin',
-      'fa-duotone fa-solid fa-joystick',
-      'fa-duotone fa-solid fa-kiwi-bird',
-      'fa-duotone fa-solid fa-block-question',
-      'fa-duotone fa-solid fa-crab',
-      'fa-duotone fa-solid fa-volcano',
-      'fa-duotone fa-solid fa-tree-christmas',
-      'fa-duotone fa-solid fa-sheep',
+      {
+        icon: 'fa-duotone fa-solid fa-house',
+        name: 'house',
+        pro: false,
+      },
+      {
+        icon: 'fa-duotone fa-solid fa-car',
+        name: 'car',
+        pro: false,
+      },
+      {
+        icon: 'fa-duotone fa-solid fa-cat-space',
+        name: 'cat space',
+        pro: false,
+      },
+      {
+        icon: 'fa-duotone fa-solid fa-dog-leashed',
+        name: 'dog leashed',
+        pro: false,
+      },
+      {
+        icon: 'fa-duotone fa-solid fa-leafy-green',
+        name: 'leafy green',
+        pro: false,
+      },
+      {
+        icon: 'fa-duotone fa-solid fa-shield-check',
+        name: 'shield check',
+        pro: false,
+      },
+      {
+        icon: 'fa-duotone fa-solid fa-sun',
+        name: 'sun',
+        pro: false,
+      },
+      {
+        icon: 'fa-duotone fa-solid fa-planet-moon',
+        name: 'planet moon',
+        pro: false,
+      },
+      {
+        icon: 'fa-duotone fa-solid fa-rocket-launch',
+        name: 'rocket launch',
+        pro: false,
+      },
+      {
+        icon: 'fa-duotone fa-solid fa-cloud-moon',
+        name: 'cloud moon',
+        pro: false,
+      },
+      {
+        icon: 'fa-duotone fa-solid fa-bug',
+        name: 'bug',
+        pro: false,
+      },
+      {
+        icon: 'fa-duotone fa-solid fa-ghost',
+        name: 'ghost',
+        pro: false,
+      },
+      {
+        icon: 'fa-duotone fa-solid fa-dolphin',
+        name: 'dolphin',
+        pro: false,
+      },
+      {
+        icon: 'fa-duotone fa-solid fa-joystick',
+        name: 'joystick',
+        pro: false,
+      },
+      {
+        icon: 'fa-duotone fa-solid fa-kiwi-bird',
+        name: 'kiwi bird',
+        pro: false,
+      },
+      {
+        icon: 'fa-duotone fa-solid fa-block-question',
+        name: 'block question',
+        pro: false,
+      },
+      {
+        icon: 'fa-duotone fa-solid fa-crab',
+        name: 'crab',
+        pro: false,
+      },
+      {
+        icon: 'fa-duotone fa-solid fa-volcano',
+        name: 'volcano',
+        pro: false,
+      },
+      {
+        icon: 'fa-duotone fa-solid fa-tree-christmas',
+        name: 'tree christmas',
+        pro: false,
+      },
+      {
+        icon: 'fa-duotone fa-solid fa-sheep',
+        name: 'sheep',
+        pro: false,
+      },
     ]);
 
     icons.value = shuffledIcons.reduce((acc, icon, index) => {
@@ -205,17 +286,17 @@
       <div class="game-board">
         <template v-if="!gameIsFinished">
           <IconCard
-            v-for="({ cardId, icon, pro }, index) in cards"
+            v-for="({ iconId }, index) in cards"
             :key="index"
             v-bind="{
-              cardId,
-              icon,
+              iconId,
+              icon: icons[iconId].icon,
               isCalculating,
-              isMatched: matchedIds.includes(cardId),
-              pro,
+              isMatched: matchedIds.includes(iconId),
+              pro: icons[iconId].pro,
             }"
             v-model:is-active="cards[index].isActive"
-            @card-clicked="calculateCards(cardId)"
+            @card-clicked="calculateCards(iconId)"
           />
         </template>
         <div

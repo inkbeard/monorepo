@@ -8,7 +8,7 @@ import { shallowMount } from '@vue/test-utils';
 import IconCard from '../IconCard.vue';
 
 describe('IconCard', () => {
-  const cardId = 1;
+  const iconId = 1;
   const icon = 'fa-duotone fa-solid fa-house';
   let wrapper: any;
   const createWrapper = ({
@@ -20,7 +20,7 @@ describe('IconCard', () => {
       IconCard,
       {
         props: {
-          cardId,
+          iconId,
           icon,
           isActive: false,
           isMatched: false,
