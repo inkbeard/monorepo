@@ -4,21 +4,21 @@
 
   export interface IconCardProps {
     /**
-     * Whether the game has started or not.
-     */
-    gameHasStarted?: boolean;
-    /**
      * The icon to display on the card.
      */
     icon: string;
     /**
-     * Whether the card is currently calculating a match.
+     * Whether the card is active.
+     */
+    isActive?: boolean;
+    /**
+     * Whether the game is currently calculating a match.
      */
     isCalculating?: boolean;
     /**
      * Whether the card has been matched.
      */
-    isMatched?: boolean;
+    isMatched: boolean;
     /**
      * The id of the card.
      */
@@ -26,35 +26,36 @@
     /**
      * Whether the icon requires a pro license.
      */
-    pro?: boolean;
+    pro: boolean;
   }
 
   const emits = defineEmits<{
     /**
      * Emit the card id that was clicked.
      */
-    cardClicked: [number];
+    cardClicked: [];
   }>();
   const props = defineProps<{
     cardId: number;
-    gameHasStarted?: boolean;
     icon: string;
     isCalculating?: boolean;
-    isMatched?: boolean;
-    pro?: boolean;
+    isMatched: boolean;
+    pro: boolean;
   }>();
-  const isActive = ref(false);
+  const isActive = defineModel<boolean>('isActive');
   const showIcon = ref(false);
-  const flipCard = async () => {
+  /**
+   * Flip the card if it is not already matched, calculating, or already active and emit.
+   */
+  const activateCard = async () => {
     if (
       props.isMatched
       || props.isCalculating
       || isActive.value
-      || !props.gameHasStarted
     ) return;
 
-    emits('cardClicked', props.cardId);
     isActive.value = true;
+    emits('cardClicked');
   };
 
   /**
@@ -71,38 +72,24 @@
       showIcon.value = false;
     }, 500);
   });
-
-  watch(
-    () => props.isCalculating,
-    (newValue, oldValue) => {
-      if (
-        oldValue
-        && !newValue
-        && isActive.value
-        && !props.isMatched
-      ) {
-        isActive.value = false;
-      }
-    },
-  );
 </script>
 
 <template>
   <div
     class="icon-card"
     :class="{
-      active: isActive || !props.gameHasStarted,
+      active: isActive,
       calculating: props.isCalculating,
       matched: props.isMatched,
     }"
-    @click="flipCard"
-    @keydown.enter="flipCard"
+    @click="activateCard"
+    @keydown.enter="activateCard"
   >
     <div class="content" :data-id="props.cardId">
       <div class="front" />
       <div class="back">
         <AppIcon
-          v-if="showIcon || props.isMatched || !props.gameHasStarted"
+          v-if="showIcon || props.isMatched"
           :icon="props.icon"
           size="5x"
         />
@@ -126,7 +113,7 @@
     cursor: not-allowed;
   }
 
-  &.matched {
+  &.matched:not(.active) {
     cursor: inherit;
     opacity: .85;
   }
@@ -163,7 +150,7 @@
   transform: rotateY( 180deg );
   background-color: var(--ink-white);
 
-  .matched & {
+  .matched:not(.active) & {
     &::after {
       position: absolute;
       bottom: .25rem;

@@ -27,8 +27,8 @@ export const IconCardExample = {
   args: {
     icon: 'fa-duotone fa-solid fa-house',
     cardId: 1,
+    isActive: false,
     isCalculating: false,
     isMatched: false,
-    gameHasStarted: false,
   },
 };

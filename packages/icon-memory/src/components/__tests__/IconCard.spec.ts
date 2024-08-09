@@ -22,7 +22,9 @@ describe('IconCard', () => {
         props: {
           cardId,
           icon,
-          gameHasStarted: true,
+          isActive: false,
+          isMatched: false,
+          pro: false,
           ...props,
         },
       },
@@ -33,20 +35,6 @@ describe('IconCard', () => {
     beforeEach(() => {
       createWrapper();
       vi.useFakeTimers();
-    });
-
-    it('should render if the game has not started (default)', async () => {
-      await wrapper.setProps({
-        gameHasStarted: false,
-      });
-
-      expect(wrapper.findComponent({ name: 'AppIcon' }).exists())
-        .toBe(true);
-    });
-
-    it('should not render if the game has started', () => {
-      expect(wrapper.findComponent({ name: 'AppIcon' }).exists())
-        .toBe(false);
     });
 
     it('should render if the card is flipped', async () => {
@@ -95,13 +83,11 @@ describe('IconCard', () => {
       createWrapper();
     });
 
-    it('should emit the card id and change to active', async () => {
+    it('should emit and change to active', async () => {
       wrapper.trigger('click');
 
       expect(wrapper.emitted().cardClicked)
         .toBeTruthy();
-      expect(wrapper.emitted().cardClicked[0])
-        .toEqual([1]);
       expect(wrapper.vm.isActive)
         .toBe(true);
     });
