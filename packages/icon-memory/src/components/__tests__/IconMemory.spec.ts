@@ -20,6 +20,9 @@ describe('IconMemory', () => {
       IconMemory,
       {
         props: { ...props },
+        global: {
+          renderStubDefaultSlot: true,
+        },
       },
     );
   };
