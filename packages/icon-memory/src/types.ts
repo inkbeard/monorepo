@@ -4,20 +4,28 @@ export interface IconDetails {
    */
   icon: string;
   /**
-   * The id of the icon.
+   * The family of the fontawesome icon.
    */
-  iconId: number;
+  family: string;
   /**
-   * The name of the icon.
+   * The name of the fontawesome icon.
    */
-  name?: string;
+  name: string;
   /**
    * Whether the icon is a requires a pro license.
    */
-  pro?: boolean
+  pro: boolean
+  /**
+   * The style of the fontawesome icon.
+   */
+  style: string;
 }
 
 export interface IconCardProps extends IconDetails {
+  /**
+   * The id of the icon.
+   */
+  iconId: number;
   /**
    * Whether the card is active.
    */
