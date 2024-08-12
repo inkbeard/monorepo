@@ -1,5 +1,35 @@
 # @inkbeard/ui-library
 
+## 1.6.0
+
+### Minor Changes
+
+- 040c0ae: - Updated IconCard component to use `isActive` v-model instead of relying on the `gameHasStarted` state
+  - Updated MatchedCards to account for both `isActive` and `isMatched` states
+  - Updated IconMemory logic to account for `isActive` v-model prop.
+- 47d00df: - Updated the icon array of strings to be an object with icon information.
+  - Updated all components to use `iconId` instead of `cardId`
+- 6b904dd: - Moved types to appropriate file
+  - Adjusted all type paths
+  - Cleaned up some documentation
+  - Updated the mockData
+- 20ab127: Added IconDetails component, tests, and story
+
+### Patch Changes
+
+- Updated dependencies [040c0ae]
+- Updated dependencies [bdea47d]
+- Updated dependencies [47d00df]
+- Updated dependencies [6b904dd]
+- Updated dependencies [20ab127]
+- Updated dependencies [6dba90d]
+- Updated dependencies [034da94]
+- Updated dependencies [ced6d73]
+- Updated dependencies [9f9373e]
+  - @inkbeard/icon-memory@0.3.0
+  - @inkbeard/ui-vue@0.12.0
+  - @inkbeard/budget-it@1.1.0
+
 ## 1.5.1
 
 ### Patch Changes

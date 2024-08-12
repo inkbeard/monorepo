@@ -1,5 +1,22 @@
 # @inkbeard/website
 
+## 0.14.2
+
+### Patch Changes
+
+- Updated dependencies [040c0ae]
+- Updated dependencies [bdea47d]
+- Updated dependencies [47d00df]
+- Updated dependencies [6b904dd]
+- Updated dependencies [20ab127]
+- Updated dependencies [6dba90d]
+- Updated dependencies [034da94]
+- Updated dependencies [ced6d73]
+- Updated dependencies [9f9373e]
+  - @inkbeard/icon-memory@0.3.0
+  - @inkbeard/ui-vue@0.12.0
+  - @inkbeard/budget-it@1.1.0
+
 ## 0.14.1
 
 ### Patch Changes

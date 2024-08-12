@@ -1,5 +1,11 @@
 # @inkbeard/ui-vue
 
+## 0.12.0
+
+### Minor Changes
+
+- ced6d73: updated the close icon style and positioning.
+
 ## 0.11.0
 
 ### Minor Changes

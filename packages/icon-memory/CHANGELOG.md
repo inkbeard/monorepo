@@ -1,5 +1,27 @@
 # @inkbeard/icon-memory
 
+## 0.3.0
+
+### Minor Changes
+
+- 040c0ae: - Updated IconCard component to use `isActive` v-model instead of relying on the `gameHasStarted` state
+  - Updated MatchedCards to account for both `isActive` and `isMatched` states
+  - Updated IconMemory logic to account for `isActive` v-model prop.
+- bdea47d: Added IconDetails modal to the MatchedCards component
+- 47d00df: - Updated the icon array of strings to be an object with icon information.
+  - Updated all components to use `iconId` instead of `cardId`
+- 6b904dd: - Moved types to appropriate file
+  - Adjusted all type paths
+  - Cleaned up some documentation
+  - Updated the mockData
+- 20ab127: Added IconDetails component, tests, and story
+- 6dba90d: Added finished game screen
+- 034da94: - updated mockData
+  - moved types to file
+- 9f9373e: - Updated layout of starting board
+  - Updated tests
+  - Updated the TimeCounter watch to account for 'oldValue'
+
 ## 0.2.0
 
 ### Minor Changes
