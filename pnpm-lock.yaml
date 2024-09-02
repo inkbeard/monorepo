@@ -308,8 +308,8 @@ importers:
         specifier: ^9.1.0
         version: 9.1.0(eslint@8.57.0)
       eslint-config-turbo:
-        specifier: ^1.13.3
-        version: 1.13.4(eslint@8.57.0)
+        specifier: ^2.1.1
+        version: 2.1.1(eslint@8.57.0)
       eslint-plugin-only-warn:
         specifier: ^1.1.0
         version: 1.1.0
@@ -4192,8 +4192,8 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
 
-  eslint-config-turbo@1.13.4:
-    resolution: {integrity: sha512-+we4eWdZlmlEn7LnhXHCIPX/wtujbHCS7XjQM/TN09BHNEl2fZ8id4rHfdfUKIYTSKyy8U/nNyJ0DNoZj5Q8bw==}
+  eslint-config-turbo@2.1.1:
+    resolution: {integrity: sha512-JJF8SZErmgKCGkt124WUmTt0sQ5YLvPo2YxDsfzn9avGJC7/BQIa+3FZoDb3zeYYsZx91pZ6htQAJaKK8NQQAg==}
     peerDependencies:
       eslint: '>6.6.0'
 
@@ -4329,8 +4329,8 @@ packages:
   eslint-plugin-tsdoc@0.2.17:
     resolution: {integrity: sha512-xRmVi7Zx44lOBuYqG8vzTXuL6IdGOeF9nHX17bjJ8+VE6fsxpdGem0/SBTmAwgYMKYB1WBkqRJVQ+n8GK041pA==}
 
-  eslint-plugin-turbo@1.13.4:
-    resolution: {integrity: sha512-82GfMzrewI/DJB92Bbch239GWbGx4j1zvjk1lqb06lxIlMPnVwUHVwPbAnLfyLG3JuhLv9whxGkO/q1CL18JTg==}
+  eslint-plugin-turbo@2.1.1:
+    resolution: {integrity: sha512-E/34kdQd0n3RP18+e0DSV0f3YTSCOojUh1p4X0Xrho2PBYmJ3umSnNo9FhkZt6UDACl+nBQcYTFkRHMz76lJdw==}
     peerDependencies:
       eslint: '>6.6.0'
 
@@ -8011,8 +8011,8 @@ packages:
   vue-component-type-helpers@2.0.26:
     resolution: {integrity: sha512-sO9qQ8oC520SW6kqlls0iqDak53gsTVSrYylajgjmkt1c0vcgjsGSy1KzlDrbEx8pm02IEYhlUkU5hCYf8rwtg==}
 
-  vue-component-type-helpers@2.0.29:
-    resolution: {integrity: sha512-58i+ZhUAUpwQ+9h5Hck0D+jr1qbYl4voRt5KffBx8qzELViQ4XdT/Tuo+mzq8u63teAG8K0lLaOiL5ofqW38rg==}
+  vue-component-type-helpers@2.1.4:
+    resolution: {integrity: sha512-aVqB3KxwpM76cYRkpnezl1J62E/1omzHQfx1yuz7zcbxmzmP/PeSgI20NEmkdeGnjZPVzm0V9fB4ZyRu5BBj4A==}
 
   vue-demi@0.14.8:
     resolution: {integrity: sha512-Uuqnk9YE9SsWeReYqK2alDI5YzciATE0r2SkA6iMAtuXvNTMNACJLJEXNXaEy94ECuBe4Sk6RzRU80kjdbIo1Q==}
@@ -10599,7 +10599,7 @@ snapshots:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.4.36(typescript@5.2.2)
-      vue-component-type-helpers: 2.0.29
+      vue-component-type-helpers: 2.1.4
 
   '@storybook/vue3@8.2.7(storybook@8.2.7(@babel/preset-env@7.24.8(@babel/core@7.24.9)))(vue@3.4.36(typescript@5.2.2))':
     dependencies:
@@ -10614,7 +10614,7 @@ snapshots:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.4.36(typescript@5.2.2)
-      vue-component-type-helpers: 2.0.29
+      vue-component-type-helpers: 2.1.4
 
   '@szmarczak/http-timer@5.0.1':
     dependencies:
@@ -12797,10 +12797,10 @@ snapshots:
     dependencies:
       eslint: 8.57.0
 
-  eslint-config-turbo@1.13.4(eslint@8.57.0):
+  eslint-config-turbo@2.1.1(eslint@8.57.0):
     dependencies:
       eslint: 8.57.0
-      eslint-plugin-turbo: 1.13.4(eslint@8.57.0)
+      eslint-plugin-turbo: 2.1.1(eslint@8.57.0)
 
   eslint-define-config@2.1.0: {}
 
@@ -13038,7 +13038,7 @@ snapshots:
       '@microsoft/tsdoc': 0.14.2
       '@microsoft/tsdoc-config': 0.16.2
 
-  eslint-plugin-turbo@1.13.4(eslint@8.57.0):
+  eslint-plugin-turbo@2.1.1(eslint@8.57.0):
     dependencies:
       dotenv: 16.0.3
       eslint: 8.57.0
@@ -17483,7 +17483,7 @@ snapshots:
 
   vue-component-type-helpers@2.0.26: {}
 
-  vue-component-type-helpers@2.0.29: {}
+  vue-component-type-helpers@2.1.4: {}
 
   vue-demi@0.14.8(vue@3.4.36(typescript@5.2.2)):
     dependencies:
