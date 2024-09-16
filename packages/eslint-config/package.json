@@ -7,7 +7,7 @@
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.10.4",
     "@typescript-eslint/eslint-plugin": "^7.15.0",
-    "@typescript-eslint/parser": "^7.9.0",
+    "@typescript-eslint/parser": "^8.5.0",
     "@vercel/style-guide": "^6.0.0",
     "@vue/eslint-config-airbnb-with-typescript": "^8.0.0",
     "@vue/eslint-config-typescript": "^13.0.0",
