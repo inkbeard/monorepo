@@ -13,7 +13,7 @@
     "@vue/eslint-config-airbnb-with-typescript": "^8.0.0",
     "@vue/eslint-config-typescript": "^13.0.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-config-turbo": "^1.13.4",
+    "eslint-config-turbo": "^2.1.2",
     "eslint-plugin-only-warn": "^1.1.0",
     "eslint-plugin-sort-exports": "^0.9.1",
     "eslint-plugin-storybook": "^0.9.0",
