@@ -18,7 +18,7 @@
     startGame: [];
   }>();
 
-  const pairCount = defineModel<number>('pairCount');
+  const pairCount = defineModel<number>('pairCount', { required: true });
   const gameHasStarted = defineModel<boolean>('gameHasStarted');
 </script>
 
