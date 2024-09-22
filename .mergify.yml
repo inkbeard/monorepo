@@ -97,21 +97,18 @@ pull_request_rules:
     actions:
       queue:
         name: default
-        allow_merging_configuration_change: true
   - name: Add PR to dependabot queue
     conditions:
       - and: *dependabot_queue_conditions
     actions:
       queue:
         name: dependabot
-        allow_merging_configuration_change: true
   - name: Add PR to release queue
     conditions:
       - and: *release_queue_conditions
     actions:
       queue:
         name: release
-        allow_merging_configuration_change: true
   # PR test rules
   - name: Test for conflicts
     conditions:
