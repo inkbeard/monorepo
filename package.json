@@ -22,7 +22,7 @@
     "@inkbeard/eslint-config": "workspace:*",
     "@inkbeard/typescript-config": "workspace:*",
     "@manypkg/cli": "^0.21.4",
-    "eslint": "^8.57.0",
+    "eslint": "^8.57.1",
     "jsdom": "^24.1.1",
     "prettier": "^3.2.5",
     "stylelint": "^16.6.1",
