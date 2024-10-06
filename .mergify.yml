@@ -116,7 +116,7 @@ pull_request_rules:
     actions:
       label:
         toggle:
-          - conflict
+          - "failure: conflict"
   # PR label rules
   - name: Add PR stack label for stacked PRs
     conditions:
@@ -132,6 +132,34 @@ pull_request_rules:
       label:
         toggle:
           - "feature: generator"
+  - name: toggle unit test failure label
+    conditions:
+      - "check-failure=Run unit tests"
+    actions:
+      label:
+        toggle:
+          - "failure: unit test"
+  - name: toggle lint failure label
+    conditions:
+      - "check-failure=Run lint"
+    actions:
+      label:
+        toggle:
+          - "failure: lint"
+  - name: toggle stylelint failure label
+    conditions:
+      - "check-failure=Run stylelint"
+    actions:
+      label:
+        toggle:
+          - "failure: stylelint"
+  - name: toggle build failure label
+    conditions:
+      - "check-failure=Build"
+    actions:
+      label:
+        toggle:
+          - "failure: build"
   # Partition rules
   # Would ideally have this as dynamic, but Mergify doesn't support the `partition-queue-name` attribute at the moment.
   - name: inkbeard partition workflow
