@@ -1,6 +1,8 @@
 shared:
   ci_success: &ci_success
-    - "check-success=Build and Test"
+    - "check-success=Run unit tests"
+    - "check-success=Run lint"
+    - "check-success=Run stylelint"
     - or:
       - and:
         - head=main
@@ -57,13 +59,15 @@ partition_rules:
     conditions:
       - and: *team_general_ui
 
+merge_queue:
+  max_parallel_checks: 3
+
 queue_rules:
   - name: release
     queue_conditions:
       - and: *release_queue_conditions
   - name: default
     batch_size: 3
-    speculative_checks: 3
     queue_conditions:
       - and: *default_queue_conditions
   - name: dependabot
