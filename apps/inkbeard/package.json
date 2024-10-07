@@ -20,7 +20,7 @@
     "@inkbeard/icon-memory": "workspace:*",
     "@inkbeard/ui-vue": "workspace:*",
     "@vitejs/plugin-basic-ssl": "^1.1.0",
-    "flagsmith": "^4.0.3",
+    "flagsmith": "^5.0.0",
     "pinia": "^2.1.7",
     "vue": "^3.4.36",
     "vue-i18n": "^9.13.1",
