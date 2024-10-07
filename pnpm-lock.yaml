@@ -185,8 +185,8 @@ importers:
         specifier: ^5.0.5
         version: 5.0.5(vite@5.4.7(@types/node@22.7.4)(terser@5.31.2))(vue@3.4.36(typescript@5.2.2))
       eslint-plugin-storybook:
-        specifier: ^0.8.0
-        version: 0.8.0(eslint@8.57.1)(typescript@5.2.2)
+        specifier: ^0.9.0
+        version: 0.9.0(eslint@8.57.1)(typescript@5.2.2)
       eslint-plugin-vue:
         specifier: ^9.28.0
         version: 9.28.0(eslint@8.57.1)
@@ -3835,8 +3835,8 @@ packages:
     peerDependencies:
       eslint: '>=5.0.0'
 
-  eslint-plugin-storybook@0.8.0:
-    resolution: {integrity: sha512-CZeVO5EzmPY7qghO2t64oaFM+8FTaD4uzOEjHKp516exyTKo+skKAL9GI3QALS2BXhyALJjNtwbmr1XinGE8bA==}
+  eslint-plugin-storybook@0.9.0:
+    resolution: {integrity: sha512-qOT/2vQBo0VqrG/BhZv8IdSsKQiyzJw+2Wqq+WFCiblI/PfxLSrGkF/buiXF+HumwfsCyBdaC94UhqhmYFmAvA==}
     engines: {node: '>= 18'}
     peerDependencies:
       eslint: '>=6'
@@ -9729,7 +9729,7 @@ snapshots:
       '@typescript-eslint/typescript-estree': 5.62.0(typescript@5.2.2)
       eslint: 8.57.1
       eslint-scope: 5.1.1
-      semver: 7.6.2
+      semver: 7.6.3
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -11736,7 +11736,7 @@ snapshots:
       eslint: 8.57.1
       minimatch: 9.0.5
 
-  eslint-plugin-storybook@0.8.0(eslint@8.57.1)(typescript@5.2.2):
+  eslint-plugin-storybook@0.9.0(eslint@8.57.1)(typescript@5.2.2):
     dependencies:
       '@storybook/csf': 0.0.1
       '@typescript-eslint/utils': 5.62.0(eslint@8.57.1)(typescript@5.2.2)
