@@ -1,90 +1,83 @@
 shared:
-  ci_success: &ci_success
-    - "check-success=Run unit tests"
-    - "check-success=Run lint"
-    - "check-success=Run stylelint"
+  ci_success: &a1
+    - check-success=Run unit tests
+    - check-success=Run lint
+    - check-success=Run stylelint
     - or:
-      - and:
-        - head=main
-        - "check-success=netlify/dainty-arithmetic-94f385/deploy-preview"
-      - and:
-        - head!=main
-  queue_conditions: &queue_conditions
+        - and:
+            - head=main
+            - check-success=netlify/dainty-arithmetic-94f385/deploy-preview
+        - and:
+            - head!=main
+  queue_conditions: &a2
     - -label=Hold merge
     - -label=Addressing issues
     - -conflict
     - "#approved-reviews-by>=1"
-  default_queue_conditions: &default_queue_conditions
-      - and: *ci_success
-      - and: *queue_conditions
-      - author!=dependabot[bot]
-  dependabot_queue_conditions: &dependabot_queue_conditions
-      - and: *ci_success
-      - and: *queue_conditions
-      - author=dependabot[bot]
-  release_queue_conditions: &release_queue_conditions
-      - head=changeset-release/main
-      - "#approved-reviews-by>=1"
-  team_inkbeard: &team_inkbeard
+  default_queue_conditions: &a8
+    - and: *a1
+    - and: *a2
+    - author!=dependabot[bot]
+  dependabot_queue_conditions: &a9
+    - and: *a1
+    - and: *a2
+    - author=dependabot[bot]
+  release_queue_conditions: &a7
+    - head=changeset-release/main
+    - "#approved-reviews-by>=1"
+  team_inkbeard: &a3
     - files~=^apps/inkbeard/
-  team_ui_library: &team_ui_library
+  team_ui_library: &a4
     - files~=^apps/ui-library/
-  team_budget_it: &team_budget_it
+  team_budget_it: &a5
     - files~=^apps/budget-it/
-  team_general_ui: &team_general_ui
-      - files~=^packages/ui-theme/
-      - files~=^packages/ui-vue/
-      - files~=^packages/ui/
-      - files~=^packages/eslint-config/
-      - files~=^packages/stylelint-config/
-      - files~=^packages/typescript-config/
-
+  team_general_ui: &a6
+    - files~=^packages/ui-theme/
+    - files~=^packages/ui-vue/
+    - files~=^packages/ui/
+    - files~=^packages/eslint-config/
+    - files~=^packages/stylelint-config/
+    - files~=^packages/typescript-config/
 partition_rules:
   - name: default
     fallback_partition: true
-
   - name: inkbeard
     conditions:
-      - and: *team_inkbeard
-
+      - and: *a3
   - name: examples
     conditions:
-      - and: *team_ui_library
-
+      - and: *a4
   - name: budget-it
     conditions:
-      - and: *team_budget_it
-
+      - and: *a5
   - name: general ui
     conditions:
-      - and: *team_general_ui
-
+      - and: *a6
 merge_queue:
-  max_parallel_checks: 3
-
+  max_parallel_checks: 4
 queue_rules:
   - name: release
     queue_conditions:
-      - and: *release_queue_conditions
+      - and: *a7
   - name: default
     batch_size: 3
     queue_conditions:
-      - and: *default_queue_conditions
+      - and: *a8
+    merge_method: squash
+    update_method: rebase
   - name: dependabot
     batch_size: 10
     batch_max_wait_time: 30 min
     queue_conditions:
-      - and: *dependabot_queue_conditions
-
+      - and: *a9
 pull_request_rules:
-  # PR approval rules
   - name: Automatically approve Dependabot PRs
     conditions:
       - author=dependabot[bot]
-      - and: *ci_success
+      - and: *a1
       - or:
-        - dependabot-update-type=version-update:semver-minor
-        - dependabot-update-type=version-update:semver-patch
+          - dependabot-update-type=version-update:semver-minor
+          - dependabot-update-type=version-update:semver-patch
     actions:
       review:
         type: APPROVE
@@ -94,26 +87,24 @@ pull_request_rules:
     actions:
       review:
         type: APPROVE
-  # PR queue rules
   - name: Add PR to default queue
     conditions:
-      - and: *default_queue_conditions
+      - and: *a8
     actions:
       queue:
         name: default
   - name: Add PR to dependabot queue
     conditions:
-      - and: *dependabot_queue_conditions
+      - and: *a9
     actions:
       queue:
         name: dependabot
   - name: Add PR to release queue
     conditions:
-      - and: *release_queue_conditions
+      - and: *a7
     actions:
       queue:
         name: release
-  # PR test rules
   - name: Test for conflicts
     conditions:
       - conflict
@@ -121,7 +112,6 @@ pull_request_rules:
       label:
         toggle:
           - "failure: conflict"
-  # PR label rules
   - name: Add PR stack label for stacked PRs
     conditions:
       - base!=main
@@ -138,38 +128,36 @@ pull_request_rules:
           - "feature: generator"
   - name: toggle unit test failure label
     conditions:
-      - "check-failure=Run unit tests"
+      - check-failure=Run unit tests
     actions:
       label:
         toggle:
           - "failure: unit test"
   - name: toggle lint failure label
     conditions:
-      - "check-failure=Run lint"
+      - check-failure=Run lint
     actions:
       label:
         toggle:
           - "failure: lint"
   - name: toggle stylelint failure label
     conditions:
-      - "check-failure=Run stylelint"
+      - check-failure=Run stylelint
     actions:
       label:
         toggle:
           - "failure: stylelint"
   - name: toggle build failure label
     conditions:
-      - "check-failure=Build"
+      - check-failure=Build
     actions:
       label:
         toggle:
           - "failure: build"
-  # Partition rules
-  # Would ideally have this as dynamic, but Mergify doesn't support the `partition-queue-name` attribute at the moment.
   - name: inkbeard partition workflow
     conditions:
-      - and: *ci_success
-      - and: *team_inkbeard
+      - and: *a1
+      - and: *a3
     actions:
       github_actions:
         workflow:
@@ -179,8 +167,8 @@ pull_request_rules:
                 project_name: inkbeard
   - name: examples partition workflow
     conditions:
-      - and: *ci_success
-      - and: *team_ui_library
+      - and: *a1
+      - and: *a4
     actions:
       github_actions:
         workflow:
@@ -190,8 +178,8 @@ pull_request_rules:
                 project_name: examples
   - name: budget-it partition workflow
     conditions:
-      - and: *ci_success
-      - and: *team_budget_it
+      - and: *a1
+      - and: *a5
     actions:
       github_actions:
         workflow:
@@ -201,8 +189,8 @@ pull_request_rules:
                 project_name: budget-it
   - name: general ui partition workflow
     conditions:
-      - and: *ci_success
-      - and: *team_general_ui
+      - and: *a1
+      - and: *a6
     actions:
       github_actions:
         workflow:
