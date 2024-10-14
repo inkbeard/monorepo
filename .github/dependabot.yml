@@ -18,3 +18,8 @@ updates:
         applies-to: version-updates
         patterns:
           - "@storybook*"
+      vitest:
+        applies-to: version-updates
+        patterns:
+          - "vitest"
+          - "@vitest*"
