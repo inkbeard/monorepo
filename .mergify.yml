@@ -116,6 +116,7 @@ pull_request_rules:
   # PR test rules
   - name: Test for conflicts
     conditions:
+      - -closed
       - conflict
     actions:
       label:
@@ -124,6 +125,7 @@ pull_request_rules:
   # PR label rules
   - name: Add PR stack label for stacked PRs
     conditions:
+      - -closed
       - base!=main
     actions:
       label:
@@ -131,6 +133,7 @@ pull_request_rules:
           - PR stack
   - name: toggle generator label
     conditions:
+      - -closed
       - files~=turbo/generators/
     actions:
       label:
@@ -138,6 +141,7 @@ pull_request_rules:
           - "feature: generator"
   - name: toggle unit test failure label
     conditions:
+      - -closed
       - "check-failure=Run unit tests"
     actions:
       label:
@@ -145,6 +149,7 @@ pull_request_rules:
           - "failure: unit test"
   - name: toggle lint failure label
     conditions:
+      - -closed
       - "check-failure=Run lint"
     actions:
       label:
@@ -152,6 +157,7 @@ pull_request_rules:
           - "failure: lint"
   - name: toggle stylelint failure label
     conditions:
+      - -closed
       - "check-failure=Run stylelint"
     actions:
       label:
@@ -159,6 +165,7 @@ pull_request_rules:
           - "failure: stylelint"
   - name: toggle build failure label
     conditions:
+      - -closed
       - "check-failure=Build"
     actions:
       label:
