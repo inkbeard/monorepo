@@ -4,7 +4,7 @@
   "main": "index.js",
   "dependencies": {
     "postcss-html": "^1.7.0",
-    "stylelint-config-standard": "^36.0.0",
+    "stylelint-config-standard": "^36.0.1",
     "stylelint-config-standard-vue": "^1.0.0"
   }
 }
