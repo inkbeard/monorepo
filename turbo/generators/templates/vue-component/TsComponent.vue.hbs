@@ -9,9 +9,7 @@
     msg?: string;
   }
 
-  withDefaults(defineProps< {{ componentName }}Props>(), {
-    msg: 'Hello {{ componentName }}!',
-  });
+  const { msg ='Hello {{ componentName }}!' } = defineProps<{{ componentName }}Props>();
 </script>
 
 <template>

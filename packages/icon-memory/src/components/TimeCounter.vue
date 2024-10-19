@@ -9,12 +9,7 @@
     gameHasStarted?: boolean;
   };
 
-  const props = withDefaults(defineProps<TimeCounterProps>(), {
-    /**
-     * Whether the game has started or not.
-     */
-    gameHasStarted: false,
-  });
+  const { gameHasStarted = false } = defineProps<TimeCounterProps>();
   const emit = defineEmits<{
     /**
      * Emit the total time and the time in 'HH:MM:SS.MS' format when the game stops.
@@ -42,7 +37,7 @@
   });
 
   watch(
-    () => props.gameHasStarted,
+    () => gameHasStarted,
     (newValue, oldValue) => {
       if (newValue) {
         timeBegan.value = new Date();
