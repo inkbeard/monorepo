@@ -1,7 +1,7 @@
 <script setup lang="ts">
   export type AppBadgeSize = 'small' | 'medium' | 'large';
   export type AppBadgeStatus = 'danger' | 'info' | 'success' | 'warning';
-  export interface AppBadgeProps {
+  export type AppBadgeProps = {
     /**
      * Used to determine if the badge should show counter notifications styles.
      */
@@ -22,7 +22,7 @@
      * Used to render badge content.
      */
     value: string | number;
-  }
+  };
   const {
     isCounter = false,
     isPill = false,

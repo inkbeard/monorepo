@@ -1,8 +1,8 @@
 /**
  * Required data for a category.
  */
-export interface CategoryInfo {
+export type CategoryInfo = {
   backgroundColor: string
   id: number
   name: string
-}
+};

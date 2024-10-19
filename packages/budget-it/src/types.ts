@@ -1,4 +1,4 @@
-export interface BaseExpenseInfo {
+export type BaseExpenseInfo = {
   /**
    * Description of the expense.
    */
@@ -7,12 +7,12 @@ export interface BaseExpenseInfo {
    * Name of the expense.
    */
   name: string
-}
+};
 
 /**
  * General information about a particular expense.
  */
-export interface ExpenseInfo extends BaseExpenseInfo {
+export type ExpenseInfo = BaseExpenseInfo & {
   /**
    * Amount of the expense.
    */
@@ -37,30 +37,30 @@ export interface ExpenseInfo extends BaseExpenseInfo {
    * Source Id of the expense that is mapped from the sources store.
    */
   sourceId: number
-}
+};
 
 /**
  * A dictionary of expenses with a `[expenseId]: ExpenseInfo` pair.
  */
-export interface ExpenseList {
+export type ExpenseList = {
   [key: string]: ExpenseInfo;
-}
+};
 
 /**
  * Required data for a category.
  */
-export interface CategoryInfo {
+export type CategoryInfo = {
   backgroundColor: string
   id: number
   name: string
-}
+};
 
 /**
  * A dictionary of sources with a `[sourceId]: sourceName` pair.
  */
-export interface SourceList {
+export type SourceList = {
   [sourceId: string]: string;
-}
+};
 
 /**
  * A list of labels and ids used for select options.

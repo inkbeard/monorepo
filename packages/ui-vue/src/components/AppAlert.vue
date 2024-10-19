@@ -13,7 +13,7 @@
     close: [];
   }>();
 
-  export interface Props {
+  export type AppAlertProps = {
     /**
      * Align the text in the horizontally center.
      */
@@ -45,9 +45,9 @@
      * Render the alert title above the description.
      */
     title?: string,
-  }
+  };
 
-  const props = withDefaults(defineProps<Props>(), {
+  const props = withDefaults(defineProps<AppAlertProps>(), {
     center: false,
     closable: false,
     dataTestClose: 'close alert',

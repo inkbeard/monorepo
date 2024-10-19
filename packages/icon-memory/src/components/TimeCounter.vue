@@ -2,12 +2,12 @@
   import { computed, ref, watch } from 'vue';
   import type { TimeStopped } from '../types';
 
-  export interface TimeCounterProps {
+  export type TimeCounterProps = {
     /**
      * Whether the game has started or not.
      */
     gameHasStarted?: boolean;
-  }
+  };
 
   const props = withDefaults(defineProps<TimeCounterProps>(), {
     /**

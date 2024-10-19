@@ -1,7 +1,7 @@
 <script lang="ts" setup>
   import Button from 'primevue/button';
 
-  export interface Props {
+  export type AppButtonProps = {
     /**
      * Whether the button should be full width and center the text/icon.
      */
@@ -10,9 +10,9 @@
      * Whether the button should be disabled. (this is a PrimeVue prop but needed here for better unit testing.)
      */
     disabled?: boolean | number;
-  }
+  };
 
-  withDefaults(defineProps<Props>(), {
+  withDefaults(defineProps<AppButtonProps>(), {
     disabled: false,
     isFullWidth: false,
   });

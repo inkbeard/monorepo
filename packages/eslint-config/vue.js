@@ -40,6 +40,7 @@ module.exports = {
       "files": ["*.vue"],
       "rules": {
         // Turning off since vue/script-indent handles this
+        '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
         '@typescript-eslint/indent': ['off'],
         'import/no-extraneous-dependencies': [
           'error',
@@ -73,15 +74,15 @@ module.exports = {
     'vue/require-macro-variable-name': 'error',
     'vue/require-prop-comment': ['error', { 'type': 'JSDoc' }],
     'vue/script-indent': ['warn', 2, { baseIndent: 1 }],
-    "vue/max-len": ["error", {
-      "code": 120,
-      "template": 120,
-      "comments": 120,
-      "ignorePattern": ' d=', // Ignore SVG paths
-      "ignoreComments": true,
-      "ignoreUrls": true,
-      "ignoreStrings": false,
-      "ignoreTemplateLiterals": false,
+    'vue/max-len': ['error', {
+      'code': 120,
+      'template': 120,
+      'comments': 120,
+      'ignorePattern': ' d=', // Ignore SVG paths
+      'ignoreComments': true,
+      'ignoreUrls': true,
+      'ignoreStrings': false,
+      'ignoreTemplateLiterals': false,
       "ignoreRegExpLiterals": false,
       "ignoreHTMLAttributeValues": false,
       "ignoreHTMLTextContents": false,

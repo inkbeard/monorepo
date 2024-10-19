@@ -4,12 +4,12 @@
     AppInputNumber,
   } from '@inkbeard/ui-vue';
 
-  export interface GameSetupProps {
+  export type GameSetupProps = {
     /**
      * The number of pairs of cards to display.
      */
     ctaLabel?: string;
-  }
+  };
 
   withDefaults(defineProps<GameSetupProps>(), {
     ctaLabel: 'Start game',
