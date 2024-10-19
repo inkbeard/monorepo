@@ -6,7 +6,7 @@
     /**
      * Whether the game has started or not.
      */
-    gameHasStarted: boolean;
+    gameHasStarted?: boolean;
   }
 
   const props = withDefaults(defineProps<TimeCounterProps>(), {
