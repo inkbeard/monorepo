@@ -3,7 +3,7 @@
   import { AppCard } from '@inkbeard/ui-vue';
   import type { AppBadgeStatus } from '@/components/AppBadge.vue';
 
-  export interface ProjectHeaderProps {
+  export type ProjectHeaderProps = {
     /**
      * The status of the badge.
      */
@@ -12,7 +12,7 @@
      * The value of the badge.
      */
     badgeValue: string,
-  }
+  };
   const { badgeStatus = 'info' } = defineProps<ProjectHeaderProps>();
 </script>
 

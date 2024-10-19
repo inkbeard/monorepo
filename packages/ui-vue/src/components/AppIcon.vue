@@ -3,7 +3,7 @@
    * @desc A custom icon component that uses Font Awesome icons, separating the icon name and the size, along with a type for color.
    */
 
-  export interface AppIconProps {
+  export type AppIconProps = {
     /**
      * The icon type (fa-solid, fa-thin, etc) and icon name (fa-t-rex, fa-bulldozer, etc) to render.
      */
@@ -34,7 +34,7 @@
      * The color theme used to render the icon color.
      */
     type?: '' | 'danger' | 'info' | 'success' | 'warning';
-  }
+  };
 
   const {
     size = 'lg',

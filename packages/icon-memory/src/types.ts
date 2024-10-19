@@ -1,4 +1,4 @@
-export interface IconDetails {
+export type IconDetails = {
   /**
    * The icon to display on the card.
    */
@@ -19,9 +19,9 @@ export interface IconDetails {
    * The style of the fontawesome icon.
    */
   style: string;
-}
+};
 
-export interface IconCardProps extends IconDetails {
+export type IconCardProps = IconDetails & {
   /**
    * The id of the icon.
    */
@@ -38,9 +38,9 @@ export interface IconCardProps extends IconDetails {
    * Whether the card has been matched.
    */
   isMatched?: boolean;
-}
+};
 
-export interface TimeStopped {
+export type TimeStopped = {
   /**
    * The time the game was stopped in MM:SS.MS format.
    */
@@ -49,4 +49,4 @@ export interface TimeStopped {
    * The time the game was stopped in milliseconds.
    */
   time: number;
-}
+};

@@ -17,7 +17,7 @@
     SourceList,
   } from '../types';
 
-  export interface Props {
+  export type ResetBudgetItProps = {
     /**
      * The data attribute to use for the button.
      */
@@ -30,9 +30,9 @@
      * The text to display on the button.
      */
     label?: string;
-  }
+  };
 
-  withDefaults(defineProps<Props>(), {
+  withDefaults(defineProps<ResetBudgetItProps>(), {
     btnDataAttr: 'reset budget it',
     isFullWidth: false,
     label: 'Reset data',

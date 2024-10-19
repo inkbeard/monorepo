@@ -12,7 +12,7 @@
     LabelsAndIds,
   } from '../types';
 
-  export interface AddExpenseProps {
+  export type AddExpenseProps = {
     /**
      * The ID of the category to add the expense to.
      */
@@ -21,7 +21,7 @@
      * Whether the button should be full width and center the text/icon.
      */
     isFullWidth?: boolean;
-  }
+  };
   const vTooltip = Tooltip;
   const props = withDefaults(defineProps<AddExpenseProps>(), {
     isFullWidth: false,

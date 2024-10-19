@@ -2,14 +2,14 @@
   /**
    * {{ description }}
    */
-  export interface Props {
+  export type {{ componentName }}Props = {
     /**
      * The message displaying in the component.
      */
     msg?: string;
   }
 
-  withDefaults(defineProps<Props>(), {
+  withDefaults(defineProps< {{ componentName }}Props>(), {
     msg: 'Hello {{ componentName }}!',
   });
 </script>
