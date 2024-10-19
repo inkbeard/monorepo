@@ -90,8 +90,7 @@ describe('IconMemory', () => {
     });
 
     it('should render two cards for each pair count', () => {
-      expect(cards.length)
-        .toBe(pairCount * 2);
+      expect(cards).toHaveLength(pairCount * 2);
     });
 
     it('should push the card ID when a card is flipped and not calculate', async () => {
@@ -123,6 +122,7 @@ describe('IconMemory', () => {
           .toEqual([firstCard.props('iconId'), secondCardId]);
       });
 
+      // eslint-disable-next-line vue/max-len
       it('should add matched card ID to stack and reset flipped cards/calculating states on successful match', async () => {
         const secondCardId = secondCard.props('iconId');
 
@@ -136,12 +136,14 @@ describe('IconMemory', () => {
           .toEqual([]);
         expect(wrapper.vm.isCalculating)
           .toBe(false);
+
         cards.forEach((card) => {
           expect(card.props('isActive'))
             .toBe(false);
         });
       });
 
+      // eslint-disable-next-line vue/max-len
       it('should not add matched card ID to stack and reset card and calculating state after 1 second on unsuccessful match', async () => {
         const thirdCardId = thirdCard.props('iconId');
 
@@ -177,7 +179,6 @@ describe('IconMemory', () => {
     it('should increment the turn count and matched count on successful match', async () => {
       const cards = wrapper.findAllComponents({ name: 'IconCard' });
       const turnCounter = wrapper.findComponent({ name: 'TurnCounter' });
-
       const [firstCard, secondCard] = cards.filter((card: typeof IconCard) => card.props('iconId') === 1);
 
       firstCard.vm.$emit('cardClicked');

@@ -30,6 +30,7 @@ export const icons = [
     ...card,
     icon: `${card.family} ${card.style} fa-${card.name}`,
   });
+
   return acc;
 }, [] as IconDetails[]);
 

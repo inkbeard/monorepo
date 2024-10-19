@@ -6,7 +6,6 @@
   const props = defineProps<{
     iconDetails: IconDetails;
   }>();
-
   /**
    * Calculate the URL to the fontawesome icon page.
    */

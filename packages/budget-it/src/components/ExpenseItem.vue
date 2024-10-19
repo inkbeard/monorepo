@@ -19,7 +19,6 @@
      */
     expenseId: number;
   }>();
-
   const alphabaticSourceList = inject<LabelsAndIds>('alphabaticSourceList', []);
   const expense = defineModel<ExpenseInfo>('expense', { required: true });
   const expenseAmount = ref(expense.value.amount);

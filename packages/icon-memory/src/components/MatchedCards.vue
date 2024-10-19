@@ -8,7 +8,6 @@
   const props = defineProps<{
     cards: IconCardProps[];
   }>();
-
   const dialogIsVisible = ref(false);
   const activeIconDetails = ref<IconDetailsProps | null>(null);
   const loadCard = (iconId: number) => {

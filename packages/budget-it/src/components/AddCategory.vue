@@ -34,6 +34,7 @@
     || categoryList.some(({ name }) => (
       name.toLowerCase() === categoryName.value.trim().toLowerCase()))
   ));
+
   /**
    * Close the add category form and reset the category name.
    */

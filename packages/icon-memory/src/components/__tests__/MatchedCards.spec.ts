@@ -25,6 +25,7 @@ describe('MatchedCards', () => {
 
     expect(iconCards)
       .toHaveLength(cards.length);
+
     cards.forEach((card, index) => {
       expect(iconCards[index].props('isActive'))
         .toBe(true);

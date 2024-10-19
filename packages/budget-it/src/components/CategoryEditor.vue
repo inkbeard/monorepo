@@ -60,6 +60,7 @@
       name.toLowerCase() === editableCategory.value.name.toLowerCase()
     ))
   ));
+
   /**
    * Save the category with the new information and cancel editing.
    */
@@ -86,6 +87,7 @@
    */
   function deleteCategory() {
     const index = categoryList.findIndex(({ id }) => id === category.value.id);
+
     categoryList.splice(index, 1);
 
     emits('deleteCategory', category.value.id);

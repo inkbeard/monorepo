@@ -64,11 +64,17 @@ module.exports = {
       "ignorePattern": ' d=', // Ignore SVG paths
       "ignoreComments": true,
       "ignoreUrls": true,
-      "ignoreStrings": true,
+      "ignoreStrings": false,
       "ignoreTemplateLiterals": false,
       "ignoreRegExpLiterals": false,
       "ignoreHTMLAttributeValues": false,
       "ignoreHTMLTextContents": false,
-    }]
+    }],
+    'padding-line-between-statements': [
+      'warn',
+      { blankLine: 'always', prev: ['const', 'let'], next: '*' },
+      { blankLine: 'never', prev: ['const', 'let'], next: ['const', 'let'] },
+      { blankLine: 'always', prev: '*', next: 'return' },
+    ],
   }
 };

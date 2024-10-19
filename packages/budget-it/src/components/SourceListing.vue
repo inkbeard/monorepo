@@ -37,6 +37,7 @@
       source.toLowerCase() === sourceName.value.toLowerCase()
     ))
   ));
+
   /**
    * Restore the source name and cancel the source editing state.
    */

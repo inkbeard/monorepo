@@ -65,6 +65,7 @@
 
     return newSourceId;
   };
+
   provide('addSource', addSource);
   provide('alphabaticSourceList', alphabaticSourceList);
   // provide('defaultSourceId', defaultSourceId.value); // why doesn't this work?!

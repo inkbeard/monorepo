@@ -43,6 +43,7 @@ describe('GameSetup', () => {
       });
 
       const pairCountInput = wrapper.findComponent('[data-test="edit pair count"]');
+
       expect(pairCountInput.props('disabled'))
         .toBe(true);
     });
@@ -71,6 +72,7 @@ describe('GameSetup', () => {
       });
 
       const cta = wrapper.findComponent('[data-test="start game"]');
+
       expect(cta.props('disabled'))
         .toBe(true);
     });
