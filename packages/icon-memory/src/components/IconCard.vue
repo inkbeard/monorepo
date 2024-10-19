@@ -2,7 +2,7 @@
   import { AppIcon } from '@inkbeard/ui-vue';
   import { ref, watch } from 'vue';
 
-  const emits = defineEmits<{
+  const emit = defineEmits<{
     /**
      * Emit the card id that was clicked.
      */
@@ -42,7 +42,7 @@
       props.isMatched
       && isActive.value
     ) {
-      emits('cardClicked');
+      emit('cardClicked');
 
       return;
     }
@@ -53,7 +53,7 @@
       || isActive.value
     ) return;
 
-    emits('cardClicked');
+    emit('cardClicked');
     isActive.value = true;
   };
 

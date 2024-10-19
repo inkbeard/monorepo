@@ -1,52 +1,32 @@
 <script setup lang="ts">
-  defineProps({
+  export interface AppBadgeProps {
     /**
      * Used to determine if the badge should show counter notifications styles.
      */
-    isCounter: {
-      type: Boolean,
-      default: false,
-    },
+    isCounter: boolean;
     /**
      * Used to determine if the badge should be pill shaped.
      */
-    isPill: {
-      type: Boolean,
-      default: false,
-    },
+    isPill: boolean;
     /**
      * Used to determine the badge's padding and font.
      */
-    size: {
-      type: String,
-      default: 'medium',
-      validator: (value: string) => [
-        'small',
-        'medium',
-        'large',
-      ].includes(value),
-    },
+    size: 'small' | 'medium' | 'large';
     /**
      * Used to determine the badge status.
      */
-    status: {
-      type: String,
-      default: 'info',
-      validator: (value: string) => [
-        'danger',
-        'info',
-        'success',
-        'warning',
-      ].includes(value),
-    },
+    status: 'danger' | 'info' | 'success' | 'warning';
     /**
      * Used to render badge content.
      */
-    value: {
-      type: [String, Number],
-      required: true,
-    },
-  });
+    value: string | number;
+  }
+  const {
+    isCounter = false,
+    isPill = false,
+    size = 'medium',
+    status = 'info',
+  } = defineProps<AppBadgeProps>();
 </script>
 
 <template>
@@ -54,8 +34,10 @@
     class="app-badge"
     :class="[
       `is-${size} is-${status}`,
-      { 'is-counter': isCounter },
-      { 'is-pill': isPill },
+      {
+        'is-counter': isCounter,
+        'is-pill': isPill,
+      },
     ]"
   >
     {{ value }}

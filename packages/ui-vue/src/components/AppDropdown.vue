@@ -6,7 +6,13 @@
     inheritAttrs: false,
   });
   defineProps<{
+    /**
+     * The label for the dropdown.
+     */
     label: string;
+    /**
+     * The id for the dropdown associated with the label and form.
+     */
     inputId: string;
   }>();
 </script>

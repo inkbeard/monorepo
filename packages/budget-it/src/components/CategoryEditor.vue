@@ -12,7 +12,7 @@
     CategoryInfo,
   } from '../types';
 
-  const emits = defineEmits<{
+  const emit = defineEmits<{
     /**
      * Emit the edited name and description of the category.
      */
@@ -68,7 +68,7 @@
     category.value.name = categoryName.value;
     category.value.backgroundColor = backgroundColor.value;
 
-    emits('editCategory', {
+    emit('editCategory', {
       backgroundColor: editableCategory.value.backgroundColor,
       id: category.value.id,
       name: editableCategory.value.name,
@@ -80,7 +80,7 @@
   function cancelEditing() {
     categoryName.value = category.value.name;
     backgroundColor.value = category.value.backgroundColor;
-    emits('cancelEditing');
+    emit('cancelEditing');
   }
   /**
    * Close the dialog, removed the category and emit the deleted category id.
@@ -90,7 +90,7 @@
 
     categoryList.splice(index, 1);
 
-    emits('deleteCategory', category.value.id);
+    emit('deleteCategory', category.value.id);
 
     toast.add({
       severity: 'success',

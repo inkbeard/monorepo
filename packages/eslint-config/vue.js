@@ -51,12 +51,28 @@ module.exports = {
     },
   ],
   rules: {
-    'vue/attributes-order': ['warn', {
-      alphabetical: true,
-    }],
-    // Require indenting with 2 spaces in script block
-    'vue/script-indent': ['warn', 2, { baseIndent: 1 }],
+    // import rules
     'import/prefer-default-export': 0,
+    // vue rules
+    'vue/attributes-order': ['warn', { alphabetical: true }],
+    'vue/custom-event-name-casing': ['warn', 'camelCase'],
+    'vue/define-props-declaration': 'error',
+    // come back to this one
+    // 'vue/max-template-depth': ['error', { maxDepth: 4 }],
+    'vue/no-boolean-default': ['error', 'default-false'],
+    'vue/no-multiple-objects-in-class': 'error',
+    'vue/no-root-v-if': 'error',
+    'vue/no-unused-emit-declarations': 'error',
+    'vue/no-unused-properties': 'error',
+    'vue/no-unused-refs': 'error',
+    'vue/no-useless-v-bind': 'error',
+    'vue/padding-line-between-blocks': ['warn', 'always'],
+    'vue/prefer-true-attribute-shorthand': ['warn', 'always'],
+    'vue/prefer-separate-static-class': 'error',
+    'vue/require-emit-validator': 'error',
+    'vue/require-macro-variable-name': 'error',
+    'vue/require-prop-comment': ['error', { 'type': 'JSDoc' }],
+    'vue/script-indent': ['warn', 2, { baseIndent: 1 }],
     "vue/max-len": ["error", {
       "code": 120,
       "template": 120,
@@ -70,6 +86,7 @@ module.exports = {
       "ignoreHTMLAttributeValues": false,
       "ignoreHTMLTextContents": false,
     }],
+    // misc
     'padding-line-between-statements': [
       'warn',
       { blankLine: 'always', prev: ['const', 'let'], next: '*' },

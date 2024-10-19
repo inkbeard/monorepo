@@ -118,7 +118,7 @@
     <AppIcon
       v-if="closable"
       class="close-alert"
-      data-test="close alert"
+      :data-test="dataTestClose"
       icon="fa-solid fa-xmark"
       :severity="severity"
       size="xl"

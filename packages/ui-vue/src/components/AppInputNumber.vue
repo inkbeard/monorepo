@@ -10,9 +10,18 @@
      * Whether the input should be disabled. (this is a PrimeVue prop but needed here for better unit testing.)
      */
     disabled?: boolean;
+    /**
+     * The label used for the `<label>` field.
+     */
     label: string;
-    labelDescription?: string;
+    /**
+     * The id for the input associated with the label and form.
+     */
     inputId: string;
+    /**
+     * The copy used for the label popover.
+     */
+    labelDescription?: string;
     /**
      * The model to be passed to the input. (this is a PrimeVue prop but needed here for better unit testing.)
      */

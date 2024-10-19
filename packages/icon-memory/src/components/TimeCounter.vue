@@ -3,6 +3,9 @@
   import type { TimeStopped } from '../types';
 
   export interface TimeCounterProps {
+    /**
+     * Whether the game has started or not.
+     */
     gameHasStarted: boolean;
   }
 
@@ -12,7 +15,7 @@
      */
     gameHasStarted: false,
   });
-  const emits = defineEmits<{
+  const emit = defineEmits<{
     /**
      * Emit the total time and the time in 'HH:MM:SS.MS' format when the game stops.
      */
@@ -51,7 +54,7 @@
       } else if (!newValue && oldValue) {
         window.clearInterval(timer);
         timer = 0;
-        emits('timeStopped', {
+        emit('timeStopped', {
           time: clock.value,
           readableTime: timeElapsed.value,
         });

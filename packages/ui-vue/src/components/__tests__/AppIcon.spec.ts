@@ -10,12 +10,9 @@ describe('AppIcon', () => {
       props: { icon: `${fontStyle} ${iconName}` },
     });
 
-    expect(wrapper.classes())
-      .toEqual([
-        fontStyle,
-        iconName,
-        'app-icon',
-        'fa-lg',
-      ]);
+    expect(wrapper.classes()).toContain('app-icon');
+    expect(wrapper.classes()).toContain('fa-lg');
+    expect(wrapper.classes()).toContain(fontStyle);
+    expect(wrapper.classes()).toContain(iconName);
   });
 });

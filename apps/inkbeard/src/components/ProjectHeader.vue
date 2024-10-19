@@ -2,15 +2,19 @@
   import AppBadge from '@/components/AppBadge.vue';
   import { AppCard } from '@inkbeard/ui-vue';
 
-  defineProps({
-    badgeStatus: {
-      type: String,
-      default: 'info',
-    },
-    badgeValue: {
-      type: String,
-      required: true,
-    },
+  export interface ProjectHeaderProps {
+    /**
+     * The status of the badge.
+     */
+    badgeStatus?: string,
+    /**
+     * The value of the badge.
+     */
+    badgeValue: string,
+  }
+
+  withDefaults(defineProps<ProjectHeaderProps>(), {
+    badgeStatus: 'info',
   });
 </script>
 
