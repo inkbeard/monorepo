@@ -12,10 +12,11 @@
     disabled?: boolean | number;
   };
 
-  withDefaults(defineProps<AppButtonProps>(), {
-    disabled: false,
-    isFullWidth: false,
-  });
+  const {
+    disabled = false,
+    isFullWidth = false,
+  } = defineProps<AppButtonProps>();
+
   defineOptions({
     inheritAttrs: false,
   });

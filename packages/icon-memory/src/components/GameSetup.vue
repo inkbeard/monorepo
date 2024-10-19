@@ -11,9 +11,8 @@
     ctaLabel?: string;
   };
 
-  withDefaults(defineProps<GameSetupProps>(), {
-    ctaLabel: 'Start game',
-  });
+  const { ctaLabel = 'Start game' } = defineProps<GameSetupProps>();
+
   defineEmits<{
     startGame: [];
   }>();

@@ -32,12 +32,11 @@
     label?: string;
   };
 
-  withDefaults(defineProps<ResetBudgetItProps>(), {
-    btnDataAttr: 'reset budget it',
-    isFullWidth: false,
-    label: 'Reset data',
-  });
-
+  const {
+    btnDataAttr = 'reset budget it',
+    isFullWidth = false,
+    label = 'Reset data',
+  } = defineProps<ResetBudgetItProps>();
   const categoryList = inject<CategoryInfo[]>('categoryList', []);
   const confirm = useConfirm();
   const expenseList = inject<ExpenseList>('expenseList', {});

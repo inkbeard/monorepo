@@ -47,20 +47,20 @@
     title?: string,
   };
 
-  const props = withDefaults(defineProps<AppAlertProps>(), {
-    center: false,
-    closable: false,
-    dataTestClose: 'close alert',
-    description: '',
-    severity: 'info',
-    showIcon: false,
-    title: '',
-  });
+  const {
+    center = false,
+    closable = false,
+    dataTestClose = 'close alert',
+    description = '',
+    severity = 'info',
+    showIcon = false,
+    title = '',
+  } = defineProps<AppAlertProps>();
   /**
    * Determine the icon based on the alert severity.
    */
   const icon = computed(() => {
-    switch (props.severity) {
+    switch (severity) {
     case 'success':
       return 'fa-duotone fa-check-circle';
     case 'danger':
