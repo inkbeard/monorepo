@@ -1,5 +1,15 @@
 # @inkbeard/ui-library
 
+## 1.6.1
+
+### Patch Changes
+
+- Updated dependencies [24f9b55]
+- Updated dependencies [b366e1f]
+  - @inkbeard/icon-memory@0.4.0
+  - @inkbeard/budget-it@1.2.0
+  - @inkbeard/ui-vue@0.13.0
+
 ## 1.6.0
 
 ### Minor Changes

@@ -1,5 +1,19 @@
 # @inkbeard/budget-it
 
+## 1.2.0
+
+### Minor Changes
+
+- 24f9b55: - Added vitest and recommended rules
+  - Added spacing vue rules
+  - Fixed all rule violations
+- b366e1f: - updated interfaces to types for consistency
+  - destructure vue props
+  - updated to node v22
+  - updated eslint rules for consistency
+  - added vitest eslint rules
+  - added prop jsdocs
+
 ## 1.1.0
 
 ### Minor Changes

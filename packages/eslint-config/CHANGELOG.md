@@ -1,5 +1,13 @@
 # @inkbeard/eslint-config
 
+## 0.7.0
+
+### Minor Changes
+
+- 24f9b55: - Added vitest and recommended rules
+  - Added spacing vue rules
+  - Fixed all rule violations
+
 ## 0.6.0
 
 ### Minor Changes
