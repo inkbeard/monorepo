@@ -19,5 +19,8 @@
     "eslint-plugin-vue": "^9.28.0",
     "typescript": "5.2.2"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "eslint-plugin-vuejs-accessibility": "^2.4.1"
+  }
 }
