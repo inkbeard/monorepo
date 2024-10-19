@@ -93,7 +93,6 @@
   const onTimeStopped = ({ readableTime }: { readableTime: string }) => {
     finishedTime.value = readableTime;
   };
-
   /**
    * Calculate if the flipped cards are a match.
    * If they are, keep them flipped and add them to the matched cards.
@@ -140,7 +139,6 @@
 
     turnCount.value += 1;
   };
-
   /**
    * Start a new game by resetting the game state.
    */

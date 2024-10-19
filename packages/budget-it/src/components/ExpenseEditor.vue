@@ -46,6 +46,12 @@
     description: expenseDescription,
   });
   const isEditing = ref(false);
+  const tooltipCopy = computed(() => {
+    const prefix = expense.value.isHidden ? 'Show' : 'Hide';
+    const affix = expense.value.isHidden ? 'with' : 'without';
+
+    return `${prefix} the expense to calculate your budget ${affix} it.`;
+  });
   /**
    * The save button is disabled if the name is empty, the name is the same as the original name, or the name is the same as another expense.
    */
@@ -56,6 +62,7 @@
       name.toLowerCase() === editableExpense.value.name.toLowerCase()
     ))
   ));
+
   /**
    * Save the expense with the new information and cancel editing.
    */
@@ -146,7 +153,7 @@
     />
     <div class="btn-group align-end">
       <AppButton
-        v-tooltip.left="`${expense.isHidden ? 'Show' : 'Hide'} the expense to calculate your budget ${expense.isHidden ? 'with' : 'without'} it.`"
+        v-tooltip.left="tooltipCopy"
         class="hide-expense"
         data-test="hide expense"
         :icon="`fa-duotone ${expense.isHidden ? 'fa-eye' : 'fa-eye-slash'}`"

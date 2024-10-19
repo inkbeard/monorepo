@@ -16,6 +16,7 @@
       title: 'Sr Software Engineer / Engineering Team Lead',
       dates: 'Jun 2019 - November 2023',
       description: [
+        /* eslint-disable vue/max-len */
         'Used scrum methodology to lead a team consisting of product, design, QA, backend, and frontend engineers to help define a product roadmap and deliver features on a regular basis.',
         'Built tooling to allow for migration of the company\'s vue2 component library to a vue3 monorepo.',
         'Built tooling to reduce the the time of component/unit-test creation from 2-3 hours to less than 1 minute.',
@@ -25,6 +26,7 @@
         'Integrated jira, github, and circleCI automation to help streamline development, QA, and deployment processes.',
         'Increased unit test coverage (jest/vitest) from 40% to 80+% for largest application at the company.',
         'Built custom components used by multiple large scale applications.',
+        /* eslint-enable vue/max-len */
       ],
     },
     {
@@ -33,6 +35,7 @@
       dates: 'July 2016 - April 2019',
       description: [
         'Migrated a large scale application from Backbone.js to VueJs to improve performance and maintainability.',
+        // eslint-disable-next-line vue/max-len
         'Used D3 to build a complex visualization map of large data sets to help users navigate network devices and potential points of security breaches.',
         'Built custom diff tool to help users compare changes between two versions of a network device configuration.',
         'A presentation of the entire application can be found on https://www.youtube.com/watch?v=I6dYiv02ddE',
@@ -43,10 +46,12 @@
       title: 'Sr Frontend Engineer',
       dates: 'Nov 2014 - July 2016',
       description: [
+        /* eslint-disable vue/max-len */
         'Lead developer for multi-year/multi-phased project, which included combining high trafficked b2b, b2c, and numerous marketing legacy projects into a single gogoair.com site.',
         'Created scss and markup standards guide to be followed by team.',
         'Updated a java based tech stack into more up to date technologies (at the time) including Handlebars.js, NGINX, scss, and Grunt.',
         'Worked closely with DevOps team to implement a build process utilizing automatic deployments to AWS instances based on triggers from gitlab changes.',
+        /* eslint-enable vue/max-len */
       ],
     },
     {

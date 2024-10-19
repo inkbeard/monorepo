@@ -56,7 +56,6 @@
     showIcon: false,
     title: '',
   });
-
   /**
    * Determine the icon based on the alert severity.
    */

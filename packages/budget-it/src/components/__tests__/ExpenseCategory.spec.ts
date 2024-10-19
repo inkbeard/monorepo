@@ -146,6 +146,7 @@ describe('ExpenseCategory', () => {
       .toBe(true);
   });
 
+  // eslint-disable-next-line @vitest/no-disabled-tests
   it.skip('should confirm the deletion on delete cta click what there expenses', async () => {
     createWrapper({
       props: { isOpen: true },
@@ -159,6 +160,7 @@ describe('ExpenseCategory', () => {
       .toHaveBeenCalled();
   });
 
+  // eslint-disable-next-line @vitest/no-disabled-tests
   it.skip('should delete on delete cta click when there are no expenses for this category', async () => {
     createWrapper({
       props: { isOpen: true },
@@ -169,8 +171,7 @@ describe('ExpenseCategory', () => {
 
     expect(wrapper.emitted().deleteCategory)
       .toBeTruthy();
-    expect(wrapper.emitted().deleteCategory.length)
-      .toBe(1);
+    expect(wrapper.emitted().deleteCategory).toHaveLength(1);
     expect(wrapper.emitted().deleteCategory[0])
       .toEqual([categoryId]);
     expect(wrapper.vm.categoryList)

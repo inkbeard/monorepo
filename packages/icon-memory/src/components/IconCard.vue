@@ -43,6 +43,7 @@
       && isActive.value
     ) {
       emits('cardClicked');
+
       return;
     }
 

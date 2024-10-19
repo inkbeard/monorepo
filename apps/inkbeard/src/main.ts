@@ -30,6 +30,7 @@ flagsmith.init({
     : 'ax5a27QiuSV2CYBUbw9J67',
   onChange: () => {
     const featureFlagStore = useFeatureFlagStore();
+
     featureFlagStore.flags = {
       ...featureFlagStore.flags,
       // All feature flags will be set as an object with with `enabled`, `id`, and `value` properties

@@ -8,7 +8,6 @@ describe('TurnCounter', () => {
   const matchedCount = 5;
   const missedCount = 5;
   const turnCount = 10;
-
   let wrapper: any;
   const createWrapper = () => {
     wrapper = shallowMount(

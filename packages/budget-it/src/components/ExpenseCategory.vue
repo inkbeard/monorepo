@@ -35,6 +35,7 @@
           name: expense.name,
         });
       }
+
       return acc;
     }, [] as ({
       id: number,
@@ -55,6 +56,7 @@
       return acc;
     }, 0)
   ));
+
   /**
    * Show confirmation when the user has successfully edited an expense name or description.
    */
