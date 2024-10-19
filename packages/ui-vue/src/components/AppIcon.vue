@@ -11,7 +11,7 @@
     /**
      * The appended icon from the the fontawesome [icon size property](https://fontawesome.com/v6/docs/web/style/size) without the `fa-` prefix.
      */
-    size:
+    size?:
       // relative sizes
       '2xs'
       | 'xs'
@@ -33,7 +33,7 @@
     /**
      * The color theme used to render the icon color.
      */
-    type: '' | 'danger' | 'info' | 'success' | 'warning';
+    type?: '' | 'danger' | 'info' | 'success' | 'warning';
   }
 
   const {

@@ -1,21 +1,19 @@
 <script setup lang="ts">
   import AppBadge from '@/components/AppBadge.vue';
   import { AppCard } from '@inkbeard/ui-vue';
+  import type { AppBadgeStatus } from '@/components/AppBadge.vue';
 
   export interface ProjectHeaderProps {
     /**
      * The status of the badge.
      */
-    badgeStatus?: string,
+    badgeStatus?: AppBadgeStatus,
     /**
      * The value of the badge.
      */
     badgeValue: string,
   }
-
-  withDefaults(defineProps<ProjectHeaderProps>(), {
-    badgeStatus: 'info',
-  });
+  const { badgeStatus = 'info' } = defineProps<ProjectHeaderProps>();
 </script>
 
 <template>

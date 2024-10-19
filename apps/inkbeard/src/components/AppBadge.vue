@@ -1,21 +1,23 @@
 <script setup lang="ts">
+  export type AppBadgeSize = 'small' | 'medium' | 'large';
+  export type AppBadgeStatus = 'danger' | 'info' | 'success' | 'warning';
   export interface AppBadgeProps {
     /**
      * Used to determine if the badge should show counter notifications styles.
      */
-    isCounter: boolean;
+    isCounter?: boolean;
     /**
      * Used to determine if the badge should be pill shaped.
      */
-    isPill: boolean;
+    isPill?: boolean;
     /**
      * Used to determine the badge's padding and font.
      */
-    size: 'small' | 'medium' | 'large';
+    size?: AppBadgeSize;
     /**
      * Used to determine the badge status.
      */
-    status: 'danger' | 'info' | 'success' | 'warning';
+    status?: AppBadgeStatus;
     /**
      * Used to render badge content.
      */

@@ -9,7 +9,7 @@ import TimeCounter from '../TimeCounter.vue';
 
 describe('TimeCounter', () => {
   let wrapper: any;
-  const createWrapper = (gameHasStarted?: false) => {
+  const createWrapper = (gameHasStarted = false) => {
     wrapper = shallowMount(
       TimeCounter,
       {
