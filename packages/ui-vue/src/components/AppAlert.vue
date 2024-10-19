@@ -5,6 +5,7 @@
 
   import { computed } from 'vue';
   import AppIcon from './AppIcon.vue';
+  import AppButton from './AppButton.vue';
 
   defineEmits<{
     /**
@@ -115,13 +116,14 @@
         </slot>
       </p>
     </div>
-    <AppIcon
+    <AppButton
       v-if="closable"
       class="close-alert"
       :data-test="dataTestClose"
       icon="fa-solid fa-xmark"
       :severity="severity"
       size="xl"
+      text
       @click="$emit('close')"
     />
   </div>
@@ -159,7 +161,6 @@
 
   .close-alert {
     align-self: flex-start;
-    margin-top: .7rem;
   }
 
   .is-danger {
