@@ -4,6 +4,9 @@
   import type { IconDetails } from '../types';
 
   const props = defineProps<{
+    /**
+     * The details for the icon to display.
+     */
     iconDetails: IconDetails;
   }>();
   /**

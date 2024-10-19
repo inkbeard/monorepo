@@ -6,6 +6,9 @@
   import type { IconCardProps, IconDetails as IconDetailsProps } from '../types';
 
   const props = defineProps<{
+    /**
+     * The cards to display in the matched cards section.
+     */
     cards: IconCardProps[];
   }>();
   const dialogIsVisible = ref(false);

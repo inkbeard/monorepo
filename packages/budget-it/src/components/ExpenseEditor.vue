@@ -15,7 +15,7 @@
   } from '../types';
 
   const vTooltip = Tooltip;
-  const emits = defineEmits<{
+  const emit = defineEmits<{
     /**
      * Emit the edited name and description of the expense item.
      */
@@ -71,7 +71,7 @@
     expense.value.description = expenseDescription.value;
     isEditing.value = false;
 
-    emits('editExpense', {
+    emit('editExpense', {
       name: editableExpense.value.name,
       description: editableExpense.value.description || '',
     });
@@ -80,7 +80,7 @@
    * Cancel the editing of the expense and reset the form.
    */
   function cancelEditing() {
-    emits('cancelEditing');
+    emit('cancelEditing');
     isEditing.value = false;
     expenseName.value = expense.value.name;
     expenseDescription.value = expense.value.description;
@@ -90,7 +90,7 @@
    */
   function deleteExpense() {
     isEditing.value = false;
-    emits('deleteExpense', props.expenseId);
+    emit('deleteExpense', props.expenseId);
     delete expenseList[props.expenseId];
 
     toast.add({

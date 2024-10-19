@@ -3,8 +3,17 @@
   import AppIcon from './AppIcon.vue';
 
   defineProps<{
+    /**
+     * The label used for the `<label>` field.
+     */
     label: string;
-    inputId: string | undefined;
+    /**
+     * The id for the dropdown associated with the label and form.
+     */
+    inputId: string;
+    /**
+     * The copy used for the label popover.
+     */
     labelDescription?: string;
   }>();
 
