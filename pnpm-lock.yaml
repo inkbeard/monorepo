@@ -303,7 +303,7 @@ importers:
         version: 6.0.0(eslint@8.57.1)(prettier@3.3.3)(typescript@5.2.2)
       '@vitest/eslint-plugin':
         specifier: ^1.1.7
-        version: 1.1.7(@typescript-eslint/utils@8.8.1)(eslint@8.57.1)(typescript@5.2.2)
+        version: 1.1.7(@typescript-eslint/utils@8.10.0)(eslint@8.57.1)(typescript@5.2.2)
       '@vue/eslint-config-airbnb-with-typescript':
         specifier: ^8.0.0
         version: 8.0.0(eslint-plugin-vue@9.29.0)(eslint@8.57.1)(typescript@5.2.2)
@@ -322,6 +322,9 @@ importers:
       eslint-plugin-sort-exports:
         specifier: ^0.9.1
         version: 0.9.1(eslint@8.57.1)
+      eslint-plugin-storybook:
+        specifier: ^0.9.0
+        version: 0.9.0(eslint@8.57.1)(typescript@5.2.2)
       eslint-plugin-vue:
         specifier: ^9.28.0
         version: 9.29.0(eslint@8.57.1)
@@ -3921,22 +3924,6 @@ packages:
       - typescript
     dev: true
 
-  /@typescript-eslint/utils@8.8.1(eslint@8.57.1)(typescript@5.2.2):
-    resolution: {integrity: sha512-/QkNJDbV0bdL7H7d0/y0qBbV2HTtf0TIyjSDTvvmQEzeVx8jEImEbLuOA4EsvE8gIgqMitns0ifb5uQhMj8d9w==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-    peerDependencies:
-      eslint: ^8.57.0 || ^9.0.0
-    dependencies:
-      '@eslint-community/eslint-utils': 4.4.0(eslint@8.57.1)
-      '@typescript-eslint/scope-manager': 8.8.1
-      '@typescript-eslint/types': 8.8.1
-      '@typescript-eslint/typescript-estree': 8.8.1(typescript@5.2.2)
-      eslint: 8.57.1
-    transitivePeerDependencies:
-      - supports-color
-      - typescript
-    dev: true
-
   /@typescript-eslint/visitor-keys@5.62.0:
     resolution: {integrity: sha512-07ny+LHRzQXepkGg6w0mFY41fVUNBrL2Roj/++7V1txKugfjm/Ci/qSND03r2RhlJhJYMcTn9AhhSSqQp0Ysyw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -4147,7 +4134,7 @@ packages:
       - supports-color
     dev: true
 
-  /@vitest/eslint-plugin@1.1.7(@typescript-eslint/utils@8.8.1)(eslint@8.57.1)(typescript@5.2.2):
+  /@vitest/eslint-plugin@1.1.7(@typescript-eslint/utils@8.10.0)(eslint@8.57.1)(typescript@5.2.2):
     resolution: {integrity: sha512-pTWGW3y6lH2ukCuuffpan6kFxG6nIuoesbhMiQxskyQMRcCN5t9SXsKrNHvEw3p8wcCsgJoRqFZVkOTn6TjclA==}
     peerDependencies:
       '@typescript-eslint/utils': '>= 8.0'
@@ -4160,7 +4147,7 @@ packages:
       vitest:
         optional: true
     dependencies:
-      '@typescript-eslint/utils': 8.8.1(eslint@8.57.1)(typescript@5.2.2)
+      '@typescript-eslint/utils': 8.10.0(eslint@8.57.1)(typescript@5.2.2)
       eslint: 8.57.1
       typescript: 5.2.2
     dev: true

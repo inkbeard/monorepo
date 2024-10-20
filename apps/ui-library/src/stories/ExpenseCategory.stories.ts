@@ -49,7 +49,7 @@ const provideSetup = () => {
     { id: 4, label: 'Savings Account' },
     { id: 5, label: 'Cash' },
   ]);
-}
+};
 const meta = {
   component: ExpenseCategory,
   title: 'Budget It/ExpenseCategory',
@@ -74,20 +74,21 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const WithExpensesCollapsed = {
+export const WithExpensesCollapsed: Story = {
   args: {
     category: {
       name: 'Entertainment',
+      backgroundColor: '#b30000',
       id: 1,
     },
   },
 };
 
-
-export const NoExpenses = {
+export const NoExpenses: Story = {
   args: {
     category: {
       name: 'Food',
+      backgroundColor: '#b30000',
       id: 2,
     },
     isOpen: true,

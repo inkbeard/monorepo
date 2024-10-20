@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { IconDetails } from '@inkbeard/icon-memory';
-import { icons } from '@inkbeard/icon-memory/mockData.ts'
+import { icons } from '@inkbeard/icon-memory/mockData.ts';
 
 const meta = {
   title: 'Icon Memory/IconDetails',

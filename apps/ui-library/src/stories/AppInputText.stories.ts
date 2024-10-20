@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { AppInputText } from '@inkbeard/ui-vue';
 
-
 const meta = {
   title: 'ui vue/AppInputText',
   component: AppInputText,
@@ -14,9 +13,9 @@ const meta = {
     layout: 'padded',
     docs: {
       description: {
-        component: 'A component extended from primevue\'s `InputText` component that requires a label and an optional description.\n\nRefer to the [documentation](https://primevue.org/Inputtext/) for a full list of features of the InputText component.'
-      }
-    }
+        component: 'A component extended from primevue\'s `InputText` component that requires a label and an optional description.\n\nRefer to the [documentation](https://primevue.org/Inputtext/) for a full list of features of the InputText component.',
+      },
+    },
   },
 } satisfies Meta<typeof AppInputText>;
 

@@ -14,9 +14,9 @@ const meta = {
     layout: 'padded',
     docs: {
       description: {
-        component: 'A component extended from primevue\'s `Button` component\n\nRefer to the [documentation](https://primevue.org/button/) for a full list of features.'
-      }
-    }
+        component: 'A component extended from primevue\'s `Button` component\n\nRefer to the [documentation](https://primevue.org/button/) for a full list of features.',
+      },
+    },
   },
 } satisfies Meta<typeof AppButton>;
 

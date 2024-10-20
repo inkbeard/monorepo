@@ -19,7 +19,7 @@ const meta = {
         type: { summary: 'string' },
         readonly: true,
       },
-    }
+    },
   },
   args: {
     icon: 'fa-duotone fa-solid fa-house',

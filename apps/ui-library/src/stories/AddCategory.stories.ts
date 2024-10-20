@@ -31,8 +31,7 @@ const categoryList = [
     name: 'Medical',
     id: 7,
   },
-]
-
+];
 const meta: Meta<typeof AddCategory> = {
   title: 'Budget It/AddCategory',
   component: AddCategory,
@@ -43,7 +42,7 @@ const meta: Meta<typeof AddCategory> = {
     isAdding: false,
     categoryList,
   },
-}
+};
 
 export default meta;
 

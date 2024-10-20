@@ -16,7 +16,8 @@ const meta = {
       sourceId: 1,
     },
     expenseId: 1,
-  }, render: (args) => ({
+  },
+  render: (args) => ({
     components: { ExpenseItem },
     setup() {
       provide('alphabaticSourceList', [

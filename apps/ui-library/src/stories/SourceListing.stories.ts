@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { SourceListing } from '@inkbeard/budget-it';
-import { ref, provide } from 'vue';
-import type { Source } from '@storybook/blocks';
+import { provide } from 'vue';
 
 const meta = {
   title: 'Budget It/SourceListing',
@@ -26,7 +25,7 @@ const meta = {
         1: ['1', '4', '5', '8', '10'],
         3: ['3', '7'],
         4: ['9'],
-        5: ['2']
+        5: ['2'],
       });
 
       return { args };

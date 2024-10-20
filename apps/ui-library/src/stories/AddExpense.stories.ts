@@ -26,7 +26,12 @@ const meta = {
 
       return { args };
     },
-    template: '<AddExpense :category-id="args.categoryId" :is-adding-expense="args.isAddingExpense" :is-full-width="args.isFullWidth" />',
+    template: `
+      <AddExpense
+        :category-id="args.categoryId"
+        :is-adding-expense="args.isAddingExpense"
+        :is-full-width="args.isFullWidth"
+      />`,
   }),
 } satisfies Meta<typeof AddExpense>;
 
@@ -34,4 +39,4 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Example = {};
+export const Example: Story = {};

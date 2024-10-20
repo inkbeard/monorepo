@@ -9,7 +9,7 @@ const meta = {
       control: {
         type: 'select',
       },
-      options: ['info', 'success', 'warn', 'danger']
+      options: ['info', 'success', 'warn', 'danger'],
     },
   },
   args: {
@@ -18,7 +18,7 @@ const meta = {
     severity: 'danger',
     closable: true,
     showIcon: true,
-  }
+  },
 } satisfies Meta<typeof AppAlert>;
 
 export default meta;
