@@ -1,3 +1,4 @@
+import type { Meta, StoryObj } from '@storybook/vue3';
 import {
   AppButton,
   AppToast,
@@ -5,6 +6,16 @@ import {
 } from '@inkbeard/ui-vue';
 
 export const SampleToast = {
+};
+
+const meta = {
+  title: 'ui vue/AppToast',
+  args: {
+    severity: 'success',
+    summary: 'Info',
+    detail: 'Message Content',
+    life: 3000,
+  },
   argTypes: {
     severity: {
       control: {
@@ -37,26 +48,10 @@ export const SampleToast = {
     },
     template: '<AppToast /><AppButton label="Show" @click="showToast" />'
   }),
-};
+} satisfies Meta<typeof AppToast>;
 
-export default {
-  title: 'ui vue/AppToast',
-  args: {
-    severity: 'success',
-    summary: 'Info',
-    detail: 'Message Content',
-    life: 3000,
-  },
-  argTypes: {
-    severity: {
-      options: [
-        "contrast",
-        "error",
-        "info",
-        "secondary",
-        "success",
-        "warn",
-      ],
-    },
-  },
-};
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {};

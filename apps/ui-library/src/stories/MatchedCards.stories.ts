@@ -1,10 +1,10 @@
+import type { Meta, StoryObj } from '@storybook/vue3';
 import { MatchedCards } from '@inkbeard/icon-memory';
 import { cards } from '@inkbeard/icon-memory/mockData.ts'
 
-export default {
+const meta = {
   title: 'Icon Memory/MatchedCards',
   component: MatchedCards,
-  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },
@@ -15,9 +15,12 @@ export default {
         readonly: true,
       },
     },
-  }
-};
-
-export const MatchedCardsExample = {
+  },
   args: { cards },
-};
+} satisfies Meta<typeof MatchedCards>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {};

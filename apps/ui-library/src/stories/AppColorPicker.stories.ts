@@ -1,9 +1,9 @@
+import type { Meta, StoryObj } from '@storybook/vue3';
 import { AppColorPicker } from '@inkbeard/ui-vue';
 
-export default {
+const meta = {
   title: 'ui vue/AppColorPicker',
   component: AppColorPicker,
-  tags: ['autodocs'],
   parameters: {
     docs: {
       description: {
@@ -12,9 +12,13 @@ export default {
     },
     layout: 'centered',
   },
-};
-export const AppColorPickerExample = {
   args: {
     modelValue: '#cccccc',
   },
-};
+} satisfies Meta<typeof AppColorPicker>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {};

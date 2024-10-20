@@ -1,10 +1,9 @@
+import type { Meta, StoryObj } from '@storybook/vue3';
 import { AppIcon } from '@inkbeard/ui-vue';
 
-// More on how to set up stories at: https://storybook.js.org/docs/vue/writing-stories/introduction
-export default {
+const meta = {
   title: 'ui vue/AppIcon',
   component: AppIcon,
-  tags: ['autodocs'],
   argTypes: {
     icon: {
       control: {
@@ -56,9 +55,15 @@ export default {
   parameters: {
     layout: 'centered',
   },
-};
-export const PrimaryPlus = {
   args: {
     icon: 'fa-solid fa-plus',
+    size: 'lg',
+    type: '',
   },
-};
+} satisfies Meta<typeof AppIcon>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {};

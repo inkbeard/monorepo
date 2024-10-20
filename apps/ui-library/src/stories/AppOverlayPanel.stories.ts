@@ -1,15 +1,18 @@
+import type { Meta, StoryObj } from '@storybook/vue3';
 import { AppOverlayPanel } from '@inkbeard/ui-vue';
-
-export default {
+const meta = {
   title: 'ui vue/AppOverlayPanel',
   component: AppOverlayPanel,
-  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },
-};
-export const AppOverlayPanelExample = {
   args: {
     msg: 'Hello storybook!',
   },
-};
+} satisfies Meta<typeof AppOverlayPanel>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {};

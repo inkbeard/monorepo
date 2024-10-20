@@ -1,9 +1,9 @@
+import type { Meta, StoryObj } from '@storybook/vue3';
 import { IconCard } from '@inkbeard/icon-memory';
 
-export default {
+const meta = {
   title: 'Icon Memory/IconCard',
   component: IconCard,
-  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },
@@ -20,10 +20,7 @@ export default {
         readonly: true,
       },
     }
-  }
-};
-
-export const IconCardExample = {
+  },
   args: {
     icon: 'fa-duotone fa-solid fa-house',
     iconId: 1,
@@ -31,4 +28,10 @@ export const IconCardExample = {
     isCalculating: false,
     isMatched: false,
   },
-};
+} satisfies Meta<typeof IconCard>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {};

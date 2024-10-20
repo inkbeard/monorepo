@@ -1,8 +1,8 @@
+import type { Meta, StoryObj } from '@storybook/vue3';
 import { AppCard } from '@inkbeard/ui-vue';
 
-export default {
+const meta = {
   title: 'ui vue/AppCard',
-  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },
@@ -40,8 +40,6 @@ export default {
     subTitle: 'subTitle slot',
     title: 'title slot',
   },
-};
-export const AppCardExample = {
   render: (args) => ({
     components: { AppCard },
     setup() {
@@ -57,4 +55,10 @@ export const AppCardExample = {
       </AppCard>
     `,
   }),
-};
+} satisfies Meta<typeof AppCard>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {};

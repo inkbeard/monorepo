@@ -1,10 +1,12 @@
+import type { Meta, StoryObj } from '@storybook/vue3';
 import {
   AppButton,
   AppConfirmPopup,
   useConfirm
 } from '@inkbeard/ui-vue';
 
-export const SampleConfirmPopup = {
+const meta = {
+  title: 'ui vue/AppConfirmPopup',
   render: (args) => ({
     components: {
       AppButton,
@@ -38,8 +40,10 @@ export const SampleConfirmPopup = {
     },
     template: '<AppConfirmPopup group="testConfirm"/><AppButton label="Click me" @click="showConfirm" />'
   }),
-};
+} satisfies Meta<typeof AppConfirmPopup>;
 
-export default {
-  title: 'ui vue/AppConfirmPopup',
-};
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {};

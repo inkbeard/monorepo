@@ -1,4 +1,3 @@
-/** @type { import('@storybook/vue3').Preview } */
 import { setup } from '@storybook/vue3'
 import '../src/assets/global.css';
 import { createPinia } from 'pinia';
@@ -27,6 +26,7 @@ const preview = {
       },
     },
   },
+  tags: ['autodocs']
 };
 
 export default preview;

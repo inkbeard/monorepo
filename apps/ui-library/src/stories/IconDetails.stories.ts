@@ -1,10 +1,10 @@
+import type { Meta, StoryObj } from '@storybook/vue3';
 import { IconDetails } from '@inkbeard/icon-memory';
 import { icons } from '@inkbeard/icon-memory/mockData.ts'
 
-export default {
+const meta = {
   title: 'Icon Memory/IconDetails',
   component: IconDetails,
-  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },
@@ -15,9 +15,12 @@ export default {
         readonly: true,
       },
     },
-  }
-};
-
-export const IconDetailsExample = {
+  },
   args: { iconDetails: icons[2] },
-};
+} satisfies Meta<typeof IconDetails>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {};

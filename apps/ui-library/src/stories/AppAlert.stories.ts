@@ -1,9 +1,9 @@
+import type { Meta, StoryObj } from '@storybook/vue3';
 import { AppAlert } from '@inkbeard/ui-vue';
 
-export default {
+const meta = {
   title: 'ui vue/AppAlert',
   component: AppAlert,
-  tags: ['autodocs'],
   argTypes: {
     severity: {
       control: {
@@ -19,6 +19,10 @@ export default {
     closable: true,
     showIcon: true,
   }
-};
-export const AppAlertExample = {
-};
+} satisfies Meta<typeof AppAlert>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {};

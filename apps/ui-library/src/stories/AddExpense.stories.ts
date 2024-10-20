@@ -1,10 +1,10 @@
+import type { Meta, StoryObj } from '@storybook/vue3';
 import { AddExpense } from '@inkbeard/budget-it';
 import { provide } from 'vue';
 
-export default {
+const meta = {
   component: AddExpense,
   title: 'Budget It/AddExpense',
-  tags: ['autodocs'],
   parameters: {
     layout: 'padded',
   },
@@ -13,9 +13,6 @@ export default {
     isFullWidth: true,
     isAddingExpense: false,
   },
-};
-
-export const AddExpenseComponent = {
   render: (args) => ({
     components: { AddExpense },
     setup() {
@@ -31,4 +28,10 @@ export const AddExpenseComponent = {
     },
     template: '<AddExpense :category-id="args.categoryId" :is-adding-expense="args.isAddingExpense" :is-full-width="args.isFullWidth" />',
   }),
-};
+} satisfies Meta<typeof AddExpense>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Example = {};

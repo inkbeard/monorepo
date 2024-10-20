@@ -1,3 +1,4 @@
+import type { Meta, StoryObj } from '@storybook/vue3';
 import { provide } from 'vue';
 import { AddCategory } from '@inkbeard/budget-it';
 
@@ -32,10 +33,9 @@ const categoryList = [
   },
 ]
 
-export default {
+const meta: Meta<typeof AddCategory> = {
   title: 'Budget It/AddCategory',
   component: AddCategory,
-  tags: ['autodocs'],
   parameters: {
     layout: 'padded',
   },
@@ -43,9 +43,13 @@ export default {
     isAdding: false,
     categoryList,
   },
-};
+}
 
-export const AddCategoryComponent = {
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const AddCategoryComponent: Story = {
   render: (args) => ({
     components: { AddCategory },
     setup() {

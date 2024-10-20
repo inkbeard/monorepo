@@ -1,20 +1,19 @@
+import type { Meta, StoryObj } from '@storybook/vue3';
 import { provide } from 'vue';
 import { ExpenseCategory } from '@inkbeard/budget-it';
 
-const categoryList = [
-  {
-    name: 'Entertainment',
-    id: 1,
-  },
-  {
-    name: 'Food',
-    id: 2,
-  },
-];
-
-const provideSetup = (args) => {
+const provideSetup = () => {
   provide('defaultSourceId', 1);
-  provide('categoryList', categoryList);
+  provide('categoryList', [
+    {
+      name: 'Entertainment',
+      id: 1,
+    },
+    {
+      name: 'Food',
+      id: 2,
+    },
+  ]);
   provide('sourceList', {
     1: 'Credit Card',
     3: 'Checking Account',
@@ -51,25 +50,14 @@ const provideSetup = (args) => {
     { id: 5, label: 'Cash' },
   ]);
 }
-
-export default {
+const meta = {
   component: ExpenseCategory,
   title: 'Budget It/ExpenseCategory',
-  tags: ['autodocs'],
   parameters: {
     layout: 'padded',
   },
   args: {
     isOpen: false,
-  },
-};
-
-export const WithExpensesCollapsed = {
-  args: {
-    category: {
-      name: 'Entertainment',
-      id: 1,
-    },
   },
   render: (args) => ({
     components: { ExpenseCategory },
@@ -80,6 +68,19 @@ export const WithExpensesCollapsed = {
     },
     template: '<ExpenseCategory :category="args.category" :is-open="args.isOpen" />',
   }),
+} satisfies Meta<typeof ExpenseCategory>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const WithExpensesCollapsed = {
+  args: {
+    category: {
+      name: 'Entertainment',
+      id: 1,
+    },
+  },
 };
 
 
@@ -91,13 +92,4 @@ export const NoExpenses = {
     },
     isOpen: true,
   },
-  render: (args) => ({
-    components: { ExpenseCategory },
-    setup() {
-      provideSetup();
-
-      return { args };
-    },
-    template: '<ExpenseCategory :category="args.category" :is-open="args.isOpen" />',
-  }),
 };
