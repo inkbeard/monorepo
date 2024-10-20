@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { MatchedCards } from '@inkbeard/icon-memory';
-import { cards } from '@inkbeard/icon-memory/mockData.ts'
+import { cards } from '@inkbeard/icon-memory/mockData.ts';
 
 const meta = {
   title: 'Icon Memory/MatchedCards',

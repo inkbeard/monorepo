@@ -21,20 +21,20 @@ const meta = {
       control: {
         type: 'select',
         options: [
-          "contrast",
-          "error",
-          "info",
-          "secondary",
-          "success",
-          "warn",
-        ]
+          'contrast',
+          'error',
+          'info',
+          'secondary',
+          'success',
+          'warn',
+        ],
       },
     },
   },
   render: (args) => ({
     components: {
       AppButton,
-      AppToast
+      AppToast,
     },
     setup() {
       const toast = useToast();
@@ -43,10 +43,10 @@ const meta = {
         args,
         showToast: () => {
           toast.add({ ...args });
-        }
+        },
       };
     },
-    template: '<AppToast /><AppButton label="Show" @click="showToast" />'
+    template: '<AppToast /><AppButton label="Show" @click="showToast" />',
   }),
 } satisfies Meta<typeof AppToast>;
 

@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { AppOverlayPanel } from '@inkbeard/ui-vue';
+
 const meta = {
   title: 'ui vue/AppOverlayPanel',
   component: AppOverlayPanel,

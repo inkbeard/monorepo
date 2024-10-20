@@ -7,7 +7,9 @@
     "dev": "storybook dev -p 6006",
     "build": "storybook build",
     "preview": "serve storybook-static",
-    "init-msw": "msw init public/"
+    "init-msw": "msw init public/",
+    "lint": "eslint . --ext .js,.cjs,.ts --ignore-path .gitignore",
+    "lint:fix": "pnpm lint --fix"
   },
   "dependencies": {
     "@inkbeard/budget-it": "workspace:*",

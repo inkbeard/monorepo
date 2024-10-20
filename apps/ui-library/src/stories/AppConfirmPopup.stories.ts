@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/vue3';
 import {
   AppButton,
   AppConfirmPopup,
-  useConfirm
+  useConfirm,
 } from '@inkbeard/ui-vue';
 
 const meta = {
@@ -10,11 +10,10 @@ const meta = {
   render: (args) => ({
     components: {
       AppButton,
-      AppConfirmPopup
+      AppConfirmPopup,
     },
     setup() {
       const confirm = useConfirm();
-
       const showConfirm = ({ currentTarget }) => {
         confirm.require({
           target: currentTarget,
@@ -28,17 +27,19 @@ const meta = {
           rejectIcon: 'fa-solid fa-xmark',
           rejectLabel: 'Cancel',
           accept: () => {
+            // eslint-disable-next-line no-alert
             alert('You have accepted');
           },
           reject: () => {
+            // eslint-disable-next-line no-alert
             alert('You have rejected');
-          }
+          },
         });
-      }
+      };
 
       return { args, showConfirm };
     },
-    template: '<AppConfirmPopup group="testConfirm"/><AppButton label="Click me" @click="showConfirm" />'
+    template: '<AppConfirmPopup group="testConfirm"/><AppButton label="Click me" @click="showConfirm" />',
   }),
 } satisfies Meta<typeof AppConfirmPopup>;
 

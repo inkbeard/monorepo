@@ -12,7 +12,7 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     '@storybook/addon-mdx-gfm',
-    '@storybook/addon-docs',
+    '@storybook/addon-docs'
   ],
   framework: {
     name: '@storybook/vue3-vite',
@@ -25,10 +25,3 @@ const config: StorybookConfig = {
   },
 };
 export default config;
-<<<<<<< HEAD
-=======
-
-// function value){
-//   return dirname(require.resolve(join(value, 'package.json')));
-// }
->>>>>>> a7def21 (moved stories to ts)
