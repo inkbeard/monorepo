@@ -25,3 +25,10 @@ const config: StorybookConfig = {
   },
 };
 export default config;
+<<<<<<< HEAD
+=======
+
+// function value){
+//   return dirname(require.resolve(join(value, 'package.json')));
+// }
+>>>>>>> a7def21 (moved stories to ts)

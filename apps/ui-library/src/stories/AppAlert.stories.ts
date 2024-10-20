@@ -25,4 +25,8 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
+<<<<<<< HEAD
 export const Example: Story = {};
+=======
+export const AppAlertExample: Story = {};
+>>>>>>> a7def21 (moved stories to ts)
