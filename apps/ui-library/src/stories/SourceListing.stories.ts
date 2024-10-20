@@ -1,7 +1,17 @@
+import type { Meta, StoryObj } from '@storybook/vue3';
 import { SourceListing } from '@inkbeard/budget-it';
 import { ref, provide } from 'vue';
+import type { Source } from '@storybook/blocks';
 
-export const CashSourceListing = {
+const meta = {
+  title: 'Budget It/SourceListing',
+  parameters: {
+    layout: 'centered',
+  },
+  args: {
+    isEditing: false,
+    sourceId: 1,
+  },
   render: (args: any) => ({
     components: { SourceListing },
     setup() {
@@ -23,16 +33,10 @@ export const CashSourceListing = {
     },
     template: '<SourceListing :is-editing="args.isEditing" :source-id="args.sourceId" />',
   }),
-};
+} satisfies Meta<typeof SourceListing>;
 
-export default {
-  title: 'Budget It/SourceListing',
-  tags: ['autodocs'],
-  parameters: {
-    layout: 'centered',
-  },
-  args: {
-    isEditing: false,
-    sourceId: 1,
-  }
-};
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {};

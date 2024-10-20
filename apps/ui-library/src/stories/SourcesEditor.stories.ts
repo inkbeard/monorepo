@@ -1,15 +1,12 @@
+import type { Meta, StoryObj } from '@storybook/vue3';
 import { SourcesEditor } from '@inkbeard/budget-it';
 import { provide } from 'vue';
 
-export const SampleSourcesEditor = {};
-
-export default {
+const meta = {
   title: 'Budget It/SourcesEditor',
-  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },
-  args: { ...SampleSourcesEditor },
   render: (args) => ({
     components: { SourcesEditor },
     setup() {
@@ -31,4 +28,10 @@ export default {
     },
     template: '<SourcesEditor/>',
   }),
-};
+} satisfies Meta<typeof SourcesEditor>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {};

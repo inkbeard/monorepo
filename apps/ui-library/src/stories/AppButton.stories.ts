@@ -1,18 +1,15 @@
+import type { Meta, StoryObj } from '@storybook/vue3';
 import { AppButton } from '@inkbeard/ui-vue';
 
-export const PrimaryPlus = {
-  label: 'Primary plus',
-  icon: 'fa-solid fa-plus',
-  isFullWidth: false,
-  disabled: false,
-};
-
-// More on how to set up stories at: https://storybook.js.org/docs/vue/writing-stories/introduction
-export default {
+const meta = {
   title: 'ui vue/AppButton',
   component: AppButton,
-  tags: ['autodocs'],
-  args: { ...PrimaryPlus },
+  args: {
+    label: 'Primary plus',
+    icon: 'fa-solid fa-plus',
+    isFullWidth: false,
+    disabled: false,
+  },
   parameters: {
     layout: 'padded',
     docs: {
@@ -21,4 +18,10 @@ export default {
       }
     }
   },
-};
+} satisfies Meta<typeof AppButton>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {};

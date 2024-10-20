@@ -18,6 +18,9 @@
     '8be04e',
     'ebdc78',
   ];
+  /**
+   * The list of categories from the parent component.
+   */
   const categoryList = inject<CategoryInfo[]>('categoryList', []);
   const addCategory = inject<Function>('addCategory', () => () => {});
   const categoryName = ref('');

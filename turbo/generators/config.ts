@@ -210,8 +210,8 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
         // Add component story file
         {
           type: 'add',
-          path: `${root}/apps/ui-library/src/stories/${componentName}.stories.js`,
-          templateFile: `${templateFolder}/${componentTemplate}.stories.js.hbs`,
+          path: `${root}/apps/ui-library/src/stories/${componentName}.stories.ts`,
+          templateFile: `${templateFolder}/${componentTemplate}.stories.ts.hbs`,
         },
         // Add component changelog
         {

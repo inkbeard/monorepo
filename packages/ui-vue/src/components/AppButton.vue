@@ -10,10 +10,19 @@
      * Whether the button should be disabled. (this is a PrimeVue prop but needed here for better unit testing.)
      */
     disabled?: boolean | number;
+    /**
+     * The icon to display next the label or on its own.
+     */
+    icon?: string;
+    /**
+     * The text to display on the button.
+     */
+    label?: string;
   };
 
   const {
     disabled = false,
+    icon = '',
     isFullWidth = false,
   } = defineProps<AppButtonProps>();
 
@@ -27,6 +36,8 @@
     v-bind="{
       ...$attrs,
       disabled: Boolean(disabled),
+      icon,
+      label,
     }"
     :pt="{
       root: {
