@@ -90,6 +90,11 @@ pull_request_rules:
         type: APPROVE
   - name: Add bot approval for PRs ready to merge
     conditions:
+      - or:
+        - and:
+          - head!=changeset-release/main
+          - and: *ci_success
+        - head=changeset-release/main
       - label=Ready to merge
     actions:
       review:
