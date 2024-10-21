@@ -1,5 +1,14 @@
 # @inkbeard/ui-library
 
+## 1.6.2
+
+### Patch Changes
+
+- 5a54fe4: added storybook eslint rules
+  - @inkbeard/budget-it@1.2.0
+  - @inkbeard/icon-memory@0.4.0
+  - @inkbeard/ui-vue@0.13.0
+
 ## 1.6.1
 
 ### Patch Changes

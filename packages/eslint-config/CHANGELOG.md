@@ -1,5 +1,11 @@
 # @inkbeard/eslint-config
 
+## 0.7.1
+
+### Patch Changes
+
+- 5a54fe4: added storybook eslint rules
+
 ## 0.7.0
 
 ### Minor Changes
