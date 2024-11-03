@@ -12,7 +12,7 @@ updates:
     ignore:
       - dependency-name: "typescript"
       - dependency-name: "@types/node"
-        versions: [">= 21"]
+        versions: [">= 23"]
       - dependency-name: "eslint-plugin-cypress"
         versions: [">= 4"]
       # Pinned to 4.4.0 due to breaking changes in 4.4.1 (https://github.com/vuejs/router/discussions/2321)
