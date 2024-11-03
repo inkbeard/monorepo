@@ -15,6 +15,7 @@ updates:
         versions: [">= 21"]
       - dependency-name: "eslint-plugin-cypress"
         versions: [">= 4"]
+      # Pinned to 4.4.0 due to breaking changes in 4.4.1 (https://github.com/vuejs/router/discussions/2321)
       - dependency-name: "vue-router"
         versions: ["<= 4.4.5"]
       # ignore @vue/eslint-config-typescript since it's only supports flat config
