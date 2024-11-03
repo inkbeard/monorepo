@@ -26,6 +26,7 @@ updates:
         applies-to: version-updates
         patterns:
           - "@storybook*"
+          - "storybook"
       vitest:
         applies-to: version-updates
         patterns:
