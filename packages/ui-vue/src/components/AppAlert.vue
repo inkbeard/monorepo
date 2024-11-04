@@ -37,7 +37,7 @@
     severity?: 'danger'
       | 'info'
       | 'success'
-      | 'warn'
+      | 'warning'
     /**
      * Render the appropriate icon with the alert type.
      */
@@ -66,7 +66,7 @@
       return 'fa-duotone fa-check-circle';
     case 'danger':
       return 'fa-duotone fa-circle-exclamation';
-    case 'warn':
+    case 'warning':
       return 'fa-duotone fa-triangle-exclamation';
     default:
       return 'fa-duotone fa-circle-info';
@@ -175,7 +175,7 @@
     background: var(--ink-success-color-light);
   }
 
-  .is-warn {
+  .is-warning {
     border-color: var(--ink-warning-color);
     color: var(--ink-warning-color);
     background: var(--ink-warning-color-light);

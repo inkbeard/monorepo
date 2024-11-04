@@ -177,7 +177,6 @@
         icon="fa-solid fa-check"
         label="Update"
         raised
-        severity="primary"
         @click="saveExpense"
       />
     </div>

@@ -151,7 +151,7 @@ pull_request_rules:
     actions:
       label:
         toggle:
-          - "failure: unit test"
+          - "failure: unit tests"
   - name: toggle lint failure label
     conditions:
       - -closed

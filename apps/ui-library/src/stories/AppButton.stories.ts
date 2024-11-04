@@ -4,6 +4,23 @@ import { AppButton } from '@inkbeard/ui-vue';
 const meta = {
   title: 'ui vue/AppButton',
   component: AppButton,
+  argTypes: {
+    severity: {
+      control: {
+        type: 'select',
+      },
+      options: [
+        '',
+        'secondary',
+        'info',
+        'success',
+        'warning',
+        'danger',
+        'contrast',
+        'help',
+      ],
+    },
+  },
   args: {
     label: 'Primary plus',
     icon: 'fa-solid fa-plus',

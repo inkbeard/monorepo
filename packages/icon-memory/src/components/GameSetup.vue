@@ -36,7 +36,6 @@
     :disabled="gameHasStarted"
     :label="ctaLabel"
     raised
-    severity="primary"
     @click="$emit('startGame')"
   />
 </template>
