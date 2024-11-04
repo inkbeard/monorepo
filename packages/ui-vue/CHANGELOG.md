@@ -1,5 +1,12 @@
 # @inkbeard/ui-vue
 
+## 0.14.0
+
+### Minor Changes
+
+- a69c01e: - Updated `warn` to `warning` for AppAlert severity
+  - Added `severity` prop to AppButton
+
 ## 0.13.0
 
 ### Minor Changes

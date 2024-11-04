@@ -1,5 +1,19 @@
 # @inkbeard/ui-library
 
+## 1.7.0
+
+### Minor Changes
+
+- a69c01e: - Added `severity` dropdown for AppButton, AppAlert, and AppToast
+
+### Patch Changes
+
+- Updated dependencies [a69c01e]
+- Updated dependencies [a69c01e]
+  - @inkbeard/icon-memory@0.5.0
+  - @inkbeard/budget-it@1.3.0
+  - @inkbeard/ui-vue@0.14.0
+
 ## 1.6.2
 
 ### Patch Changes

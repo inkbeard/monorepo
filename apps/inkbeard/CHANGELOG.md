@@ -1,5 +1,15 @@
 # @inkbeard/website
 
+## 0.15.1
+
+### Patch Changes
+
+- Updated dependencies [a69c01e]
+- Updated dependencies [a69c01e]
+  - @inkbeard/icon-memory@0.5.0
+  - @inkbeard/budget-it@1.3.0
+  - @inkbeard/ui-vue@0.14.0
+
 ## 0.15.0
 
 ### Minor Changes

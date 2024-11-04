@@ -1,5 +1,11 @@
 # @inkbeard/icon-memory
 
+## 0.5.0
+
+### Minor Changes
+
+- a69c01e: removed `primary` severity from buttons
+
 ## 0.4.0
 
 ### Minor Changes
