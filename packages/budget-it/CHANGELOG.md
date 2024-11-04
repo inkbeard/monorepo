@@ -1,5 +1,11 @@
 # @inkbeard/budget-it
 
+## 1.3.0
+
+### Minor Changes
+
+- a69c01e: removed `primary` severity from buttons
+
 ## 1.2.0
 
 ### Minor Changes
