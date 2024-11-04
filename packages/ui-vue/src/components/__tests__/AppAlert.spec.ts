@@ -77,11 +77,11 @@ describe('AppAlert', () => {
     });
 
     it.each`
-      severity         | icon
+      severity     | icon
       ${'danger'}  | ${'fa-duotone fa-circle-exclamation'}
       ${'info'}    | ${'fa-duotone fa-circle-info'}
       ${'success'} | ${'fa-duotone fa-check-circle'}
-      ${'warn'}    | ${'fa-duotone fa-triangle-exclamation'}
+      ${'warning'} | ${'fa-duotone fa-triangle-exclamation'}
     `(
       'should render $icon icon for the $severity severity',
       async ({ severity, icon }) => {

@@ -118,7 +118,6 @@
         icon="fa-solid fa-check"
         label="Submit"
         raised
-        severity="primary"
         @click="submitNewExpense"
       />
     </div>
@@ -135,7 +134,6 @@
       :is-full-width="isFullWidth"
       label="Add expense"
       raised
-      severity="primary"
       @click="isAddingExpense = true"
     />
   </div>

@@ -18,12 +18,18 @@
      * The text to display on the button.
      */
     label?: string;
+    /**
+     * The severity/theme of the button.
+     */
+    severity?: '' | 'secondary' | 'info' | 'success' | 'warning' | 'danger' | 'contrast' | 'help';
   };
 
   const {
     disabled = false,
     icon = '',
     isFullWidth = false,
+    label = '',
+    severity = '',
   } = defineProps<AppButtonProps>();
 
   defineOptions({
@@ -38,6 +44,7 @@
       disabled: Boolean(disabled),
       icon,
       label,
+      severity,
     }"
     :pt="{
       root: {

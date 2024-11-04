@@ -105,7 +105,6 @@
           icon="fa-solid fa-check"
           label="Create"
           raised
-          severity="primary"
           @click="addNewCategory"
         />
       </div>

@@ -26,7 +26,7 @@ const meta = {
           'info',
           'secondary',
           'success',
-          'warn',
+          'warning',
         ],
       },
     },

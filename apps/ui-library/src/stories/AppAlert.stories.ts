@@ -9,7 +9,7 @@ const meta = {
       control: {
         type: 'select',
       },
-      options: ['info', 'success', 'warn', 'danger'],
+      options: ['info', 'success', 'warning', 'danger'],
     },
   },
   args: {
