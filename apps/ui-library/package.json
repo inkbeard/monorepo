@@ -39,7 +39,7 @@
     "msw": "^2.4.9",
     "msw-storybook-addon": "^2.0.3",
     "storybook": "^8.4.2",
-    "vite": "^5.4.9"
+    "vite": "^5.4.10"
   },
   "resolutions": {
     "jackspeak": "2.1.1"
