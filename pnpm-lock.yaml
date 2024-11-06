@@ -191,8 +191,8 @@ importers:
         specifier: ^0.10.2
         version: 0.10.2(eslint@8.57.1)(typescript@5.2.2)
       eslint-plugin-vue:
-        specifier: ^9.28.0
-        version: 9.29.0(eslint@8.57.1)
+        specifier: ^9.30.0
+        version: 9.30.0(eslint@8.57.1)
       msw:
         specifier: ^2.4.9
         version: 2.4.10(typescript@5.2.2)
@@ -243,7 +243,7 @@ importers:
         version: 2.1.4(vitest@2.1.4)
       '@vue/eslint-config-typescript':
         specifier: ^13.0.0
-        version: 13.0.0(eslint-plugin-vue@9.29.0(eslint@8.57.1))(eslint@8.57.1)(typescript@5.2.2)
+        version: 13.0.0(eslint-plugin-vue@9.30.0(eslint@8.57.1))(eslint@8.57.1)(typescript@5.2.2)
       '@vue/test-utils':
         specifier: ^2.4.6
         version: 2.4.6
@@ -260,8 +260,8 @@ importers:
         specifier: ^3.6.0
         version: 3.6.0(eslint@8.57.1)
       eslint-plugin-vue:
-        specifier: ^9.28.0
-        version: 9.29.0(eslint@8.57.1)
+        specifier: ^9.30.0
+        version: 9.30.0(eslint@8.57.1)
       npm-run-all2:
         specifier: ^7.0.1
         version: 7.0.1
@@ -306,10 +306,10 @@ importers:
         version: 1.1.7(@typescript-eslint/utils@8.12.2(eslint@8.57.1)(typescript@5.2.2))(eslint@8.57.1)(typescript@5.2.2)(vitest@2.1.4)
       '@vue/eslint-config-airbnb-with-typescript':
         specifier: ^8.0.0
-        version: 8.0.0(eslint-plugin-vue@9.29.0(eslint@8.57.1))(eslint@8.57.1)(typescript@5.2.2)
+        version: 8.0.0(eslint-plugin-vue@9.30.0(eslint@8.57.1))(eslint@8.57.1)(typescript@5.2.2)
       '@vue/eslint-config-typescript':
         specifier: ^13.0.0
-        version: 13.0.0(eslint-plugin-vue@9.29.0(eslint@8.57.1))(eslint@8.57.1)(typescript@5.2.2)
+        version: 13.0.0(eslint-plugin-vue@9.30.0(eslint@8.57.1))(eslint@8.57.1)(typescript@5.2.2)
       eslint-config-prettier:
         specifier: ^9.1.0
         version: 9.1.0(eslint@8.57.1)
@@ -326,8 +326,8 @@ importers:
         specifier: ^0.10.2
         version: 0.10.2(eslint@8.57.1)(typescript@5.2.2)
       eslint-plugin-vue:
-        specifier: ^9.28.0
-        version: 9.29.0(eslint@8.57.1)
+        specifier: ^9.30.0
+        version: 9.30.0(eslint@8.57.1)
       typescript:
         specifier: 5.2.2
         version: 5.2.2
@@ -372,7 +372,7 @@ importers:
         version: 2.1.4(vitest@2.1.4)
       '@vue/eslint-config-typescript':
         specifier: ^13.0.0
-        version: 13.0.0(eslint-plugin-vue@9.29.0(eslint@8.57.1))(eslint@8.57.1)(typescript@5.2.2)
+        version: 13.0.0(eslint-plugin-vue@9.30.0(eslint@8.57.1))(eslint@8.57.1)(typescript@5.2.2)
       '@vue/test-utils':
         specifier: ^2.4.6
         version: 2.4.6
@@ -380,8 +380,8 @@ importers:
         specifier: ^0.5.1
         version: 0.5.1
       eslint-plugin-vue:
-        specifier: ^9.28.0
-        version: 9.29.0(eslint@8.57.1)
+        specifier: ^9.30.0
+        version: 9.30.0(eslint@8.57.1)
       npm-run-all2:
         specifier: ^7.0.1
         version: 7.0.1
@@ -3721,8 +3721,8 @@ packages:
       vitest:
         optional: true
 
-  eslint-plugin-vue@9.29.0:
-    resolution: {integrity: sha512-hamyjrBhNH6Li6R1h1VF9KHfshJlKgKEg3ARbGTn72CMNDSMhWbgC7NdkRDEh25AFW+4SDATzyNM+3gWuZii8g==}
+  eslint-plugin-vue@9.30.0:
+    resolution: {integrity: sha512-CyqlRgShvljFkOeYK8wN5frh/OGTvkj1S7wlr2Q2pUvwq+X5VYiLd6ZjujpgSgLnys2W8qrBLkXQ41SUYaoPIQ==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
@@ -9679,20 +9679,20 @@ snapshots:
     dependencies:
       rfdc: 1.4.1
 
-  '@vue/eslint-config-airbnb-with-typescript@8.0.0(eslint-plugin-vue@9.29.0(eslint@8.57.1))(eslint@8.57.1)(typescript@5.2.2)':
+  '@vue/eslint-config-airbnb-with-typescript@8.0.0(eslint-plugin-vue@9.30.0(eslint@8.57.1))(eslint@8.57.1)(typescript@5.2.2)':
     dependencies:
       '@eslint-types/import': 2.29.0-1
       '@eslint-types/typescript-eslint': 6.21.0
       '@typescript-eslint/eslint-plugin': 6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.2.2))(eslint@8.57.1)(typescript@5.2.2)
       '@typescript-eslint/parser': 6.21.0(eslint@8.57.1)(typescript@5.2.2)
-      '@vue/eslint-config-airbnb': 8.0.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.2.2))(eslint-import-resolver-typescript@3.6.3)(eslint-plugin-vue@9.29.0(eslint@8.57.1))(eslint@8.57.1)
+      '@vue/eslint-config-airbnb': 8.0.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.2.2))(eslint-import-resolver-typescript@3.6.3)(eslint-plugin-vue@9.30.0(eslint@8.57.1))(eslint@8.57.1)
       eslint: 8.57.1
       eslint-config-airbnb-typescript: 17.1.0(@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.2.2))(eslint@8.57.1)(typescript@5.2.2))(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.2.2))(eslint-plugin-import@2.31.0)(eslint@8.57.1)
       eslint-define-config: 2.1.0
       eslint-import-resolver-node: 0.3.9
       eslint-import-resolver-typescript: 3.6.3(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.2.2))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.31.0)(eslint@8.57.1)
       eslint-plugin-import: 2.31.0(@typescript-eslint/parser@8.8.1(eslint@8.57.1)(typescript@5.2.2))(eslint@8.57.1)
-      eslint-plugin-vue: 9.29.0(eslint@8.57.1)
+      eslint-plugin-vue: 9.30.0(eslint@8.57.1)
       typescript: 5.2.2
       vue-eslint-parser: 9.4.3(eslint@8.57.1)
     transitivePeerDependencies:
@@ -9700,7 +9700,7 @@ snapshots:
       - eslint-plugin-import-x
       - supports-color
 
-  '@vue/eslint-config-airbnb@8.0.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.2.2))(eslint-import-resolver-typescript@3.6.3)(eslint-plugin-vue@9.29.0(eslint@8.57.1))(eslint@8.57.1)':
+  '@vue/eslint-config-airbnb@8.0.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.2.2))(eslint-import-resolver-typescript@3.6.3)(eslint-plugin-vue@9.30.0(eslint@8.57.1))(eslint@8.57.1)':
     dependencies:
       eslint: 8.57.1
       eslint-config-airbnb-base: 15.0.0(eslint-plugin-import@2.31.0)(eslint@8.57.1)
@@ -9709,7 +9709,7 @@ snapshots:
       eslint-plugin-import: 2.31.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.2.2))(eslint-import-resolver-typescript@3.6.3)(eslint@8.57.1)
       eslint-plugin-jsx-a11y: 6.10.0(eslint@8.57.1)
       eslint-plugin-react: 7.37.1(eslint@8.57.1)
-      eslint-plugin-vue: 9.29.0(eslint@8.57.1)
+      eslint-plugin-vue: 9.30.0(eslint@8.57.1)
       eslint-plugin-vuejs-accessibility: 2.4.1(eslint@8.57.1)
       vue-eslint-parser: 9.4.3(eslint@8.57.1)
     transitivePeerDependencies:
@@ -9718,12 +9718,12 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  '@vue/eslint-config-typescript@13.0.0(eslint-plugin-vue@9.29.0(eslint@8.57.1))(eslint@8.57.1)(typescript@5.2.2)':
+  '@vue/eslint-config-typescript@13.0.0(eslint-plugin-vue@9.30.0(eslint@8.57.1))(eslint@8.57.1)(typescript@5.2.2)':
     dependencies:
       '@typescript-eslint/eslint-plugin': 7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.2.2))(eslint@8.57.1)(typescript@5.2.2)
       '@typescript-eslint/parser': 7.18.0(eslint@8.57.1)(typescript@5.2.2)
       eslint: 8.57.1
-      eslint-plugin-vue: 9.29.0(eslint@8.57.1)
+      eslint-plugin-vue: 9.30.0(eslint@8.57.1)
       vue-eslint-parser: 9.4.3(eslint@8.57.1)
     optionalDependencies:
       typescript: 5.2.2
@@ -11336,7 +11336,7 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-vue@9.29.0(eslint@8.57.1):
+  eslint-plugin-vue@9.30.0(eslint@8.57.1):
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.57.1)
       eslint: 8.57.1
