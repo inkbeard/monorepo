@@ -302,8 +302,8 @@ importers:
         specifier: ^6.0.0
         version: 6.0.0(eslint@8.57.1)(prettier@3.3.3)(typescript@5.2.2)(vitest@2.1.4)
       '@vitest/eslint-plugin':
-        specifier: ^1.1.7
-        version: 1.1.7(@typescript-eslint/utils@8.13.0(eslint@8.57.1)(typescript@5.2.2))(eslint@8.57.1)(typescript@5.2.2)(vitest@2.1.4)
+        specifier: ^1.1.8
+        version: 1.1.8(@typescript-eslint/utils@8.13.0(eslint@8.57.1)(typescript@5.2.2))(eslint@8.57.1)(typescript@5.2.2)(vitest@2.1.4)
       '@vue/eslint-config-airbnb-with-typescript':
         specifier: ^8.0.0
         version: 8.0.0(eslint-plugin-vue@9.30.0(eslint@8.57.1))(eslint@8.57.1)(typescript@5.2.2)
@@ -2243,8 +2243,8 @@ packages:
     peerDependencies:
       vitest: 2.1.4
 
-  '@vitest/eslint-plugin@1.1.7':
-    resolution: {integrity: sha512-pTWGW3y6lH2ukCuuffpan6kFxG6nIuoesbhMiQxskyQMRcCN5t9SXsKrNHvEw3p8wcCsgJoRqFZVkOTn6TjclA==}
+  '@vitest/eslint-plugin@1.1.8':
+    resolution: {integrity: sha512-Vej6LT38XxPayXi1RoiExxWgZWuNsx7kMudvRXHsuoYl0BykFB7vAR2OwFpuVFCkW35UW/DQ3EYB1Qj3IYHXvQ==}
     peerDependencies:
       '@typescript-eslint/utils': '>= 8.0'
       eslint: '>= 8.57.0'
@@ -9467,7 +9467,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitest/eslint-plugin@1.1.7(@typescript-eslint/utils@8.13.0(eslint@8.57.1)(typescript@5.2.2))(eslint@8.57.1)(typescript@5.2.2)(vitest@2.1.4)':
+  '@vitest/eslint-plugin@1.1.8(@typescript-eslint/utils@8.13.0(eslint@8.57.1)(typescript@5.2.2))(eslint@8.57.1)(typescript@5.2.2)(vitest@2.1.4)':
     dependencies:
       '@typescript-eslint/utils': 8.13.0(eslint@8.57.1)(typescript@5.2.2)
       eslint: 8.57.1
