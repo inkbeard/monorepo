@@ -23,7 +23,7 @@
     "stylelint": "stylelint \"**/*.{css,scss,vue}\""
   },
   "dependencies": {
-    "primevue": "^3.53.0",
+    "primevue": "^4.2.2",
     "vue": "^3.5.11"
   },
   "devDependencies": {
