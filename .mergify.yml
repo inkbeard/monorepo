@@ -17,11 +17,11 @@ shared:
   default_queue_conditions: &default_queue_conditions
       - and: *ci_success
       - and: *queue_conditions
-      - author!=dependabot[bot]
-  dependabot_queue_conditions: &dependabot_queue_conditions
+      - author!=renovate[bot]
+  renovate_queue_conditions: &renovate_queue_conditions
       - and: *ci_success
       - and: *queue_conditions
-      - author=dependabot[bot]
+      - author=renovate[bot]
   release_queue_conditions: &release_queue_conditions
       - head=changeset-release/main
       - "#approved-reviews-by>=1"
@@ -70,24 +70,24 @@ queue_rules:
     batch_size: 3
     queue_conditions:
       - and: *default_queue_conditions
-  - name: dependabot
+  - name: renovate
     batch_size: 10
     batch_max_wait_time: 30 min
     queue_conditions:
-      - and: *dependabot_queue_conditions
+      - and: *renovate_queue_conditions
 
 pull_request_rules:
   # PR approval rules
-  - name: Automatically approve Dependabot PRs
-    conditions:
-      - author=dependabot[bot]
-      - and: *ci_success
-      - or:
-        - dependabot-update-type=version-update:semver-minor
-        - dependabot-update-type=version-update:semver-patch
-    actions:
-      review:
-        type: APPROVE
+  # - name: Automatically approve Renovate PRs
+  #   conditions:
+  #     - author=renovate[bot]
+  #     - and: *ci_success
+  #     - or:
+  #       - dependabot-update-type=version-update:semver-minor
+  #       - dependabot-update-type=version-update:semver-patch
+  #   actions:
+  #     review:
+  #       type: APPROVE
   - name: Add bot approval for PRs ready to merge
     conditions:
       - or:
@@ -106,12 +106,12 @@ pull_request_rules:
     actions:
       queue:
         name: default
-  - name: Add PR to dependabot queue
+  - name: Add PR to renovate queue
     conditions:
-      - and: *dependabot_queue_conditions
+      - and: *renovate_queue_conditions
     actions:
       queue:
-        name: dependabot
+        name: renovate
   - name: Add PR to release queue
     conditions:
       - and: *release_queue_conditions
