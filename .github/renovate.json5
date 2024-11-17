@@ -1,0 +1,47 @@
+{
+  '$schema': 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: ['config:recommended'],
+  ignoreDeps: [
+    'eslint', // ignore until dependencies support flat configs
+    'primevue', // ignoring until getting a chance to review breaking changes
+    'typescript', // temporarily ignore typescript due to some config issues
+  ],
+  packageRules: [
+    // Use LTS version of node types
+    {
+      packageNames: ['@types/node'],
+      allowedVersions: '<=23'
+    },
+    {
+      // Pinned to 4.4.0 due to breaking changes in 4.4.1 (https://github.com/vuejs/router/discussions/2321)
+      packageNames: ['vue-router'],
+      allowedVersions: '<=4.4.0'
+    },
+    // ignore since v14 requires eslint v9
+    {
+      packageNames: ['@vue/eslint-config-typescript'],
+      allowedVersions: '<14'
+    },
+    // ignore since v4 requires eslint v9
+    {
+      packageNames: ['eslint-plugin-cypress'],
+      allowedVersions: '<4'
+    },
+    // group storybook dependencies
+    {
+      matchPackageNames: [
+        'storybook',
+        '@storybook/**'
+      ],
+      groupName: 'storybook'
+    },
+    // group vitest dependencies
+    {
+      matchPackageNames: [
+        'vitest',
+        '@vitest/**'
+      ],
+      groupName: 'vitest'
+    }
+  ]
+}
