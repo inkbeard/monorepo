@@ -43,6 +43,10 @@
         '@vitest/**'
       ],
       groupName: 'vitest'
+    },
+    {
+      packageNames: ['turborepo'],
+      changelogUrl: 'https://github.com/vercel/turborepo/releases'
     }
   ]
 }
