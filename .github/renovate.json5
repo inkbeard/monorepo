@@ -1,6 +1,7 @@
 {
   '$schema': 'https://docs.renovatebot.com/renovate-schema.json',
   extends: ['config:recommended'],
+  rangeStrategy: 'bump',
   ignoreDeps: [
     'eslint', // ignore until dependencies support flat configs
     'primevue', // ignoring until getting a chance to review breaking changes
