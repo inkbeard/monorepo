@@ -85,7 +85,7 @@ importers:
         specifier: ^20.1.4
         version: 20.1.4
       '@types/jsdom':
-        specifier: ^21.1.6
+        specifier: ^21.1.7
         version: 21.1.7
       '@types/node':
         specifier: ^22.9.0
@@ -227,7 +227,7 @@ importers:
         specifier: ^29.5.14
         version: 29.5.14
       '@types/jsdom':
-        specifier: ^21.1.6
+        specifier: ^21.1.7
         version: 21.1.7
       '@types/node':
         specifier: ^22.9.0
@@ -356,7 +356,7 @@ importers:
         specifier: ^29.5.14
         version: 29.5.14
       '@types/jsdom':
-        specifier: ^21.1.6
+        specifier: ^21.1.7
         version: 21.1.7
       '@types/node':
         specifier: ^22.9.0
@@ -446,7 +446,7 @@ importers:
         specifier: ^20.1.4
         version: 20.1.4
       '@types/jsdom':
-        specifier: ^21.1.6
+        specifier: ^21.1.7
         version: 21.1.7
       '@types/node':
         specifier: ^22.9.0
