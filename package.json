@@ -13,7 +13,7 @@
     "test:unit:watch": "turbo run test:unit:watch",
     "gen:vue-component": "turbo gen vue-component"
   },
-  "packageManager": "pnpm@9.14.2",
+  "packageManager": "pnpm@9.14.4",
   "engines": {
     "node": ">=22"
   },
