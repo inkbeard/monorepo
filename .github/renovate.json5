@@ -34,7 +34,8 @@
         'storybook',
         '@storybook/**'
       ],
-      groupName: 'storybook'
+      groupName: 'storybook',
+      changelogUrl: 'https://github.com/storybookjs/storybook/blob/next/CHANGELOG.md'
     },
     // group vitest dependencies
     {
@@ -44,9 +45,18 @@
       ],
       groupName: 'vitest'
     },
+    // changelog urls
     {
       packageNames: ['turborepo'],
       changelogUrl: 'https://github.com/vercel/turborepo/releases'
+    },
+    {
+      packageNames: ['eslint-plugin-storybook'],
+      changelogUrl: 'https://github.com/storybookjs/eslint-plugin-storybook/blob/main/CHANGELOG.md'
+    },
+    {
+      packageNames: ['cypress'],
+      changelogUrl: 'https://docs.cypress.io/app/references/changelog'
     }
   ]
 }
