@@ -42,7 +42,7 @@ importers:
         specifier: ^3.14.159
         version: 3.14.159(@parcel/watcher@2.4.1)(@types/node@22.9.1)(eslint@8.57.1)(ioredis@5.4.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.24.4)(stylelint@16.10.0(typescript@5.2.2))(terser@5.34.1)(typescript@5.2.2)(vite@5.4.11(@types/node@22.9.1)(terser@5.34.1))(vue-tsc@2.1.10(typescript@5.2.2))
       vue:
-        specifier: ^3.5.11
+        specifier: ^3.5.13
         version: 3.5.13(typescript@5.2.2)
 
   apps/inkbeard:
@@ -66,7 +66,7 @@ importers:
         specifier: ^2.2.8
         version: 2.2.8(typescript@5.2.2)(vue@3.5.13(typescript@5.2.2))
       vue:
-        specifier: ^3.5.11
+        specifier: ^3.5.13
         version: 3.5.13(typescript@5.2.2)
       vue-i18n:
         specifier: ^10.0.5
@@ -142,7 +142,7 @@ importers:
         specifier: ^2.2.8
         version: 2.2.8(typescript@5.2.2)(vue@3.5.13(typescript@5.2.2))
       vue:
-        specifier: ^3.5.11
+        specifier: ^3.5.13
         version: 3.5.13(typescript@5.2.2)
     devDependencies:
       '@inkbeard/eslint-config':
@@ -278,7 +278,7 @@ importers:
         specifier: ^2.1.5
         version: 2.1.5(@types/node@22.9.1)(@vitest/ui@2.1.5)(jsdom@25.0.1)(msw@2.6.6(@types/node@22.9.1)(typescript@5.2.2))(terser@5.34.1)
       vue:
-        specifier: ^3.5.11
+        specifier: ^3.5.13
         version: 3.5.13(typescript@5.2.2)
       vue-chartjs:
         specifier: ^5.3.2
@@ -398,7 +398,7 @@ importers:
         specifier: ^2.1.5
         version: 2.1.5(@types/node@22.9.1)(@vitest/ui@2.1.5)(jsdom@25.0.1)(msw@2.6.6(@types/node@22.9.1)(typescript@5.2.2))(terser@5.34.1)
       vue:
-        specifier: ^3.5.11
+        specifier: ^3.5.13
         version: 3.5.13(typescript@5.2.2)
       vue-tsc:
         specifier: ^2.1.10
@@ -430,7 +430,7 @@ importers:
         specifier: ^3.53.0
         version: 3.53.0(vue@3.5.13(typescript@5.2.2))
       vue:
-        specifier: ^3.5.11
+        specifier: ^3.5.13
         version: 3.5.13(typescript@5.2.2)
     devDependencies:
       '@inkbeard/eslint-config':
