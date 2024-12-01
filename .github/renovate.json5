@@ -57,6 +57,10 @@
     {
       packageNames: ['cypress'],
       changelogUrl: 'https://docs.cypress.io/app/references/changelog'
+    },
+    {
+      packageNames: ['vue'],
+      changelogUrl: 'https://github.com/vuejs/core/blob/main/CHANGELOG.md'
     }
   ]
 }
