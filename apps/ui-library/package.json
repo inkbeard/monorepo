@@ -34,7 +34,7 @@
     "@storybook/vue3-vite": "^8.4.4",
     "@tsconfig/node20": "^20.1.4",
     "@vitejs/plugin-vue": "^5.2.1",
-    "eslint-plugin-storybook": "^0.11.0",
+    "eslint-plugin-storybook": "^0.11.1",
     "eslint-plugin-vue": "^9.31.0",
     "msw": "^2.6.4",
     "msw-storybook-addon": "^2.0.4",
