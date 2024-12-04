@@ -37,7 +37,7 @@
     "chart.js": "^4.4.7",
     "cypress": "^13.16.0",
     "eslint-plugin-cypress": "^3.6.0",
-    "eslint-plugin-vue": "^9.31.0",
+    "eslint-plugin-vue": "^9.32.0",
     "npm-run-all2": "^7.0.1",
     "start-server-and-test": "^2.0.8",
     "typescript": "5.2.2",
