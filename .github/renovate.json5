@@ -61,6 +61,14 @@
     {
       packageNames: ['vue'],
       changelogUrl: 'https://github.com/vuejs/core/blob/main/CHANGELOG.md'
+    },
+    {
+      packageNames: ['pnpm'],
+      changelogUrl: 'https://github.com/pnpm/pnpm/blob/a724295578abe0bbb1e773263a4dc3697f4855e0/pnpm/CHANGELOG.md'
+    },
+    {
+      packageNames: ['node'],
+      changelogUrl: 'https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V22.md'
     }
   ]
 }
