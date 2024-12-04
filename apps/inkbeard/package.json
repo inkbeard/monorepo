@@ -21,7 +21,7 @@
     "@inkbeard/ui-vue": "workspace:*",
     "@vitejs/plugin-basic-ssl": "^1.2.0",
     "flagsmith": "^7.0.2",
-    "pinia": "^2.2.8",
+    "pinia": "^2.3.0",
     "vue": "^3.5.13",
     "vue-i18n": "^10.0.5",
     "vue-router": "4.4.0"
