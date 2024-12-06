@@ -69,6 +69,11 @@
     {
       packageNames: ['node'],
       changelogUrl: 'https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V22.md'
+    },
+    {
+      packageNames: ['pinia'],
+      changelogUrl: 'https://github.com/vuejs/pinia/blob/v2/packages/pinia/CHANGELOG.md'
     }
+
   ]
 }
