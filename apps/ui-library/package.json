@@ -36,7 +36,7 @@
     "@vitejs/plugin-vue": "^5.2.1",
     "eslint-plugin-storybook": "^0.11.1",
     "eslint-plugin-vue": "^9.32.0",
-    "msw": "^2.6.7",
+    "msw": "^2.6.8",
     "msw-storybook-addon": "^2.0.4",
     "storybook": "^8.4.7",
     "vite": "^5.4.11"
