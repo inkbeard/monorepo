@@ -24,7 +24,7 @@
     "@manypkg/cli": "^0.22.0",
     "eslint": "^8.57.1",
     "jsdom": "^25.0.1",
-    "prettier": "^3.4.1",
+    "prettier": "^3.4.2",
     "stylelint": "^16.11.0",
     "turbo": "^2.3.3"
   },
