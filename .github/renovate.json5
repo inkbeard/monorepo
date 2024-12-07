@@ -1,6 +1,9 @@
 {
   '$schema': 'https://docs.renovatebot.com/renovate-schema.json',
-  extends: ['config:recommended'],
+  extends: [
+    'config:recommended',
+    'schedule:earlyMondays', // https://docs.renovatebot.com/presets-schedule/#scheduleearlymondays
+  ],
   rangeStrategy: 'bump',
   ignoreDeps: [
     'eslint', // ignore until dependencies support flat configs
@@ -74,6 +77,5 @@
       packageNames: ['pinia'],
       changelogUrl: 'https://github.com/vuejs/pinia/blob/v2/packages/pinia/CHANGELOG.md'
     }
-
   ]
 }
