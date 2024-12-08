@@ -17,4 +17,4 @@ jobs:
         uses: mscharley/dependency-changesets-action@v1.1.1
         with:
           token: ${{ secrets.RENOVATE_TOKEN }}
-          use-conventional-commits: true
+          use-conventional-commits: false
