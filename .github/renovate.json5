@@ -2,8 +2,9 @@
   '$schema': 'https://docs.renovatebot.com/renovate-schema.json',
   extends: [
     'config:recommended',
-    'schedule:earlyMondays', // https://docs.renovatebot.com/presets-schedule/#scheduleearlymondays
+    'schedule:earlyMondays', // https://docs.renovatebot.com/presets-schedule/#scheduleearlymondays,
   ],
+  labels: ['dependencies'],
   rangeStrategy: 'bump',
   ignoreDeps: [
     'eslint', // ignore until dependencies support flat configs
