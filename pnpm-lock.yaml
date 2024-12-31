@@ -302,8 +302,8 @@ importers:
         specifier: ^6.0.0
         version: 6.0.0(eslint@8.57.1)(prettier@3.4.2)(typescript@5.2.2)(vitest@2.1.8)
       '@vitest/eslint-plugin':
-        specifier: ^1.1.20
-        version: 1.1.20(@typescript-eslint/utils@8.17.0(eslint@8.57.1)(typescript@5.2.2))(eslint@8.57.1)(typescript@5.2.2)(vitest@2.1.8)
+        specifier: ^1.1.22
+        version: 1.1.22(@typescript-eslint/utils@8.17.0(eslint@8.57.1)(typescript@5.2.2))(eslint@8.57.1)(typescript@5.2.2)(vitest@2.1.8)
       '@vue/eslint-config-airbnb-with-typescript':
         specifier: ^8.0.0
         version: 8.0.0(eslint-plugin-vue@9.32.0(eslint@8.57.1))(eslint@8.57.1)(typescript@5.2.2)
@@ -2195,8 +2195,8 @@ packages:
     peerDependencies:
       vitest: 2.1.8
 
-  '@vitest/eslint-plugin@1.1.20':
-    resolution: {integrity: sha512-2eLsgUm+GVOpDfNyH2do//MiNO/WZkXrPi+EjDmXEdUt6Jwnziq4H221L8vJE0aJys+l1FRfSkm4QbaIyDCfBg==}
+  '@vitest/eslint-plugin@1.1.22':
+    resolution: {integrity: sha512-ztvy2+thiCMmKnywvKGhH3AcKgEMGd4BsFK2QC9/EXqlyjXDp7Pg96PonbLx8bDvNCAjq4hfCw5YuZSAz1EDIg==}
     peerDependencies:
       '@typescript-eslint/utils': '>= 8.0'
       eslint: '>= 8.57.0'
@@ -7060,11 +7060,11 @@ packages:
       typescript:
         optional: true
 
-  vue-component-type-helpers@2.1.10:
-    resolution: {integrity: sha512-lfgdSLQKrUmADiSV6PbBvYgQ33KF3Ztv6gP85MfGaGaSGMTXORVaHT1EHfsqCgzRNBstPKYDmvAV9Do5CmJ07A==}
-
   vue-component-type-helpers@2.1.6:
     resolution: {integrity: sha512-ng11B8B/ZADUMMOsRbqv0arc442q7lifSubD0v8oDXIFoMg/mXwAPUunrroIDkY+mcD0dHKccdaznSVp8EoX3w==}
+
+  vue-component-type-helpers@2.2.0:
+    resolution: {integrity: sha512-cYrAnv2me7bPDcg9kIcGwjJiSB6Qyi08+jLDo9yuvoFQjzHiPTzML7RnkJB1+3P6KMsX/KbCD4QE3Tv/knEllw==}
 
   vue-demi@0.14.10:
     resolution: {integrity: sha512-nMZBOwuzabUO0nLgIcc6rycZEebF6eeUfaiQx9+WSk8e29IbLvPU9feI6tqW4kTo3hvoYAJkMh8n8D0fuISphg==}
@@ -8847,7 +8847,7 @@ snapshots:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.5.13(typescript@5.2.2)
-      vue-component-type-helpers: 2.1.10
+      vue-component-type-helpers: 2.2.0
 
   '@testing-library/dom@10.4.0':
     dependencies:
@@ -9415,7 +9415,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitest/eslint-plugin@1.1.20(@typescript-eslint/utils@8.17.0(eslint@8.57.1)(typescript@5.2.2))(eslint@8.57.1)(typescript@5.2.2)(vitest@2.1.8)':
+  '@vitest/eslint-plugin@1.1.22(@typescript-eslint/utils@8.17.0(eslint@8.57.1)(typescript@5.2.2))(eslint@8.57.1)(typescript@5.2.2)(vitest@2.1.8)':
     dependencies:
       '@typescript-eslint/utils': 8.17.0(eslint@8.57.1)(typescript@5.2.2)
       eslint: 8.57.1
@@ -15306,9 +15306,9 @@ snapshots:
     optionalDependencies:
       typescript: 5.2.2
 
-  vue-component-type-helpers@2.1.10: {}
-
   vue-component-type-helpers@2.1.6: {}
+
+  vue-component-type-helpers@2.2.0: {}
 
   vue-demi@0.14.10(vue@3.5.13(typescript@5.2.2)):
     dependencies:
