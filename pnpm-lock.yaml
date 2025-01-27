@@ -63,8 +63,8 @@ importers:
         specifier: ^7.0.2
         version: 7.0.2
       pinia:
-        specifier: ^2.3.0
-        version: 2.3.0(typescript@5.2.2)(vue@3.5.13(typescript@5.2.2))
+        specifier: ^2.3.1
+        version: 2.3.1(typescript@5.2.2)(vue@3.5.13(typescript@5.2.2))
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.2.2)
@@ -139,8 +139,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/ui-vue
       pinia:
-        specifier: ^2.3.0
-        version: 2.3.0(typescript@5.2.2)(vue@3.5.13(typescript@5.2.2))
+        specifier: ^2.3.1
+        version: 2.3.1(typescript@5.2.2)(vue@3.5.13(typescript@5.2.2))
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.2.2)
@@ -4805,6 +4805,7 @@ packages:
 
   lodash.isequal@4.5.0:
     resolution: {integrity: sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==}
+    deprecated: This package is deprecated. Use require('node:util').isDeepStrictEqual instead.
 
   lodash.memoize@4.1.2:
     resolution: {integrity: sha512-t7j+NzmgnQzTAYXcsHYLgimltOV1MXHtlOWf6GjL9Kj8GK5FInw5JotxvbOs+IvV1/Dzo04/fCGfLVs7aXb4Ag==}
@@ -5550,8 +5551,8 @@ packages:
     resolution: {integrity: sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==}
     engines: {node: '>=6'}
 
-  pinia@2.3.0:
-    resolution: {integrity: sha512-ohZj3jla0LL0OH5PlLTDMzqKiVw2XARmC1XYLdLWIPBMdhDW/123ZWr4zVAhtJm+aoSkFa13pYXskAvAscIkhQ==}
+  pinia@2.3.1:
+    resolution: {integrity: sha512-khUlZSwt9xXCaTbbxFYBKDc/bWAGWJjOgvxETwkTN7KRm66EeT1ZdZj6i2ceh9sP2Pzqsbc704r2yngBrxBVug==}
     peerDependencies:
       typescript: '>=4.4.4'
       vue: ^2.7.0 || ^3.5.11
@@ -13710,7 +13711,7 @@ snapshots:
 
   pify@4.0.1: {}
 
-  pinia@2.3.0(typescript@5.2.2)(vue@3.5.13(typescript@5.2.2)):
+  pinia@2.3.1(typescript@5.2.2)(vue@3.5.13(typescript@5.2.2)):
     dependencies:
       '@vue/devtools-api': 6.6.4
       vue: 3.5.13(typescript@5.2.2)
