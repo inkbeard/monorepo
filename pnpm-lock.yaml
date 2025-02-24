@@ -188,8 +188,8 @@ importers:
         specifier: ^5.2.1
         version: 5.2.1(vite@5.4.11(@types/node@22.10.5)(terser@5.34.1))(vue@3.5.13(typescript@5.2.2))
       eslint-plugin-storybook:
-        specifier: ^0.11.2
-        version: 0.11.2(eslint@8.57.1)(typescript@5.2.2)
+        specifier: ^0.11.3
+        version: 0.11.3(eslint@8.57.1)(typescript@5.2.2)
       eslint-plugin-vue:
         specifier: ^9.32.0
         version: 9.32.0(eslint@8.57.1)
@@ -323,8 +323,8 @@ importers:
         specifier: ^0.9.1
         version: 0.9.1(eslint@8.57.1)
       eslint-plugin-storybook:
-        specifier: ^0.11.2
-        version: 0.11.2(eslint@8.57.1)(typescript@5.2.2)
+        specifier: ^0.11.3
+        version: 0.11.3(eslint@8.57.1)(typescript@5.2.2)
       eslint-plugin-vue:
         specifier: ^9.32.0
         version: 9.32.0(eslint@8.57.1)
@@ -3771,11 +3771,12 @@ packages:
     peerDependencies:
       eslint: '>=5.0.0'
 
-  eslint-plugin-storybook@0.11.2:
-    resolution: {integrity: sha512-0Z4DUklJrC+GHjCRXa7PYfPzWC15DaVnwaOYenpgXiCEijXPZkLKCms+rHhtoRcWccP7Z8DpOOaP1gc3P9oOwg==}
+  eslint-plugin-storybook@0.11.3:
+    resolution: {integrity: sha512-gDBnBZiyk4ZG7OMSJRaHBcuJ8TMCXgMIQ3HB/XvtN0SvSio2ZOIeYD3yGj39g/DbyCe/Bg02j/ip9tWlDEs82A==}
     engines: {node: '>= 18'}
     peerDependencies:
       eslint: '>=8'
+      typescript: '>=4.8.4 <5.8.0'
 
   eslint-plugin-testing-library@6.3.0:
     resolution: {integrity: sha512-GYcEErTt6EGwE0bPDY+4aehfEBpB2gDBFKohir8jlATSUvzStEyzCx8QWB/14xeKc/AwyXkzScSzMHnFojkWrA==}
@@ -11638,15 +11639,15 @@ snapshots:
       eslint: 8.57.1
       minimatch: 9.0.5
 
-  eslint-plugin-storybook@0.11.2(eslint@8.57.1)(typescript@5.2.2):
+  eslint-plugin-storybook@0.11.3(eslint@8.57.1)(typescript@5.2.2):
     dependencies:
       '@storybook/csf': 0.1.11
       '@typescript-eslint/utils': 8.17.0(eslint@8.57.1)(typescript@5.2.2)
       eslint: 8.57.1
       ts-dedent: 2.2.0
+      typescript: 5.2.2
     transitivePeerDependencies:
       - supports-color
-      - typescript
 
   eslint-plugin-testing-library@6.3.0(eslint@8.57.1)(typescript@5.2.2):
     dependencies:
