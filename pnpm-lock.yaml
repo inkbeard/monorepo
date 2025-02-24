@@ -251,8 +251,8 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0(typescript@5.2.2)(vue@3.5.13(typescript@5.2.2))
       chart.js:
-        specifier: ^4.4.7
-        version: 4.4.7
+        specifier: ^4.4.8
+        version: 4.4.8
       cypress:
         specifier: ^13.17.0
         version: 13.17.0
@@ -282,7 +282,7 @@ importers:
         version: 3.5.13(typescript@5.2.2)
       vue-chartjs:
         specifier: ^5.3.2
-        version: 5.3.2(chart.js@4.4.7)(vue@3.5.13(typescript@5.2.2))
+        version: 5.3.2(chart.js@4.4.8)(vue@3.5.13(typescript@5.2.2))
       vue-tsc:
         specifier: ^2.1.10
         version: 2.1.10(typescript@5.2.2)
@@ -2920,8 +2920,8 @@ packages:
   chardet@0.7.0:
     resolution: {integrity: sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==}
 
-  chart.js@4.4.7:
-    resolution: {integrity: sha512-pwkcKfdzTMAU/+jNosKhNL2bHtJc/sSmYgVbuGTEDhzkrhmyihmP7vUc/5ZK9WopidMDHNe3Wm7jOd/WhuHWuw==}
+  chart.js@4.4.8:
+    resolution: {integrity: sha512-IkGZlVpXP+83QpMm4uxEiGqSI7jFizwVtF3+n5Pc3k7sMO+tkd0qxh2OzLhenM0K80xtmAONWGBn082EiBQSDA==}
     engines: {pnpm: '>=8'}
 
   check-error@2.1.1:
@@ -10482,7 +10482,7 @@ snapshots:
 
   chardet@0.7.0: {}
 
-  chart.js@4.4.7:
+  chart.js@4.4.8:
     dependencies:
       '@kurkle/color': 0.3.2
 
@@ -15675,9 +15675,9 @@ snapshots:
     dependencies:
       ufo: 1.5.4
 
-  vue-chartjs@5.3.2(chart.js@4.4.7)(vue@3.5.13(typescript@5.2.2)):
+  vue-chartjs@5.3.2(chart.js@4.4.8)(vue@3.5.13(typescript@5.2.2)):
     dependencies:
-      chart.js: 4.4.7
+      chart.js: 4.4.8
       vue: 3.5.13(typescript@5.2.2)
 
   vue-component-meta@2.1.6(typescript@5.2.2):
