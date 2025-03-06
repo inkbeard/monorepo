@@ -9,7 +9,7 @@ From the root of the monorepo, run the following command:
     pnpm i
 
     # Start the server
-    pnpm dev --filter ui-library
+    pnpm dev --filter @inkbeard/ui-library
     ```
 
 ## Learning Storybook

@@ -55,15 +55,15 @@ There are multiple ways to run the units tests for this package. The following c
 
 ### Single run
 ```bash
-pnpm test:unit --filter ui-vue
+pnpm test:unit --filter @inkbeard/ui-vue
 ```
 
 ### Watch mode
 ```bash
-pnpm test:unit:watch --filter ui-vue
+pnpm test:unit:watch --filter @inkbeard/ui-vue
 ```
 
 ### With UI (including coverage report)
 ```bash
-pnpm test:unit:watch --filter ui-vue -- --ui
+pnpm test:unit:watch --filter @inkbeard/ui-vue -- --ui
 ```
