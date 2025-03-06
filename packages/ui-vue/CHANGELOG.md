@@ -1,5 +1,12 @@
 # @inkbeard/ui-vue
 
+## 0.14.1
+
+### Patch Changes
+
+- ba4bc47: Update dependency vite to ^5.4.14
+- 6f956c4: updated readmes for company prefix
+
 ## 0.14.0
 
 ### Minor Changes
