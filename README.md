@@ -38,7 +38,7 @@ To run any of the applications, you can use the following command (after `pnpm i
 
 ```sh
 # pnpm dev --filter name-of-workspace
-pnpm dev --filter ui-library
+pnpm dev --filter @inkbeard/ui-library
 ```
 
 Each application and package has its own `README.md` file with further instructions on how to build, test, run, etc.
