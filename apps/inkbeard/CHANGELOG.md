@@ -1,5 +1,16 @@
 # @inkbeard/website
 
+## 0.15.2
+
+### Patch Changes
+
+- ba4bc47: Update dependency vite to ^5.4.14
+- Updated dependencies [ba4bc47]
+- Updated dependencies [6f956c4]
+  - @inkbeard/budget-it@1.3.1
+  - @inkbeard/icon-memory@0.5.1
+  - @inkbeard/ui-vue@0.14.1
+
 ## 0.15.1
 
 ### Patch Changes
