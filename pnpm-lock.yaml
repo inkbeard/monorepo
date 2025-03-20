@@ -91,8 +91,8 @@ importers:
         specifier: ^22.10.5
         version: 22.10.5
       '@vitejs/plugin-vue':
-        specifier: ^5.2.1
-        version: 5.2.1(vite@5.4.14(@types/node@22.10.5)(terser@5.34.1))(vue@3.5.13(typescript@5.2.2))
+        specifier: ^5.2.3
+        version: 5.2.3(vite@5.4.14(@types/node@22.10.5)(terser@5.34.1))(vue@3.5.13(typescript@5.2.2))
       '@vue/test-utils':
         specifier: ^2.4.6
         version: 2.4.6
@@ -185,8 +185,8 @@ importers:
         specifier: ^20.1.4
         version: 20.1.4
       '@vitejs/plugin-vue':
-        specifier: ^5.2.1
-        version: 5.2.1(vite@5.4.14(@types/node@22.10.5)(terser@5.34.1))(vue@3.5.13(typescript@5.2.2))
+        specifier: ^5.2.3
+        version: 5.2.3(vite@5.4.14(@types/node@22.10.5)(terser@5.34.1))(vue@3.5.13(typescript@5.2.2))
       eslint-plugin-storybook:
         specifier: ^0.11.6
         version: 0.11.6(eslint@8.57.1)(typescript@5.2.2)
@@ -233,8 +233,8 @@ importers:
         specifier: ^22.10.5
         version: 22.10.5
       '@vitejs/plugin-vue':
-        specifier: ^5.2.1
-        version: 5.2.1(vite@5.4.14(@types/node@22.10.5)(terser@5.34.1))(vue@3.5.13(typescript@5.2.2))
+        specifier: ^5.2.3
+        version: 5.2.3(vite@5.4.14(@types/node@22.10.5)(terser@5.34.1))(vue@3.5.13(typescript@5.2.2))
       '@vitest/coverage-istanbul':
         specifier: ^2.1.8
         version: 2.1.8(vitest@2.1.9)
@@ -362,8 +362,8 @@ importers:
         specifier: ^22.10.5
         version: 22.10.5
       '@vitejs/plugin-vue':
-        specifier: ^5.2.1
-        version: 5.2.1(vite@5.4.14(@types/node@22.10.5)(terser@5.34.1))(vue@3.5.13(typescript@5.2.2))
+        specifier: ^5.2.3
+        version: 5.2.3(vite@5.4.14(@types/node@22.10.5)(terser@5.34.1))(vue@3.5.13(typescript@5.2.2))
       '@vitest/coverage-istanbul':
         specifier: ^2.1.8
         version: 2.1.8(vitest@2.1.9)
@@ -452,8 +452,8 @@ importers:
         specifier: ^22.10.5
         version: 22.10.5
       '@vitejs/plugin-vue':
-        specifier: ^5.2.1
-        version: 5.2.1(vite@5.4.14(@types/node@22.10.5)(terser@5.34.1))(vue@3.5.13(typescript@5.2.2))
+        specifier: ^5.2.3
+        version: 5.2.3(vite@5.4.14(@types/node@22.10.5)(terser@5.34.1))(vue@3.5.13(typescript@5.2.2))
       '@vitest/coverage-istanbul':
         specifier: ^2.1.8
         version: 2.1.8(vitest@2.1.9)
@@ -2342,8 +2342,8 @@ packages:
       vite: ^5.0.0 || ^6.0.0
       vue: ^3.0.0
 
-  '@vitejs/plugin-vue@5.2.1':
-    resolution: {integrity: sha512-cxh314tzaWwOLqVes2gnnCtvBDcM1UMdn+iFR+UjAn411dPT3tOmqrJjbMd7koZpMAmBM/GqeV4n9ge7JSiJJQ==}
+  '@vitejs/plugin-vue@5.2.3':
+    resolution: {integrity: sha512-IYSLEQj4LgZZuoVpdSUCw3dIynTWQgPlaRP6iAvMle4My0HdYwr5g5wQAfwOeHQBmYwEkqF70nRpSilr6PoUDg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
       vite: ^5.0.0 || ^6.0.0
@@ -7356,8 +7356,8 @@ packages:
   vue-component-type-helpers@2.1.6:
     resolution: {integrity: sha512-ng11B8B/ZADUMMOsRbqv0arc442q7lifSubD0v8oDXIFoMg/mXwAPUunrroIDkY+mcD0dHKccdaznSVp8EoX3w==}
 
-  vue-component-type-helpers@3.0.0-alpha.2:
-    resolution: {integrity: sha512-dv9YzsuJFLnpRNxKU0exwIlCIA/v+rXrgCsEtaENsFJLPFMw1Sr4IRctilwfjnjCzoJGgGACHRZfxo6ZwlH2fQ==}
+  vue-component-type-helpers@2.2.8:
+    resolution: {integrity: sha512-4bjIsC284coDO9om4HPA62M7wfsTvcmZyzdfR0aUlFXqq4tXxM1APyXpNVxPC8QazKw9OhmZNHBVDA6ODaZsrA==}
 
   vue-demi@0.14.10:
     resolution: {integrity: sha512-nMZBOwuzabUO0nLgIcc6rycZEebF6eeUfaiQx9+WSk8e29IbLvPU9feI6tqW4kTo3hvoYAJkMh8n8D0fuISphg==}
@@ -8706,7 +8706,7 @@ snapshots:
     dependencies:
       '@nuxt/kit': 3.15.4(magicast@0.3.5)
       '@rollup/plugin-replace': 6.0.2(rollup@4.34.6)
-      '@vitejs/plugin-vue': 5.2.1(vite@6.1.1(@types/node@22.10.5)(jiti@2.4.2)(terser@5.34.1)(yaml@2.7.0))(vue@3.5.13(typescript@5.2.2))
+      '@vitejs/plugin-vue': 5.2.3(vite@6.1.1(@types/node@22.10.5)(jiti@2.4.2)(terser@5.34.1)(yaml@2.7.0))(vue@3.5.13(typescript@5.2.2))
       '@vitejs/plugin-vue-jsx': 4.1.1(vite@6.1.1(@types/node@22.10.5)(jiti@2.4.2)(terser@5.34.1)(yaml@2.7.0))(vue@3.5.13(typescript@5.2.2))
       autoprefixer: 10.4.20(postcss@8.5.1)
       consola: 3.4.0
@@ -9308,7 +9308,7 @@ snapshots:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.5.13(typescript@5.2.2)
-      vue-component-type-helpers: 3.0.0-alpha.2
+      vue-component-type-helpers: 2.2.8
 
   '@testing-library/dom@10.4.0':
     dependencies:
@@ -9818,12 +9818,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitejs/plugin-vue@5.2.1(vite@5.4.14(@types/node@22.10.5)(terser@5.34.1))(vue@3.5.13(typescript@5.2.2))':
+  '@vitejs/plugin-vue@5.2.3(vite@5.4.14(@types/node@22.10.5)(terser@5.34.1))(vue@3.5.13(typescript@5.2.2))':
     dependencies:
       vite: 5.4.14(@types/node@22.10.5)(terser@5.34.1)
       vue: 3.5.13(typescript@5.2.2)
 
-  '@vitejs/plugin-vue@5.2.1(vite@6.1.1(@types/node@22.10.5)(jiti@2.4.2)(terser@5.34.1)(yaml@2.7.0))(vue@3.5.13(typescript@5.2.2))':
+  '@vitejs/plugin-vue@5.2.3(vite@6.1.1(@types/node@22.10.5)(jiti@2.4.2)(terser@5.34.1)(yaml@2.7.0))(vue@3.5.13(typescript@5.2.2))':
     dependencies:
       vite: 6.1.1(@types/node@22.10.5)(jiti@2.4.2)(terser@5.34.1)(yaml@2.7.0)
       vue: 3.5.13(typescript@5.2.2)
@@ -15893,7 +15893,7 @@ snapshots:
 
   vue-component-type-helpers@2.1.6: {}
 
-  vue-component-type-helpers@3.0.0-alpha.2: {}
+  vue-component-type-helpers@2.2.8: {}
 
   vue-demi@0.14.10(vue@3.5.13(typescript@5.2.2)):
     dependencies:
