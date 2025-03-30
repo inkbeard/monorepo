@@ -4,27 +4,27 @@ shared:
     - "check-success=Run lint"
     - "check-success=Run stylelint"
     - or:
-      - and:
-        - head=main
-        - "check-success=netlify/dainty-arithmetic-94f385/deploy-preview"
-      - and:
-        - head!=main
+        - and:
+            - head=main
+            - "check-success=netlify/dainty-arithmetic-94f385/deploy-preview"
+        - and:
+            - head!=main
   queue_conditions: &queue_conditions
     - -label=Hold merge
     - -label=Addressing issues
     - -conflict
     - "#approved-reviews-by>=1"
   default_queue_conditions: &default_queue_conditions
-      - and: *ci_success
-      - and: *queue_conditions
-      - author!=renovate[bot]
+    - and: *ci_success
+    - and: *queue_conditions
+    - author!=renovate[bot]
   renovate_queue_conditions: &renovate_queue_conditions
-      - and: *ci_success
-      - and: *queue_conditions
-      - author=renovate[bot]
+    - and: *ci_success
+    - and: *queue_conditions
+    - author=renovate[bot]
   release_queue_conditions: &release_queue_conditions
-      - head=changeset-release/main
-      - "#approved-reviews-by>=1"
+    - head=changeset-release/main
+    - "#approved-reviews-by>=1"
   team_inkbeard: &team_inkbeard
     - files~=^apps/inkbeard/
   team_ui_library: &team_ui_library
@@ -32,12 +32,12 @@ shared:
   team_budget_it: &team_budget_it
     - files~=^apps/budget-it/
   team_general_ui: &team_general_ui
-      - files~=^packages/ui-theme/
-      - files~=^packages/ui-vue/
-      - files~=^packages/ui/
-      - files~=^packages/eslint-config/
-      - files~=^packages/stylelint-config/
-      - files~=^packages/typescript-config/
+    - files~=^packages/ui-theme/
+    - files~=^packages/ui-vue/
+    - files~=^packages/ui/
+    - files~=^packages/eslint-config/
+    - files~=^packages/stylelint-config/
+    - files~=^packages/typescript-config/
 
 partition_rules:
   - name: default
@@ -91,10 +91,10 @@ pull_request_rules:
   - name: Add bot approval for PRs ready to merge
     conditions:
       - or:
-        - and:
-          - head!=changeset-release/main
-          - and: *ci_success
-        - head=changeset-release/main
+          - and:
+              - head!=changeset-release/main
+              - and: *ci_success
+          - head=changeset-release/main
       - label=Ready to merge
     actions:
       review:
@@ -234,3 +234,12 @@ pull_request_rules:
             - workflow: partition.yml
               inputs:
                 project_name: general ui
+priority_rules:
+  - name: priority for queue `release`
+    conditions:
+      - queue-name=release
+    priority: 2500
+  - name: priority for queue `default`
+    conditions:
+      - queue-name=default
+    priority: 2250
