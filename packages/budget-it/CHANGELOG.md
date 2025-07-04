@@ -1,5 +1,11 @@
 # @inkbeard/budget-it
 
+## 1.3.1
+
+### Patch Changes
+
+- ba4bc47: Update dependency vite to ^5.4.14
+
 ## 1.3.0
 
 ### Minor Changes
