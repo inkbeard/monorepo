@@ -166,6 +166,14 @@ pull_request_rules:
       label:
         toggle:
           - "failure: unit tests"
+  - name: toggle codeQl failure label
+    conditions:
+      - -closed
+      - "check-failure=CodeQL"
+    actions:
+      label:
+        toggle:
+          - "failure: CodeQL scan"
   - name: toggle lint failure label
     conditions:
       - -closed
@@ -193,6 +201,7 @@ pull_request_rules:
   - name: Test PR title for Jira IDs
     conditions:
       - -closed
+      - author!=mergify[bot]
       - "check-failure=Title has jira ticket id"
     actions:
       label:
