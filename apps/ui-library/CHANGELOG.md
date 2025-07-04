@@ -1,5 +1,17 @@
 # @inkbeard/ui-library
 
+## 1.7.1
+
+### Patch Changes
+
+- ba4bc47: Update dependency vite to ^5.4.14
+- 6f956c4: updated readmes for company prefix
+- Updated dependencies [ba4bc47]
+- Updated dependencies [6f956c4]
+  - @inkbeard/budget-it@1.3.1
+  - @inkbeard/icon-memory@0.5.1
+  - @inkbeard/ui-vue@0.14.1
+
 ## 1.7.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @inkbeard/icon-memory
 
+## 0.5.1
+
+### Patch Changes
+
+- ba4bc47: Update dependency vite to ^5.4.14
+
 ## 0.5.0
 
 ### Minor Changes
