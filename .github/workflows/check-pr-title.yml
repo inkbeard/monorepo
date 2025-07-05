@@ -14,7 +14,7 @@ concurrency:
 jobs:
   check_pr_title:
     name: Title has jira ticket id
-    runs-on: 'ubuntu-latest'
+    runs-on: ubuntu-latest
     if: ${{ github.actor != 'renovate[bot]' || github.actor != 'mergify[bot]' }}
     steps:
       - name: Checkout
