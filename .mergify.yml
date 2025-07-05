@@ -3,6 +3,8 @@ shared:
     - "check-success=Run unit tests"
     - "check-success=Run lint"
     - "check-success=Run stylelint"
+    - "check-success=Build"
+    - "check-success=Title has jira ticket id"
     - or:
         - and:
             - head=main
@@ -188,6 +190,14 @@ pull_request_rules:
       label:
         toggle:
           - "failure: build"
+  - name: Test PR title for Jira IDs
+    conditions:
+      - -closed
+      - "check-failure=Title has jira ticket id"
+    actions:
+      label:
+        toggle:
+          - "failure: title"
   # Partition rules
   # Would ideally have this as dynamic, but Mergify doesn't support the `partition-queue-name` attribute at the moment.
   - name: inkbeard partition workflow
