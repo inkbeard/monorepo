@@ -1,5 +1,8 @@
 name: PR Title Check
 
+permissions:
+  contents: read
+
 on:
   pull_request:
     types: [opened, reopened, synchronize, edited]
@@ -12,7 +15,7 @@ jobs:
   check_pr_title:
     name: Title has jira ticket id
     runs-on: 'ubuntu-latest'
-    if: ${{ github.actor != 'renovate[bot]' }}
+    if: ${{ github.actor != 'renovate[bot]' || github.actor != 'mergify[bot]' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,7 +27,9 @@ jobs:
           YELLOW="\033[1;33m"
           CYAN="\033[0;36m"
           RED="\033[0;31m"
-          NC="\033[0m" # No Color
+          NC="\033[0m"
+
+          STRING=$(echo "${{ github.event.pull_request.title }}")
 
           echo -e "${CYAN}Checking string...${NC}"
           echo -e "${YELLOW}$STRING${NC}"
