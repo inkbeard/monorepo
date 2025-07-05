@@ -4,7 +4,6 @@ shared:
     - "check-success=Run lint"
     - "check-success=Run stylelint"
     - "check-success=Build"
-    - "check-success=Title has jira ticket id"
     - or:
         - and:
             - head=main
