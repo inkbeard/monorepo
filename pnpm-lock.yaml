@@ -18,8 +18,8 @@ importers:
         specifier: workspace:*
         version: link:packages/typescript-config
       '@manypkg/cli':
-        specifier: ^0.22.0
-        version: 0.22.0
+        specifier: ^0.24.0
+        version: 0.24.0
       eslint:
         specifier: ^8.57.1
         version: 8.57.1
@@ -1486,28 +1486,28 @@ packages:
   '@kwsites/promise-deferred@1.1.1':
     resolution: {integrity: sha512-GaHYm+c0O9MjZRu0ongGBRbinu8gVAMd2UZjji6jVmqKtZluZnptXGWhz1E8j8D2HJ3f/yMxKAUC0b+57wncIw==}
 
-  '@manypkg/cli@0.22.0':
-    resolution: {integrity: sha512-HwONx0Pr9ucehlrMvFMSuztLiKfwPYkjRDc0ymL5RiGYBk1slX8k3RWy+F01f1T+JLbImthSGMwY04Ojt20nTA==}
-    engines: {node: '>=18.0.0'}
+  '@manypkg/cli@0.24.0':
+    resolution: {integrity: sha512-O1vbx4TnwaeeDXlNaa+N0LIKg3JmI2gEG8JaGn97UuXgiXJIYlAhfepJTykICV0i0oQHvb0xNfNmvYhwJ/cGgA==}
+    engines: {node: '>=20.0.0'}
     hasBin: true
 
   '@manypkg/find-root@1.1.0':
     resolution: {integrity: sha512-mki5uBvhHzO8kYYix/WRy2WX8S3B5wdVSc9D6KcU5lQNglP2yt58/VfLuAK49glRXChosY8ap2oJ1qgma3GUVA==}
 
-  '@manypkg/find-root@2.2.3':
-    resolution: {integrity: sha512-jtEZKczWTueJYHjGpxU3KJQ08Gsrf4r6Q2GjmPp/RGk5leeYAA1eyDADSAF+KVCsQ6EwZd/FMcOFCoMhtqdCtQ==}
-    engines: {node: '>=14.18.0'}
+  '@manypkg/find-root@3.0.0':
+    resolution: {integrity: sha512-uO3Rag7b0upqBGTJyZN2dPwaBdbGBZwT892RkUxzEgxgWccHGM5hZnXAy13Es95CVpsJ/QuEb2uNJ8pYBK0ZlA==}
+    engines: {node: '>=20.0.0'}
 
   '@manypkg/get-packages@1.1.3':
     resolution: {integrity: sha512-fo+QhuU3qE/2TQMQmbVMqaQ6EWbMhi4ABWP+O4AM1NqPBuy0OrApV5LO6BrrgnhtAHS2NH6RrVk9OL181tTi8A==}
 
-  '@manypkg/get-packages@2.2.2':
-    resolution: {integrity: sha512-3+Zd8kLZmsyJFmWTBtY0MAuCErI7yKB2cjMBlujvSVKZ2R/BMXi0kjCXu2dtRlSq/ML86t1FkumT0yreQ3n8OQ==}
-    engines: {node: '>=14.18.0'}
+  '@manypkg/get-packages@3.0.0':
+    resolution: {integrity: sha512-C5TGJoG/MaVGt0HDij+RYQxVw/O/GDNJc4+qwv8g6wtbGEE8wawCcrQns8+qaNsZJybTTHYgdw7eD3wQhuxTng==}
+    engines: {node: '>=20.0.0'}
 
-  '@manypkg/tools@1.1.2':
-    resolution: {integrity: sha512-3lBouSuF7CqlseLB+FKES0K4FQ02JrbEoRtJhxnsyB1s5v4AP03gsoohN8jp7DcOImhaR9scYdztq3/sLfk/qQ==}
-    engines: {node: '>=14.18.0'}
+  '@manypkg/tools@2.0.0':
+    resolution: {integrity: sha512-o4ZC8J9OmFT6Ar8hhObWrFe7M7TRFuskm8ROhroZZWdQ+/V1+RswP74wJkkDKY/VDcteKYCACq2PblifRRnj1g==}
+    engines: {node: '>=20.0.0'}
 
   '@mapbox/node-pre-gyp@2.0.0':
     resolution: {integrity: sha512-llMXd39jtP0HpQLVI37Bf1m2ADlEb35GYSh1SDSLsBhR+5iCxiNGlT31yqbNtVHygHAtMy6dWFERpU2JgufhPg==}
@@ -6104,6 +6104,10 @@ packages:
     resolution: {integrity: sha512-5b0R4txpzjPWVw/cXXUResoD4hb6U/x9BH08L7nw+GN1sezDzPdxeRvpc9c433fZhBan/wusjbCsqwqm4EIBIQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
+  p-limit@6.2.0:
+    resolution: {integrity: sha512-kuUqqHNUqoIWp/c467RI4X6mmyuojY5jGutNU0wVTmEOOfcuwLqyMVoAi9MKi2Ak+5i9+nhmrK4ufZE8069kHA==}
+    engines: {node: '>=18'}
+
   p-locate@4.1.0:
     resolution: {integrity: sha512-R79ZZ/0wAxKGu3oYMlz8jy/kbhsNrS7SKZ7PxEHBgJ5+F2mtFW2fK2cOtBh1cHYkQsbzFV7I+EoRKe6Yt0oK7A==}
     engines: {node: '>=8'}
@@ -7391,9 +7395,6 @@ packages:
   tinybench@2.9.0:
     resolution: {integrity: sha512-0+DUvqWMValLmha6lr4kD8iAMK1HzV0/aKnCtWb9v9641TnP/MFb7Pc2bxoxQjTXAErryXVgUOfv2YqNllqGeg==}
 
-  tinyexec@0.3.1:
-    resolution: {integrity: sha512-WiCJLEECkO18gwqIp6+hJg0//p23HXp4S+gGtAKu3mI2F2/sXC4FvHvXvB0zJVVaTPhx1/tOwdbRsa1sOBIKqQ==}
-
   tinyexec@0.3.2:
     resolution: {integrity: sha512-KQQR9yN7R5+OSwaK0XQoj22pwHoTlgYqmUscPYoknOoWCWfj/5/ABTMRi69FrKU5ffPVh5QcFikpWJI/P1ocHA==}
 
@@ -7844,9 +7845,9 @@ packages:
   validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
 
-  validate-npm-package-name@5.0.1:
-    resolution: {integrity: sha512-OljLrQ9SQdOUqTaQxqL5dEfZWrXExyyWsozYlAWFawPVNuD83igl7uJD2RTkNMbniIYgt8l81eCJGIdQF7avLQ==}
-    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+  validate-npm-package-name@6.0.1:
+    resolution: {integrity: sha512-OaI//3H0J7ZkR1OqlhGA8cA+Cbk/2xFOQpJOt5+s27/ta9eZwpeervh4Mxh4w0im/kdgktowaqVNR7QOrUd7Yg==}
+    engines: {node: ^18.17.0 || >=20.5.0}
 
   verror@1.10.0:
     resolution: {integrity: sha512-ZZKSmDAEFOijERBLkmYfJ+vmk3w+7hOLYDNkRCuRuMJGEmqYNCNLyBBFwWKVMhfwaEF3WOd0Zlw86U/WC/+nYw==}
@@ -9366,19 +9367,19 @@ snapshots:
 
   '@kwsites/promise-deferred@1.1.1': {}
 
-  '@manypkg/cli@0.22.0':
+  '@manypkg/cli@0.24.0':
     dependencies:
-      '@manypkg/get-packages': 2.2.2
-      detect-indent: 6.1.0
+      '@manypkg/get-packages': 3.0.0
+      detect-indent: 7.0.1
       normalize-path: 3.0.0
-      p-limit: 2.3.0
+      p-limit: 6.2.0
       package-json: 10.0.1
       parse-github-url: 1.0.3
-      picocolors: 1.1.0
+      picocolors: 1.1.1
       sembear: 0.7.0
-      semver: 7.6.3
-      tinyexec: 0.3.1
-      validate-npm-package-name: 5.0.1
+      semver: 7.7.2
+      tinyexec: 1.0.1
+      validate-npm-package-name: 6.0.1
 
   '@manypkg/find-root@1.1.0':
     dependencies:
@@ -9387,9 +9388,9 @@ snapshots:
       find-up: 4.1.0
       fs-extra: 8.1.0
 
-  '@manypkg/find-root@2.2.3':
+  '@manypkg/find-root@3.0.0':
     dependencies:
-      '@manypkg/tools': 1.1.2
+      '@manypkg/tools': 2.0.0
 
   '@manypkg/get-packages@1.1.3':
     dependencies:
@@ -9400,16 +9401,16 @@ snapshots:
       globby: 11.1.0
       read-yaml-file: 1.1.0
 
-  '@manypkg/get-packages@2.2.2':
+  '@manypkg/get-packages@3.0.0':
     dependencies:
-      '@manypkg/find-root': 2.2.3
-      '@manypkg/tools': 1.1.2
+      '@manypkg/find-root': 3.0.0
+      '@manypkg/tools': 2.0.0
 
-  '@manypkg/tools@1.1.2':
+  '@manypkg/tools@2.0.0':
     dependencies:
-      fast-glob: 3.3.3
       jju: 1.4.0
       js-yaml: 4.1.0
+      tinyglobby: 0.2.14
 
   '@mapbox/node-pre-gyp@2.0.0':
     dependencies:
@@ -15267,6 +15268,10 @@ snapshots:
     dependencies:
       yocto-queue: 1.2.1
 
+  p-limit@6.2.0:
+    dependencies:
+      yocto-queue: 1.2.1
+
   p-locate@4.1.0:
     dependencies:
       p-limit: 2.3.0
@@ -15302,7 +15307,7 @@ snapshots:
       ky: 1.7.2
       registry-auth-token: 5.0.2
       registry-url: 6.0.1
-      semver: 7.6.3
+      semver: 7.7.2
 
   package-manager-detector@0.2.8: {}
 
@@ -16147,7 +16152,7 @@ snapshots:
 
   sembear@0.7.0:
     dependencies:
-      semver: 7.6.3
+      semver: 7.7.2
 
   semver@5.7.2: {}
 
@@ -16702,8 +16707,6 @@ snapshots:
 
   tinybench@2.9.0: {}
 
-  tinyexec@0.3.1: {}
-
   tinyexec@0.3.2: {}
 
   tinyexec@1.0.1: {}
@@ -17143,7 +17146,7 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
-  validate-npm-package-name@5.0.1: {}
+  validate-npm-package-name@6.0.1: {}
 
   verror@1.10.0:
     dependencies:
