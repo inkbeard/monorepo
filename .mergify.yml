@@ -5,9 +5,6 @@ shared:
     - "check-success=Run stylelint"
     - "check-success=Build"
     - or:
-      - "check-neutral=Title has jira ticket id"
-      - "check-success=Title has jira ticket id"
-    - or:
         - and:
             - head=main
             - "check-success=netlify/dainty-arithmetic-94f385/deploy-preview"
