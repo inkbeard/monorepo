@@ -251,8 +251,8 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0(typescript@5.2.2)(vue@3.5.13(typescript@5.2.2))
       chart.js:
-        specifier: ^4.4.8
-        version: 4.4.8
+        specifier: ^4.5.0
+        version: 4.5.0
       cypress:
         specifier: ^13.17.0
         version: 13.17.0
@@ -282,7 +282,7 @@ importers:
         version: 3.5.13(typescript@5.2.2)
       vue-chartjs:
         specifier: ^5.3.2
-        version: 5.3.2(chart.js@4.4.8)(vue@3.5.13(typescript@5.2.2))
+        version: 5.3.2(chart.js@4.5.0)(vue@3.5.13(typescript@5.2.2))
       vue-tsc:
         specifier: ^2.1.10
         version: 2.1.10(typescript@5.2.2)
@@ -3274,8 +3274,8 @@ packages:
   chardet@0.7.0:
     resolution: {integrity: sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==}
 
-  chart.js@4.4.8:
-    resolution: {integrity: sha512-IkGZlVpXP+83QpMm4uxEiGqSI7jFizwVtF3+n5Pc3k7sMO+tkd0qxh2OzLhenM0K80xtmAONWGBn082EiBQSDA==}
+  chart.js@4.5.0:
+    resolution: {integrity: sha512-aYeC/jDgSEx8SHWZvANYMioYMZ2KX02W6f6uVfyteuCGcadDLcYVHdfdygsTQkQ4TKn5lghoojAsPj5pu0SnvQ==}
     engines: {pnpm: '>=8'}
 
   check-error@2.1.1:
@@ -8054,8 +8054,8 @@ packages:
   vue-component-type-helpers@2.1.6:
     resolution: {integrity: sha512-ng11B8B/ZADUMMOsRbqv0arc442q7lifSubD0v8oDXIFoMg/mXwAPUunrroIDkY+mcD0dHKccdaznSVp8EoX3w==}
 
-  vue-component-type-helpers@3.0.1:
-    resolution: {integrity: sha512-j23mCB5iEbGsyIhnVdXdWUOg+UdwmVxpKnYYf2j+4ppCt5VSFXKjwu9YFt0QYxUaf5G99PuHsVfRScjHCRSsGQ==}
+  vue-component-type-helpers@3.0.4:
+    resolution: {integrity: sha512-WtR3kPk8vqKYfCK/HGyT47lK/T3FaVyWxaCNuosaHYE8h9/k0lYRZ/PI/+T/z2wP+uuNKmL6z30rOcBboOu/YA==}
 
   vue-demi@0.14.10:
     resolution: {integrity: sha512-nMZBOwuzabUO0nLgIcc6rycZEebF6eeUfaiQx9+WSk8e29IbLvPU9feI6tqW4kTo3hvoYAJkMh8n8D0fuISphg==}
@@ -10306,7 +10306,7 @@ snapshots:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.5.13(typescript@5.2.2)
-      vue-component-type-helpers: 3.0.1
+      vue-component-type-helpers: 3.0.4
 
   '@testing-library/dom@10.4.0':
     dependencies:
@@ -11725,7 +11725,7 @@ snapshots:
 
   chardet@0.7.0: {}
 
-  chart.js@4.4.8:
+  chart.js@4.5.0:
     dependencies:
       '@kurkle/color': 0.3.2
 
@@ -17328,9 +17328,9 @@ snapshots:
     dependencies:
       ufo: 1.6.1
 
-  vue-chartjs@5.3.2(chart.js@4.4.8)(vue@3.5.13(typescript@5.2.2)):
+  vue-chartjs@5.3.2(chart.js@4.5.0)(vue@3.5.13(typescript@5.2.2)):
     dependencies:
-      chart.js: 4.4.8
+      chart.js: 4.5.0
       vue: 3.5.13(typescript@5.2.2)
 
   vue-component-meta@2.1.6(typescript@5.2.2):
@@ -17344,7 +17344,7 @@ snapshots:
 
   vue-component-type-helpers@2.1.6: {}
 
-  vue-component-type-helpers@3.0.1: {}
+  vue-component-type-helpers@3.0.4: {}
 
   vue-demi@0.14.10(vue@3.5.13(typescript@5.2.2)):
     dependencies:
