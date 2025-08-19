@@ -34,7 +34,7 @@
     "@types/node": "^22.10.5",
     "@vitejs/plugin-vue": "^5.2.3",
     "@vue/test-utils": "^2.4.6",
-    "@vue/tsconfig": "^0.7.0",
+    "@vue/tsconfig": "^0.8.1",
     "cypress": "^13.17.0",
     "eslint-plugin-cypress": "^3.6.0",
     "npm-run-all2": "^7.0.2",
