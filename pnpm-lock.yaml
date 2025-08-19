@@ -91,8 +91,8 @@ importers:
         specifier: ^22.10.5
         version: 22.10.5
       '@vitejs/plugin-vue':
-        specifier: ^5.2.3
-        version: 5.2.3(vite@5.4.19(@types/node@22.10.5)(terser@5.43.1))(vue@3.5.13(typescript@5.2.2))
+        specifier: ^5.2.4
+        version: 5.2.4(vite@5.4.19(@types/node@22.10.5)(terser@5.43.1))(vue@3.5.13(typescript@5.2.2))
       '@vue/test-utils':
         specifier: ^2.4.6
         version: 2.4.6
@@ -185,8 +185,8 @@ importers:
         specifier: ^20.1.6
         version: 20.1.6
       '@vitejs/plugin-vue':
-        specifier: ^5.2.3
-        version: 5.2.3(vite@5.4.19(@types/node@22.10.5)(terser@5.43.1))(vue@3.5.13(typescript@5.2.2))
+        specifier: ^5.2.4
+        version: 5.2.4(vite@5.4.19(@types/node@22.10.5)(terser@5.43.1))(vue@3.5.13(typescript@5.2.2))
       eslint-plugin-storybook:
         specifier: ^0.12.0
         version: 0.12.0(eslint@8.57.1)(typescript@5.2.2)
@@ -233,8 +233,8 @@ importers:
         specifier: ^22.10.5
         version: 22.10.5
       '@vitejs/plugin-vue':
-        specifier: ^5.2.3
-        version: 5.2.3(vite@5.4.19(@types/node@22.10.5)(terser@5.43.1))(vue@3.5.13(typescript@5.2.2))
+        specifier: ^5.2.4
+        version: 5.2.4(vite@5.4.19(@types/node@22.10.5)(terser@5.43.1))(vue@3.5.13(typescript@5.2.2))
       '@vitest/coverage-istanbul':
         specifier: ^2.1.9
         version: 2.1.9(vitest@2.1.9)
@@ -362,8 +362,8 @@ importers:
         specifier: ^22.10.5
         version: 22.10.5
       '@vitejs/plugin-vue':
-        specifier: ^5.2.3
-        version: 5.2.3(vite@5.4.19(@types/node@22.10.5)(terser@5.43.1))(vue@3.5.13(typescript@5.2.2))
+        specifier: ^5.2.4
+        version: 5.2.4(vite@5.4.19(@types/node@22.10.5)(terser@5.43.1))(vue@3.5.13(typescript@5.2.2))
       '@vitest/coverage-istanbul':
         specifier: ^2.1.9
         version: 2.1.9(vitest@2.1.9)
@@ -452,8 +452,8 @@ importers:
         specifier: ^22.10.5
         version: 22.10.5
       '@vitejs/plugin-vue':
-        specifier: ^5.2.3
-        version: 5.2.3(vite@5.4.19(@types/node@22.10.5)(terser@5.43.1))(vue@3.5.13(typescript@5.2.2))
+        specifier: ^5.2.4
+        version: 5.2.4(vite@5.4.19(@types/node@22.10.5)(terser@5.43.1))(vue@3.5.13(typescript@5.2.2))
       '@vitest/coverage-istanbul':
         specifier: ^2.1.9
         version: 2.1.9(vitest@2.1.9)
@@ -2612,13 +2612,6 @@ packages:
     peerDependencies:
       vite: ^5.0.0 || ^6.0.0
       vue: ^3.0.0
-
-  '@vitejs/plugin-vue@5.2.3':
-    resolution: {integrity: sha512-IYSLEQj4LgZZuoVpdSUCw3dIynTWQgPlaRP6iAvMle4My0HdYwr5g5wQAfwOeHQBmYwEkqF70nRpSilr6PoUDg==}
-    engines: {node: ^18.0.0 || >=20.0.0}
-    peerDependencies:
-      vite: ^5.0.0 || ^6.0.0
-      vue: ^3.2.25
 
   '@vitejs/plugin-vue@5.2.4':
     resolution: {integrity: sha512-7Yx/SXSOcQq5HiiV3orevHUFn+pmMB4cgbEkDYgnkUWb0WfeQ/wa2yFv6D5ICiCQOVpjA7vYDXrC7AGO8yjDHA==}
@@ -10890,7 +10883,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitejs/plugin-vue@5.2.3(vite@5.4.19(@types/node@22.10.5)(terser@5.43.1))(vue@3.5.13(typescript@5.2.2))':
+  '@vitejs/plugin-vue@5.2.4(vite@5.4.19(@types/node@22.10.5)(terser@5.43.1))(vue@3.5.13(typescript@5.2.2))':
     dependencies:
       vite: 5.4.19(@types/node@22.10.5)(terser@5.43.1)
       vue: 3.5.13(typescript@5.2.2)
