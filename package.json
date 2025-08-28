@@ -21,7 +21,7 @@
     "@changesets/cli": "^2.27.12",
     "@inkbeard/eslint-config": "workspace:*",
     "@inkbeard/typescript-config": "workspace:*",
-    "@manypkg/cli": "^0.22.0",
+    "@manypkg/cli": "^0.25.1",
     "eslint": "^8.57.1",
     "jsdom": "^25.0.1",
     "prettier": "^3.4.2",
