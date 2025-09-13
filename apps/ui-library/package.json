@@ -17,12 +17,12 @@
     "@inkbeard/ui-theme": "workspace:*",
     "@inkbeard/ui-vue": "workspace:*",
     "pinia": "^2.3.1",
-    "vue": "^3.5.13"
+    "vue": "^3.5.21"
   },
   "devDependencies": {
     "@inkbeard/eslint-config": "workspace:*",
     "@inkbeard/stylelint-config": "workspace:*",
-    "@rushstack/eslint-patch": "^1.10.5",
+    "@rushstack/eslint-patch": "^1.12.0",
     "@storybook/addon-docs": "^8.4.7",
     "@storybook/addon-essentials": "^8.4.7",
     "@storybook/addon-interactions": "^8.4.7",

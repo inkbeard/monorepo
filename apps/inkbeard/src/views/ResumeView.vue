@@ -12,6 +12,20 @@
   ];
   const experience = [
     {
+      company: 'Ahold Delhaize',
+      title: 'Contract Software Engineer',
+      dates: 'Aug 2024 - current',
+      description: [
+        /* eslint-disable vue/max-len */
+        'Helped lead the scaling of core repo and design system to accommodate 30+ engineers, implementing CI configuration and coding standards.',
+        'Implemented github/jira automation tooling to streamline workflow and release management processes, saving countless hours of daily/weekly manual work.',
+        'Assisted in streamlining agile processes to ensure efficient workflow within the team.',
+        'Orchestrated migration from gitflow to trunk based development.',
+        'Developed core components for major grocery brands in the US, contributing to company growth.',
+        /* eslint-enable vue/max-len */
+      ],
+    },
+    {
       company: 'ThreeFlow',
       title: 'Sr Software Engineer / Engineering Team Lead',
       dates: 'Jun 2019 - November 2023',
