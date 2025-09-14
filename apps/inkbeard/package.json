@@ -1,6 +1,6 @@
 {
   "name": "@inkbeard/website",
-  "version": "0.15.2",
+  "version": "0.16.0",
   "scripts": {
     "dev": "vite --open",
     "build": "run-p type-check \"build-only {@}\" --",
