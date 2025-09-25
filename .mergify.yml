@@ -40,29 +40,10 @@ shared:
     - files~=^packages/stylelint-config/
     - files~=^packages/typescript-config/
 
-partition_rules:
-  - name: default
-    fallback_partition: true
-
-  - name: inkbeard
-    conditions:
-      - and: *team_inkbeard
-
-  - name: examples
-    conditions:
-      - and: *team_ui_library
-
-  - name: budget-it
-    conditions:
-      - and: *team_budget_it
-
-  - name: general ui
-    conditions:
-      - and: *team_general_ui
-
 merge_queue:
   max_parallel_checks: 3
 
+  reset_on_external_merge: never
 queue_rules:
   - name: release
     queue_conditions:
@@ -76,6 +57,32 @@ queue_rules:
     batch_max_wait_time: 30 min
     queue_conditions:
       - and: *renovate_queue_conditions
+
+  - name: queue rule for `inkbeard`
+    queue_conditions:
+      - and:
+          - files~=^apps/inkbeard/
+
+  - name: queue rule for `examples`
+    queue_conditions:
+      - and:
+          - files~=^apps/ui-library/
+
+  - name: queue rule for `budget-it`
+    queue_conditions:
+      - and:
+          - files~=^apps/budget-it/
+
+  - name: queue rule for `general ui`
+    queue_conditions:
+      - and:
+          - files~=^packages/ui-theme/
+          - files~=^packages/ui-vue/
+          - files~=^packages/ui/
+          - files~=^packages/eslint-config/
+          - files~=^packages/stylelint-config/
+          - files~=^packages/typescript-config/
+
 
 pull_request_rules:
   # PR approval rules
