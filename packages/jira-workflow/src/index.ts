@@ -8,7 +8,7 @@ async function main() {
     try {
         await jiraClient.authenticate();
 
-        const jqlQuery = getJqlQuery();
+        const jqlQuery = process.env.INPUT_JQL || process.env.JQL;
         const tickets: JiraTicket[] = await jiraClient.searchAllIssues(jqlQuery);
 
         for (const ticket of tickets) {
