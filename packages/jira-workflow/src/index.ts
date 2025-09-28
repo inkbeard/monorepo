@@ -9,11 +9,12 @@ async function main() {
         await jiraClient.authenticate();
 
         const jqlQuery = getJqlQuery();
-        const tickets: JiraTicket[] = await jiraClient.searchIssues(jqlQuery);
+        const tickets: JiraTicket[] = await jiraClient.searchAllIssues(jqlQuery);
 
         for (const ticket of tickets) {
-            const status = await jiraClient.getTicketStatus(ticket.key);
-            console.log(`Ticket ${ticket.key}: ${status}`);
+            const idOrKey = (ticket as any).key || (ticket as any).id;
+            const status = await jiraClient.getTicketStatus(idOrKey);
+            console.log(`Ticket ${idOrKey}: ${status}`);
         }
     } catch (error) {
         console.error('Error occurred:', error);

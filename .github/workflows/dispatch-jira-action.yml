@@ -16,6 +16,19 @@ jobs:
       - name: Prepare job
         uses: ./.github/actions/prepare-job
 
+      - name: Debug: curl Jira search
+      - name: Debug: curl Jira search
+        run: |
+          echo 'Running debug curl against Jira search/jql'
+          curl -sS -u "$JIRA_EMAIL:$JIRA_SEARCH_AND_LINK_API_TOKEN" \
+            -H "Accept: application/json" \
+            "${JIRA_BASE_URL}/rest/api/3/search/jql?jql=$(python3 -c "import urllib.parse,sys; print(urllib.parse.quote(sys.argv[1]))" 'project = inkbeard AND status = "To Do"')" \
+            | jq '.' || true
+        env:
+          JIRA_SEARCH_AND_LINK_API_TOKEN: ${{ secrets.JIRA_SEARCH_AND_LINK_API_TOKEN }}
+          JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
+          JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
+
       - name: Build package
         run: pnpm --filter jira-workflow build
 
