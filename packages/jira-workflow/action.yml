@@ -1,0 +1,15 @@
+name: Jira JQL Search
+description: Search Jira with JQL and return ticket statuses
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
+
+inputs:
+  jql:
+    description: 'JQL query to run'
+    required: false
+
+branding:
+  color: blue
+  icon: search

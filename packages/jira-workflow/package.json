@@ -1,0 +1,27 @@
+{
+  "name": "jira-workflow",
+  "version": "1.0.0",
+  "description": "A workflow package for integrating with Jira using JQL searches.",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "test": "jest"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.5",
+    "jest": "^27.0.6",
+    "ts-node": "^10.4.0",
+    "typescript": "5.2.2"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "author": "",
+  "license": "ISC"
+}

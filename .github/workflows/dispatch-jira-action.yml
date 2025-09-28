@@ -1,0 +1,29 @@
+name: Dispatch Jira Action
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - ink-91
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare job
+        uses: ./.github/actions/prepare-job
+
+      - name: Build package
+        run: pnpm --filter jira-workflow build
+
+      - name: Run local action
+        uses: ./packages/jira-workflow
+        with:
+          jql: 'project = inkbeard AND status = "To Do"'
+        env:
+          JIRA_API_TOKEN: ${{ secrets.JIRA_SEARCH_AND_LINK_API_TOKEN }}
+          JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
+          JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
