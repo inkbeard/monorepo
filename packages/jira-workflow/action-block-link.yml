@@ -1,0 +1,31 @@
+name: "Jira: Ensure blocked-by link"
+description: Use JQL to find issues and ensure they are linked as "is blocked by" to a given blocker
+
+runs:
+  using: 'node20'
+  main: 'dist/blockLink.js'
+
+inputs:
+  jql:
+    description: 'JQL to find issues'
+    required: true
+  blocker:
+    description: 'Issue key to link as blocker (is blocked by)'
+    required: false
+    default: 'INK-91'
+  linkType:
+    description: 'Issue link type name to use when creating a link (e.g. Blocks)'
+    required: false
+    default: 'Blocks'
+  blockerSide:
+    description: "Which side the blocker should be placed on when creating the link: 'outward' means outwardIssue=blocker (default), 'inward' means inwardIssue=blocker"
+    required: false
+    default: 'outward'
+  dryRun:
+    description: "If 'true', do not create links, only log actions (default true)"
+    required: false
+    default: 'false'
+
+branding:
+  color: blue
+  icon: link

@@ -2,13 +2,19 @@ import { JiraClient } from './jiraClient';
 import { getJqlQuery } from './jql';
 import { JiraTicket } from './types';
 
-async function main() {
+export async function main() {
     const jiraClient = new JiraClient();
 
     try {
         await jiraClient.authenticate();
 
-        const jqlQuery = process.env.INPUT_JQL || process.env.JQL;
+        const jqlQuery = getJqlQuery();
+        if (!jqlQuery) {
+            console.error('No JQL provided via input `jql` or JQL env var');
+            process.exitCode = 1;
+            return;
+        }
+
         const tickets: JiraTicket[] = await jiraClient.searchAllIssues(jqlQuery);
 
         for (const ticket of tickets) {
@@ -22,4 +28,8 @@ async function main() {
     }
 }
 
-main();
+// Only run main if this file is executed directly
+declare const require: any;
+if (typeof require !== 'undefined' && require.main === module) {
+    main();
+}

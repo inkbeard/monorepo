@@ -113,4 +113,51 @@ export class JiraClient {
       throw err;
     }
   }
+
+  // Paginated search that returns all issues (requests status by default)
+  async searchAllIssues(jql: string, maxResults = 50) {
+    const results: any[] = [];
+    let startAt = 0;
+
+    while (true) {
+      const url = `${this.baseUrl}/rest/api/${this.apiVersion}/search`;
+      const resp = await axios.get(url, {
+        params: { jql, startAt, maxResults, fields: ['summary', 'status'] },
+        auth: { username: this.email!, password: this.apiToken! },
+        headers: { Accept: 'application/json' },
+      });
+
+      const data = resp.data || {};
+      const issues = data.issues || [];
+      results.push(...issues);
+
+      if (results.length >= (data.total || 0) || issues.length === 0) break;
+      startAt += issues.length;
+    }
+
+    return results;
+  }
+
+  async getIssueLinks(key: string) {
+    const url = `${this.baseUrl}/rest/api/${this.apiVersion}/issue/${key}`;
+    const resp = await axios.get(url, {
+      params: { fields: ['issuelinks'] },
+      auth: { username: this.email!, password: this.apiToken! },
+      headers: { Accept: 'application/json' },
+    });
+    return resp.data?.fields?.issuelinks || [];
+  }
+
+  async createIssueLink(inwardIssueKey: string, outwardIssueKey: string, typeName = 'Blocks') {
+    const url = `${this.baseUrl}/rest/api/${this.apiVersion}/issueLink`;
+    const payload = {
+      type: { name: typeName },
+      inwardIssue: { key: inwardIssueKey },
+      outwardIssue: { key: outwardIssueKey },
+    };
+    await axios.post(url, payload, {
+      auth: { username: this.email!, password: this.apiToken! },
+      headers: { Accept: 'application/json' },
+    });
+  }
 }

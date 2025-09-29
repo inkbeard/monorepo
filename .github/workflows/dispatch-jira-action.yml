@@ -32,3 +32,14 @@ jobs:
           JIRA_API_TOKEN: ${{ secrets.JIRA_CLASSIC_API_TOKEN }}
           JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
           JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
+
+      - name: Run block-link action (dry-run)
+        uses: ./packages/jira-workflow/action-block-link.yml
+        with:
+          jql: 'project = inkbeard AND status = "To Do"'
+          blocker: 'INK-91'
+          dryRun: 'true'
+        env:
+          JIRA_API_TOKEN: ${{ secrets.JIRA_CLASSIC_API_TOKEN }}
+          JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
+          JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
