@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - ink-91
+      - branch-d64d7b5-main
 
 jobs:
   run:
