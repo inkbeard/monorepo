@@ -181,9 +181,7 @@ export class JiraClient {
         headers: { Accept: 'application/json' },
       });
 
-      console.log('getLinkedIssues() resp.data.fields: ', JSON.stringify(resp.data.fields));
-
-      return resp.data.fields;
+      return resp.data.fields.issuelinks;
     } catch (err: any) {
       if (axios.isAxiosError(err) && err.response) {
         console.error('Jira getLinkedIssues failed', {
