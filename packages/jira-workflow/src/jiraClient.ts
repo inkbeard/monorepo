@@ -73,10 +73,12 @@ export class JiraClient {
       const issues = data.issues || data.results || data;
 
       if (Array.isArray(issues) && issues.length > 0) {
+        console.log('all issues: ', JSON.stringify(issues));
+
         try {
           const keys = issues.map((it: any) => it.key || it.id).slice(0, 20);
 
-          console.info(`Jira search returned ${issues.length} result(s) for JQL: ${jql}. Showing up to 20 keys: ${JSON.stringify(keys)}`);
+          console.info(`Jira search returned ${issues.length} result(s): ${JSON.stringify(keys)}`);
         } catch (e) {
           console.info(`Jira search returned ${Array.isArray(issues) ? issues.length : 0} result(s) for JQL: ${jql}`);
         }
@@ -178,15 +180,10 @@ export class JiraClient {
         auth: { username: this.email!, password: this.apiToken! },
         headers: { Accept: 'application/json' },
       });
-      const links = resp.data.fields.issuelinks || [];
-      const linkedKeys = links.map((link: any) => {
-        if (link.outwardIssue) return link.outwardIssue.key;
-        if (link.inwardIssue) return link.inwardIssue.key;
 
-        return null;
-      }).filter((k: string | null) => k !== null);
+      console.log('getLinkedIssues() resp.data.fields: ', JSON.stringify(resp.data.fields));
 
-      return linkedKeys;
+      return resp.data.fields;
     } catch (err: any) {
       if (axios.isAxiosError(err) && err.response) {
         console.error('Jira getLinkedIssues failed', {
