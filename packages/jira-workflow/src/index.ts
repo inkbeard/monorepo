@@ -17,7 +17,7 @@ async function main() {
       const linkedIssues = await jiraClient.getLinkedIssues(idOrKey);
 
       console.log(`Ticket ${idOrKey} status: ${status}`);
-      console.log(`Ticket ${idOrKey} linkedIssues: ${linkedIssues}`);
+      console.log(`Ticket ${idOrKey} linkedIssues: ${JSON.stringify(linkedIssues)}`);
     }
   } catch (error) {
     console.error('Error occurred:', error);
