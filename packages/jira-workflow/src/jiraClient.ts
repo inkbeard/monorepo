@@ -41,6 +41,11 @@ export class JiraClient {
       const note = 'This action requires Jira Cloud REST API v3. If you run Jira Server/DC, this action will not function.';
       if (axios.isAxiosError(err) && err.response) {
         console.error('Jira serverInfo check failed', { status: err.response.status, data: err.response.data });
+        // Specific handling for HTTP 410: API/version not available on target server
+        if (err.response.status === 410) {
+          const msg = err.response.data?.errorMessages?.join?.(', ') || err.response.data?.message || JSON.stringify(err.response.data);
+          throw new Error(`Jira REST API v3 not supported by ${this.baseUrl}: ${msg}\n${note}`);
+        }
         throw new Error(`Unable to reach Jira Cloud v3 serverInfo: ${err.response.status} - ${JSON.stringify(err.response.data)}\n${note}`);
       }
       throw new Error(`${String(err)}\n${note}`);

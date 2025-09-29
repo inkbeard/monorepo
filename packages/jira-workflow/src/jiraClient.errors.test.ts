@@ -29,8 +29,8 @@ describe('JiraClient error and edge paths', () => {
     mockedAxios.get.mockRejectedValueOnce(err);
   vi.spyOn(axios, 'isAxiosError').mockReturnValue(true);
 
-    const c = new JiraClient();
-    await expect(c.authenticate()).rejects.toThrow(/Unable to reach Jira Cloud v3/);
+  const c = new JiraClient();
+  await expect(c.authenticate()).rejects.toThrow(/Jira REST API v3 not supported/);
   });
 
   test('searchIssues returns empty array when no issues and logs debug', async () => {
