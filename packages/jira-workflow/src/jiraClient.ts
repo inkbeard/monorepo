@@ -173,13 +173,15 @@ export class JiraClient {
   }
 
   async getLinkedIssues(key: string) {
-    const url = `${this.baseUrl}/rest/api/${this.apiVersion}/issue/${key}?fields=issuelinks`;
+    const url = `${this.baseUrl}/rest/api/${this.apiVersion}/issue/${key}`;
 
     try {
       const resp = await axios.get(url, {
         auth: { username: this.email!, password: this.apiToken! },
         headers: { Accept: 'application/json' },
       });
+
+      console.log('::debug:: Issue fields: ', JSON.stringify(resp.data.fields.issuelinks));
 
       return resp.data.fields.issuelinks;
     } catch (err: any) {
