@@ -1,5 +1,19 @@
 # @inkbeard/website
 
+## 0.16.0
+
+### Minor Changes
+
+- f9cf717: Updated resume
+- f9cf717: updated dependencies
+
+### Patch Changes
+
+- Updated dependencies [f9cf717]
+  - @inkbeard/icon-memory@0.6.0
+  - @inkbeard/budget-it@1.4.0
+  - @inkbeard/ui-vue@0.15.0
+
 ## 0.15.2
 
 ### Patch Changes

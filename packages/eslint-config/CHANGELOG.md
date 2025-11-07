@@ -1,5 +1,11 @@
 # @inkbeard/eslint-config
 
+## 0.8.0
+
+### Minor Changes
+
+- f9cf717: updated dependencies
+
 ## 0.7.1
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @inkbeard/build-a-budget
 
+## 0.5.0
+
+### Minor Changes
+
+- f9cf717: updated dependencies
+
 ## 0.4.0
 
 ### Minor Changes

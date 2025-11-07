@@ -1,5 +1,11 @@
 # @inkbeard/budget-it
 
+## 1.4.0
+
+### Minor Changes
+
+- f9cf717: updated dependencies
+
 ## 1.3.1
 
 ### Patch Changes
