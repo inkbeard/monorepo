@@ -1,5 +1,11 @@
 # @inkbeard/ui-vue
 
+## 0.15.0
+
+### Minor Changes
+
+- f9cf717: updated dependencies
+
 ## 0.14.1
 
 ### Patch Changes

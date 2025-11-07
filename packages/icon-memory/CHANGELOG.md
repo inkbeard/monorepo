@@ -1,5 +1,11 @@
 # @inkbeard/icon-memory
 
+## 0.6.0
+
+### Minor Changes
+
+- f9cf717: updated dependencies
+
 ## 0.5.1
 
 ### Patch Changes
