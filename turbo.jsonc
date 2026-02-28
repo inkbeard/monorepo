@@ -1,0 +1,83 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": [
+    "**/.env.*local"
+  ],
+  "tasks": {
+    "build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "dist/**",
+        ".next/**",
+        "!.next/cache/**",
+        "storybook-static"
+      ]
+    },
+    "preview": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "lint": {
+      "dependsOn": [
+        "^lint"
+      ],
+      "inputs": [
+        "**/*.{vue,ts,js,cjs}",
+        "!**/.changeset/**",
+        "!coverage/**",
+        "!dist/**",
+        "!node_modules/**",
+        "!.nuxt/**",
+        "!.output/**"
+      ],
+      "outputs": [
+        ".eslintcache"
+      ],
+      "outputLogs": "new-only"
+    },
+    "@inkbeard/build-a-budget#lint": {
+      "inputs": [
+        "**/*.{vue,ts,js,cjs}",
+        "!**/.changeset/**",
+        "!.nuxt/**",
+        "!.output/**",
+        "!coverage/**",
+        "!node_modules/**"
+      ],
+      "outputs": [
+        ".eslintcache"
+      ],
+      "outputLogs": "new-only"
+    },
+    "@inkbeard/ui-library#lint": {
+      "inputs": [
+        "**/*.{vue,ts,js,cjs}",
+        "!**/.changeset/**",
+        "!storybook-static/**",
+        "!coverage/**",
+        "!node_modules/**"
+      ],
+      "outputs": [
+        ".eslintcache"
+      ],
+      "outputLogs": "new-only"
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "stylelint": {},
+    "test:unit": {
+      "dependsOn": [],
+      "outputs": [
+        "coverage/**"
+      ]
+    },
+    "test:unit:watch": {
+      "cache": false
+    }
+  }
+}
