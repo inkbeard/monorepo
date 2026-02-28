@@ -56,7 +56,7 @@
       "inputs": [
         "**/*.{vue,ts,js,cjs}",
         "!**/.changeset/**",
-        "!.storybook-static/**",
+        "!storybook-static/**",
         "!coverage/**",
         "!node_modules/**"
       ],
