@@ -6,15 +6,20 @@ on:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
+env:
+  IS_CHANGELOG_PR: ${{ github.event.pull_request.title == vars.CHANGELOG_PR_TITLE }}
+
 jobs:
   install_dependencies:
     name: Install dependencies
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
+        if: env.IS_CHANGELOG_PR != 'true'
         uses: actions/checkout@v6.0.2
 
       - name: Prepare job
+        if: env.IS_CHANGELOG_PR != 'true'
         uses: ./.github/actions/prepare-job
 
   run_unit_tests:
@@ -23,12 +28,15 @@ jobs:
     needs: install_dependencies
     steps:
       - name: Checkout
+        if: env.IS_CHANGELOG_PR != 'true'
         uses: actions/checkout@v6.0.2
 
       - name: Prepare job
+        if: env.IS_CHANGELOG_PR != 'true'
         uses: ./.github/actions/prepare-job
 
-      - run: pnpm test:unit
+      - if: env.IS_CHANGELOG_PR != 'true'
+        run: pnpm test:unit
 
   run_lint:
     name: Run lint
@@ -36,12 +44,15 @@ jobs:
     needs: install_dependencies
     steps:
       - name: Checkout
+        if: env.IS_CHANGELOG_PR != 'true'
         uses: actions/checkout@v6.0.2
 
       - name: Prepare job
+        if: env.IS_CHANGELOG_PR != 'true'
         uses: ./.github/actions/prepare-job
 
-      - run: pnpm lint
+      - if: env.IS_CHANGELOG_PR != 'true'
+        run: pnpm lint
 
   run_stylelint:
     name: Run stylelint
@@ -49,12 +60,15 @@ jobs:
     needs: install_dependencies
     steps:
       - name: Checkout
+        if: env.IS_CHANGELOG_PR != 'true'
         uses: actions/checkout@v6.0.2
 
       - name: Prepare job
+        if: env.IS_CHANGELOG_PR != 'true'
         uses: ./.github/actions/prepare-job
 
-      - run: pnpm stylelint
+      - if: env.IS_CHANGELOG_PR != 'true'
+        run: pnpm stylelint
 
   build:
     name: Build
@@ -62,9 +76,12 @@ jobs:
     needs: install_dependencies
     steps:
       - name: Checkout
+        if: env.IS_CHANGELOG_PR != 'true'
         uses: actions/checkout@v6.0.2
 
       - name: Prepare job
+        if: env.IS_CHANGELOG_PR != 'true'
         uses: ./.github/actions/prepare-job
 
-      - run: pnpm build
+      - if: env.IS_CHANGELOG_PR != 'true'
+        run: pnpm build
