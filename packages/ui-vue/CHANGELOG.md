@@ -1,5 +1,12 @@
 # @inkbeard/ui-vue
 
+## 0.15.0
+
+### Minor Changes
+
+- f9cf717: updated dependencies
+- c4c5865: added eslint as devDependency and caching
+
 ## 0.14.1
 
 ### Patch Changes
