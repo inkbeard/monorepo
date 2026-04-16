@@ -264,7 +264,11 @@ priority_rules:
     conditions:
       - queue-name=release
     priority: 2500
+    allow_checks_interruption: true
   - name: priority for queue `default`
     conditions:
       - queue-name=default
     priority: 2250
+    allow_checks_interruption: true
+merge_protections_settings:
+  reporting_method: check-runs
