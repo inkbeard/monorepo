@@ -31,6 +31,15 @@ jobs:
         if: env.IS_CHANGELOG_PR != 'true'
         uses: actions/checkout@v6.0.2
 
+      - name: Cache turbo unit tests
+        if: env.IS_CHANGELOG_PR != 'true'
+        uses: actions/cache@v5.0.5
+        with:
+          path: .turbo
+          key: ${{ runner.os }}-turbo-unit-tests-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-unit-tests-
+
       - name: Prepare job
         if: env.IS_CHANGELOG_PR != 'true'
         uses: ./.github/actions/prepare-job
@@ -51,6 +60,15 @@ jobs:
         if: env.IS_CHANGELOG_PR != 'true'
         uses: ./.github/actions/prepare-job
 
+      - name: Cache turbo lint
+        if: env.IS_CHANGELOG_PR != 'true'
+        uses: actions/cache@v5.0.5
+        with:
+          path: .turbo
+          key: ${{ runner.os }}-turbo-lint-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-lint-
+
       - if: env.IS_CHANGELOG_PR != 'true'
         run: pnpm lint
 
@@ -67,6 +85,15 @@ jobs:
         if: env.IS_CHANGELOG_PR != 'true'
         uses: ./.github/actions/prepare-job
 
+      - name: Cache turbo stylelint
+        if: env.IS_CHANGELOG_PR != 'true'
+        uses: actions/cache@v5.0.5
+        with:
+          path: .turbo
+          key: ${{ runner.os }}-turbo-stylelint-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-stylelint-
+
       - if: env.IS_CHANGELOG_PR != 'true'
         run: pnpm stylelint
 
@@ -82,6 +109,15 @@ jobs:
       - name: Prepare job
         if: env.IS_CHANGELOG_PR != 'true'
         uses: ./.github/actions/prepare-job
+
+      - name: Cache turbo build setup
+        if: env.IS_CHANGELOG_PR != 'true'
+        uses: actions/cache@v5.0.5
+        with:
+          path: .turbo
+          key: ${{ runner.os }}-turbo-build-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-build-
 
       - if: env.IS_CHANGELOG_PR != 'true'
         run: pnpm build

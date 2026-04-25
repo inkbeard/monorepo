@@ -38,20 +38,6 @@
       ],
       "outputLogs": "new-only"
     },
-    "@inkbeard/build-a-budget#lint": {
-      "inputs": [
-        "**/*.{vue,ts,js,cjs}",
-        "!**/.changeset/**",
-        "!.nuxt/**",
-        "!.output/**",
-        "!coverage/**",
-        "!node_modules/**"
-      ],
-      "outputs": [
-        ".eslintcache"
-      ],
-      "outputLogs": "new-only"
-    },
     "@inkbeard/ui-library#lint": {
       "inputs": [
         "**/*.{vue,ts,js,cjs}",
