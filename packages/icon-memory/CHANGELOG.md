@@ -1,5 +1,12 @@
 # @inkbeard/icon-memory
 
+## 0.7.0
+
+### Minor Changes
+
+- 4cf054c: updated node types
+- cd5fc5e: updated typescript and vue-tsc
+
 ## 0.6.0
 
 ### Minor Changes

@@ -1,5 +1,12 @@
 # @inkbeard/eslint-config
 
+## 0.9.0
+
+### Minor Changes
+
+- 4cf054c: updated node types
+- cd5fc5e: updated typescript and vue-tsc
+
 ## 0.8.0
 
 ### Minor Changes

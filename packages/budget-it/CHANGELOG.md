@@ -1,5 +1,12 @@
 # @inkbeard/budget-it
 
+## 1.5.0
+
+### Minor Changes
+
+- 4cf054c: updated node types
+- cd5fc5e: updated typescript and vue-tsc
+
 ## 1.4.0
 
 ### Minor Changes

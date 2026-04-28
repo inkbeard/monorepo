@@ -1,5 +1,11 @@
 # @inkbeard/typescript-config
 
+## 0.3.0
+
+### Minor Changes
+
+- 4cf054c: updated node types
+
 ## 0.2.0
 
 ### Minor Changes
