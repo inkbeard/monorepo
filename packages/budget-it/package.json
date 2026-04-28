@@ -34,7 +34,7 @@
     "@vue/eslint-config-typescript": "^13.0.0",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.9.1",
-    "chart.js": "^4.5.0",
+    "chart.js": "^4.5.1",
     "cypress": "^13.17.0",
     "eslint": "^8.57.1",
     "eslint-plugin-cypress": "^3.6.0",
