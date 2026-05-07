@@ -28,7 +28,7 @@
     "@inkbeard/typescript-config": "workspace:*",
     "@manypkg/cli": "^0.25.1",
     "jsdom": "^25.0.1",
-    "prettier": "^3.6.2",
+    "prettier": "^3.8.3",
     "stylelint": "^16.24.0",
     "turbo": "^2.9.6"
   }
