@@ -1,82 +1,99 @@
 {
-  '$schema': 'https://docs.renovatebot.com/renovate-schema.json',
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
   extends: [
     'config:recommended',
-    'schedule:earlyMondays', // https://docs.renovatebot.com/presets-schedule/#scheduleearlymondays,
+    'schedule:earlyMondays',
   ],
-  labels: ['dependencies'],
+  labels: [
+    'dependencies',
+  ],
   rangeStrategy: 'bump',
   ignoreDeps: [
-    'eslint', // ignore until dependencies support flat configs
-    'primevue', // ignoring until getting a chance to review breaking changes
-    'typescript', // temporarily ignore typescript due to some config issues
+    'eslint',
+    'primevue',
+    'typescript',
   ],
   packageRules: [
-    // Use LTS version of node types
     {
-      packageNames: ['@types/node'],
-      allowedVersions: '<=23'
+      matchPackageNames: [
+        '@types/node',
+      ],
+      allowedVersions: '<=23',
     },
     {
-      // Pinned to 4.4.0 due to breaking changes in 4.4.1 (https://github.com/vuejs/router/discussions/2321)
-      packageNames: ['vue-router'],
-      allowedVersions: '<=4.4.0'
+      matchPackageNames: [
+        'vue-router',
+      ],
+      allowedVersions: '<=4.4.0',
     },
-    // ignore since v14 requires eslint v9
     {
-      packageNames: ['@vue/eslint-config-typescript'],
-      allowedVersions: '<14'
+      matchPackageNames: [
+        '@vue/eslint-config-typescript',
+      ],
+      allowedVersions: '<14',
     },
-    // ignore since v4 requires eslint v9
     {
-      packageNames: ['eslint-plugin-cypress'],
-      allowedVersions: '<4'
+      matchPackageNames: [
+        'eslint-plugin-cypress',
+      ],
+      allowedVersions: '<4',
     },
-    // group storybook dependencies
     {
       matchPackageNames: [
         'storybook',
-        '@storybook/**'
+        '@storybook/**',
       ],
       groupName: 'storybook',
-      changelogUrl: 'https://github.com/storybookjs/storybook/blob/next/CHANGELOG.md'
+      changelogUrl: 'https://github.com/storybookjs/storybook/blob/next/CHANGELOG.md',
     },
-    // group vitest dependencies
     {
       matchPackageNames: [
         'vitest',
-        '@vitest/**'
+        '@vitest/**',
       ],
-      groupName: 'vitest'
-    },
-    // changelog urls
-    {
-      packageNames: ['turborepo'],
-      changelogUrl: 'https://github.com/vercel/turborepo/releases'
+      groupName: 'vitest',
     },
     {
-      packageNames: ['eslint-plugin-storybook'],
-      changelogUrl: 'https://github.com/storybookjs/eslint-plugin-storybook/blob/main/CHANGELOG.md'
+      matchPackageNames: [
+        'turborepo',
+      ],
+      changelogUrl: 'https://github.com/vercel/turborepo/releases',
     },
     {
-      packageNames: ['cypress'],
-      changelogUrl: 'https://docs.cypress.io/app/references/changelog'
+      matchPackageNames: [
+        'eslint-plugin-storybook',
+      ],
+      changelogUrl: 'https://github.com/storybookjs/eslint-plugin-storybook/blob/main/CHANGELOG.md',
     },
     {
-      packageNames: ['vue'],
-      changelogUrl: 'https://github.com/vuejs/core/blob/main/CHANGELOG.md'
+      matchPackageNames: [
+        'cypress',
+      ],
+      changelogUrl: 'https://docs.cypress.io/app/references/changelog',
     },
     {
-      packageNames: ['pnpm'],
-      changelogUrl: 'https://github.com/pnpm/pnpm/blob/a724295578abe0bbb1e773263a4dc3697f4855e0/pnpm/CHANGELOG.md'
+      matchPackageNames: [
+        'vue',
+      ],
+      changelogUrl: 'https://github.com/vuejs/core/blob/main/CHANGELOG.md',
     },
     {
-      packageNames: ['node'],
-      changelogUrl: 'https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V22.md'
+      matchPackageNames: [
+        'pnpm',
+      ],
+      changelogUrl: 'https://github.com/pnpm/pnpm/blob/a724295578abe0bbb1e773263a4dc3697f4855e0/pnpm/CHANGELOG.md',
     },
     {
-      packageNames: ['pinia'],
-      changelogUrl: 'https://github.com/vuejs/pinia/blob/v2/packages/pinia/CHANGELOG.md'
-    }
-  ]
+      matchPackageNames: [
+        'node',
+      ],
+      changelogUrl: 'https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V22.md',
+    },
+    {
+      matchPackageNames: [
+        'pinia',
+      ],
+      changelogUrl: 'https://github.com/vuejs/pinia/blob/v2/packages/pinia/CHANGELOG.md',
+    },
+  ],
 }
