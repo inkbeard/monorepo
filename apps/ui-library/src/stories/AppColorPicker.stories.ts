@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/vue3';
+import type { Meta, StoryObj } from '@storybook/vue3-vite';
 import { AppColorPicker } from '@inkbeard/ui-vue';
 
 const meta = {

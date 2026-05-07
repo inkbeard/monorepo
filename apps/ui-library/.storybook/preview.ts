@@ -1,4 +1,4 @@
-import { setup } from '@storybook/vue3'
+import { setup } from '@storybook/vue3-vite'
 import '../src/assets/global.css';
 import { createPinia } from 'pinia';
 import InkbeardUiVue, { ConfirmationService, ToastService } from '@inkbeard/ui-vue';

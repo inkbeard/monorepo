@@ -1,5 +1,4 @@
 import { StorybookConfig } from '@storybook/vue3-vite';
-import { dirname, join } from 'path';
 
 const config: StorybookConfig = {
   stories: [
@@ -9,9 +8,6 @@ const config: StorybookConfig = {
   staticDirs: ['../public'],
   addons: [
     '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
-    '@storybook/addon-mdx-gfm',
     '@storybook/addon-docs'
   ],
   framework: {

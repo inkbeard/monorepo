@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/vue3';
+import type { Meta, StoryObj } from '@storybook/vue3-vite';
 import { provide } from 'vue';
 import { ExpenseCategory } from '@inkbeard/budget-it';
 

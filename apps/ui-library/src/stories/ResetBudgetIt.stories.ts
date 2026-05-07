@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/vue3';
+import type { Meta, StoryObj } from '@storybook/vue3-vite';
 import { ResetBudgetIt } from '@inkbeard/budget-it';
 
 const meta = {

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/vue3';
+import type { Meta, StoryObj } from '@storybook/vue3-vite';
 import { IconDetails } from '@inkbeard/icon-memory';
 import { icons } from '@inkbeard/icon-memory/mockData.ts';
 
