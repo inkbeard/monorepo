@@ -1,5 +1,19 @@
 # @inkbeard/ui-library
 
+## 1.9.0
+
+### Minor Changes
+
+- 4cf054c: updated node types
+
+### Patch Changes
+
+- Updated dependencies [4cf054c]
+- Updated dependencies [cd5fc5e]
+  - @inkbeard/icon-memory@0.7.0
+  - @inkbeard/budget-it@1.5.0
+  - @inkbeard/ui-vue@0.16.0
+
 ## 1.8.0
 
 ### Minor Changes
