@@ -23,7 +23,7 @@
     "flagsmith": "^7.0.2",
     "pinia": "^3.0.4",
     "vue": "^3.5.33",
-    "vue-i18n": "^10.0.7",
+    "vue-i18n": "^10.0.8",
     "vue-router": "4.4.0"
   },
   "devDependencies": {
