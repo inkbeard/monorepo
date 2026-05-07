@@ -32,7 +32,7 @@
     "@vitest/coverage-istanbul": "^2.1.9",
     "@vitest/ui": "^2.1.9",
     "@vue/eslint-config-typescript": "^13.0.0",
-    "@vue/test-utils": "^2.4.6",
+    "@vue/test-utils": "^2.4.10",
     "@vue/tsconfig": "^0.9.1",
     "chart.js": "^4.5.1",
     "cypress": "^13.17.0",
