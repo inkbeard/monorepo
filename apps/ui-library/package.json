@@ -33,7 +33,7 @@
     "@storybook/vue3": "^8.4.7",
     "@storybook/vue3-vite": "^8.4.7",
     "@tsconfig/node24": "^24.0.4",
-    "@vitejs/plugin-vue": "^5.2.4",
+    "@vitejs/plugin-vue": "6.0.6",
     "@vue/tsconfig": "^0.9.1",
     "eslint": "^8.57.1",
     "eslint-plugin-storybook": "^0.12.0",
@@ -41,7 +41,7 @@
     "msw": "^2.7.3",
     "msw-storybook-addon": "^2.0.5",
     "storybook": "^8.6.17",
-    "vite": "^5.4.14"
+    "vite": "8.0.10"
   },
   "resolutions": {
     "jackspeak": "4.1.1"
