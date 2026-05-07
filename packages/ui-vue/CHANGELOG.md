@@ -1,5 +1,12 @@
 # @inkbeard/ui-vue
 
+## 0.16.0
+
+### Minor Changes
+
+- 4cf054c: updated node types
+- cd5fc5e: updated typescript and vue-tsc
+
 ## 0.15.0
 
 ### Minor Changes

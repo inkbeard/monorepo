@@ -1,5 +1,20 @@
 # @inkbeard/website
 
+## 0.17.0
+
+### Minor Changes
+
+- 4cf054c: updated node types
+- cd5fc5e: updated typescript and vue-tsc
+
+### Patch Changes
+
+- Updated dependencies [4cf054c]
+- Updated dependencies [cd5fc5e]
+  - @inkbeard/icon-memory@0.7.0
+  - @inkbeard/budget-it@1.5.0
+  - @inkbeard/ui-vue@0.16.0
+
 ## 0.16.0
 
 ### Minor Changes
