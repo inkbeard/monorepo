@@ -1,5 +1,22 @@
 # @inkbeard/ui-library
 
+## 2.0.0
+
+### Major Changes
+
+- eb4a6ba: updated to storybook v10
+
+### Minor Changes
+
+- 241dcf5: updated vite and vitest related packages to the latest
+
+### Patch Changes
+
+- Updated dependencies [241dcf5]
+  - @inkbeard/icon-memory@0.8.0
+  - @inkbeard/budget-it@1.6.0
+  - @inkbeard/ui-vue@0.17.0
+
 ## 1.9.0
 
 ### Minor Changes

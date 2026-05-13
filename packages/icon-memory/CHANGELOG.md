@@ -1,5 +1,11 @@
 # @inkbeard/icon-memory
 
+## 0.8.0
+
+### Minor Changes
+
+- 241dcf5: updated vite and vitest related packages to the latest
+
 ## 0.7.0
 
 ### Minor Changes

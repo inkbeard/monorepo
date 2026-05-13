@@ -1,5 +1,11 @@
 # @inkbeard/budget-it
 
+## 1.6.0
+
+### Minor Changes
+
+- 241dcf5: updated vite and vitest related packages to the latest
+
 ## 1.5.0
 
 ### Minor Changes
