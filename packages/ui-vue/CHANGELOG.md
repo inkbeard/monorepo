@@ -1,5 +1,11 @@
 # @inkbeard/ui-vue
 
+## 0.17.0
+
+### Minor Changes
+
+- 241dcf5: updated vite and vitest related packages to the latest
+
 ## 0.16.0
 
 ### Minor Changes
