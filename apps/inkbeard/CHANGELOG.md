@@ -1,5 +1,18 @@
 # @inkbeard/website
 
+## 0.18.0
+
+### Minor Changes
+
+- 241dcf5: updated vite and vitest related packages to the latest
+
+### Patch Changes
+
+- Updated dependencies [241dcf5]
+  - @inkbeard/icon-memory@0.8.0
+  - @inkbeard/budget-it@1.6.0
+  - @inkbeard/ui-vue@0.17.0
+
 ## 0.17.0
 
 ### Minor Changes
