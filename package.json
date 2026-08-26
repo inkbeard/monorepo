@@ -24,7 +24,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@changesets/cli": "^2.29.8",
+    "@changesets/cli": "^2.31.1",
     "@inkbeard/typescript-config": "workspace:*",
     "@manypkg/cli": "^0.25.1",
     "jsdom": "^25.0.1",
