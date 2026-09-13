@@ -1,5 +1,11 @@
 # @inkbeard/eslint-config
 
+## 0.10.0
+
+### Minor Changes
+
+- 241dcf5: updated vite and vitest related packages to the latest
+
 ## 0.9.0
 
 ### Minor Changes
