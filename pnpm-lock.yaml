@@ -263,8 +263,8 @@ importers:
         specifier: ^3.5.42
         version: 3.5.42(typescript@5.9.3)
       vue-chartjs:
-        specifier: ^5.3.3
-        version: 5.3.3(chart.js@4.5.1)(vue@3.5.42(typescript@5.9.3))
+        specifier: ^5.3.4
+        version: 5.3.4(chart.js@4.5.1)(vue@3.5.42(typescript@5.9.3))
       vue-tsc:
         specifier: ^3.2.8
         version: 3.2.8(typescript@5.9.3)
@@ -5264,8 +5264,8 @@ packages:
   vscode-uri@3.1.0:
     resolution: {integrity: sha512-/BpdSx+yCQGnCvecbyXdxHDkuk55/G3xwnC0GqY4gmQ3j+A+g8kzzgB4Nk/SINjqn6+waqw3EgbVF2QKExkRxQ==}
 
-  vue-chartjs@5.3.3:
-    resolution: {integrity: sha512-jqxtL8KZ6YJ5NTv6XzrzLS7osyegOi28UGNZW0h9OkDL7Sh1396ht4Dorh04aKrl2LiSalQ84WtqiG0RIJb0tA==}
+  vue-chartjs@5.3.4:
+    resolution: {integrity: sha512-x3Fqob8RQvrTdssfi9ecsCzEkFOd8JPmNwSkSQzdfKj/uBsRJs/Y88cZcZIEcPsTVfMGwMo4MOoihoDG2DoE/g==}
     peerDependencies:
       chart.js: ^4.1.1
       vue: ^3.0.0-0 || ^2.7.0
@@ -5283,6 +5283,9 @@ packages:
 
   vue-component-type-helpers@3.3.11:
     resolution: {integrity: sha512-LwcxzeliO9fkQcpJG0PoX8X5kmAhKmH9wkpDLxNabwzkQ9Zeib2YVHwFV4pcWmMLfXVfjr/dSV+DaJ3cIPgSNA==}
+
+  vue-component-type-helpers@3.3.12:
+    resolution: {integrity: sha512-HwCqmgTfLFskQc4P5TRnbduCMyPat2Ezu0elLWOGn0dD/6BKHP15B5bxce6aDi+E4kblPtru8amIBQzu0Di3qQ==}
 
   vue-docgen-api@4.79.2:
     resolution: {integrity: sha512-n9ENAcs+40awPZMsas7STqjkZiVlIjxIKgiJr5rSohDP0/JCrD9VtlzNojafsA1MChm/hz2h3PDtUedx3lbgfA==}
@@ -6341,7 +6344,7 @@ snapshots:
       storybook: 10.3.6(@testing-library/dom@10.4.0)(prettier@3.9.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       type-fest: 2.19.0
       vue: 3.5.42(typescript@5.9.3)
-      vue-component-type-helpers: 3.3.11
+      vue-component-type-helpers: 3.3.12
 
   '@testing-library/dom@10.4.0':
     dependencies:
@@ -11037,7 +11040,7 @@ snapshots:
 
   vscode-uri@3.1.0: {}
 
-  vue-chartjs@5.3.3(chart.js@4.5.1)(vue@3.5.42(typescript@5.9.3)):
+  vue-chartjs@5.3.4(chart.js@4.5.1)(vue@3.5.42(typescript@5.9.3)):
     dependencies:
       chart.js: 4.5.1
       vue: 3.5.42(typescript@5.9.3)
@@ -11054,6 +11057,8 @@ snapshots:
   vue-component-type-helpers@2.1.6: {}
 
   vue-component-type-helpers@3.3.11: {}
+
+  vue-component-type-helpers@3.3.12: {}
 
   vue-docgen-api@4.79.2(vue@3.5.42(typescript@5.9.3)):
     dependencies:
