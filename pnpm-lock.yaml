@@ -140,8 +140,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/stylelint-config
       '@rushstack/eslint-patch':
-        specifier: ^1.12.0
-        version: 1.12.0
+        specifier: ^1.16.1
+        version: 1.16.1
       '@storybook/addon-docs':
         specifier: 10.3.6
         version: 10.3.6(@types/react@18.3.11)(storybook@10.3.6(@testing-library/dom@10.4.0)(prettier@3.9.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(vite@8.0.16(@types/node@24.11.0)(terser@5.43.1))
@@ -197,8 +197,8 @@ importers:
         specifier: workspace:*
         version: link:../ui-vue
       '@rushstack/eslint-patch':
-        specifier: ^1.12.0
-        version: 1.12.0
+        specifier: ^1.16.1
+        version: 1.16.1
       '@tsconfig/node24':
         specifier: ^24.0.5
         version: 24.0.5
@@ -272,8 +272,8 @@ importers:
   packages/eslint-config:
     devDependencies:
       '@rushstack/eslint-patch':
-        specifier: ^1.12.0
-        version: 1.12.0
+        specifier: ^1.16.1
+        version: 1.16.1
       '@typescript-eslint/eslint-plugin':
         specifier: ^8.56.1
         version: 8.56.1(@typescript-eslint/parser@8.56.1(eslint@8.57.1)(typescript@5.9.3))(eslint@8.57.1)(typescript@5.9.3)
@@ -329,8 +329,8 @@ importers:
         specifier: workspace:*
         version: link:../ui-vue
       '@rushstack/eslint-patch':
-        specifier: ^1.12.0
-        version: 1.12.0
+        specifier: ^1.16.1
+        version: 1.16.1
       '@tsconfig/node24':
         specifier: ^24.0.5
         version: 24.0.5
@@ -1178,8 +1178,8 @@ packages:
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
 
-  '@rushstack/eslint-patch@1.12.0':
-    resolution: {integrity: sha512-5EwMtOqvJMMa3HbmxLlF74e+3/HhwBTMcvt3nqVJgGCozO6hzIPOBlwm8mGVNR9SN2IJpxSnlxczyDjcn7qIyw==}
+  '@rushstack/eslint-patch@1.16.1':
+    resolution: {integrity: sha512-TvZbIpeKqGQQ7X0zSCvPH9riMSFQFSggnfBjFZ1mEoILW+UuXCKwOoPcgjMwiUtRqFZ8jWhPJc4um14vC6I4ag==}
 
   '@sideway/address@4.1.5':
     resolution: {integrity: sha512-IqO/DUQHUkPeixNQ8n0JA6102hT9CmaljNTPmQ1u8MEhBo/R4Q8eKLN/vGZxuebwOroDB4cbpjheD4+/sKFK4Q==}
@@ -5284,6 +5284,9 @@ packages:
   vue-component-type-helpers@3.3.11:
     resolution: {integrity: sha512-LwcxzeliO9fkQcpJG0PoX8X5kmAhKmH9wkpDLxNabwzkQ9Zeib2YVHwFV4pcWmMLfXVfjr/dSV+DaJ3cIPgSNA==}
 
+  vue-component-type-helpers@3.3.12:
+    resolution: {integrity: sha512-HwCqmgTfLFskQc4P5TRnbduCMyPat2Ezu0elLWOGn0dD/6BKHP15B5bxce6aDi+E4kblPtru8amIBQzu0Di3qQ==}
+
   vue-docgen-api@4.79.2:
     resolution: {integrity: sha512-n9ENAcs+40awPZMsas7STqjkZiVlIjxIKgiJr5rSohDP0/JCrD9VtlzNojafsA1MChm/hz2h3PDtUedx3lbgfA==}
     peerDependencies:
@@ -6250,7 +6253,7 @@ snapshots:
 
   '@rtsao/scc@1.1.0': {}
 
-  '@rushstack/eslint-patch@1.12.0': {}
+  '@rushstack/eslint-patch@1.16.1': {}
 
   '@sideway/address@4.1.5':
     dependencies:
@@ -6341,7 +6344,7 @@ snapshots:
       storybook: 10.3.6(@testing-library/dom@10.4.0)(prettier@3.9.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       type-fest: 2.19.0
       vue: 3.5.42(typescript@5.9.3)
-      vue-component-type-helpers: 3.3.11
+      vue-component-type-helpers: 3.3.12
 
   '@testing-library/dom@10.4.0':
     dependencies:
@@ -11054,6 +11057,8 @@ snapshots:
   vue-component-type-helpers@2.1.6: {}
 
   vue-component-type-helpers@3.3.11: {}
+
+  vue-component-type-helpers@3.3.12: {}
 
   vue-docgen-api@4.79.2(vue@3.5.42(typescript@5.9.3)):
     dependencies:
