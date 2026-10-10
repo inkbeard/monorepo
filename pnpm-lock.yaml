@@ -76,8 +76,8 @@ importers:
         specifier: ^24.1.0
         version: 24.11.0
       '@vitejs/plugin-vue':
-        specifier: 6.0.8
-        version: 6.0.8(vite@8.0.16(@types/node@24.11.0)(terser@5.43.1))(vue@3.5.42(typescript@5.9.3))
+        specifier: 6.0.10
+        version: 6.0.10(vite@8.0.16(@types/node@24.11.0)(terser@5.43.1))(vue@3.5.42(typescript@5.9.3))
       '@vue/test-utils':
         specifier: ^2.5.0
         version: 2.5.0(@vue/compiler-dom@3.5.42)(@vue/server-renderer@3.5.42)(vue@3.5.42(typescript@5.9.3))
@@ -158,8 +158,8 @@ importers:
         specifier: ^24.0.5
         version: 24.0.5
       '@vitejs/plugin-vue':
-        specifier: 6.0.8
-        version: 6.0.8(vite@8.0.16(@types/node@24.11.0)(terser@5.43.1))(vue@3.5.42(typescript@5.9.3))
+        specifier: 6.0.10
+        version: 6.0.10(vite@8.0.16(@types/node@24.11.0)(terser@5.43.1))(vue@3.5.42(typescript@5.9.3))
       '@vue/tsconfig':
         specifier: ^0.9.1
         version: 0.9.1(typescript@5.9.3)(vue@3.5.42(typescript@5.9.3))
@@ -212,8 +212,8 @@ importers:
         specifier: ^24.1.0
         version: 24.11.0
       '@vitejs/plugin-vue':
-        specifier: 6.0.8
-        version: 6.0.8(vite@8.0.16(@types/node@24.11.0)(terser@5.43.1))(vue@3.5.42(typescript@5.9.3))
+        specifier: 6.0.10
+        version: 6.0.10(vite@8.0.16(@types/node@24.11.0)(terser@5.43.1))(vue@3.5.42(typescript@5.9.3))
       '@vitest/coverage-istanbul':
         specifier: 4.1.11
         version: 4.1.11(vitest@4.1.11)
@@ -344,8 +344,8 @@ importers:
         specifier: ^24.1.0
         version: 24.11.0
       '@vitejs/plugin-vue':
-        specifier: 6.0.8
-        version: 6.0.8(vite@8.0.16(@types/node@24.11.0)(terser@5.43.1))(vue@3.5.42(typescript@5.9.3))
+        specifier: 6.0.10
+        version: 6.0.10(vite@8.0.16(@types/node@24.11.0)(terser@5.43.1))(vue@3.5.42(typescript@5.9.3))
       '@vitest/coverage-istanbul':
         specifier: 4.1.11
         version: 4.1.11(vitest@4.1.11)
@@ -437,8 +437,8 @@ importers:
         specifier: ^24.1.0
         version: 24.11.0
       '@vitejs/plugin-vue':
-        specifier: 6.0.8
-        version: 6.0.8(vite@8.0.16(@types/node@24.11.0)(terser@5.43.1))(vue@3.5.42(typescript@5.9.3))
+        specifier: 6.0.10
+        version: 6.0.10(vite@8.0.16(@types/node@24.11.0)(terser@5.43.1))(vue@3.5.42(typescript@5.9.3))
       '@vitest/coverage-istanbul':
         specifier: 4.1.11
         version: 4.1.11(vitest@4.1.11)
@@ -1612,12 +1612,12 @@ packages:
     peerDependencies:
       vite: ^6.0.0 || ^7.0.0 || ^8.0.0
 
-  '@vitejs/plugin-vue@6.0.8':
-    resolution: {integrity: sha512-0ZjgOg7oO6farnNGup7yvoM/YXZV84OZxHAwtflItNa/6zzQyVb5LNxyea3FEKEX2XlagIKzrlH7wwxkKgtiew==}
+  '@vitejs/plugin-vue@6.0.10':
+    resolution: {integrity: sha512-b80aUQh3n+qEzzZm5oQp3rT2QImeCx58K6eFl/RkJ3d65KW0kTuv5lNsLRVAjbW9YRUpo/wzmvzMgV34bTAItA==}
     engines: {node: ^20.19.0 || >=22.12.0}
     peerDependencies:
       vite: ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
-      vue: ^3.2.25
+      vue: ^3.2.25 || ^3.6.0-rc.10
 
   '@vitest/coverage-istanbul@4.1.11':
     resolution: {integrity: sha512-pK9LJtOS534bmUwdwLpGD9qL52DeqVWSInrXFMNqrvWLbbAhuIPAlRup3UbsjFOMqCC/p3MmmX7uXV7ZTkcFfQ==}
@@ -5284,6 +5284,9 @@ packages:
   vue-component-type-helpers@3.3.11:
     resolution: {integrity: sha512-LwcxzeliO9fkQcpJG0PoX8X5kmAhKmH9wkpDLxNabwzkQ9Zeib2YVHwFV4pcWmMLfXVfjr/dSV+DaJ3cIPgSNA==}
 
+  vue-component-type-helpers@3.3.12:
+    resolution: {integrity: sha512-HwCqmgTfLFskQc4P5TRnbduCMyPat2Ezu0elLWOGn0dD/6BKHP15B5bxce6aDi+E4kblPtru8amIBQzu0Di3qQ==}
+
   vue-docgen-api@4.79.2:
     resolution: {integrity: sha512-n9ENAcs+40awPZMsas7STqjkZiVlIjxIKgiJr5rSohDP0/JCrD9VtlzNojafsA1MChm/hz2h3PDtUedx3lbgfA==}
     peerDependencies:
@@ -6341,7 +6344,7 @@ snapshots:
       storybook: 10.3.6(@testing-library/dom@10.4.0)(prettier@3.9.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       type-fest: 2.19.0
       vue: 3.5.42(typescript@5.9.3)
-      vue-component-type-helpers: 3.3.11
+      vue-component-type-helpers: 3.3.12
 
   '@testing-library/dom@10.4.0':
     dependencies:
@@ -6783,7 +6786,7 @@ snapshots:
     dependencies:
       vite: 8.0.16(@types/node@24.11.0)(terser@5.43.1)
 
-  '@vitejs/plugin-vue@6.0.8(vite@8.0.16(@types/node@24.11.0)(terser@5.43.1))(vue@3.5.42(typescript@5.9.3))':
+  '@vitejs/plugin-vue@6.0.10(vite@8.0.16(@types/node@24.11.0)(terser@5.43.1))(vue@3.5.42(typescript@5.9.3))':
     dependencies:
       '@rolldown/pluginutils': 1.0.1
       vite: 8.0.16(@types/node@24.11.0)(terser@5.43.1)
@@ -11054,6 +11057,8 @@ snapshots:
   vue-component-type-helpers@2.1.6: {}
 
   vue-component-type-helpers@3.3.11: {}
+
+  vue-component-type-helpers@3.3.12: {}
 
   vue-docgen-api@4.79.2(vue@3.5.42(typescript@5.9.3)):
     dependencies:
