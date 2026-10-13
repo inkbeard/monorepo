@@ -22,7 +22,7 @@
   "devDependencies": {
     "@inkbeard/eslint-config": "workspace:*",
     "@inkbeard/stylelint-config": "workspace:*",
-    "@rushstack/eslint-patch": "^1.12.0",
+    "@rushstack/eslint-patch": "^1.16.1",
     "@storybook/addon-docs": "10.3.6",
     "@storybook/addon-links": "10.3.6",
     "@storybook/vue3": "10.3.6",
