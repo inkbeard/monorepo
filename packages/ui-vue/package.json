@@ -36,7 +36,7 @@
     "@vitejs/plugin-vue": "6.0.8",
     "@vitest/coverage-istanbul": "4.1.11",
     "@vitest/ui": "4.1.11",
-    "@vue/test-utils": "^2.5.0",
+    "@vue/test-utils": "^2.5.1",
     "@vue/tsconfig": "^0.9.1",
     "eslint": "^8.57.1",
     "typescript": "5.9.3",
