@@ -5,7 +5,7 @@
     "library.js"
   ],
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.12.0",
+    "@rushstack/eslint-patch": "^1.16.1",
     "@typescript-eslint/eslint-plugin": "^8.56.1",
     "@typescript-eslint/parser": "^8.56.1",
     "@vitest/eslint-plugin": "1.6.27",
